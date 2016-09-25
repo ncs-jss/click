@@ -22,10 +22,17 @@
             android:id="@+id/nav_jsswebsite"
             android:icon="@drawable/ic_menu_send"
             android:title="JSS Website"/>
-        <item
-            android:id="@+id/nav_login"
-            android:icon="@drawable/ic_menu_share"
-            android:title="Login" />
 
     </group>
+    <item android:title="Settings">
+        <menu>
+            <item
+                android:id="@+id/nav_login"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Login" />
+
+        </menu>
+
+    </item>
+
 </menu>

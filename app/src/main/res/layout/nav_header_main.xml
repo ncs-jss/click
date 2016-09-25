@@ -27,7 +27,6 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 
-
     <TextView
         android:layout_width="141dp"
         android:layout_height="wrap_content"

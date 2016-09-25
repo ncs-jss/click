@@ -151,7 +151,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="1bc59cba1f8ce709af4796cacf8a85047078dcfc">
+        sha1="b49a73bb7f39dc627a93b3b8bc78119a03f0426e">
         <dex dex="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_098eb71e5e9451847eebac1007d06a81ab9bda7c\classes.dex" />
     </item>
     <item

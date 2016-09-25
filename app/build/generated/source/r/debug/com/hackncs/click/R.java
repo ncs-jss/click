@@ -2507,7 +2507,6 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0c005a;
         public static final int action_mode_bar_stub=0x7f0c0059;
         public static final int action_mode_close_button=0x7f0c003e;
-        public static final int action_settings=0x7f0c008d;
         public static final int activity_chooser_view_content=0x7f0c003f;
         public static final int activity_splash=0x7f0c006e;
         public static final int add=0x7f0c001a;
