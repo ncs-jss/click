@@ -1,10 +1,10 @@
 [
     {
-        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_main_drawer.xml",
-        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\src\\main\\res\\menu\\activity_main_drawer.xml"
+        "merged": "/home/abhay/StudioProjects/click/app/build/intermediates/res/merged/debug/menu/main.xml",
+        "source": "/home/abhay/StudioProjects/click/app/src/main/res/menu/main.xml"
     },
     {
-        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
-        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\src\\main\\res\\menu\\main.xml"
+        "merged": "/home/abhay/StudioProjects/click/app/build/intermediates/res/merged/debug/menu/activity_main_drawer.xml",
+        "source": "/home/abhay/StudioProjects/click/app/src/main/res/menu/activity_main_drawer.xml"
     }
 ]

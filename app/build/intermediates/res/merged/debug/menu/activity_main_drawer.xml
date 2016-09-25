@@ -21,7 +21,7 @@
         <item
             android:id="@+id/nav_jsswebsite"
             android:icon="@drawable/ic_menu_send"
-            android:title="JSS Website"/>
+            android:title="JSS Website" />
 
     </group>
     <item android:title="Settings">
