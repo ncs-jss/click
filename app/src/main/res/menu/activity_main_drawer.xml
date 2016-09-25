@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_notices"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="All notices" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="About" />
+        <item
+            android:id="@+id/nav_contact"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Contact" />
+        <item
+            android:id="@+id/nav_jsswebsite"
+            android:icon="@drawable/ic_menu_send"
+            android:title="JSS Website" />
+
+    </group>
+    <item android:title="Settings">
+        <menu>
+            <item
+                android:id="@+id/nav_login"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Login" />
+
+        </menu>
+
+    </item>
+
+</menu>
