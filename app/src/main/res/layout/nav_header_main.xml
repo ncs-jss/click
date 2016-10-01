@@ -13,8 +13,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_marginTop="4dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_gravity="center"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:src="@drawable/jsslogo" />
 
@@ -23,15 +25,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Jss Academy Of Technical"
+        android:text="@string/jssate"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 
     <TextView
         android:layout_width="141dp"
         android:layout_height="wrap_content"
-        android:text="Education"
+        android:paddingTop="8dp"
+        android:text="@string/welcome"
         android:textAlignment="center"
+        android:gravity="center_horizontal"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 </LinearLayout>

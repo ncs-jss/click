@@ -2,34 +2,47 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Home" />
+
         <item
             android:id="@+id/nav_notices"
             android:icon="@drawable/ic_menu_gallery"
             android:title="All notices" />
         <item
-            android:id="@+id/nav_about"
+            android:id="@+id/nav_relevant"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Relevant" />
+        <item
+            android:id="@+id/nav_administration"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="About" />
+            android:title="Administration" />
         <item
-            android:id="@+id/nav_contact"
+            android:id="@+id/nav_academics"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Contact" />
+            android:title="Academics" />
         <item
-            android:id="@+id/nav_jsswebsite"
+            android:id="@+id/nav_events"
             android:icon="@drawable/ic_menu_send"
-            android:title="JSS Website"/>
+            android:title="Events" />
+        <item
+            android:id="@+id/nav_filler"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Filler Notices" />
+        <item
+            android:id="@+id/nav_starred"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Starred" />
 
     </group>
     <item android:title="Settings">
         <menu>
             <item
-                android:id="@+id/nav_login"
+                android:id="@+id/nav_myprofile"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Login" />
+                android:title="My Profile" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Logout" />
 
         </menu>
 

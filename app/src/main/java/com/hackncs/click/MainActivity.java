@@ -10,17 +10,34 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+//import android.support.v4.app.Fragment;
+
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
+
+       /* if (savedInstanceState == null) {
+            Fragment fragment = null;
+            Class fragmentClass = null;
+            fragmentClass = FragmentRelevant.class;
+            try {
+                fragment = (Fragment) fragmentClass.newInstance();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.flContent,fragment).commit();
+        }
+           */
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -58,20 +75,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        //Fragment fragment = null;
+        //Class fragmentClass = null;
 
-        if (id == R.id.nav_home) {
+        if (id == R.id.nav_notices) {
+             //fragmentClass = FragmentNotice.class;
+        } else if (id == R.id.nav_administration) {
+             //fragmentClass = FragmentNotice.class;
+        } else if (id == R.id.nav_academics) {
 
-        } else if (id == R.id.nav_notices) {
+        } else if (id == R.id.nav_events) {
 
-        } else if (id == R.id.nav_about) {
+        }else if (id == R.id.nav_filler) {
 
-        } else if (id == R.id.nav_contact) {
+        }else if (id == R.id.nav_starred) {
 
-        } else if (id == R.id.nav_jsswebsite) {
-
-        } else if (id == R.id.nav_login) {
+        }else if (id == R.id.nav_logout) {
 
         }
+       /* try{
+            fragment = (Fragment) fragmentClass.newInstance();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        FragmentManager  fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.flContent,fragment).commit();   */
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
