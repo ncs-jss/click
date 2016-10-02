@@ -1,10 +1,14 @@
 package com.hackncs.click;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.os.Handler;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +27,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.Toast;
+
+import java.io.File;
 
 public class Splash extends Activity {
 
@@ -33,6 +40,9 @@ public class Splash extends Activity {
     EditText username, password;
     CheckBox rememberMe;
     Button submit;
+
+    boolean isConnected;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,9 +74,14 @@ public class Splash extends Activity {
     }
 
     private void backgroundTasks() {
+        int x = 0;
+        isConnected = isOnline();
+        connectFolder();
         while (progress <= 100) {
+            if (progress % 5 == 0)
+                x++;
             try {
-                Thread.sleep(25);
+                Thread.sleep(10+x);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -103,6 +118,43 @@ public class Splash extends Activity {
     protected void onPause() {
         super.onPause();
         finish();
+    }
+
+    public boolean isOnline() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = connectivityManager.getActiveNetworkInfo();
+        if (netInfo != null && netInfo.isConnected()) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(getApplicationContext(), "Connected!", Toast.LENGTH_SHORT).show();
+                }
+            });
+            return true;
+        } else {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(getApplicationContext(), "Disconnected!", Toast.LENGTH_SHORT).show();
+                }
+            });
+            return false;
+        }
+    }
+
+    private boolean connectFolder() {
+        File folder = new File(Environment.getExternalStorageDirectory()+"/InfoConnect");
+        boolean status = folder.exists();
+        if (!status) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(getApplicationContext(), "Creating directory...", Toast.LENGTH_SHORT).show();
+                }
+            });
+            status = folder.mkdir();
+        }
+        return status;
     }
 
     public class BackgroundTasks extends AsyncTask<String, Integer, String> {
