@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2d2251">
+
+    <ImageView
+        android:src="@drawable/logo"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="200px"
+        android:layout_gravity="center_horizontal"/>
+
+    <EditText
+        android:visibility="visible"
+        android:id="@+id/etUsername"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:background="#1c1140"
+        android:hint="Username"
+        android:padding="10px"
+        android:textColorHint="#aaaaaa"
+        android:textColor="#ffffff"/>
+
+    <EditText
+        android:visibility="visible"
+        android:id="@+id/etPassword"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="#1c1140"
+        android:hint="Password"
+        android:padding="10px"
+        android:textColorHint="#aaaaaa"
+        android:textColor="#ffffff"/>
+
+    <CheckBox
+        android:id="@+id/cbRememberMe"
+        android:visibility="visible"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="Remember me"
+        android:textColor="#eeeeee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bSubmit"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="Submit"
+        android:textColor="#eeeeee"
+        android:background="#4f4473"/>
+
+</LinearLayout>
