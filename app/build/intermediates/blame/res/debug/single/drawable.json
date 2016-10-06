@@ -20,6 +20,14 @@
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
     },
     {
+        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\img_filters.png",
+        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\src\\main\\res\\drawable\\img_filters.png"
+    },
+    {
+        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\img_relevant.png",
+        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\src\\main\\res\\drawable\\img_relevant.png"
+    },
+    {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
@@ -76,6 +84,10 @@
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
+        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\img_allnotices.png",
+        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\src\\main\\res\\drawable\\img_allnotices.png"
+    },
+    {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_go_search_api_material.xml",
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_ic_go_search_api_material.xml"
     },
@@ -86,6 +98,10 @@
     {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\img_admin.png",
+        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\src\\main\\res\\drawable\\img_admin.png"
     },
     {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
@@ -100,8 +116,16 @@
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_cab_background_top_material.xml"
     },
     {
+        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\img_events.png",
+        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\src\\main\\res\\drawable\\img_events.png"
+    },
+    {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\img_academics.png",
+        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\src\\main\\res\\drawable\\img_academics.png"
     },
     {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
@@ -130,6 +154,10 @@
     {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\img_starred.png",
+        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\src\\main\\res\\drawable\\img_starred.png"
     },
     {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",

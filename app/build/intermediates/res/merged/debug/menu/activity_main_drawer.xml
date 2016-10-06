@@ -5,32 +5,32 @@
 
         <item
             android:id="@+id/nav_notices"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="All notices" />
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/notices" />
         <item
             android:id="@+id/nav_relevant"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Relevant" />
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/relevant" />
         <item
             android:id="@+id/nav_administration"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Administration" />
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/administration" />
         <item
             android:id="@+id/nav_academics"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Academics" />
+            android:icon="@drawable/ic_menu_send"
+            android:title="@string/academics" />
         <item
             android:id="@+id/nav_events"
-            android:icon="@drawable/ic_menu_send"
-            android:title="Events" />
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/events" />
         <item
             android:id="@+id/nav_filler"
-            android:icon="@drawable/ic_menu_send"
-            android:title="Filler Notices" />
+            android:icon="@drawable/ic_menu_share"
+            android:title="@string/filler" />
         <item
             android:id="@+id/nav_starred"
-            android:icon="@drawable/ic_menu_send"
-            android:title="Starred" />
+            android:icon="@drawable/img_starred"
+            android:title="@string/starred" />
 
     </group>
     <item android:title="Settings">
@@ -38,11 +38,11 @@
             <item
                 android:id="@+id/nav_myprofile"
                 android:icon="@drawable/ic_menu_share"
-                android:title="My Profile" />
+                android:title="@string/profile" />
             <item
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Logout" />
+                android:title="@string/logout" />
 
         </menu>
 
