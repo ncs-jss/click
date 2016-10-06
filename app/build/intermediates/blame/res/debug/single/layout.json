@@ -4,8 +4,16 @@
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_action_bar_up_container.xml"
     },
     {
+        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_events.xml",
+        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\src\\main\\res\\layout\\fragment_events.xml"
+    },
+    {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0\\res\\layout\\design_layout_tab_text.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_relevant_notice.xml",
+        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\src\\main\\res\\layout\\fragment_relevant_notice.xml"
     },
     {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
@@ -52,6 +60,10 @@
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
+        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_starred_notices.xml",
+        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\src\\main\\res\\layout\\fragment_starred_notices.xml"
+    },
+    {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
@@ -74,6 +86,10 @@
     {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0\\res\\layout\\design_layout_snackbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_administration.xml",
+        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\src\\main\\res\\layout\\fragment_administration.xml"
     },
     {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
@@ -114,6 +130,10 @@
     {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_main.xml",
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\src\\main\\res\\layout\\content_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_academics.xml",
+        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\src\\main\\res\\layout\\fragment_academics.xml"
     },
     {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\app_bar_main.xml",
@@ -180,6 +200,10 @@
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
+        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_filler_notices.xml",
+        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\src\\main\\res\\layout\\fragment_filler_notices.xml"
+    },
+    {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\notification_template_part_time.xml"
     },
@@ -218,5 +242,9 @@
     {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_notice_layout.xml",
+        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\src\\main\\res\\layout\\fragment_notice_layout.xml"
     }
 ]
