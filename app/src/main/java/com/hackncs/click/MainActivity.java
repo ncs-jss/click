@@ -15,12 +15,9 @@ import android.view.MenuItem;
 
 import static com.hackncs.click.R.id.nav_relevant;
 
-//import android.support.v4.app.Fragment;
-
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, FragmentNotice.OnFragmentInteractionListener,
-         FragmentRelevant.OnFragmentInteractionListener{
+        FragmentRelevant.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +26,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 
-       if (savedInstanceState == null) {
+        if (savedInstanceState == null) {
             Fragment fragment = null;
             Class fragmentClass = null;
             fragmentClass = FragmentRelevant.class;
@@ -40,10 +37,8 @@ public class MainActivity extends AppCompatActivity
             }
 
             FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.flContent,fragment).commit();
+            fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
         }
-
-
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -86,35 +81,36 @@ public class MainActivity extends AppCompatActivity
         Class fragmentClass = null;
 
         if (id == R.id.nav_notices) {
-             fragmentClass = FragmentNotice.class;
-        } else if(id == nav_relevant){
-              fragmentClass = FragmentRelevant.class;
+            fragmentClass = FragmentNotice.class;
+        } else if (id == nav_relevant) {
+            fragmentClass = FragmentRelevant.class;
         } else if (id == R.id.nav_administration) {
-             fragmentClass = FragmentAdministration.class;
+            fragmentClass = FragmentAdministration.class;
         } else if (id == R.id.nav_academics) {
-             fragmentClass = FragmentAcademics.class;
+            fragmentClass = FragmentAcademics.class;
         } else if (id == R.id.nav_events) {
-             fragmentClass = FragmentEvents.class;
-        }else if (id == R.id.nav_filler) {
-             fragmentClass = FragmentFillerNotices.class;
-        }else if (id == R.id.nav_starred) {
-             fragmentClass = FragmentStarredNotices.class;
-        }else if (id == R.id.nav_logout) {
-             fragmentClass = FragmentNotice.class;
+            fragmentClass = FragmentEvents.class;
+        } else if (id == R.id.nav_filler) {
+            fragmentClass = FragmentFillerNotices.class;
+        } else if (id == R.id.nav_starred) {
+            fragmentClass = FragmentStarredNotices.class;
+        } else if (id == R.id.nav_logout) {
+            fragmentClass = FragmentNotice.class;
         }
-       try{
+        try {
             fragment = (Fragment) fragmentClass.newInstance();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        FragmentManager  fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.flContent,fragment).commit();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
     @Override
     public void onFragmentInteraction(Uri uri) {
 

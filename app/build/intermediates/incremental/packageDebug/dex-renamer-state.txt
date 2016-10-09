@@ -1,4 +1,4 @@
-#Thu Oct 06 22:24:47 IST 2016
+#Thu Oct 06 23:18:19 IST 2016
 base.0=C\:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_098eb71e5e9451847eebac1007d06a81ab9bda7c
 renamed.1=classes.dex
 renamed.0=classes2.dex
