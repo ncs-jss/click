@@ -54,7 +54,7 @@ public class Splash extends Activity {
             public void run() {
                 changeView();
             }
-        }, 4500);
+        }, 3750);
     }
 
     private void initialize(int condition) {
