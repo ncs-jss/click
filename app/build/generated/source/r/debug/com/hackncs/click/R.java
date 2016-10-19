@@ -2571,6 +2571,7 @@ containing a value of this type.
         public static final int listMode=0x7f0c000b;
         public static final int list_item=0x7f0c0043;
         public static final int media_actions=0x7f0c007e;
+        public static final int menu_item_share=0x7f0c0091;
         public static final int middle=0x7f0c0034;
         public static final int mini=0x7f0c0032;
         public static final int multiply=0x7f0c001b;
