@@ -4,9 +4,9 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.0"
-    timestamp="470714200017790"
+    timestamp="516662165928036"
     token="-5671220999865053173"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="MANIFEST_FILE_CHANGE" >
 
     <task
         name="javac"
@@ -26,8 +26,8 @@
         type="MAIN" />
 
     <build
-        timestamp="470714200017790"
-        verifier="FULL_BUILD_REQUESTED" >
+        timestamp="516662165928036"
+        verifier="MANIFEST_FILE_CHANGE" >
         <artifact
             location="C:\Users\Yasha\AndroidStudioProjects\click\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />

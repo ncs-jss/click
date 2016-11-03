@@ -76,16 +76,16 @@
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
+        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\img_allnotices.png",
+        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\src\\main\\res\\drawable\\img_allnotices.png"
+    },
+    {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_text_cursor_material.xml"
     },
     {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_btn_radio_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\img_allnotices.png",
-        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\src\\main\\res\\drawable\\img_allnotices.png"
     },
     {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_go_search_api_material.xml",
@@ -120,12 +120,12 @@
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\src\\main\\res\\drawable\\img_events.png"
     },
     {
-        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
-        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_seekbar_thumb_material.xml"
-    },
-    {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\img_academics.png",
         "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\src\\main\\res\\drawable\\img_academics.png"
+    },
+    {
+        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_seekbar_thumb_material.xml"
     },
     {
         "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
