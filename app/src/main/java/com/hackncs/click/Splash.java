@@ -2,13 +2,14 @@ package com.hackncs.click;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -20,7 +21,20 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Splash extends Activity {
 
@@ -29,10 +43,11 @@ public class Splash extends Activity {
     int progress;
     final int INITIAL_DISPLAY = 0, LOGIN_DISPLAY = 1;
     EditText username, password;
-    CheckBox rememberMe;
     Button submit;
 
     boolean isConnected;
+
+    View.OnClickListener submitListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +73,6 @@ public class Splash extends Activity {
             case LOGIN_DISPLAY:
                 username = (EditText)findViewById(R.id.etUsername);
                 password = (EditText)findViewById(R.id.etPassword);
-                rememberMe = (CheckBox)findViewById(R.id.cbRememberMe);
                 submit = (Button)findViewById(R.id.bSubmit);
                 break;
         }
@@ -93,7 +107,6 @@ public class Splash extends Activity {
                 fade_in.setDuration(500);
                 username.startAnimation(fade_in);
                 password.startAnimation(fade_in);
-                rememberMe.startAnimation(fade_in);
                 submit.startAnimation(fade_in);
                 break;
         }
@@ -103,6 +116,42 @@ public class Splash extends Activity {
         setContentView(R.layout.login);
         initialize(LOGIN_DISPLAY);
         animate(LOGIN_DISPLAY);
+        submitListener =  new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String sUsername = username.getText().toString().trim();
+                final String sPassword = password.getText().toString().trim();
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, LOGIN_URL,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                try {
+                                    JSONObject jsonObject = new JSONObject(response);
+                                    Toast.makeText(Splash.this, jsonObject.getString("token"), Toast.LENGTH_SHORT).show();
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Toast.makeText(Splash.this, error.getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                        }){
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> map = new HashMap<>();
+                        map.put("username",sUsername);
+                        map.put("password",sPassword);
+                        return map;
+                    }
+                };
+                RequestQueue requestQueue = Volley.newRequestQueue(Splash.this);
+                requestQueue.add(stringRequest);
+            }
+        };
+        submit.setOnClickListener(submitListener);
     }
 
     @Override
