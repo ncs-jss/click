@@ -10,23 +10,32 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     android:background="#2d2251"
-    android:gravity="center"
+    android:gravity="center_horizontal"
     tools:context="com.hackncs.click.Splash">
 
     <ImageView
         android:id="@+id/ivLogo"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="180dp"
         android:src="@drawable/logo"/>
 
     <ProgressBar
         android:id="@+id/pbLoader"
         android:layout_width="65dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:foregroundTint="#ffffff"
         style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"/>
+
+    <TextView
+        android:id="@+id/tvConnErrMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="You're not connected!"
+        android:textSize="15dp"
+        android:textColor="#ffffff"
+        android:visibility="gone"/>
 
 </LinearLayout>

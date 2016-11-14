@@ -188,12 +188,12 @@
         "source": "C:\\Users\\Siddhartha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0\\res\\layout\\design_navigation_menu.xml"
     },
     {
-        "merged": "C:\\Users\\Siddhartha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
-        "source": "C:\\Users\\Siddhartha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0\\res\\layout\\design_navigation_item_header.xml"
-    },
-    {
         "merged": "C:\\Users\\Siddhartha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu_item.xml",
         "source": "C:\\Users\\Siddhartha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0\\res\\layout\\design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Siddhartha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
+        "source": "C:\\Users\\Siddhartha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0\\res\\layout\\design_navigation_item_header.xml"
     },
     {
         "merged": "C:\\Users\\Siddhartha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_relevant_notice.xml",
