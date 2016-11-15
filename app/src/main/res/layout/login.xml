@@ -38,15 +38,6 @@
         android:textColorHint="#aaaaaa"
         android:textColor="#ffffff"/>
 
-    <CheckBox
-        android:id="@+id/cbRememberMe"
-        android:visibility="visible"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:text="Remember me"
-        android:textColor="#eeeeee"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/bSubmit"
@@ -54,7 +45,7 @@
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="Submit"
         android:textColor="#eeeeee"
         android:background="#4f4473"/>

@@ -2,175 +2,184 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_69abd8dfcf85dece30a544bd6d04ee0044d199fa\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_e6c13cb4b5f340f4fd1d6caa9579d89ab6ad3af9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\design\24.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="fc29308a7a8f6d4407b34634eb48fb8b817f9b23">
-        <dex dex="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.0.0_7222a4da32236c1d56beb94d9442934ca680750c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        is-multidex="false"
+        jar="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_65287333bb8869c803456c1ed1cb9c80ab08fd04\classes.dex" />
+        <dex dex="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.1_4192d0e5bff34e260a18f3a5cec3663fab6918eb.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.0.0\jars\classes.jar"
+        is-multidex="false"
+        jar="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.0.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="894922f67adeaaef51f077a29e315da21a3382d3">
-        <dex dex="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.0.0_7943e9502ed749c384d693321eeef3fa436a8e7f\classes.dex" />
+        <dex dex="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-24.0.0_3aaa43cc5297f66e7a92760ef1020f7b5d270bcd.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        is-multidex="false"
+        jar="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.volley\volley\1.0.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_32adc944f6dcd2603f686de4970cdecca64fd335\classes.dex" />
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\pre-dexed\debug\com.android.volley-volley-1.0.0_9b1e5afa13f99ecb55d9c9ada21be3581560bd6e.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        is-multidex="false"
+        jar="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_de9eb397c1c589346d55e33991ddeecd63d88446\classes.dex" />
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.1_cf8e7cfa56ace2d2c53c6fb5e1a619b43a69c74b.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        is-multidex="false"
+        jar="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_0cc868f1d92a203ac4396af46ea3ce3f9b334f77\classes.dex" />
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.1_db07de98ea83d4a60ae6e579d98277f09d81c586.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_36d34ea367d63c380a3eb04847a23325095d3cb2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Yasha\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_c9d8c5742fa2d30b772e646152b798f421815db9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_de380bb42c86c26374099347990ee551a8822e52\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_05fdceae1fc0b306d301f7351896916689f464fc\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_1b58750fc5e819b02563c7951db6407d40b86965\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        is-multidex="false"
+        jar="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_8553709f00865b4a66f13679810af3490a1d9123\classes.dex" />
+        <dex dex="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.1_bb0f5f7966f3e61c63aeb34cdbe1412a74ef03cd.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="eb5c3db2a05deec43605c61925a5168926fd7f9c">
-        <dex dex="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_f1c488c8cbf1888b03081e6a4a79486b4691e04c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_272529b229ac10695a6dc38ea550a461c7cd1c79\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="e9c6cf5c66ef6d44676a405edb381ab86ff3933f">
-        <dex dex="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_098eb71e5e9451847eebac1007d06a81ab9bda7c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_91bae361af33985d27fbcbd90f1ffa62e67f0fce\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        is-multidex="false"
+        jar="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="C:\Users\Yasha\AndroidStudioProjects\click\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_0a48823d7264212aadd48724ba84514fc7af318a\classes.dex" />
+        <dex dex="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_5146b80fd526275955e736f1ce0ed59a495d5e88.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_d13ac011d367303537002c380adce3434d732ded.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_f5c7ffbcac0e2dd36914f7166c0996a6d0083dbf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_d0a9d643108e8065f63ac85cb6d6c7721168de46.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="367e4af6c9ec66368276499830d8fa418592ecf6">
+        <dex dex="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\pre-dexed\debug\instant-run_85e818af9052bb8f83efd29974c3bf6b33e4e8c9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.1_f82b89a7946d4ae574907a5b7c0ef07aba2ba45a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="3f2926a056d9aecb005cf64b27ce9c2090569267">
+        <dex dex="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_b58a5cd237b17dc46c96c24dffa3a2b1ec7f56f2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.1_f3fcbd1e62341783e3a3083c6b318069da3639e3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.1_1636f4816df1a9ee682d43180eb31e6a26c7b8db.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_0ec2c8bedd592760b5344317e0cf29247f0f6532.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Siddhartha\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\pre-dexed\debug\support-annotations-24.2.1_3e8af5370005c199ba735529f3618f01eb675dd3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_84a78639ddcd6963002d4a1d2a0d55da352a2961.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.1_2208bf915d6847984af3e5fdd0068b838dbffe5c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\exploded-aar\com.android.support\design\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="fc29308a7a8f6d4407b34634eb48fb8b817f9b23">
+        <dex dex="C:\Users\Siddhartha\AndroidStudioProjects\click\app\build\intermediates\pre-dexed\debug\com.android.support-design-24.0.0_91b028a6e7d09e98d97a468777d3f85704d6ccc4.jar" />
     </item>
 
 </items>
