@@ -8,10 +8,6 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/notices" />
         <item
-            android:id="@+id/nav_relevant"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/relevant" />
-        <item
             android:id="@+id/nav_administration"
             android:icon="@drawable/ic_menu_manage"
             android:title="@string/administration" />
@@ -20,17 +16,17 @@
             android:icon="@drawable/ic_menu_send"
             android:title="@string/academics" />
         <item
+            android:id="@+id/nav_placement"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/placement" />
+        <item
             android:id="@+id/nav_events"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/events" />
         <item
-            android:id="@+id/nav_filler"
-            android:icon="@drawable/ic_menu_share"
-            android:title="@string/filler" />
-        <item
-            android:id="@+id/nav_starred"
+            android:id="@+id/download"
             android:icon="@drawable/img_starred"
-            android:title="@string/starred" />
+            android:title="@string/download" />
 
     </group>
     <item android:title="Settings">

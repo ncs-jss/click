@@ -1,19 +1,19 @@
 <resources>
-<string name="app_name">click</string>
+    <string name="app_name">click</string>
 
-<string name="navigation_drawer_open">Open navigation drawer</string>
-<string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
-<string name="action_settings">Settings</string>
-<string name="jssate">"JSS Academy Of Technical Education"</string>
-<string name="welcome">"Welcome, User"</string>
+    <string name="action_settings">Settings</string>
+    <string name="jssate">"JSS Academy Of Technical Education"</string>
+    <string name="welcome">"Welcome, User"</string>
     <string name="notices">"All notices"</string>
-    <string name="relevant">"Relevant"</string>
+    <string name="placement">"Placement"</string>
     <string name="administration">"Administration"</string>
     <string name="academics">"Academics"</string>
     <string name="events">"Events"</string>
     <string name="filler">"Filler Notices"</string>
-    <string name="starred">"Starred"</string>
+    <string name="download">"Download"</string>
     <string name="profile">"My Profile"</string>
     <string name="logout">"Logout"</string>
 
