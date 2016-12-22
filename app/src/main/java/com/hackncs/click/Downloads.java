@@ -3,10 +3,11 @@ package com.hackncs.click;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,14 +25,31 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Downloads extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class Downloads extends Fragment implements AdapterView.OnItemClickListener {
+
+    private View view;
 
     File initialDirectory;
     ArrayList<File> filesList;
     MyAdapter myAdapter;
     ListView listView;
+    Context context;
     protected String[] acceptedFileExtensions;
+
+    @Nullable
     @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.activity_downloads,container,false);
+        context = getActivity().getApplicationContext();
+        listView = (ListView) view.findViewById(R.id.lvList);
+        initialDirectory = new File(Environment.getExternalStorageDirectory()+"/InfoConnect");
+        filesList = new ArrayList<>();
+        acceptedFileExtensions = new String[] {};
+        refreshFilesList();
+        return view;
+    }
+
+   /* @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_downloads);
@@ -47,7 +65,7 @@ public class Downloads extends AppCompatActivity implements AdapterView.OnItemCl
         refreshFilesList();
         super.onResume();
     }
-
+*/
     private void refreshFilesList() {
         filesList.clear();
         ExtensionFilenameFilter filter = new ExtensionFilenameFilter(acceptedFileExtensions);
@@ -59,9 +77,9 @@ public class Downloads extends AppCompatActivity implements AdapterView.OnItemCl
             Collections.sort(filesList, new FileComparator());
         }
         else {
-            Toast.makeText(this, "No files found!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context , "No files found!", Toast.LENGTH_SHORT).show();
         }
-        myAdapter = new MyAdapter(this, filesList);
+        myAdapter = new MyAdapter(context , filesList);
         listView.setAdapter(myAdapter);
         listView.setOnItemClickListener(this);
     }
@@ -114,7 +132,8 @@ public class Downloads extends AppCompatActivity implements AdapterView.OnItemCl
         public View getView(int position, View convertView, ViewGroup parent) {
             View row;
             if (convertView == null) {
-                LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater  inflater = getActivity().getLayoutInflater();
+//                LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 row = inflater.inflate(R.layout.list_item, parent, false);
             }
             else

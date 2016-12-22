@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_description"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hackncs.click.DescriptionActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textColor="#000"
+        android:gravity="center"
+        android:text="This is the notice title"
+        android:id="@+id/nTitle"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="10dp"
+        android:gravity="center"
+        android:textColor="#000"
+        android:text="Posted by: Some Faculty"
+        android:layout_below="@+id/nTitle"
+        android:id="@+id/nFaculty"/>
+
+    <WebView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/nFaculty"
+        android:id="@+id/nDescription"
+        />
+
+</RelativeLayout>
