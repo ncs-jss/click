@@ -1,3 +1,4 @@
+/*
 package com.hackncs.click;
 
 
@@ -53,10 +54,12 @@ public class OfflineDatabaseHandler extends SQLiteOpenHelper{
     }
 
     public boolean insertNotice(Notice notice) {
-        /*
+        */
+/*
             * When a notice is starred, this function can be called to insert that
             * notice (instance of Notice) into device's offline database.
-         */
+         *//*
+
         try {
             SQLiteDatabase db = getWritableDatabase();
             ContentValues values = new ContentValues();
@@ -79,10 +82,12 @@ public class OfflineDatabaseHandler extends SQLiteOpenHelper{
     }
 
     public boolean deleteNotice(Notice notice) {
-        /*
+        */
+/*
             * A notice which is unstarred by the user should be sent to this function
             * (instance of Notice) to remove it from device's offline database.
-         */
+         *//*
+
         try {
             SQLiteDatabase db = getWritableDatabase();
             db.delete(TABLE_LABEL_NOTICES, KEY_NOTICE_ID + " = ?", new String[]{notice.getNoticeId()});
@@ -95,9 +100,11 @@ public class OfflineDatabaseHandler extends SQLiteOpenHelper{
     }
 
     public List<Notice> getStarredNotices() {
-        /*
+        */
+/*
             * When a list of starred notices (objects) is required.
-         */
+         *//*
+
         List<Notice> noticeList = new ArrayList<>();
         Notice notice = new Notice();
         try {
@@ -125,4 +132,4 @@ public class OfflineDatabaseHandler extends SQLiteOpenHelper{
         }
         return noticeList;
     }
-}
+}*/

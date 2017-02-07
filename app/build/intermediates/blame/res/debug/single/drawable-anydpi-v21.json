@@ -1,50 +1,26 @@
 [
     {
-        "merged": "C:\\Users\\Siddhartha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_menu_slideshow.xml",
-        "source": "C:\\Users\\Siddhartha\\AndroidStudioProjects\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_slideshow.xml"
+        "merged": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_menu_manage.xml",
+        "source": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_manage.xml"
     },
     {
-        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_menu_gallery.xml",
-        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_gallery.xml"
+        "merged": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_menu_camera.xml",
+        "source": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_camera.xml"
     },
     {
-        "merged": "C:\\Users\\Siddhartha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_menu_share.xml",
-        "source": "C:\\Users\\Siddhartha\\AndroidStudioProjects\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_share.xml"
+        "merged": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_menu_slideshow.xml",
+        "source": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_slideshow.xml"
     },
     {
-        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_menu_share.xml",
-        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_share.xml"
+        "merged": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_menu_gallery.xml",
+        "source": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_gallery.xml"
     },
     {
-        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_menu_send.xml",
-        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_send.xml"
+        "merged": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_menu_send.xml",
+        "source": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_send.xml"
     },
     {
-        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_menu_slideshow.xml",
-        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_slideshow.xml"
-    },
-    {
-        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_menu_camera.xml",
-        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_camera.xml"
-    },
-    {
-        "merged": "C:\\Users\\Siddhartha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_menu_manage.xml",
-        "source": "C:\\Users\\Siddhartha\\AndroidStudioProjects\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_manage.xml"
-    },
-    {
-        "merged": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_menu_manage.xml",
-        "source": "C:\\Users\\Yasha\\AndroidStudioProjects\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_manage.xml"
-    },
-    {
-        "merged": "C:\\Users\\Siddhartha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_menu_camera.xml",
-        "source": "C:\\Users\\Siddhartha\\AndroidStudioProjects\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_camera.xml"
-    },
-    {
-        "merged": "C:\\Users\\Siddhartha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_menu_send.xml",
-        "source": "C:\\Users\\Siddhartha\\AndroidStudioProjects\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_send.xml"
-    },
-    {
-        "merged": "C:\\Users\\Siddhartha\\AndroidStudioProjects\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_menu_gallery.xml",
-        "source": "C:\\Users\\Siddhartha\\AndroidStudioProjects\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_gallery.xml"
+        "merged": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_menu_share.xml",
+        "source": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_share.xml"
     }
 ]

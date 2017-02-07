@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, FragmentNotice.OnFragmentInteractionListener,
         FragmentPlacement.OnFragmentInteractionListener {
 
-    private ShareActionProvider mShareActionProvider;
     /*private static final int REQUEST_EXTERNAL_STORAGE = 1;
 
     private static String[] PERMISSIONS_STORAGE = {
@@ -69,9 +68,8 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-<<<<<<< HEAD
     //to remove
-=======
+
     private void startShareIntent(){
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
@@ -79,7 +77,6 @@ public class MainActivity extends AppCompatActivity
         sendIntent.setType("text/plain");
         startActivity(sendIntent);
     }
->>>>>>> origin/offlinenotices
 
     @Override
     public void onBackPressed() {
@@ -99,15 +96,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-<<<<<<< HEAD
-    //to remove share lines
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        return super.onOptionsItemSelected(item);
-    }
 
-=======
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -117,9 +106,6 @@ public class MainActivity extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
-
-
->>>>>>> origin/offlinenotices
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -178,7 +164,7 @@ public class MainActivity extends AppCompatActivity
      *
      * If the app does not has permission then the user will be prompted to grant permissions
      *
-     * @param activity
+     * @param //activity
      */
     /*public static void verifyStoragePermissions(Activity activity) {
         // Check if we have write permission
