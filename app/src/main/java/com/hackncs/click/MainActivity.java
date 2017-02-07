@@ -1,5 +1,6 @@
 package com.hackncs.click;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -27,6 +28,9 @@ public class MainActivity extends AppCompatActivity
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE
     };*/
+
+    private ShareActionProvider mShareActionProvider;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +69,17 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+<<<<<<< HEAD
     //to remove
+=======
+    private void startShareIntent(){
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        // sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+        sendIntent.setType("text/plain");
+        startActivity(sendIntent);
+    }
+>>>>>>> origin/offlinenotices
 
     @Override
     public void onBackPressed() {
@@ -85,6 +99,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+<<<<<<< HEAD
     //to remove share lines
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -92,6 +107,19 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+=======
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (item.getItemId() == R.id.menu_item_share) {
+            startShareIntent();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+>>>>>>> origin/offlinenotices
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
