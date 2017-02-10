@@ -56,6 +56,7 @@ public class FragmentAcademics extends Fragment {
         USER_NAME = sp.getString("com.hackncs.click.USERNAME", "");
         Log.d("---->", TOKEN);
         Log.d("---->", USER_NAME);
+        Log.d("---->", sp.getString("com.hackncs.click.FIRST_NAME","User"));
 
 
 
@@ -77,7 +78,7 @@ public class FragmentAcademics extends Fragment {
 
     public void loadNextDataFromApi(int offset) {
 
-        URL = "";
+        URL = "http://210.212.85.155/api/notices/notice_list/";
         if (offset != 1)
             URL = URL + "?page=" + offset;
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext()); // altered

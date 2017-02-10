@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="armeabi-v7a,armeabi"
-    api-level="24"
-    density="xxhdpi"
+    api-level="19"
+    density="xhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="5311951752178"
+    timestamp="262803951256254"
     token="8560392274275707394"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="4723" />
+        duration="11709" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="2136" />
+        duration="121" />
     <task
         name="verifier"
-        duration="543" />
+        duration="14" />
 
     <artifact
         location="C:\Users\Siddhartha\Downloads\click\app\build\outputs\apk\app-debug.apk"
         type="MAIN" />
 
     <build
-        timestamp="5311951752178"
+        timestamp="262803951256254"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\Siddhartha\Downloads\click\app\build\outputs\apk\app-debug.apk"

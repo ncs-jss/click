@@ -76,7 +76,7 @@ public class DescriptionActivity extends AppCompatActivity {
             String url = getIntent().getData().toString();
             Log.d("url", url);
             String noticeid = url.substring(url.indexOf('=')+1);
-            String get_url = "http://210.212.85.155/api/v1/notices/"+noticeid;
+            String get_url = "http://210.212.85.155/api/notices/notice_by_pk/"+noticeid;
             Log.d("Notice Id",noticeid);
             StringRequest newNoticeRequest = new StringRequest(Request.Method.GET, get_url,
                     new Response.Listener<String>() {
@@ -84,8 +84,7 @@ public class DescriptionActivity extends AppCompatActivity {
                         public void onResponse(String response) {
                             try {
                                 JSONObject jo = new JSONObject(response);
-                                JSONArray ja = jo.getJSONArray("results");
-                                notice = Notice.getNoticeObject((JSONObject) ja.get(0));
+                                notice = Notice.getNoticeObject(jo);
                                 Log.d("json response",response);
                                 populateView();
                             } catch (JSONException e) {
@@ -97,7 +96,7 @@ public class DescriptionActivity extends AppCompatActivity {
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(context, "Some error occured", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }){
                 @Override
@@ -119,10 +118,10 @@ public class DescriptionActivity extends AppCompatActivity {
 
     private void populateView() {
 
+        setContentView(R.layout.activity_description);
+        Button button = (Button) findViewById(R.id.downloadB);
         if(notice.mAttachment)
         {
-            setContentView(R.layout.activity_description);
-            Button button = (Button) findViewById(R.id.downloadB);
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -130,8 +129,9 @@ public class DescriptionActivity extends AppCompatActivity {
                 }
             });
         }
-        else
-            setContentView(R.layout.activity_description2);
+        else {
+            button.setVisibility(View.GONE);
+        }
 
         if(notice.mAttachment)
         {
@@ -157,7 +157,7 @@ public class DescriptionActivity extends AppCompatActivity {
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
         String share_url = "http://infoconnect.jssaten.ac.in/notice/?notice_id=" + notice.mId;
-        sendIntent.putExtra(Intent.EXTRA_TEXT,share_url+ "\n\nSent via Infoconnect");
+        sendIntent.putExtra(Intent.EXTRA_TEXT,share_url+ "\n\nSent via InfoConnect");
         sendIntent.setType("text/plain");
         startActivity(sendIntent);
     }
@@ -186,7 +186,7 @@ public class DescriptionActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             //verifyStoragePermissions();
-            P.setMessage("Downoading...");
+            P.setMessage("Downloading...");
             P.show();
             P.setIndeterminate(false);
             P.setCancelable(true);
@@ -252,7 +252,6 @@ public class DescriptionActivity extends AppCompatActivity {
             URL url = new URL(sUrl);
             URLConnection conection = url.openConnection();
             conection.connect();
-            //System.out.println(url);
             Log.d("--->",sUrl);
 
             int lengthOfFile = conection.getContentLength();

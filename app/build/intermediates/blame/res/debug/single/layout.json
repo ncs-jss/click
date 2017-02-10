@@ -212,12 +212,12 @@
         "source": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_placement.xml",
-        "source": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\src\\main\\res\\layout\\fragment_placement.xml"
-    },
-    {
         "merged": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
         "source": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_placement.xml",
+        "source": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\src\\main\\res\\layout\\fragment_placement.xml"
     },
     {
         "merged": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",

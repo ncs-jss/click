@@ -75,7 +75,7 @@ public class FragmentPlacement extends Fragment{
 
     public void loadNextDataFromApi(int offset) {
 
-        URL = "http://210.212.85.155/api/v1/notices/";
+        URL = "http://210.212.85.155/api/notices/notice_list/";
         if (offset != 1)
             URL = URL + "?page=" + offset;
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext()); // altered

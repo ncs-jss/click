@@ -1,8 +1,10 @@
 package com.hackncs.click;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,9 +14,11 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.view.View;
+import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity
@@ -65,7 +69,12 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         assert navigationView != null;
 
+        View headerView =  navigationView.getHeaderView(0);
+        TextView name = (TextView)headerView.findViewById(R.id.tvFirstName);
+        name.setText("Welcome, "+PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.FIRST_NAME","User"));
+
         navigationView.setNavigationItemSelectedListener(this);
+        
     }
 
     //to remove
@@ -140,6 +149,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.download) {
             fragmentClass = Downloads.class;
         } else if (id == R.id.nav_logout) {
+            PreferenceManager.getDefaultSharedPreferences(getBaseContext()).edit().clear().commit();
+            Intent intent = new Intent(MainActivity.this, Splash.class);
+            startActivity(intent);
             fragmentClass = FragmentNotice.class;
         }
         try {
