@@ -126,7 +126,7 @@ public class DescriptionActivity extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    new Asyn().execute("http://210.212.85.155/media/"+notice.mAttachment_link);
+                    new Asyn().execute(""+notice.mAttachment_link);
                 }
             });
         }

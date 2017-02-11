@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Home"/>
+        <item
+            android:id ="@+id/nav_uploaded"
+            android:icon = "@drawable/ic_menu_send"
+            android:title ="My uploaded notices" />
+        <item
+            android:id="@+id/nav_create"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Create Notice" />
+    </group>
+    <item android:title="Settings">
+        <menu>
+            <item
+                android:id="@+id/nav_myprofile"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/profile" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/logout" />
+        </menu>
+
+    </item>
+
+</menu>

@@ -105,7 +105,14 @@ public class MainActivity extends AppCompatActivity
             Field field = fragmentClass.getDeclaredField("Category");
             field.setAccessible(true);
             switch(id){
-                case R.id.nav_notices: field.set(FragmentNotice, );
+                case R.id.nav_notices: field.set(FragmentNotice,"Misc" );
+                break;
+                case R.id.nav_placement: field.set(FragmentNotice,"Placement;
+                break;
+                case R.id.nav_administration: field.set(FragmentNotice,"Administration");
+                break;
+                case R.id.nav_academics: field.set(FragmentNotice,"Academics");
+                break;
             }
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
@@ -122,7 +129,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_academics) {
             fragmentClass = FragmentAcademics.class;
         } else if (id == R.id.nav_events) {
-            fragmentClass = FragmentEvents.class;
+            fragmentClass = CreateNotice.class;
+            //fragmentClass = FragmentEvents.class;
         } else if (id == R.id.download) {
             fragmentClass = Downloads.class;
         } else if (id == R.id.nav_logout) {
