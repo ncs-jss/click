@@ -146,10 +146,13 @@ public class MainActivity extends AppCompatActivity
             fragmentClass = FragmentAcademics.class;
         } else if (id == R.id.nav_events) {
             fragmentClass = FragmentEvents.class;
+        } else if (id == R.id.starred) {
+            fragmentClass = FragmentStarredNotices.class;
         } else if (id == R.id.download) {
             fragmentClass = Downloads.class;
         } else if (id == R.id.nav_logout) {
-            PreferenceManager.getDefaultSharedPreferences(getBaseContext()).edit().clear().commit();
+            PreferenceManager.getDefaultSharedPreferences(getBaseContext()).edit().clear().apply();
+            new OfflineDatabaseHandler(this).flush();
             Intent intent = new Intent(MainActivity.this, Splash.class);
             startActivity(intent);
             fragmentClass = FragmentNotice.class;

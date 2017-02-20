@@ -175,8 +175,46 @@ public class DescriptionActivity extends AppCompatActivity {
         if (id == R.id.menu_item_share) {
             startShareIntent();
         }
-
+        else if (id == R.id.menu_item_star) {
+            starNotice();
+        }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void starNotice() {
+        String URL = "http://210.212.85.155/api/notices/add_starred_notice/";
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL + notice.mId + "/",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        JSONObject jo;
+                        try {
+                            jo = new JSONObject(response);
+                            Toast.makeText(context, jo.getString("message"), Toast.LENGTH_SHORT).show();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        new OfflineDatabaseHandler(context).insertNotice(notice);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                })
+        {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("Authorization", "token " + TOKEN);
+                return params;
+            }
+        };
+        RequestQueue rq = Volley.newRequestQueue(this);
+        rq.add(stringRequest);
+        if (notice.mAttachment)
+            new Asyn().execute("http://210.212.85.155/media/"+notice.mAttachment_link);
     }
 
     private class Asyn extends AsyncTask<String, Void, Void> {
@@ -259,7 +297,6 @@ public class DescriptionActivity extends AppCompatActivity {
             // download the file
             InputStream input = new BufferedInputStream(url.openStream(),
                     8192);
-
 
             // Output stream
             OutputStream output = new FileOutputStream(Environment

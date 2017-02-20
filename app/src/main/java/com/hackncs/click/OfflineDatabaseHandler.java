@@ -1,4 +1,3 @@
-/*
 package com.hackncs.click;
 
 
@@ -25,7 +24,7 @@ public class OfflineDatabaseHandler extends SQLiteOpenHelper{
     private static final String KEY_DATE = "date";
     private static final String KEY_POSTED_BY = "postedby";
     private static final String KEY_ATTACHMENT_URL = "attachmenturl";
-    private static final String KEY_NOTICE_URL = "noticeurl";
+    private static final String KEY_NEXT_URL = "nexturl";
     private static final String KEY_NOTICE_ID = "noticeid";
     private static final String KEY_ATTACHMENT = "attachment";
 
@@ -44,7 +43,7 @@ public class OfflineDatabaseHandler extends SQLiteOpenHelper{
                 KEY_POSTED_BY +         " VARCHAR, " +
                 KEY_ATTACHMENT +        " BIT, " +
                 KEY_ATTACHMENT_URL +    " VARCHAR, " +
-                KEY_NOTICE_URL +        " VARCHAR)";
+                KEY_NEXT_URL +        " VARCHAR)";
         sqLiteDatabase.execSQL(CREATE_TABLE);
     }
 
@@ -53,25 +52,30 @@ public class OfflineDatabaseHandler extends SQLiteOpenHelper{
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+TABLE_LABEL_NOTICES);
     }
 
+    public void flush() {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM "+TABLE_LABEL_NOTICES);
+    }
+
     public boolean insertNotice(Notice notice) {
-        */
-/*
+        /*
             * When a notice is starred, this function can be called to insert that
             * notice (instance of Notice) into device's offline database.
-         *//*
+         */
 
         try {
             SQLiteDatabase db = getWritableDatabase();
             ContentValues values = new ContentValues();
-            values.put(KEY_NOTICE_ID, notice.getNoticeId());
-            values.put(KEY_TITLE, notice.getTitle());
-            values.put(KEY_DESCRIPTION, notice.getDescription());
-            values.put(KEY_DATE, notice.getDate());
-            values.put(KEY_POSTED_BY, notice.getPostedBy());
-            values.put(KEY_ATTACHMENT, notice.hasAttachment());
-            values.put(KEY_ATTACHMENT_URL, notice.getAttachmentUrl());
-            values.put(KEY_NOTICE_URL, notice.getNoticeUrl());
+            values.put(KEY_NOTICE_ID, notice.mId);
+            values.put(KEY_TITLE, notice.mTitle);
+            values.put(KEY_DESCRIPTION, notice.mNotice_description);
+            values.put(KEY_DATE, notice.mDate);
+            values.put(KEY_POSTED_BY, notice.mPosted_by);
+            values.put(KEY_ATTACHMENT, notice.mAttachment);
+            values.put(KEY_ATTACHMENT_URL, notice.mAttachment_link);
+            values.put(KEY_NEXT_URL, notice.mNextUrl);
             db.insert(TABLE_LABEL_NOTICES, null, values);
+            values.clear();
             db.close();
         } catch (SQLiteException e) {
             e.printStackTrace();
@@ -82,15 +86,15 @@ public class OfflineDatabaseHandler extends SQLiteOpenHelper{
     }
 
     public boolean deleteNotice(Notice notice) {
-        */
-/*
+
+        /*
             * A notice which is unstarred by the user should be sent to this function
             * (instance of Notice) to remove it from device's offline database.
-         *//*
+         */
 
         try {
             SQLiteDatabase db = getWritableDatabase();
-            db.delete(TABLE_LABEL_NOTICES, KEY_NOTICE_ID + " = ?", new String[]{notice.getNoticeId()});
+            db.delete(TABLE_LABEL_NOTICES, KEY_NOTICE_ID + " = ?", new String[]{notice.mId});
         } catch(SQLiteException e) {
             e.printStackTrace();
             Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -100,27 +104,26 @@ public class OfflineDatabaseHandler extends SQLiteOpenHelper{
     }
 
     public List<Notice> getStarredNotices() {
-        */
-/*
+
+        /*
             * When a list of starred notices (objects) is required.
-         *//*
+         */
 
         List<Notice> noticeList = new ArrayList<>();
-        Notice notice = new Notice();
         try {
             SQLiteDatabase db = getReadableDatabase();
             Cursor cursor = db.rawQuery("SELECT * FROM "+TABLE_LABEL_NOTICES, null);
             if (cursor.moveToFirst()){
                 do {
-                    notice = notice.getBlankObject();
-                    notice.setNoticeId(cursor.getString(0));
-                    notice.setTitle(cursor.getString(1));
-                    notice.setDescription(cursor.getString(2));
-                    notice.setDate(cursor.getString(3));
-                    notice.setPostedBy(cursor.getString(4));
-                    notice.setAttachmentStatus(cursor.getString(5).equals("1"));
-                    notice.setAttachmentUrl(cursor.getString(6));
-                    notice.setNoticeUrl(cursor.getString(7));
+                    Notice notice = new Notice();
+                    notice.mId = cursor.getString(0);
+                    notice.mTitle = cursor.getString(1);
+                    notice.mNotice_description = cursor.getString(2);
+                    notice.mDate = cursor.getString(3);
+                    notice.mPosted_by = cursor.getString(4);
+                    notice.mAttachment = cursor.getString(5).equals("1");
+                    notice.mAttachment_link = cursor.getString(6);
+                    notice.mNextUrl = cursor.getString(7);
                     noticeList.add(notice);
                 }while (cursor.moveToNext());
             }
@@ -132,4 +135,4 @@ public class OfflineDatabaseHandler extends SQLiteOpenHelper{
         }
         return noticeList;
     }
-}*/
+}

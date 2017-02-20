@@ -15,6 +15,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v4.app.ActivityCompat;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
@@ -35,6 +36,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -130,6 +132,8 @@ public class Splash extends Activity {
         int x = 0;
         isConnected = isOnline();
         logged_in = sharedPreferences.getBoolean("com.hackncs.click.LOGGED_IN", false);
+        if (isConnected && logged_in)
+            syncStarredNotices();
         connectFolder();
         while (progress <= 100) {
             if (progress % 5 == 0)
@@ -142,6 +146,79 @@ public class Splash extends Activity {
             progress += 1;
             loader.setProgress(progress);
         }
+    }
+
+    private void syncStarredNotices() {
+        new OfflineDatabaseHandler(getApplicationContext()).flush();
+        final String TOKEN = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.TOKEN", "");
+        final String USER_NAME = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.USERNAME", "");
+        String URL = "http://210.212.85.155/api/notices/get_starred_notice_list/";
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONArray jsonArray = new JSONArray(response);
+                            int i = 0;
+                            while (jsonArray.getJSONObject(i)!=null) {
+                                loadAndAdd(jsonArray.getJSONObject(i).getString("notice"));
+                                i++;
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(Splash.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("Authorization", "token " + TOKEN);
+                params.put("username", USER_NAME);
+                return params;
+            }
+        };
+        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+        queue.add(stringRequest);
+    }
+
+    private void loadAndAdd(String notice) {
+        final OfflineDatabaseHandler dbHandler = new OfflineDatabaseHandler(this);
+        String URL = "http://210.212.85.155/api/notices/notice_by_pk/";
+        final String TOKEN = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.TOKEN", "");
+        final String USER_NAME = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.USERNAME", "");
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL+notice,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            dbHandler.insertNotice(Notice.getNoticeObject(jsonObject));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(Splash.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("Authorization", "token " + TOKEN);
+                params.put("username", USER_NAME);
+                return params;            }
+        };
+        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+        queue.add(stringRequest);
     }
 
     private void animate(int condition) {
@@ -298,6 +375,7 @@ public class Splash extends Activity {
                     editor.putString("com.hackncs.click.USERNAME", sUsername);
                     editor.putString("com.hackncs.click.FIRST_NAME", first_name);
                     editor.commit();
+                    syncStarredNotices();
                     Intent intent = new Intent(Splash.this, MainActivity.class);
                     intent.putExtra("mode", "ONLINE_MODE");
                     startActivity(intent);

@@ -58,8 +58,6 @@ public class FragmentAcademics extends Fragment {
         Log.d("---->", USER_NAME);
         Log.d("---->", sp.getString("com.hackncs.click.FIRST_NAME","User"));
 
-
-
         mAdapter = new NoticeAdapter(context, data);
         mRVNoticeList.setAdapter(mAdapter);
         loadNextDataFromApi(1);
