@@ -1,6 +1,24 @@
 <resources>
     <string name="app_name">click</string>
 
+    <string-array name="uplaod_category">
+        <item>Academics</item>
+        <item>Administration</item>
+        <item>Timimg and Placement</item>
+        <item>Events</item>
+        <item>Miscelleneous</item>
+    </string-array>
+
+    <string-array name="upload_for">
+        <item>Entire College</item>
+        <item>HOD</item>
+        <item>Faculty</item>
+        <item>Management</item>
+        <item>Others</item>
+    </string-array>
+
+     <string name="ok">OK</string>
+     <string name="cancel">CANCEL</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 

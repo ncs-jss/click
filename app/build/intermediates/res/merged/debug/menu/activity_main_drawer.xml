@@ -24,9 +24,13 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/events" />
         <item
-            android:id="@+id/download"
+            android:id="@+id/nav_download"
             android:icon="@drawable/img_starred"
             android:title="@string/download" />
+        <item
+            android:id="@+id/nav_create"
+            android:icon="@drawable/img_starred"
+            android:title="Create Notice" />
 
     </group>
     <item android:title="Settings">

@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.Map;
 
 public class FragmentNotice extends Fragment {
+    public FragmentNotice fragmentNotice;
     private RecyclerView mRVNoticeList;
     private NoticeAdapter mAdapter;
     private String TOKEN = "token ";
@@ -51,7 +52,7 @@ public class FragmentNotice extends Fragment {
         view = inflater.inflate(R.layout.fragment_notice_layout, container, false);
         context = getActivity().getApplicationContext();
         mRVNoticeList = (RecyclerView) view.findViewById(R.id.noticeList);
-
+        fragmentNotice = new FragmentNotice();
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         TOKEN = sp.getString("com.hackncs.click.TOKEN", "");
         USER_NAME = sp.getString("com.hackncs.click.USERNAME", "");

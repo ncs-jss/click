@@ -5,22 +5,22 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="80820891670808"
+    timestamp="19221760699667"
     token="6196069812000139878"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="3204" />
+        duration="1430" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="370" />
+        duration="150" />
     <task
         name="verifier"
-        duration="7" />
+        duration="1" />
 
     <artifact
         location="/home/yasha/github/click/app/build/outputs/apk/app-debug.apk"

@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.lang.reflect.Field;
 
 
 public class MainActivity extends AppCompatActivity
@@ -100,25 +101,30 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         Fragment fragment = null;
         Class fragmentClass = null;
-       /* fragmentClass = FragmentNotice.class;
-        try {
+        fragmentClass = FragmentNotice.class;
+        /*try {
             Field field = fragmentClass.getDeclaredField("Category");
             field.setAccessible(true);
             switch(id){
-                case R.id.nav_notices: field.set(FragmentNotice,"Misc" );
+                case R.id.nav_notices: field.set(fragmentClass,"misc");
                 break;
-                case R.id.nav_placement: field.set(FragmentNotice,"Placement;
+                case R.id.nav_events: field.set(fragmentClass,"events");
                 break;
-                case R.id.nav_administration: field.set(FragmentNotice,"Administration");
+                case R.id.nav_download: field.set(fragmentClass,"downloads");
                 break;
-                case R.id.nav_academics: field.set(FragmentNotice,"Academics");
+                case R.id.nav_placement: field.set(fragmentClass,"tnp");
                 break;
+                case R.id.nav_administration: field.set(fragmentClass,"administration");
+                break;
+                case R.id.nav_academics: field.set(fragmentClass,"academics");
+                break;
+
             }
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
-        }  */
-
-
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }*/
 
         if (id == R.id.nav_notices) {
             fragmentClass = FragmentNotice.class;
@@ -129,13 +135,13 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_academics) {
             fragmentClass = FragmentAcademics.class;
         } else if (id == R.id.nav_events) {
-            fragmentClass = CreateNotice.class;
-            //fragmentClass = FragmentEvents.class;
-        } else if (id == R.id.download) {
+            fragmentClass = FragmentEvents.class;
+        } else if (id == R.id.nav_download) {
             fragmentClass = Downloads.class;
         } else if (id == R.id.nav_logout) {
             fragmentClass = FragmentNotice.class;
-        }
+        } else if (id == R.id.nav_create)
+            fragmentClass = CreateNotice.class;
         try {
             fragment = (Fragment) fragmentClass.newInstance();
            // Field field = fragment.
