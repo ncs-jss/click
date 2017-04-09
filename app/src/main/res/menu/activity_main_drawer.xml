@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
+    <group>
 
         <item
             android:id="@+id/nav_notices"
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/notices" />
-        <item
-            android:id="@+id/nav_relevant"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/relevant" />
         <item
             android:id="@+id/nav_administration"
             android:icon="@drawable/ic_menu_manage"
@@ -20,17 +16,21 @@
             android:icon="@drawable/ic_menu_send"
             android:title="@string/academics" />
         <item
+            android:id="@+id/nav_placement"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/placement" />
+        <item
             android:id="@+id/nav_events"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/events" />
         <item
-            android:id="@+id/nav_filler"
-            android:icon="@drawable/ic_menu_share"
-            android:title="@string/filler" />
-        <item
-            android:id="@+id/nav_starred"
+            android:id="@+id/nav_download"
             android:icon="@drawable/img_starred"
-            android:title="@string/starred" />
+            android:title="@string/download" />
+        <item
+            android:id="@+id/nav_create"
+            android:icon="@drawable/img_starred"
+            android:title="Create Notice" />
 
     </group>
     <item android:title="Settings">

@@ -1,6 +1,5 @@
 package com.hackncs.click;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -15,29 +14,34 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import static com.hackncs.click.R.id.nav_relevant;
-
-//import android.support.v4.app.Fragment;
+import java.lang.reflect.Field;
 
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, FragmentNotice.OnFragmentInteractionListener,
-         FragmentRelevant.OnFragmentInteractionListener{
+        FragmentPlacement.OnFragmentInteractionListener {
 
     private ShareActionProvider mShareActionProvider;
+    /*private static final int REQUEST_EXTERNAL_STORAGE = 1;
 
+    private static String[] PERMISSIONS_STORAGE = {
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+    };*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
 
-       if (savedInstanceState == null) {
+
+//        setSupportActionBar(toolbar);
+//        verifyStoragePermissions(this);
+        if (savedInstanceState == null) {
             Fragment fragment = null;
             Class fragmentClass = null;
-            fragmentClass = FragmentRelevant.class;
+            fragmentClass = FragmentNotice.class;
             try {
                 fragment = (Fragment) fragmentClass.newInstance();
             } catch (Exception e) {
@@ -45,10 +49,8 @@ public class MainActivity extends AppCompatActivity
             }
 
             FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.flContent,fragment).commit();
+            fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
         }
-
-
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -64,13 +66,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    private void startShareIntent(){
-        Intent sendIntent = new Intent();
-        sendIntent.setAction(Intent.ACTION_SEND);
-        // sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
-        sendIntent.setType("text/plain");
-        startActivity(sendIntent);
-    }
+    //to remove
 
     @Override
     public void onBackPressed() {
@@ -82,6 +78,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    //to remove share lines
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -89,16 +86,12 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    //to remove share lines
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (item.getItemId() == R.id.menu_item_share) {
-            startShareIntent();
-        }
-
         return super.onOptionsItemSelected(item);
     }
-
 
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -108,37 +101,85 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         Fragment fragment = null;
         Class fragmentClass = null;
+        fragmentClass = FragmentNotice.class;
+        /*try {
+            Field field = fragmentClass.getDeclaredField("Category");
+            field.setAccessible(true);
+            switch(id){
+                case R.id.nav_notices: field.set(fragmentClass,"misc");
+                break;
+                case R.id.nav_events: field.set(fragmentClass,"events");
+                break;
+                case R.id.nav_download: field.set(fragmentClass,"downloads");
+                break;
+                case R.id.nav_placement: field.set(fragmentClass,"tnp");
+                break;
+                case R.id.nav_administration: field.set(fragmentClass,"administration");
+                break;
+                case R.id.nav_academics: field.set(fragmentClass,"academics");
+                break;
+
+            }
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }*/
 
         if (id == R.id.nav_notices) {
-             fragmentClass = FragmentNotice.class;
-        } else if(id == nav_relevant){
-              fragmentClass = FragmentRelevant.class;
+            fragmentClass = FragmentNotice.class;
+        } else if (id == R.id.nav_placement) {
+            fragmentClass = FragmentPlacement.class;
         } else if (id == R.id.nav_administration) {
-             fragmentClass = FragmentAdministration.class;
+            fragmentClass = FragmentAdministration.class;
         } else if (id == R.id.nav_academics) {
-             fragmentClass = FragmentAcademics.class;
+            fragmentClass = FragmentAcademics.class;
         } else if (id == R.id.nav_events) {
-             fragmentClass = FragmentEvents.class;
-        }else if (id == R.id.nav_filler) {
-             fragmentClass = FragmentFillerNotices.class;
-        }else if (id == R.id.nav_starred) {
-             fragmentClass = FragmentStarredNotices.class;
-        }else if (id == R.id.nav_logout) {
-             fragmentClass = FragmentNotice.class;
-        }
-       try{
+            fragmentClass = FragmentEvents.class;
+        } else if (id == R.id.nav_download) {
+            fragmentClass = Downloads.class;
+        } else if (id == R.id.nav_logout) {
+            fragmentClass = FragmentNotice.class;
+        } else if (id == R.id.nav_create)
+            fragmentClass = CreateNotice.class;
+        try {
             fragment = (Fragment) fragmentClass.newInstance();
-        }catch (Exception e){
+           // Field field = fragment.
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        FragmentManager  fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.flContent,fragment).commit();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+
+    /**
+     * Checks if the app has permission to write to device storage
+     *
+     * If the app does not has permission then the user will be prompted to grant permissions
+     *
+     * @param activity
+     */
+    /*public static void verifyStoragePermissions(Activity activity) {
+        // Check if we have write permission
+        int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            // We don't have permission so prompt the user
+            ActivityCompat.requestPermissions(
+                    activity,
+                    PERMISSIONS_STORAGE,
+                    REQUEST_EXTERNAL_STORAGE
+            );
+        }
+    }
+*/
     @Override
     public void onFragmentInteraction(Uri uri) {
 
