@@ -1,4 +1,4 @@
-#Sun Mar 19 16:56:24 IST 2017
+#Sun Apr 09 16:13:58 IST 2017
 base.0=/home/yasha/github/click/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_fe80c188d7df2d1cf3c95624cd8b71ee89e1e4c8
 renamed.1=classes.dex
 renamed.0=classes2.dex

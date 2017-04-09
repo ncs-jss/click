@@ -64,12 +64,12 @@
         "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/layout/design_navigation_menu_item.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_alert_dialog_material.xml"
-    },
-    {
         "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
         "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
+        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_alert_dialog_material.xml"
     },
     {
         "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml",
@@ -202,6 +202,10 @@
     {
         "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/content_main.xml",
         "source": "/home/yasha/github/click/app/src/main/res/layout/content_main.xml"
+    },
+    {
+        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/upload_for_details.xml",
+        "source": "/home/yasha/github/click/app/src/main/res/layout/upload_for_details.xml"
     },
     {
         "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",

@@ -9,12 +9,47 @@
         <item>Miscelleneous</item>
     </string-array>
 
-    <string-array name="upload_for">
-        <item>Entire College</item>
-        <item>HOD</item>
-        <item>Faculty</item>
-        <item>Management</item>
-        <item>Others</item>
+    <string-array name="select_course">
+        <item>AllCourses</item>
+        <item>BTech</item>
+        <item>MTech</item>
+        <item>MCA</item>
+        <item>MBA</item>
+    </string-array>
+
+    <string-array name="select_branch">
+        <item>All Branches</item>
+        <item>CSE</item>
+        <item>IT</item>
+        <item>ECE</item>
+        <item>EE</item>
+        <item>CE</item>
+        <item>IC</item>
+        <item>ME</item>
+    </string-array>
+
+    <string-array name="select_year">
+        <item>All years</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="select_section">
+        <item>All Sections</item>
+        <item>CSE1</item>
+        <item>CSE2</item>
+        <item>IT1</item>
+        <item>IT2</item>
+        <item>ECE1</item>
+        <item>ECE2</item>
+        <item>EE1</item>
+        <item>EE2</item>
+        <item>CE1</item>
+        <item>CE2</item>
+        <item>IC1</item>
+        <item>IC2</item>
     </string-array>
 
      <string name="ok">OK</string>

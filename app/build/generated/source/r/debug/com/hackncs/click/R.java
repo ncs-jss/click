@@ -28,8 +28,11 @@ public final class R {
         public static final int design_snackbar_out=0x7f050010;
     }
     public static final class array {
-        public static final int uplaod_category=0x7f0b0000;
-        public static final int upload_for=0x7f0b0001;
+        public static final int select_branch=0x7f0b0000;
+        public static final int select_course=0x7f0b0001;
+        public static final int select_section=0x7f0b0002;
+        public static final int select_year=0x7f0b0003;
+        public static final int uplaod_category=0x7f0b0004;
     }
     public static final class attr {
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -2645,6 +2648,8 @@ containing a value of this type.
         public static final int b_cancel=0x7f0d008f;
         public static final int b_ok=0x7f0d0090;
         public static final int beginning=0x7f0d0034;
+        public static final int bnxt_cancel=0x7f0d00b4;
+        public static final int bnxt_ok=0x7f0d00b5;
         public static final int bottom=0x7f0d0022;
         public static final int buttonPanel=0x7f0d0047;
         public static final int cancel_action=0x7f0d00a4;
@@ -2711,24 +2716,24 @@ containing a value of this type.
         public static final int list_item=0x7f0d0044;
         public static final int lvList=0x7f0d0077;
         public static final int media_actions=0x7f0d00a6;
-        public static final int menu_item_share=0x7f0d00bb;
+        public static final int menu_item_share=0x7f0d00c1;
         public static final int middle=0x7f0d0035;
         public static final int mini=0x7f0d0033;
         public static final int multiply=0x7f0d001b;
         public static final int nDescription=0x7f0d0074;
         public static final int nFaculty=0x7f0d0071;
         public static final int nTitle=0x7f0d006f;
-        public static final int nav_academics=0x7f0d00b2;
-        public static final int nav_administration=0x7f0d00b1;
-        public static final int nav_create=0x7f0d00b6;
-        public static final int nav_download=0x7f0d00b5;
-        public static final int nav_events=0x7f0d00b4;
-        public static final int nav_home=0x7f0d00b9;
-        public static final int nav_logout=0x7f0d00b8;
-        public static final int nav_myprofile=0x7f0d00b7;
-        public static final int nav_notices=0x7f0d00b0;
-        public static final int nav_placement=0x7f0d00b3;
-        public static final int nav_uploaded=0x7f0d00ba;
+        public static final int nav_academics=0x7f0d00b8;
+        public static final int nav_administration=0x7f0d00b7;
+        public static final int nav_create=0x7f0d00bc;
+        public static final int nav_download=0x7f0d00bb;
+        public static final int nav_events=0x7f0d00ba;
+        public static final int nav_home=0x7f0d00bf;
+        public static final int nav_logout=0x7f0d00be;
+        public static final int nav_myprofile=0x7f0d00bd;
+        public static final int nav_notices=0x7f0d00b6;
+        public static final int nav_placement=0x7f0d00b9;
+        public static final int nav_uploaded=0x7f0d00c0;
         public static final int nav_view=0x7f0d0079;
         public static final int navigation_header_container=0x7f0d0084;
         public static final int ndate=0x7f0d0073;
@@ -2771,7 +2776,11 @@ containing a value of this type.
         public static final int snackbar_text=0x7f0d0082;
         public static final int snap=0x7f0d0019;
         public static final int spacer=0x7f0d0048;
+        public static final int spinner_branch=0x7f0d00b1;
         public static final int spinner_category=0x7f0d0095;
+        public static final int spinner_course=0x7f0d00b0;
+        public static final int spinner_section=0x7f0d00b3;
+        public static final int spinner_year=0x7f0d00b2;
         public static final int split_action_bar=0x7f0d0008;
         public static final int src_atop=0x7f0d001d;
         public static final int src_in=0x7f0d001e;
@@ -2886,6 +2895,7 @@ containing a value of this type.
         public static final int select_dialog_multichoice_material=0x7f040044;
         public static final int select_dialog_singlechoice_material=0x7f040045;
         public static final int support_simple_spinner_dropdown_item=0x7f040046;
+        public static final int upload_for_details=0x7f040047;
     }
     public static final class menu {
         public static final int activity_main_drawer=0x7f0e0000;
