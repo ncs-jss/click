@@ -1,17 +1,20 @@
 package com.hackncs.click;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
-import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActivityCompat;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
@@ -25,12 +28,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
-import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -56,12 +57,19 @@ public class Splash extends Activity {
     String sUsername, sPassword;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
+    private static final int REQUEST_EXTERNAL_STORAGE = 1;
+
+    private static String[] PERMISSIONS_STORAGE = {
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         initialize(INITIAL_DISPLAY);
+        verifyStoragePermissions(this);
         new BackgroundTasks().execute();
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -87,6 +95,18 @@ public class Splash extends Activity {
             }
         }, 3750);
     }
+
+    public static void verifyStoragePermissions(Activity activity) {
+        int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(
+                    activity,
+                    PERMISSIONS_STORAGE,
+                    REQUEST_EXTERNAL_STORAGE
+            );
+        }
+    }
+
 
     private void initialize(int condition) {
         switch (condition) {
@@ -275,6 +295,7 @@ public class Splash extends Activity {
                     editor.putString("com.hackncs.click.TOKEN", token);
                     editor.putString("com.hackncs.click.GROUP", group);
                     editor.putString("com.hackncs.click.USER_ID", user_id);
+                    editor.putString("com.hackncs.click.USERNAME", sUsername);
                     editor.commit();
                     Intent intent = new Intent(Splash.this, MainActivity.class);
                     intent.putExtra("mode", "ONLINE_MODE");
@@ -285,7 +306,7 @@ public class Splash extends Activity {
         @Override
         protected String doInBackground(String... strings) {
             final String[] status = {"fail"};
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, Endpoints.LOGIN_URL,
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://210.212.85.155/api/profiles/login/",
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {

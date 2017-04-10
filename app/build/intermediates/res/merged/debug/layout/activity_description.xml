@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_description"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hackncs.click.DescriptionActivity"
+    android:background="#fff">
+
+    <RelativeLayout
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp"
+        android:background="#644599"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/nTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="This is the notice title"
+            android:textStyle="bold"
+            android:textColor="#efefef"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nTitle"
+            android:id="@+id/postedby"
+            android:text="Posted by :"
+            android:textColor="#efefef"
+            android:textStyle="bold"
+            android:textSize="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nTitle"
+            android:id="@+id/nFaculty"
+            android:layout_toRightOf="@+id/postedby"
+            android:text="Posted by :"
+            android:textColor="#efefef"
+            android:textSize="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nTitle"
+            android:id="@+id/postedon"
+            android:text="Posted on :"
+            android:layout_toLeftOf="@+id/ndate"
+            android:textColor="#efefef"
+            android:textStyle="bold"
+            android:textSize="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nTitle"
+            android:layout_alignParentRight="true"
+            android:id="@+id/ndate"
+            android:text="Posted by :"
+            android:textColor="#efefef"
+            android:textSize="10dp"/>
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/nDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/downloadB"
+        android:layout_below="@+id/container" />
+
+    <Button
+        android:id="@+id/downloadB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:onClick="downloadAttachment"
+        android:text="Download"
+        android:textColor="#fff" />
+
+</RelativeLayout>

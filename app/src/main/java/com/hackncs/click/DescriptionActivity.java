@@ -1,0 +1,297 @@
+package com.hackncs.click;
+
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Environment;
+import android.preference.PreferenceManager;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.webkit.WebView;
+import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.HashMap;
+import java.util.Map;
+
+public class DescriptionActivity extends AppCompatActivity {
+
+    private TextView title, faculty, posted_on;
+    private WebView description;
+    private int index=0;
+    private String linkstr="";
+    public Context context;
+    private Notice notice;
+    private String TOKEN;
+    private String USER_NAME;
+
+    private void init(){
+        title = (TextView) findViewById(R.id.nTitle);
+        faculty = (TextView) findViewById(R.id.nFaculty);
+        description = (WebView)findViewById(R.id.nDescription);
+        posted_on = (TextView) findViewById(R.id.ndate);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        context = this;
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        TOKEN = sp.getString("com.hackncs.click.TOKEN", "");
+        USER_NAME = sp.getString("com.hackncs.click.USERNAME", "");
+
+        if(getIntent().getAction() == Intent.ACTION_VIEW){
+            String url = getIntent().getData().toString();
+            Log.d("url", url);
+            String noticeid = url.substring(url.indexOf('=')+1);
+            String get_url = "http://210.212.85.155/api/v1/notices/"+noticeid;
+            Log.d("Notice Id",noticeid);
+            StringRequest newNoticeRequest = new StringRequest(Request.Method.GET, get_url,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            try {
+                                JSONObject jo = new JSONObject(response);
+                                JSONArray ja = jo.getJSONArray("results");
+                                notice = Notice.getNoticeObject((JSONObject) ja.get(0));
+                                Log.d("json response",response);
+                                populateView();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+
+                            }
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(context, "Some error occured", Toast.LENGTH_SHORT).show();
+                        }
+                    }){
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<>();
+                    params.put("Authorization", "token " + TOKEN);
+                    params.put("username", USER_NAME);
+                    return params;
+                }
+            };
+            RequestQueue rq = Volley.newRequestQueue(this);
+            rq.add(newNoticeRequest);
+        }else{
+            Bundle b = getIntent().getExtras();
+            notice = (Notice) b.get("Notice");
+            populateView();
+        }
+    }
+
+    private void populateView() {
+
+        if(notice.mAttachment)
+        {
+            setContentView(R.layout.activity_description);
+            Button button = (Button) findViewById(R.id.downloadB);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    new Asyn().execute(""+notice.mAttachment_link);
+                }
+            });
+        }
+        else
+            setContentView(R.layout.activity_description2);
+
+        if(notice.mAttachment)
+        {
+            index = notice.mAttachment_link.lastIndexOf("/");
+            linkstr = notice.mAttachment_link.substring(index+1);
+        }
+
+        init();
+
+        String stitle = notice.mTitle;
+        String sdescription = notice.mNotice_description;
+        String sfaculty = notice.mPosted_by;
+
+
+
+        title.setText(notice.mTitle);
+        faculty.setText(notice.mPosted_by);
+        posted_on.setText(notice.mDate);
+        description.loadData(notice.mNotice_description, "text/html", null);
+    }
+
+    private void startShareIntent() {
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        String share_url = "http://infoconnect.jssaten.ac.in/notice/?notice_id=" + notice.mId;
+        sendIntent.putExtra(Intent.EXTRA_TEXT,share_url+ "\n\nSent via Infoconnect");
+        sendIntent.setType("text/plain");
+        startActivity(sendIntent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.menu_item_share) {
+            startShareIntent();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private class Asyn extends AsyncTask<String, Void, Void> {
+
+        ProgressDialog P = new ProgressDialog(context);
+
+        @Override
+        protected void onPreExecute() {
+            //verifyStoragePermissions();
+            P.setMessage("Downoading...");
+            P.show();
+            P.setIndeterminate(false);
+            P.setCancelable(true);
+            Toast.makeText(context, "Download starting...", Toast.LENGTH_SHORT).show();
+            super.onPreExecute();
+        }
+
+        @Override
+        protected Void doInBackground(String... params) {
+            downloadAttachment(params[0]);
+            Log.d("---->", params[0]);
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void Void) {
+            RelativeLayout parentView = (RelativeLayout)findViewById(R.id.activity_description);
+            Snackbar.make(parentView, "Download Complete!", Snackbar.LENGTH_SHORT).setAction("Open", new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    File selectedFile = new File(Environment.getExternalStorageDirectory().toString()+"/InfoConnect/" + linkstr);
+                    if (selectedFile.isFile()) {
+                        Intent intent = new Intent();
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        intent.setAction(Intent.ACTION_VIEW);
+                        if (selectedFile.getName().endsWith(".doc") || selectedFile.getName().endsWith(".docx")) {
+                            intent.setDataAndType(Uri.fromFile(selectedFile), "application/msword");
+                        }
+                        else if(selectedFile.getName().endsWith(".pdf")) {
+                            intent.setDataAndType(Uri.fromFile(selectedFile), "application/pdf");
+                        }
+                        else if(selectedFile.getName().endsWith(".ppt") || selectedFile.getName().endsWith(".pptx")) {
+                            intent.setDataAndType(Uri.fromFile(selectedFile), "application/vnd.ms-powerpoint");
+                        }
+                        else if(selectedFile.getName().endsWith(".xls") || selectedFile.getName().endsWith(".xlsx")) {
+                            intent.setDataAndType(Uri.fromFile(selectedFile), "application/vnd.ms-excel");
+                        }
+                        else if(selectedFile.getName().endsWith(".rtf")) {
+                            intent.setDataAndType(Uri.fromFile(selectedFile), "application/rtf");
+                        }
+                        else if(selectedFile.getName().endsWith(".jpg") || selectedFile.getName().endsWith(".jpeg") || selectedFile.getName().endsWith(".png")) {
+                            intent.setDataAndType(Uri.fromFile(selectedFile), "image/jpeg");
+                        }
+                        else if(selectedFile.getName().endsWith(".txt")) {
+                            intent.setDataAndType(Uri.fromFile(selectedFile), "text/plain");
+                        }
+                        else {
+                            intent.setDataAndType(Uri.fromFile(selectedFile), "*/*");
+                        }
+                        startActivity(intent);
+                    }
+                }
+            }).show();
+            P.dismiss();
+            super.onPostExecute(Void);
+        }
+    }
+
+    public void downloadAttachment(String sUrl) {
+        int count;
+        try {
+            URL url = new URL(sUrl);
+            URLConnection conection = url.openConnection();
+            conection.connect();
+            //System.out.println(url);
+            Log.d("--->",sUrl);
+
+            int lengthOfFile = conection.getContentLength();
+
+            // download the file
+            InputStream input = new BufferedInputStream(url.openStream(),
+                    8192);
+
+
+            // Output stream
+            OutputStream output = new FileOutputStream(Environment
+                    .getExternalStorageDirectory().toString()+"/InfoConnect/"
+                    + linkstr);
+
+            byte data[] = new byte[1024];
+
+            long total = 0;
+
+            while ((count = input.read(data)) != -1) {
+                total += count;
+
+                // writing data to file
+                output.write(data, 0, count);
+            }
+
+            // flushing output
+            output.flush();
+
+            // closing streams
+            output.close();
+            input.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
