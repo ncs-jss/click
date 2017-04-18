@@ -56,6 +56,7 @@ public class DescriptionActivity extends AppCompatActivity {
     private Notice notice;
     private String TOKEN;
     private String USER_NAME;
+    private Menu menu;
 
     private void init(){
         title = (TextView) findViewById(R.id.nTitle);
@@ -85,8 +86,6 @@ public class DescriptionActivity extends AppCompatActivity {
                             try {
                                 JSONObject jo = new JSONObject(response);
                                 notice = Notice.getNoticeObject(jo);
-                                Log.d("json response",response);
-                                populateView();
                             } catch (JSONException e) {
                                 e.printStackTrace();
 
@@ -112,8 +111,8 @@ public class DescriptionActivity extends AppCompatActivity {
         }else{
             Bundle b = getIntent().getExtras();
             notice = (Notice) b.get("Notice");
-            populateView();
         }
+        populateView();
     }
 
     private void populateView() {
@@ -140,13 +139,6 @@ public class DescriptionActivity extends AppCompatActivity {
         }
 
         init();
-
-        String stitle = notice.mTitle;
-        String sdescription = notice.mNotice_description;
-        String sfaculty = notice.mPosted_by;
-
-
-
         title.setText(notice.mTitle);
         faculty.setText(notice.mPosted_by);
         posted_on.setText(notice.mDate);
@@ -166,6 +158,9 @@ public class DescriptionActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        this.menu = menu;
+        if (new OfflineDatabaseHandler(getApplicationContext()).getStarredNoticesIds().contains(notice.mId))
+            menu.getItem(1).setIcon(R.drawable.img_starred_h);
         return true;
     }
 
@@ -176,9 +171,47 @@ public class DescriptionActivity extends AppCompatActivity {
             startShareIntent();
         }
         else if (id == R.id.menu_item_star) {
-            starNotice();
+            if (!new OfflineDatabaseHandler(getApplicationContext()).getStarredNoticesIds().contains(notice.mId))
+                starNotice();
+            else
+                removeStarredNotice();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void removeStarredNotice() {
+        String URL = "http://210.212.85.155/api/notices/delete_starred_notice/";
+        StringRequest stringRequest = new StringRequest(Request.Method.DELETE, URL + notice.mId + "/",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        JSONObject jo;
+                        try {
+                            jo = new JSONObject(response);
+                            Toast.makeText(context, jo.getString("message"), Toast.LENGTH_SHORT).show();
+                            menu.getItem(1).setIcon(R.drawable.img_starred);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        new OfflineDatabaseHandler(context).deleteNotice(notice);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(context, error.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                })
+        {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("Authorization", "Token " + TOKEN);
+                return params;
+            }
+        };
+        RequestQueue rq = Volley.newRequestQueue(this);
+        rq.add(stringRequest);
     }
 
     private void starNotice() {
@@ -191,6 +224,7 @@ public class DescriptionActivity extends AppCompatActivity {
                         try {
                             jo = new JSONObject(response);
                             Toast.makeText(context, jo.getString("message"), Toast.LENGTH_SHORT).show();
+                            menu.getItem(1).setIcon(R.drawable.img_starred_h);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

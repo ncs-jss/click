@@ -352,7 +352,7 @@ public class Splash extends Activity {
 
     public class LoginTasks extends AsyncTask<String, Integer, String> {
 
-        String token = "", group = "", user_id = "", first_name="";
+        String token = "", group = "", user_id = "", first_name="", profile_id="";
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -372,6 +372,7 @@ public class Splash extends Activity {
                     editor.putString("com.hackncs.click.TOKEN", token);
                     editor.putString("com.hackncs.click.GROUP", group);
                     editor.putString("com.hackncs.click.USER_ID", user_id);
+                    editor.putString("com.hackncs.click.PROFILE_ID", profile_id);
                     editor.putString("com.hackncs.click.USERNAME", sUsername);
                     editor.putString("com.hackncs.click.FIRST_NAME", first_name);
                     editor.commit();
@@ -394,9 +395,13 @@ public class Splash extends Activity {
                                 token = jsonObject.getString("token");
                                 group = jsonObject.getString("group");
                                 user_id = jsonObject.getString("user_id");
+                                if (Character.isDigit(username.getText().toString().charAt(0)))
+                                    profile_id = jsonObject.getString("student_id");
+                                else
+                                    profile_id = jsonObject.getString("faculty_id");
                                 first_name = jsonObject.getString("first_name");
-                                //Toast.makeText(Splash.this, token+"\n"+group+"\n"+user_id, Toast.LENGTH_SHORT).show();
                                 status[0] = "ok";
+
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }

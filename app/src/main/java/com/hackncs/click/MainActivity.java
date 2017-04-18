@@ -150,7 +150,12 @@ public class MainActivity extends AppCompatActivity
             fragmentClass = FragmentStarredNotices.class;
         } else if (id == R.id.download) {
             fragmentClass = Downloads.class;
-        } else if (id == R.id.nav_logout) {
+        } else if (id == R.id.nav_myprofile) {
+            if (PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.GROUP","").equals("student"))
+                fragmentClass = FragmentStudentProfile.class;
+            else if (PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.GROUP","").equals("faculty"))
+                fragmentClass = FragmentFacultyProfile.class;
+        }else if (id == R.id.nav_logout) {
             PreferenceManager.getDefaultSharedPreferences(getBaseContext()).edit().clear().apply();
             new OfflineDatabaseHandler(this).flush();
             Intent intent = new Intent(MainActivity.this, Splash.class);

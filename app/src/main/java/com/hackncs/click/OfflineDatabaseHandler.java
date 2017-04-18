@@ -135,4 +135,28 @@ public class OfflineDatabaseHandler extends SQLiteOpenHelper{
         }
         return noticeList;
     }
+
+    public List<String> getStarredNoticesIds() {
+
+        /*
+            * When a list of ids of starred notices is required.
+         */
+
+        List<String> idList = new ArrayList<>();
+        try {
+            SQLiteDatabase db = getReadableDatabase();
+            Cursor cursor = db.rawQuery("SELECT * FROM "+TABLE_LABEL_NOTICES, null);
+            if (cursor.moveToFirst()){
+                do {
+                    idList.add(cursor.getString(0));
+                }while (cursor.moveToNext());
+            }
+            cursor.close();
+            db.close();
+        } catch(SQLiteException e) {
+            e.printStackTrace();
+            Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+        return idList;
+    }
 }

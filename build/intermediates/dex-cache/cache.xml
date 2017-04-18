@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="ac21b72f3489af4dd006efde9f507d44e72ce4fd">
+        sha1="c2b93062180216b0bff906b49a7fa77e8921b7c5">
         <dex dex="C:\Users\Siddhartha\Downloads\click\app\build\intermediates\pre-dexed\debug\instant-run_c55613d602a101eb0990d70e01d44845eee3e14c.jar" />
     </item>
     <item
@@ -25,7 +25,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="fabc81724b95b9f7f0898444f8b289c952765db6">
+        sha1="483753a7a71e1c177a029f1f43e8ff2c057f0c77">
         <dex dex="C:\Users\Siddhartha\Downloads\click\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_e592a797fef53d5c126666c1a84e4fc336ce11cb.jar" />
     </item>
     <item

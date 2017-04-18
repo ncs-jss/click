@@ -68,6 +68,10 @@
         "source": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\select_dialog_singlechoice_material.xml"
     },
     {
+        "merged": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_student_profile.xml",
+        "source": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\src\\main\\res\\layout\\fragment_student_profile.xml"
+    },
+    {
         "merged": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
         "source": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\notification_template_part_time.xml"
     },
@@ -168,6 +172,10 @@
         "source": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\src\\main\\res\\layout\\nav_header_main.xml"
     },
     {
+        "merged": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_faculty_profile.xml",
+        "source": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\src\\main\\res\\layout\\fragment_faculty_profile.xml"
+    },
+    {
         "merged": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notice_row_layout.xml",
         "source": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\src\\main\\res\\layout\\notice_row_layout.xml"
     },
@@ -212,12 +220,12 @@
         "source": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
-        "source": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_list_menu_item_radio.xml"
-    },
-    {
         "merged": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_placement.xml",
         "source": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\src\\main\\res\\layout\\fragment_placement.xml"
+    },
+    {
+        "merged": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
         "merged": "C:\\Users\\Siddhartha\\Downloads\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
