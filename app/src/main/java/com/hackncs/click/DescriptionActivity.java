@@ -77,7 +77,7 @@ public class DescriptionActivity extends AppCompatActivity {
             String url = getIntent().getData().toString();
             Log.d("url", url);
             String noticeid = url.substring(url.indexOf('=')+1);
-            String get_url = "http://210.212.85.155/api/notices/notice_by_pk/"+noticeid;
+            String get_url = Endpoints.notice_by_pk +noticeid;
             Log.d("Notice Id",noticeid);
             StringRequest newNoticeRequest = new StringRequest(Request.Method.GET, get_url,
                     new Response.Listener<String>() {
@@ -180,7 +180,7 @@ public class DescriptionActivity extends AppCompatActivity {
     }
 
     private void removeStarredNotice() {
-        String URL = "http://210.212.85.155/api/notices/delete_starred_notice/";
+        String URL = Endpoints.delete_starred_notice;
         StringRequest stringRequest = new StringRequest(Request.Method.DELETE, URL + notice.mId + "/",
                 new Response.Listener<String>() {
                     @Override
@@ -215,7 +215,7 @@ public class DescriptionActivity extends AppCompatActivity {
     }
 
     private void starNotice() {
-        String URL = "http://210.212.85.155/api/notices/add_starred_notice/";
+        String URL = Endpoints.add_starred_notice;
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL + notice.mId + "/",
                 new Response.Listener<String>() {
                     @Override
@@ -248,7 +248,7 @@ public class DescriptionActivity extends AppCompatActivity {
         RequestQueue rq = Volley.newRequestQueue(this);
         rq.add(stringRequest);
         if (notice.mAttachment)
-            new Asyn().execute("http://210.212.85.155/media/"+notice.mAttachment_link);
+            new Asyn().execute(Endpoints.media + notice.mAttachment_link);
     }
 
     private class Asyn extends AsyncTask<String, Void, Void> {

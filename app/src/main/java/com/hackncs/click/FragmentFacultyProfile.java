@@ -50,7 +50,7 @@ public class FragmentFacultyProfile extends Fragment implements View.OnClickList
     }
 
     private void fetchAndDisplay() {
-        String URL = "http://210.212.85.155/api/profiles/faculty_profile_data/";
+        String URL = Endpoints.faculty_profile_data;
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL + PROFILE_ID,
                 new Response.Listener<String>() {
                     @Override
@@ -142,7 +142,7 @@ public class FragmentFacultyProfile extends Fragment implements View.OnClickList
     }
 
     private void uploadChanges() {
-        String URL = "http://210.212.85.155/api/profiles/faculty_profile_data/";
+        String URL = Endpoints.faculty_profile_data;
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL + PROFILE_ID + "/",
                 new Response.Listener<String>() {
                     @Override

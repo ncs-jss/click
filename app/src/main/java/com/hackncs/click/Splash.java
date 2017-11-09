@@ -152,7 +152,7 @@ public class Splash extends Activity {
         new OfflineDatabaseHandler(getApplicationContext()).flush();
         final String TOKEN = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.TOKEN", "");
         final String USER_NAME = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.USERNAME", "");
-        String URL = "http://210.212.85.155/api/notices/get_starred_notice_list/";
+        String URL = Endpoints.get_starred_notice_list;
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
                 new Response.Listener<String>() {
                     @Override
@@ -350,7 +350,7 @@ public class Splash extends Activity {
         @Override
         protected String doInBackground(String... strings) {
             final String[] status = {"fail"};
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://210.212.85.155/api/profiles/login/",
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, Endpoints.login,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
