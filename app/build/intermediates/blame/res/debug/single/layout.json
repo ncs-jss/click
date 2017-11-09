@@ -1,290 +1,582 @@
 [
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_action_mode_bar.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\login.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\login.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_search_dropdown_item_icons_2line.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_navigation_item_subheader.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_button_bar_material.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_alert_dialog_button_bar_material.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/design_navigation_item_subheader.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/layout/design_navigation_item_subheader.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_layout_tab_text.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/fragment_filler_notices.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/layout/fragment_filler_notices.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/notification_template_media.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_navigation_menu.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_screen_simple_overlay_action_mode.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\select_dialog_multichoice_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_activity_chooser_view.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_activity_chooser_view_list_item.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_screen_toolbar.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_action_bar_title_item.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_text_input_password_icon.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_text_input_password_icon.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/list_item.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/layout/list_item.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu_item.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_navigation_menu_item.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/fragment_starred_notices.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/layout/fragment_starred_notices.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_action_menu_item_layout.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/activity_splash.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/layout/activity_splash.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/design_navigation_menu.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/layout/design_navigation_menu.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\notification_media_action.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/design_navigation_menu_item.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/layout/design_navigation_menu_item.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_screen_simple.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/support_simple_spinner_dropdown_item.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_description2.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\activity_description2.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_alert_dialog_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_filler_notices.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\fragment_filler_notices.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_list_menu_item_layout.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/design_layout_tab_text.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/layout/design_layout_tab_text.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/notification_template_part_chronometer.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\upload_for_details.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\src\\main\\res\\layout\\upload_for_details.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/notification_media_action.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/notification_media_action.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_layout_tab_icon.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/fragment_academics.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/layout/fragment_academics.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\notification_template_part_time.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_header_item_layout.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_popup_menu_header_item_layout.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_screen_content_include.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_popup_menu_item_layout.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\notification_template_part_time.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_select_dialog_material.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/layout/design_layout_snackbar.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_dialog_title_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/design_navigation_item_header.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/layout/design_navigation_item_header.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\list_item.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/activity_description.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/layout/activity_description.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/dialogue_layout.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/layout/dialogue_layout.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notice_row_layout.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\notice_row_layout.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_action_menu_item_layout.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\app_bar_main.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\app_bar_main.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/notice_row_layout.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/layout/notice_row_layout.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar_include.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/layout/design_layout_snackbar_include.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_navigation_item.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_narrow.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/notification_template_big_media_narrow.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_navigation_item_header.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/fragment_events.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/layout/fragment_events.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_navigation_item_separator.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_screen_simple.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\select_dialog_singlechoice_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/design_bottom_sheet_dialog.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/layout/design_bottom_sheet_dialog.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_createnotice.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\src\\main\\res\\layout\\fragment_createnotice.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/design_text_input_password_icon.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/layout/design_text_input_password_icon.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_events.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\fragment_events.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/notification_template_part_time.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\nav_header_main.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\src\\main\\res\\layout\\nav_header_main.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_action_mode_close_item_material.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\login.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\src\\main\\res\\layout\\login.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/login.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/layout/login.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/design_layout_tab_icon.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/layout/design_layout_tab_icon.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_text_input_password_icon.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_text_input_password_icon.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/fragment_administration.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/layout/fragment_administration.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_activity_chooser_view.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/notification_template_big_media.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/design_navigation_item_separator.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/layout/design_navigation_item_separator.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/layout/activity_main.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\src\\main\\res\\layout\\list_item.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/design_navigation_item.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/layout/design_navigation_item.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_main.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\content_main.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_action_bar_up_container.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_action_bar_up_container.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/activity_description2.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/layout/activity_description2.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\upload_for_details.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\upload_for_details.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/content_main.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/layout/content_main.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/upload_for_details.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/layout/upload_for_details.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_layout_tab_icon.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_list_menu_item_icon.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_administration.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\src\\main\\res\\layout\\fragment_administration.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/fragment_notice_layout.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/layout/fragment_notice_layout.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_list_menu_item_radio.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_navigation_item_separator.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/app_bar_main.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/layout/app_bar_main.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_action_bar_view_list_nav_layout.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\notification_media_action.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_action_menu_layout.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_menu_item_action_area.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/notification_media_cancel_action.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/notification_media_cancel_action.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\spinner_item.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\spinner_item.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/select_dialog_multichoice_material.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\notification_template_lines.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/fragment_placement.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/layout/fragment_placement.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_popup_menu_header_item_layout.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_search_view.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/nav_header_main.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/layout/nav_header_main.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/fragment_createnotice.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/layout/fragment_createnotice.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\select_dialog_item_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/activity_downloads.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/layout/activity_downloads.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_placement.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\fragment_placement.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/design_menu_item_action_area.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/layout/design_menu_item_action_area.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_events.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\src\\main\\res\\layout\\fragment_events.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_expanded_menu_layout.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/select_dialog_singlechoice_material.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_navigation_item_subheader.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/select_dialog_item_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/notification_template_lines.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/notification_template_lines.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_navigation_item.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_screen_content_include.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_list_menu_item_checkbox.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_navigation_menu.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_downloads.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\src\\main\\res\\layout\\activity_downloads.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_starred_notices.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\src\\main\\res\\layout\\fragment_starred_notices.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_description2.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\src\\main\\res\\layout\\activity_description2.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_downloads.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\activity_downloads.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialogue_layout.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\dialogue_layout.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_filler_notices.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\src\\main\\res\\layout\\fragment_filler_notices.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\app_bar_main.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\src\\main\\res\\layout\\app_bar_main.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notice_row_layout.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\src\\main\\res\\layout\\notice_row_layout.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_description.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\src\\main\\res\\layout\\activity_description.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_description.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\activity_description.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_splash.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu_item.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_academics.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\fragment_academics.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_layout_snackbar.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_main.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\src\\main\\res\\layout\\content_main.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_layout_tab_text.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_notice_layout.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\src\\main\\res\\layout\\fragment_notice_layout.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_splash.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_layout_snackbar.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_bottom_sheet_dialog.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_navigation_item_header.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_menu_item_action_area.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_academics.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\src\\main\\res\\layout\\fragment_academics.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout\\design_bottom_sheet_dialog.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_createnotice.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\fragment_createnotice.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_notice_layout.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\fragment_notice_layout.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialogue_layout.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\src\\main\\res\\layout\\dialogue_layout.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_placement.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\src\\main\\res\\layout\\fragment_placement.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\nav_header_main.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\nav_header_main.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\notification_template_lines.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_administration.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\fragment_administration.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_starred_notices.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\fragment_starred_notices.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_action_mode_close_item_material.xml"
     }
 ]

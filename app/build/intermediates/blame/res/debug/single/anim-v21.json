@@ -1,14 +1,26 @@
 [
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/anim-v21/design_bottom_sheet_slide_in.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_appbar_state_list_animator.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\anim-v21\\design_appbar_state_list_animator.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/anim-v21/design_bottom_sheet_slide_out.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/anim-v21/design_appbar_state_list_animator.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/anim-v21/design_appbar_state_list_animator.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_in.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_appbar_state_list_animator.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\anim-v21\\design_appbar_state_list_animator.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_in.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
     }
 ]

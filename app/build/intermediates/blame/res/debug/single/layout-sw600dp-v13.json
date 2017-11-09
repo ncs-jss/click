@@ -1,6 +1,10 @@
 [
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
-        "source": "/home/yasha/github/click/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/layout-sw600dp-v13/design_layout_snackbar.xml"
+        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
+        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
+        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
     }
 ]
