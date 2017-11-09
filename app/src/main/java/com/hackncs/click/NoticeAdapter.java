@@ -49,7 +49,6 @@ public class NoticeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                 Intent intent = new Intent(context,DescriptionActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("Notice", current);
-
                 context.startActivity(intent);
             }
         }

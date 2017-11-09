@@ -1,7 +1,10 @@
 package com.hackncs.click;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,23 +14,26 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import java.lang.reflect.Field;
-
+import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, FragmentNotice.OnFragmentInteractionListener,
         FragmentPlacement.OnFragmentInteractionListener {
 
-    private ShareActionProvider mShareActionProvider;
     /*private static final int REQUEST_EXTERNAL_STORAGE = 1;
 
     private static String[] PERMISSIONS_STORAGE = {
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE
     };*/
+
+    private ShareActionProvider mShareActionProvider;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,10 +69,23 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         assert navigationView != null;
 
+        View headerView =  navigationView.getHeaderView(0);
+        TextView name = (TextView)headerView.findViewById(R.id.tvFirstName);
+        name.setText("Welcome, "+PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.FIRST_NAME","User"));
+
         navigationView.setNavigationItemSelectedListener(this);
+        
     }
 
     //to remove
+
+    private void startShareIntent(){
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        // sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+        sendIntent.setType("text/plain");
+        startActivity(sendIntent);
+    }
 
     @Override
     public void onBackPressed() {
@@ -86,13 +105,15 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    //to remove share lines
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        if (item.getItemId() == R.id.menu_item_share) {
+            startShareIntent();
+        }
+
         return super.onOptionsItemSelected(item);
     }
-
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -138,7 +159,18 @@ public class MainActivity extends AppCompatActivity
             fragmentClass = FragmentEvents.class;
         } else if (id == R.id.nav_download) {
             fragmentClass = Downloads.class;
-        } else if (id == R.id.nav_logout) {
+        } else if (id == R.id.starred) {
+            fragmentClass = FragmentStarredNotices.class;
+        } else if (id == R.id.nav_myprofile) {
+            if (PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.GROUP","").equals("student"))
+                fragmentClass = FragmentStudentProfile.class;
+            else if (PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.GROUP","").equals("faculty"))
+                fragmentClass = FragmentFacultyProfile.class;
+        }else if (id == R.id.nav_logout) {
+            PreferenceManager.getDefaultSharedPreferences(getBaseContext()).edit().clear().apply();
+            new OfflineDatabaseHandler(this).flush();
+            Intent intent = new Intent(MainActivity.this, Splash.class);
+            startActivity(intent);
             fragmentClass = FragmentNotice.class;
         } else if (id == R.id.nav_create)
             fragmentClass = CreateNotice.class;
@@ -164,7 +196,7 @@ public class MainActivity extends AppCompatActivity
      *
      * If the app does not has permission then the user will be prompted to grant permissions
      *
-     * @param activity
+     * @param //activity
      */
     /*public static void verifyStoragePermissions(Activity activity) {
         // Check if we have write permission
