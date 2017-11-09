@@ -1,6 +1,6 @@
 package com.hackncs.click;
 
-import android.content.Context;
+import  android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
@@ -56,8 +56,7 @@ public class FragmentAcademics extends Fragment {
         USER_NAME = sp.getString("com.hackncs.click.USERNAME", "");
         Log.d("---->", TOKEN);
         Log.d("---->", USER_NAME);
-
-
+        Log.d("---->", sp.getString("com.hackncs.click.FIRST_NAME","User"));
 
         mAdapter = new NoticeAdapter(context, data);
         mRVNoticeList.setAdapter(mAdapter);

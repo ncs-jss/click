@@ -1,7 +1,7 @@
-#Sun Apr 09 16:13:58 IST 2017
-base.0=/home/yasha/github/click/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_fe80c188d7df2d1cf3c95624cd8b71ee89e1e4c8
+#Thu Nov 09 10:10:55 IST 2017
+base.0=/home/yasha/github/click/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_32561f93fdc328e3340d73ca0bfd632afeec4e46
 renamed.1=classes.dex
 renamed.0=classes2.dex
-file.1=/home/yasha/github/click/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_32561f93fdc328e3340d73ca0bfd632afeec4e46/classes.dex
-base.1=/home/yasha/github/click/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_32561f93fdc328e3340d73ca0bfd632afeec4e46
-file.0=/home/yasha/github/click/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_fe80c188d7df2d1cf3c95624cd8b71ee89e1e4c8/classes.dex
+file.1=/home/yasha/github/click/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_fe80c188d7df2d1cf3c95624cd8b71ee89e1e4c8/classes.dex
+base.1=/home/yasha/github/click/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_fe80c188d7df2d1cf3c95624cd8b71ee89e1e4c8
+file.0=/home/yasha/github/click/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_32561f93fdc328e3340d73ca0bfd632afeec4e46/classes.dex

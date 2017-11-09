@@ -67,6 +67,7 @@
     <string name="events">"Events"</string>
     <string name="filler">"Filler Notices"</string>
     <string name="download">"Download"</string>
+    <string name="starred">"Starred"</string>
     <string name="profile">"My Profile"</string>
     <string name="logout">"Logout"</string>
 
