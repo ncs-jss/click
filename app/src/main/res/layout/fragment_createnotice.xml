@@ -57,6 +57,14 @@
         android:layout_below="@id/spinner_category"
         android:textOff="UPLOAD FOR"
         android:textOn="UPLOAD FOR"/>
+
+        <Button
+            android:id="@+id/choose_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/spinner_category"
+            android:text="ATTACH"/>
 <LinearLayout
 
     android:id="@+id/upload_for"

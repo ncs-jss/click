@@ -35,13 +35,13 @@ MERGED from [com.android.volley:volley:1.0.0] C:\Users\DELL\.android\build-cache
 MERGED from [in.nashapp.androidsummernote:androidsummernote:1.0.5] C:\Users\DELL\.android\build-cache\badaafa07cf3bb1e985b95863bc828ce34467c07\output\AndroidManifest.xml:11:5-15:19
 MERGED from [com.android.support:design:24.2.1] C:\Users\DELL\.android\build-cache\16e71f33412d26e20f9390da54cb1ac58b18c8b3\output\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:appcompat-v7:24.2.1] C:\Users\DELL\.android\build-cache\34223d7e247dd6aad67064c96551d55dcdf7cfc1\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.2.1] C:\Users\DELL\.android\build-cache\00bd9c6d202bb26e441554311aa460d7693258bf\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:24.2.1] C:\Users\DELL\.android\build-cache\4061e5074e6cb2498fe13624e6905443732b0e11\output\AndroidManifest.xml:23:5-20
 MERGED from [com.android.support:support-v4:24.2.1] C:\Users\DELL\.android\build-cache\d3f7404a7878d97105a95f09e8f770419f0f9030\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-fragment:24.2.1] C:\Users\DELL\.android\build-cache\0c0447bd7545a38198f50d920678e6f37e036d20\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-media-compat:24.2.1] C:\Users\DELL\.android\build-cache\2614a76b8022ecbfd2342dc816beb196005b5d7f\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:24.2.1] C:\Users\DELL\.android\build-cache\010f8b70610ba27cbe948c1ff4f85b86f120f17c\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:24.2.1] C:\Users\DELL\.android\build-cache\00bd9c6d202bb26e441554311aa460d7693258bf\output\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-vector-drawable:24.2.1] C:\Users\DELL\.android\build-cache\4061e5074e6cb2498fe13624e6905443732b0e11\output\AndroidManifest.xml:23:5-20
 MERGED from [com.android.support:support-core-ui:24.2.1] C:\Users\DELL\.android\build-cache\ffab54d8afced9aed918447b3364cfb6cb5af58c\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.1] C:\Users\DELL\.android\build-cache\010f8b70610ba27cbe948c1ff4f85b86f120f17c\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-compat:24.2.1] C:\Users\DELL\.android\build-cache\db5cc916c4483431009fabdc9280e3bb6e8b3d28\output\AndroidManifest.xml:25:5-20
 	android:label
 		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:15:9-41
@@ -109,14 +109,16 @@ MERGED from [com.android.volley:volley:1.0.0] C:\Users\DELL\.android\build-cache
 MERGED from [in.nashapp.androidsummernote:androidsummernote:1.0.5] C:\Users\DELL\.android\build-cache\badaafa07cf3bb1e985b95863bc828ce34467c07\output\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:design:24.2.1] C:\Users\DELL\.android\build-cache\16e71f33412d26e20f9390da54cb1ac58b18c8b3\output\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:appcompat-v7:24.2.1] C:\Users\DELL\.android\build-cache\34223d7e247dd6aad67064c96551d55dcdf7cfc1\output\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:support-v4:24.2.1] C:\Users\DELL\.android\build-cache\d3f7404a7878d97105a95f09e8f770419f0f9030\output\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:24.2.1] C:\Users\DELL\.android\build-cache\0c0447bd7545a38198f50d920678e6f37e036d20\output\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:24.2.1] C:\Users\DELL\.android\build-cache\2614a76b8022ecbfd2342dc816beb196005b5d7f\output\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-utils:24.2.1] C:\Users\DELL\.android\build-cache\010f8b70610ba27cbe948c1ff4f85b86f120f17c\output\AndroidManifest.xml:21:5-23:61
 MERGED from [com.android.support:animated-vector-drawable:24.2.1] C:\Users\DELL\.android\build-cache\00bd9c6d202bb26e441554311aa460d7693258bf\output\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:24.2.1] C:\Users\DELL\.android\build-cache\4061e5074e6cb2498fe13624e6905443732b0e11\output\AndroidManifest.xml:21:5-43
 MERGED from [com.android.support:recyclerview-v7:24.2.1] C:\Users\DELL\.android\build-cache\ad5837ebd758576072823cd7c83359be100fb1ac\output\AndroidManifest.xml:20:5-43
+MERGED from [com.joanzapata.iconify:android-iconify-fontawesome:2.2.2] C:\Users\DELL\.android\build-cache\c13a492a8eaba0e18fea77d60a7d1c4a2f9f9560\output\AndroidManifest.xml:6:5-43
+MERGED from [com.joanzapata.iconify:android-iconify:2.2.2] C:\Users\DELL\.android\build-cache\213f6499a860e1b41d98fdf2b54fc022dd53f852\output\AndroidManifest.xml:6:5-43
+MERGED from [com.android.support:support-v4:24.2.1] C:\Users\DELL\.android\build-cache\d3f7404a7878d97105a95f09e8f770419f0f9030\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:24.2.1] C:\Users\DELL\.android\build-cache\0c0447bd7545a38198f50d920678e6f37e036d20\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:24.2.1] C:\Users\DELL\.android\build-cache\2614a76b8022ecbfd2342dc816beb196005b5d7f\output\AndroidManifest.xml:21:5-23:63
 MERGED from [com.android.support:support-core-ui:24.2.1] C:\Users\DELL\.android\build-cache\ffab54d8afced9aed918447b3364cfb6cb5af58c\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:24.2.1] C:\Users\DELL\.android\build-cache\010f8b70610ba27cbe948c1ff4f85b86f120f17c\output\AndroidManifest.xml:21:5-23:61
 MERGED from [com.android.support:support-compat:24.2.1] C:\Users\DELL\.android\build-cache\db5cc916c4483431009fabdc9280e3bb6e8b3d28\output\AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
 		ADDED from [com.android.support:appcompat-v7:24.2.1] C:\Users\DELL\.android\build-cache\34223d7e247dd6aad67064c96551d55dcdf7cfc1\output\AndroidManifest.xml:23:9-75

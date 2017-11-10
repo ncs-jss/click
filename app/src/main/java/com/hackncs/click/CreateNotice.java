@@ -8,9 +8,14 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileReader;
 import java.util.Calendar;
 
 import android.icu.text.SimpleDateFormat;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -46,6 +51,7 @@ import java.util.Map;
 
 import in.nashapp.androidsummernote.Summernote;
 
+import static android.app.Activity.RESULT_OK;
 import static com.hackncs.click.R.id.container;
 import static com.hackncs.click.R.id.spinner_course;
 
@@ -68,7 +74,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
     private View view;
     static Summernote summernote;
 
-
+    private final int PICK_FILE_REQUEST=1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -76,7 +82,8 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
 
         context = getActivity().getApplicationContext();
         summernote = (Summernote) view.findViewById(R.id.summernote);
-
+        Button choose=(Button)view.findViewById(R.id.choose_button);
+        choose.setOnClickListener(this);
         Spinner spinner1 = (Spinner) view.findViewById(R.id.spinner_category);
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(context,
                 R.array.uplaod_category, R.layout.spinner_item);
@@ -148,13 +155,13 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
                             new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
-                                    Toast.makeText(context, response, Toast.LENGTH_LONG).show();
+                                    Toast.makeText(context, response, Toast.LENGTH_SHORT).show();
                                 }
                             },
                             new Response.ErrorListener() {
                                 @Override
                                 public void onErrorResponse(VolleyError error) {
-                                    Toast.makeText(context, error.getMessage(), Toast.LENGTH_LONG).show();
+                                    Toast.makeText(context,"Error "+error.getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             }
                     ) {
@@ -216,22 +223,20 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
         summernote.onActivityResult(requestCode, resultCode, intent);
+
+        if (requestCode == PICK_FILE_REQUEST && resultCode == RESULT_OK && intent != null && intent.getData() != null) {
+
+            Uri uri = intent.getData();
+
+            Log.i("Path", uri.getPath());
+            File file = new File(uri.getPath());
+
+
+        }
     }
 
 
     public boolean checkDetails () {
-        /*view = new Dialog(getActivity());
-        view.setContentView(R.layout.viewue_layout);
-        view.setTitle("Upload for");
-
-        //ok_button = (Button) view.findViewById(R.id.b_ok);
-        //ancel_button = (Button) view.findViewById(R.id.b_cancel);
-        view.show();
-        ok_button.setOnClickListener(this);
-        cancel_button.setOnClickListener(this);
-        b1.setOnClickListener(this);*/
-
-
 
         cb1_value = b1.isChecked();
         cb2_value = b2.isChecked();
@@ -268,6 +273,10 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
     @Override
     public void onClick(View v) {
 
+        if(v.getId()==R.id.choose_button)
+        {
+            attach();
+        }
 
 
     }
@@ -275,8 +284,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
 
     public String getTime() {
         Calendar c = Calendar.getInstance();
-        /*SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String formattedDate = df.format(c.getTime());*/
+
         String formattedDate = String.format("%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",c.getTime());
         Log.d("Current time =>", formattedDate);
         return formattedDate;
@@ -329,21 +337,6 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         spinner2.setAdapter(adapter2);
         spinner2.setOnItemSelectedListener(this);
 
-        /*Spinner spinner4 = (Spinner) view.findViewById(R.id.spinner_year);
-        adapter4 = ArrayAdapter.createFromResource(context,
-                R.array.select_year, R.layout.spinner_item);
-        adapter4.setDropDownViewResource(R.layout.spinner_item);
-        spinner4.setAdapter(adapter4);
-        spinner4.setOnItemSelectedListener(this);
-        spinner4.setEnabled(false);
-
-        Spinner spinner5 = (Spinner) view.findViewById(R.id.spinner_section);
-        adapter5 = ArrayAdapter.createFromResource(context,
-                R.array.select_section, R.layout.spinner_item);
-        adapter5.setDropDownViewResource(R.layout.spinner_item);
-        spinner5.setAdapter(adapter5);
-        spinner5.setOnItemSelectedListener(this);
-        spinner5.setEnabled(false);*/
     }
     public void defineAdapter3(String course)
     {
@@ -442,4 +435,44 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
             create_bt.setEnabled(false);
         }
     }
+
+    public void attach()
+    {
+        Intent intent = new Intent();
+// Show only images, no videos or anything else
+        intent.setType("*/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+// Always show the chooser (if there are multiple options available)
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_FILE_REQUEST);
+    }
+    public void readFile(File file)
+    {
+        FileReader fr=null;
+        BufferedReader br=null;
+
+        try {
+
+
+            fr = new FileReader(file);
+            br=new BufferedReader(fr);
+
+            String data="";
+            String c;
+            while ((c = br.readLine()) != null) {
+
+                data+=c;
+
+            }
+            Log.i("Data=",data);
+            br.close();
+            fr.close();
+        }catch (Exception e)
+        {
+            Log.i("Error=",e.getMessage());
+
+        }
+
+
+    }
+
 }
