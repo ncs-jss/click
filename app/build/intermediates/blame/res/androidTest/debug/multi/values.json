@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/home/yasha/github/click/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "outputFile": "E:\\D drive\\git\\click\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "/home/yasha/.android/build-cache/1f6130da43973de41011b91dc103ef4060820093/output/res/values/values.xml",
+                    "file": "C:\\Users\\DELL\\.android\\build-cache\\6d7a23eab8297f092aaf11858e75ade10309548b\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

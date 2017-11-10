@@ -43,7 +43,7 @@ public class FragmentNotice extends Fragment {
     private EndlessRecyclerViewScrollListener scrollListener;
     private List<Notice> data = new ArrayList<>();
     private String USER_NAME;
-    public static String NOTICE_CATEGORY = "none";
+    public static String NOTICE_CATEGORY = "";
 
 
     @Override
@@ -53,6 +53,7 @@ public class FragmentNotice extends Fragment {
         context = getActivity().getApplicationContext();
         mRVNoticeList = (RecyclerView) view.findViewById(R.id.noticeList);
         fragmentNotice = new FragmentNotice();
+
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         TOKEN = sp.getString("com.hackncs.click.TOKEN", "");
         USER_NAME = sp.getString("com.hackncs.click.USERNAME", "");
@@ -111,7 +112,7 @@ public class FragmentNotice extends Fragment {
                 Map<String, String> params = new HashMap<>();
                 params.put("Authorization", "token " + TOKEN);
                 params.put("username", USER_NAME);
-                params.put("category", NOTICE_CATEGORY);
+                //params.put("category", NOTICE_CATEGORY);
                 return params;
             }
 

@@ -1,128 +1,130 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:2:1-60:12
+ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:2:1-60:12
 	package
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:3:5-32
-		INJECTED from /home/yasha/github/click/app/src/main/AndroidManifest.xml
-		INJECTED from /home/yasha/github/click/app/src/main/AndroidManifest.xml
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:3:5-32
+		INJECTED from E:\D drive\git\click\app\src\main\AndroidManifest.xml
+		INJECTED from E:\D drive\git\click\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/yasha/github/click/app/src/main/AndroidManifest.xml
-		INJECTED from /home/yasha/github/click/app/src/main/AndroidManifest.xml
+		INJECTED from E:\D drive\git\click\app\src\main\AndroidManifest.xml
+		INJECTED from E:\D drive\git\click\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from /home/yasha/github/click/app/src/main/AndroidManifest.xml
-		INJECTED from /home/yasha/github/click/app/src/main/AndroidManifest.xml
+		INJECTED from E:\D drive\git\click\app\src\main\AndroidManifest.xml
+		INJECTED from E:\D drive\git\click\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:6:5-79
+ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:6:5-79
 	android:name
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:6:22-76
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:6:22-76
 uses-permission#android.permission.INTERNET
-ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:7:5-66
+ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:7:5-66
 	android:name
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:7:22-64
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:7:22-64
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:8:5-81
+ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:8:5-81
 	android:name
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:8:22-78
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:8:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:9:5-80
+ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:9:5-80
 	android:name
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:9:22-77
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:9:22-77
 application
-ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:12:5-58:19
-MERGED from [com.android.volley:volley:1.0.0] /home/yasha/.android/build-cache/c5aab1ddb3fcc9acd2a46e1dc30ccb1b7d69cdea/output/AndroidManifest.xml:9:5-20
-MERGED from [in.nashapp.androidsummernote:androidsummernote:1.0.5] /home/yasha/.android/build-cache/a9e5cf55568f17141c3f6e91bf994d071d05c3fa/output/AndroidManifest.xml:11:5-15:19
-MERGED from [com.android.support:design:24.2.1] /home/yasha/.android/build-cache/49fc47fdb7f5f52c64c9e08523157bb2e484a55f/output/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:24.2.1] /home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-v4:24.2.1] /home/yasha/.android/build-cache/4bf8d115455c2120a9caaa150edb08facbd3d18f/output/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:24.2.1] /home/yasha/.android/build-cache/942e32824302dce93e81f1a967741b74ae517c6f/output/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:24.2.1] /home/yasha/.android/build-cache/10551c19af02ea7e031ff4a74526edbdc75e34ec/output/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:24.2.1] /home/yasha/.android/build-cache/fbdc2587657c0a4c44d4f0235fc0f241295885a2/output/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:24.2.1] /home/yasha/.android/build-cache/6c14f16bafdb4c9176d87ba6ce383ae3e97a66a2/output/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-vector-drawable:24.2.1] /home/yasha/.android/build-cache/79c6b5fd837990a4f43063c742941e577a3c6170/output/AndroidManifest.xml:23:5-20
-MERGED from [com.android.support:support-core-ui:24.2.1] /home/yasha/.android/build-cache/3078c27170af7e414785f83a0e2fd7f9e1012adb/output/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.1] /home/yasha/.android/build-cache/4994e2f641b412d617a43188daa6d2e05dfa420d/output/AndroidManifest.xml:25:5-20
+ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:12:5-58:19
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\DELL\.android\build-cache\0a069caefdcc9151557e399b4875ae3f2121c764\output\AndroidManifest.xml:9:5-20
+MERGED from [in.nashapp.androidsummernote:androidsummernote:1.0.5] C:\Users\DELL\.android\build-cache\badaafa07cf3bb1e985b95863bc828ce34467c07\output\AndroidManifest.xml:11:5-15:19
+MERGED from [com.android.support:design:24.2.1] C:\Users\DELL\.android\build-cache\16e71f33412d26e20f9390da54cb1ac58b18c8b3\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:24.2.1] C:\Users\DELL\.android\build-cache\34223d7e247dd6aad67064c96551d55dcdf7cfc1\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.2.1] C:\Users\DELL\.android\build-cache\00bd9c6d202bb26e441554311aa460d7693258bf\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:24.2.1] C:\Users\DELL\.android\build-cache\4061e5074e6cb2498fe13624e6905443732b0e11\output\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-v4:24.2.1] C:\Users\DELL\.android\build-cache\d3f7404a7878d97105a95f09e8f770419f0f9030\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:24.2.1] C:\Users\DELL\.android\build-cache\0c0447bd7545a38198f50d920678e6f37e036d20\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.1] C:\Users\DELL\.android\build-cache\2614a76b8022ecbfd2342dc816beb196005b5d7f\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.1] C:\Users\DELL\.android\build-cache\ffab54d8afced9aed918447b3364cfb6cb5af58c\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.1] C:\Users\DELL\.android\build-cache\010f8b70610ba27cbe948c1ff4f85b86f120f17c\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.1] C:\Users\DELL\.android\build-cache\db5cc916c4483431009fabdc9280e3bb6e8b3d28\output\AndroidManifest.xml:25:5-20
 	android:label
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:15:9-41
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:15:9-41
 	android:supportsRtl
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:16:9-35
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:16:9-35
 	android:allowBackup
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:13:9-35
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:13:9-35
 	android:icon
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:14:9-43
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:14:9-43
 	android:theme
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:17:9-52
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:17:9-52
 activity#com.hackncs.click.MainActivity
-ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:20:9-26:20
+ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:20:9-26:20
 	android:name
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:20:19-47
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:20:19-47
 intent-filter#android.intent.action.MAIN+android.intent.category.DEFAULT
-ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:21:13-25:29
+ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:21:13-25:29
 action#android.intent.action.MAIN
-ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:22:17-69
+ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:22:17-69
 	android:name
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:22:25-66
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:22:25-66
 category#android.intent.category.DEFAULT
-ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:24:17-76
+ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:24:17-76
 	android:name
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:24:27-73
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:24:27-73
 activity#com.hackncs.click.Splash
-ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:29:9-35:20
+ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:29:9-35:20
 	android:name
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:29:19-41
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:29:19-41
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:30:13-34:29
+ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:30:13-34:29
 category#android.intent.category.LAUNCHER
-ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:33:17-77
+ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:33:17-77
 	android:name
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:33:27-74
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:33:27-74
 activity#com.hackncs.click.DescriptionActivity
-ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:37:9-55:20
+ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:37:9-55:20
 	android:theme
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:38:13-44
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:38:13-44
 	android:name
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:37:19-54
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:37:19-54
 intent-filter#android.intent.action.SEND+android.intent.category.DEFAULT
-ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:40:13-46:29
+ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:40:13-46:29
 action#android.intent.action.SEND
-ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:41:17-69
+ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:41:17-69
 	android:name
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:41:25-66
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:41:25-66
 data
-ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:45:17-55
+ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:45:17-55
 	android:mimeType
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:45:23-52
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:45:23-52
 intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
-ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:48:13-53:29
+ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:48:13-53:29
 action#android.intent.action.VIEW
-ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:49:17-68
+ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:49:17-68
 	android:name
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:49:25-66
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:49:25-66
 category#android.intent.category.BROWSABLE
-ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:51:17-77
+ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:51:17-77
 	android:name
-		ADDED from /home/yasha/github/click/app/src/main/AndroidManifest.xml:51:27-75
+		ADDED from E:\D drive\git\click\app\src\main\AndroidManifest.xml:51:27-75
 uses-sdk
-INJECTED from /home/yasha/github/click/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.volley:volley:1.0.0] /home/yasha/.android/build-cache/c5aab1ddb3fcc9acd2a46e1dc30ccb1b7d69cdea/output/AndroidManifest.xml:7:5-43
-MERGED from [in.nashapp.androidsummernote:androidsummernote:1.0.5] /home/yasha/.android/build-cache/a9e5cf55568f17141c3f6e91bf994d071d05c3fa/output/AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:design:24.2.1] /home/yasha/.android/build-cache/49fc47fdb7f5f52c64c9e08523157bb2e484a55f/output/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:24.2.1] /home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:support-v4:24.2.1] /home/yasha/.android/build-cache/4bf8d115455c2120a9caaa150edb08facbd3d18f/output/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:24.2.1] /home/yasha/.android/build-cache/942e32824302dce93e81f1a967741b74ae517c6f/output/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:24.2.1] /home/yasha/.android/build-cache/10551c19af02ea7e031ff4a74526edbdc75e34ec/output/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-utils:24.2.1] /home/yasha/.android/build-cache/fbdc2587657c0a4c44d4f0235fc0f241295885a2/output/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:animated-vector-drawable:24.2.1] /home/yasha/.android/build-cache/6c14f16bafdb4c9176d87ba6ce383ae3e97a66a2/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:24.2.1] /home/yasha/.android/build-cache/79c6b5fd837990a4f43063c742941e577a3c6170/output/AndroidManifest.xml:21:5-43
-MERGED from [com.android.support:recyclerview-v7:24.2.1] /home/yasha/.android/build-cache/e630b457ffdc95cbdc6a380522e46c0de8481181/output/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-core-ui:24.2.1] /home/yasha/.android/build-cache/3078c27170af7e414785f83a0e2fd7f9e1012adb/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:24.2.1] /home/yasha/.android/build-cache/4994e2f641b412d617a43188daa6d2e05dfa420d/output/AndroidManifest.xml:21:5-23:58
+INJECTED from E:\D drive\git\click\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\DELL\.android\build-cache\0a069caefdcc9151557e399b4875ae3f2121c764\output\AndroidManifest.xml:7:5-43
+MERGED from [in.nashapp.androidsummernote:androidsummernote:1.0.5] C:\Users\DELL\.android\build-cache\badaafa07cf3bb1e985b95863bc828ce34467c07\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:24.2.1] C:\Users\DELL\.android\build-cache\16e71f33412d26e20f9390da54cb1ac58b18c8b3\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:24.2.1] C:\Users\DELL\.android\build-cache\34223d7e247dd6aad67064c96551d55dcdf7cfc1\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:24.2.1] C:\Users\DELL\.android\build-cache\00bd9c6d202bb26e441554311aa460d7693258bf\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:24.2.1] C:\Users\DELL\.android\build-cache\4061e5074e6cb2498fe13624e6905443732b0e11\output\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:recyclerview-v7:24.2.1] C:\Users\DELL\.android\build-cache\ad5837ebd758576072823cd7c83359be100fb1ac\output\AndroidManifest.xml:20:5-43
+MERGED from [com.joanzapata.iconify:android-iconify-fontawesome:2.2.2] C:\Users\DELL\.android\build-cache\c13a492a8eaba0e18fea77d60a7d1c4a2f9f9560\output\AndroidManifest.xml:6:5-43
+MERGED from [com.joanzapata.iconify:android-iconify:2.2.2] C:\Users\DELL\.android\build-cache\213f6499a860e1b41d98fdf2b54fc022dd53f852\output\AndroidManifest.xml:6:5-43
+MERGED from [com.android.support:support-v4:24.2.1] C:\Users\DELL\.android\build-cache\d3f7404a7878d97105a95f09e8f770419f0f9030\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:24.2.1] C:\Users\DELL\.android\build-cache\0c0447bd7545a38198f50d920678e6f37e036d20\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:24.2.1] C:\Users\DELL\.android\build-cache\2614a76b8022ecbfd2342dc816beb196005b5d7f\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:24.2.1] C:\Users\DELL\.android\build-cache\ffab54d8afced9aed918447b3364cfb6cb5af58c\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:24.2.1] C:\Users\DELL\.android\build-cache\010f8b70610ba27cbe948c1ff4f85b86f120f17c\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:24.2.1] C:\Users\DELL\.android\build-cache\db5cc916c4483431009fabdc9280e3bb6e8b3d28\output\AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:24.2.1] /home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:24.2.1] C:\Users\DELL\.android\build-cache\34223d7e247dd6aad67064c96551d55dcdf7cfc1\output\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		INJECTED from /home/yasha/github/click/app/src/main/AndroidManifest.xml
-		INJECTED from /home/yasha/github/click/app/src/main/AndroidManifest.xml
+		INJECTED from E:\D drive\git\click\app\src\main\AndroidManifest.xml
+		INJECTED from E:\D drive\git\click\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/yasha/github/click/app/src/main/AndroidManifest.xml
-		INJECTED from /home/yasha/github/click/app/src/main/AndroidManifest.xml
+		INJECTED from E:\D drive\git\click\app\src\main\AndroidManifest.xml
+		INJECTED from E:\D drive\git\click\app\src\main\AndroidManifest.xml

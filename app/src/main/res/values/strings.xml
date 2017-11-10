@@ -17,7 +17,7 @@
         <item>MBA</item>
     </string-array>
 
-    <string-array name="select_branch">
+    <string-array name="select_branch_Btech">
         <item>All Branches</item>
         <item>CSE</item>
         <item>IT</item>
@@ -28,7 +28,23 @@
         <item>ME</item>
     </string-array>
 
-    <string-array name="select_year">
+    <string-array name="select_branch_Mtech">
+        <item>All Branches</item>
+        <item>CSE</item>
+        <item>IT</item>
+        <item>ECE</item>
+    </string-array>
+
+    <string-array name="select_branch_MCA">
+        <item>All Branches</item>
+        <item>CSE</item>
+        <item>IT</item>
+    </string-array>
+    <string-array name="select_branch_MBA">
+        <item>All Branches</item>
+    </string-array>
+
+    <string-array name="select_year_Btech">
         <item>All years</item>
         <item>1</item>
         <item>2</item>
@@ -36,6 +52,17 @@
         <item>4</item>
     </string-array>
 
+    <string-array name="select_year_Others">
+        <item>All years</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="select_year_MCA">
+        <item>All years</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
     <string-array name="select_section">
         <item>All Sections</item>
         <item>CSE1</item>
@@ -44,12 +71,58 @@
         <item>IT2</item>
         <item>ECE1</item>
         <item>ECE2</item>
+        <item>ECE3</item>
         <item>EE1</item>
         <item>EE2</item>
         <item>CE1</item>
         <item>CE2</item>
         <item>IC1</item>
         <item>IC2</item>
+    </string-array>
+
+
+
+    <string-array name="select_section_CSE">
+        <item>All Sections</item>
+        <item>CSE1</item>
+        <item>CSE2</item>
+    </string-array>
+    <string-array name="select_section_ME">
+        <item>All Sections</item>
+        <item>ME1</item>
+        <item>ME2</item>
+        <item>ME3</item>
+    </string-array>
+
+    <string-array name="select_section_IT">
+        <item>All Sections</item>
+        <item>IT1</item>
+        <item>IT2</item>
+        </string-array>
+    <string-array name="select_section_ECE">
+        <item>All Sections</item>
+        <item>ECE1</item>
+        <item>ECE2</item>
+        <item>ECE3</item>
+    </string-array>
+    <string-array name="select_section_EE">
+        <item>All Sections</item>
+        <item>EE1</item>
+        <item>EE2</item>
+    </string-array>
+    <string-array name="select_section_CE">
+        <item>All Sections</item>
+        <item>CE1</item>
+        <item>CE2</item>
+    </string-array>
+
+    <string-array name="select_section_IC">
+        <item>All Sections</item>
+        <item>IC1</item>
+        <item>IC2</item>
+    </string-array>
+    <string-array name="select_section_Others">
+        <item>All Sections</item>
     </string-array>
 
      <string name="ok">OK</string>

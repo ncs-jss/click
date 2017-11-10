@@ -1,234 +1,234 @@
 [
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/doc.png",
-        "source": "/home/yasha/github/click/app/src/main/res/drawable/doc.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_text_cursor_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/img_events.png",
-        "source": "/home/yasha/github/click/app/src/main/res/drawable/img_events.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_ic_search_api_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/img_relevant.png",
-        "source": "/home/yasha/github/click/app/src/main/res/drawable/img_relevant.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_voice_search_api_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_ic_voice_search_api_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_spinner_textfield_background_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circle.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\drawable\\circle.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_small_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_ratingbar_small_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\xls.png",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\drawable\\xls.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/navigation_empty_icon.xml",
-        "source": "/home/yasha/.android/build-cache/49fc47fdb7f5f52c64c9e08523157bb2e484a55f/output/res/drawable/navigation_empty_icon.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_ic_clear_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/jpg.png",
-        "source": "/home/yasha/github/click/app/src/main/res/drawable/jpg.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml",
-        "source": "/home/yasha/.android/build-cache/49fc47fdb7f5f52c64c9e08523157bb2e484a55f/output/res/drawable/design_fab_background.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_textfield_search_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_btn_radio_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_cab_background_top_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_ic_arrow_drop_right_black_24dp.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_ic_arrow_drop_right_black_24dp.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_tab_indicator_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_dialog_material_background.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_ratingbar_small_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_btn_borderless_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_textfield_search_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_item_background_holo_dark.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_go_search_api_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_ic_go_search_api_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_ic_go_search_api_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_ic_go_search_api_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\img_starred.png",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\drawable\\img_starred.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_btn_colored_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_btn_colored_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_switch_thumb_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_tab_indicator_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_ic_clear_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_ic_clear_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_item_background_holo_light.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/file.png",
-        "source": "/home/yasha/github/click/app/src/main/res/drawable/file.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\img_allnotices.png",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\drawable\\img_allnotices.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_btn_default_mtrl_shape.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\jpg.png",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\drawable\\jpg.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_btn_check_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_snackbar_background.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\16e71f33412d26e20f9390da54cb1ac58b18c8b3\\output\\res\\drawable\\design_snackbar_background.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_list_selector_holo_light.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_list_selector_holo_light.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/slide_nav_bar.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/drawable/slide_nav_bar.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_edit_text_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_menu_overflow_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_ic_menu_overflow_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/txt.png",
-        "source": "/home/yasha/github/click/app/src/main/res/drawable/txt.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\doc.png",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\drawable\\doc.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_cab_background_top_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml",
-        "source": "/home/yasha/.android/build-cache/49fc47fdb7f5f52c64c9e08523157bb2e484a55f/output/res/drawable/design_snackbar_background.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/img_starred.png",
-        "source": "/home/yasha/github/click/app/src/main/res/drawable/img_starred.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_btn_colored_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/design_ic_visibility.xml",
-        "source": "/home/yasha/.android/build-cache/49fc47fdb7f5f52c64c9e08523157bb2e484a55f/output/res/drawable/design_ic_visibility.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\slide_nav_bar.xml",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\drawable\\slide_nav_bar.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/img_admin.png",
-        "source": "/home/yasha/github/click/app/src/main/res/drawable/img_admin.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\txt.png",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\drawable\\txt.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/img_academics.png",
-        "source": "/home/yasha/github/click/app/src/main/res/drawable/img_academics.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\img_admin.png",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\drawable\\img_admin.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/circle.xml",
-        "source": "/home/yasha/github/click/app/src/main/res/drawable/circle.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_vector_test.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_vector_test.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_ic_menu_overflow_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_ic_menu_overflow_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_ic_visibility.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\16e71f33412d26e20f9390da54cb1ac58b18c8b3\\output\\res\\drawable\\design_ic_visibility.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/pdf.png",
-        "source": "/home/yasha/github/click/app/src/main/res/drawable/pdf.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_ic_ab_back_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_item_background_holo_light.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\img_relevant.png",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\drawable\\img_relevant.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/ppt.png",
-        "source": "/home/yasha/github/click/app/src/main/res/drawable/ppt.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_list_selector_holo_dark.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_seekbar_thumb_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\png.png",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\drawable\\png.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_btn_borderless_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/png.png",
-        "source": "/home/yasha/github/click/app/src/main/res/drawable/png.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_switch_thumb_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\logo.png",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\drawable\\logo.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/img_allnotices.png",
-        "source": "/home/yasha/github/click/app/src/main/res/drawable/img_allnotices.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\navigation_empty_icon.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\16e71f33412d26e20f9390da54cb1ac58b18c8b3\\output\\res\\drawable\\navigation_empty_icon.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_list_selector_holo_dark.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\img_filters.png",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\drawable\\img_filters.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_ic_voice_search_api_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_ic_voice_search_api_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\img_academics.png",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\drawable\\img_academics.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_ratingbar_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_cab_background_internal_bg.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/xls.png",
-        "source": "/home/yasha/github/click/app/src/main/res/drawable/xls.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/logo.png",
-        "source": "/home/yasha/github/click/app/src/main/res/drawable/logo.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_seekbar_thumb_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/rtf.png",
-        "source": "/home/yasha/github/click/app/src/main/res/drawable/rtf.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pdf.png",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\drawable\\pdf.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_vector_test.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_vector_test.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_ratingbar_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_ratingbar_indicator_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_seekbar_track_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/jsslogo.png",
-        "source": "/home/yasha/github/click/app/src/main/res/drawable/jsslogo.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\img_events.png",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\drawable\\img_events.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_track_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_seekbar_track_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_edit_text_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_list_selector_background_transition_holo_light.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_fab_background.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\16e71f33412d26e20f9390da54cb1ac58b18c8b3\\output\\res\\drawable\\design_fab_background.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_text_cursor_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_dialog_material_background.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_cab_background_internal_bg.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\drawable\\abc_btn_check_material.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/img_filters.png",
-        "source": "/home/yasha/github/click/app/src/main/res/drawable/img_filters.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ppt.png",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\drawable\\ppt.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_ic_search_api_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_ic_search_api_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\file.png",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\drawable\\file.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_ic_ab_back_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\jsslogo.png",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\drawable\\jsslogo.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_tick_mark_material.xml",
-        "source": "/home/yasha/.android/build-cache/853c18d941de5c4b9850f1ac33392feb8fa47808/output/res/drawable/abc_seekbar_tick_mark_material.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\rtf.png",
+        "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\drawable\\rtf.png"
     }
 ]

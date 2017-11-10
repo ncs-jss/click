@@ -21,6 +21,11 @@ import java.lang.reflect.Field;
 import android.view.View;
 import android.widget.TextView;
 
+import com.joanzapata.iconify.IconDrawable;
+import com.joanzapata.iconify.Iconify;
+import com.joanzapata.iconify.fonts.FontAwesomeIcons;
+import com.joanzapata.iconify.fonts.FontAwesomeModule;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, FragmentNotice.OnFragmentInteractionListener,
         FragmentPlacement.OnFragmentInteractionListener {
@@ -41,7 +46,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
-
+        Iconify.with(new FontAwesomeModule());
 //        setSupportActionBar(toolbar);
 //        verifyStoragePermissions(this);
         if (savedInstanceState == null) {
@@ -74,6 +79,51 @@ public class MainActivity extends AppCompatActivity
         name.setText("Welcome, "+PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.FIRST_NAME","User"));
 
         navigationView.setNavigationItemSelectedListener(this);
+
+        Menu menu = navigationView.getMenu();
+        MenuItem nav_notices = menu.findItem(R.id.nav_notices);
+        nav_notices.setIcon( new IconDrawable(this, FontAwesomeIcons.fa_thumb_tack)
+                .colorRes(R.color.icon_color)
+                .actionBarSize());
+        MenuItem nav_administration = menu.findItem(R.id.nav_administration);
+        nav_administration.setIcon( new IconDrawable(this, FontAwesomeIcons.fa_university)
+                .colorRes(R.color.icon_color)
+                .actionBarSize());
+        MenuItem nav_academics = menu.findItem(R.id.nav_academics);
+        nav_academics.setIcon( new IconDrawable(this, FontAwesomeIcons.fa_pencil_square_o)
+                .colorRes(R.color.icon_color)
+                .actionBarSize());
+        MenuItem nav_placements = menu.findItem(R.id.nav_placement);
+        nav_placements.setIcon( new IconDrawable(this, FontAwesomeIcons.fa_calendar)
+                .colorRes(R.color.icon_color)
+                .actionBarSize());
+        MenuItem nav_events = menu.findItem(R.id.nav_events);
+        nav_events.setIcon( new IconDrawable(this, FontAwesomeIcons.fa_graduation_cap)
+                .colorRes(R.color.icon_color)
+                .actionBarSize());
+        MenuItem nav_starred = menu.findItem(R.id.nav_starred);
+        nav_starred.setIcon( new IconDrawable(this, FontAwesomeIcons.fa_star)
+                .colorRes(R.color.icon_color)
+                .actionBarSize());
+
+        MenuItem nav_download = menu.findItem(R.id.nav_download);
+        nav_download.setIcon( new IconDrawable(this, FontAwesomeIcons.fa_download)
+                .colorRes(R.color.icon_color)
+                .actionBarSize());
+
+        MenuItem nav_create = menu.findItem(R.id.nav_create);
+        nav_create.setIcon( new IconDrawable(this, FontAwesomeIcons.fa_plus)
+                .colorRes(R.color.icon_color)
+                .actionBarSize());
+
+        MenuItem nav_myprofile = menu.findItem(R.id.nav_myprofile);
+        nav_myprofile.setIcon( new IconDrawable(this, FontAwesomeIcons.fa_user)
+                .colorRes(R.color.icon_color)
+                .actionBarSize());
+        MenuItem nav_logout = menu.findItem(R.id.nav_logout);
+        nav_logout.setIcon( new IconDrawable(this, FontAwesomeIcons.fa_inbox)
+                .colorRes(R.color.icon_color)
+                .actionBarSize());
         
     }
 
@@ -159,7 +209,7 @@ public class MainActivity extends AppCompatActivity
             fragmentClass = FragmentEvents.class;
         } else if (id == R.id.nav_download) {
             fragmentClass = Downloads.class;
-        } else if (id == R.id.starred) {
+        } else if (id == R.id.nav_starred) {
             fragmentClass = FragmentStarredNotices.class;
         } else if (id == R.id.nav_myprofile) {
             if (PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.GROUP","").equals("student"))

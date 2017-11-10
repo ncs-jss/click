@@ -1,26 +1,26 @@
 [
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_menu_slideshow.png",
-        "source": "/home/yasha/github/click/app/build/generated/res/pngs/debug/drawable-mdpi/ic_menu_slideshow.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_menu_send.png",
+        "source": "E:\\D drive\\git\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_menu_send.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_menu_gallery.png",
-        "source": "/home/yasha/github/click/app/build/generated/res/pngs/debug/drawable-mdpi/ic_menu_gallery.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_menu_slideshow.png",
+        "source": "E:\\D drive\\git\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_menu_slideshow.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_menu_share.png",
-        "source": "/home/yasha/github/click/app/build/generated/res/pngs/debug/drawable-mdpi/ic_menu_share.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_menu_camera.png",
+        "source": "E:\\D drive\\git\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_menu_camera.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_menu_manage.png",
-        "source": "/home/yasha/github/click/app/build/generated/res/pngs/debug/drawable-mdpi/ic_menu_manage.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_menu_share.png",
+        "source": "E:\\D drive\\git\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_menu_share.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_menu_camera.png",
-        "source": "/home/yasha/github/click/app/build/generated/res/pngs/debug/drawable-mdpi/ic_menu_camera.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_menu_gallery.png",
+        "source": "E:\\D drive\\git\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_menu_gallery.png"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_menu_send.png",
-        "source": "/home/yasha/github/click/app/build/generated/res/pngs/debug/drawable-mdpi/ic_menu_send.png"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_menu_manage.png",
+        "source": "E:\\D drive\\git\\click\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_menu_manage.png"
     }
 ]
