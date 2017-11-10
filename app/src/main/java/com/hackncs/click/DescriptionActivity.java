@@ -56,6 +56,7 @@ public class DescriptionActivity extends AppCompatActivity {
     private Notice notice;
     private String TOKEN;
     private String USER_NAME;
+    private Menu menu;
 
     private void init(){
         title = (TextView) findViewById(R.id.nTitle);
@@ -76,7 +77,7 @@ public class DescriptionActivity extends AppCompatActivity {
             String url = getIntent().getData().toString();
             Log.d("url", url);
             String noticeid = url.substring(url.indexOf('=')+1);
-            String get_url = "http://210.212.85.155/api/v1/notices/"+noticeid;
+            String get_url = Endpoints.notice_by_pk +noticeid;
             Log.d("Notice Id",noticeid);
             StringRequest newNoticeRequest = new StringRequest(Request.Method.GET, get_url,
                     new Response.Listener<String>() {
@@ -84,10 +85,7 @@ public class DescriptionActivity extends AppCompatActivity {
                         public void onResponse(String response) {
                             try {
                                 JSONObject jo = new JSONObject(response);
-                                JSONArray ja = jo.getJSONArray("results");
-                                notice = Notice.getNoticeObject((JSONObject) ja.get(0));
-                                Log.d("json response",response);
-                                populateView();
+                                notice = Notice.getNoticeObject(jo);
                             } catch (JSONException e) {
                                 e.printStackTrace();
 
@@ -97,7 +95,7 @@ public class DescriptionActivity extends AppCompatActivity {
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(context, "Some error occured", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }){
                 @Override
@@ -113,16 +111,16 @@ public class DescriptionActivity extends AppCompatActivity {
         }else{
             Bundle b = getIntent().getExtras();
             notice = (Notice) b.get("Notice");
-            populateView();
         }
+        populateView();
     }
 
     private void populateView() {
 
+        setContentView(R.layout.activity_description);
+        Button button = (Button) findViewById(R.id.downloadB);
         if(notice.mAttachment)
         {
-            setContentView(R.layout.activity_description);
-            Button button = (Button) findViewById(R.id.downloadB);
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -130,8 +128,9 @@ public class DescriptionActivity extends AppCompatActivity {
                 }
             });
         }
-        else
-            setContentView(R.layout.activity_description2);
+        else {
+            button.setVisibility(View.GONE);
+        }
 
         if(notice.mAttachment)
         {
@@ -140,13 +139,6 @@ public class DescriptionActivity extends AppCompatActivity {
         }
 
         init();
-
-        String stitle = notice.mTitle;
-        String sdescription = notice.mNotice_description;
-        String sfaculty = notice.mPosted_by;
-
-
-
         title.setText(notice.mTitle);
         faculty.setText(notice.mPosted_by);
         posted_on.setText(notice.mDate);
@@ -157,7 +149,7 @@ public class DescriptionActivity extends AppCompatActivity {
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
         String share_url = "http://infoconnect.jssaten.ac.in/notice/?notice_id=" + notice.mId;
-        sendIntent.putExtra(Intent.EXTRA_TEXT,share_url+ "\n\nSent via Infoconnect");
+        sendIntent.putExtra(Intent.EXTRA_TEXT,share_url+ "\n\nSent via InfoConnect");
         sendIntent.setType("text/plain");
         startActivity(sendIntent);
     }
@@ -166,6 +158,9 @@ public class DescriptionActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        this.menu = menu;
+        if (new OfflineDatabaseHandler(getApplicationContext()).getStarredNoticesIds().contains(notice.mId))
+            menu.getItem(1).setIcon(R.drawable.img_starred);
         return true;
     }
 
@@ -175,8 +170,85 @@ public class DescriptionActivity extends AppCompatActivity {
         if (id == R.id.menu_item_share) {
             startShareIntent();
         }
-
+        else if (id == R.id.menu_item_star) {
+            if (!new OfflineDatabaseHandler(getApplicationContext()).getStarredNoticesIds().contains(notice.mId))
+                starNotice();
+            else
+                removeStarredNotice();
+        }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void removeStarredNotice() {
+        String URL = Endpoints.delete_starred_notice;
+        StringRequest stringRequest = new StringRequest(Request.Method.DELETE, URL + notice.mId + "/",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        JSONObject jo;
+                        try {
+                            jo = new JSONObject(response);
+                            Toast.makeText(context, jo.getString("message"), Toast.LENGTH_SHORT).show();
+                            menu.getItem(1).setIcon(R.drawable.img_starred);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        new OfflineDatabaseHandler(context).deleteNotice(notice);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(context, error.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                })
+        {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("Authorization", "Token " + TOKEN);
+                return params;
+            }
+        };
+        RequestQueue rq = Volley.newRequestQueue(this);
+        rq.add(stringRequest);
+    }
+
+    private void starNotice() {
+        String URL = Endpoints.add_starred_notice;
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL + notice.mId + "/",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        JSONObject jo;
+                        try {
+                            jo = new JSONObject(response);
+                            Toast.makeText(context, jo.getString("message"), Toast.LENGTH_SHORT).show();
+                            menu.getItem(1).setIcon(R.drawable.img_starred);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        new OfflineDatabaseHandler(context).insertNotice(notice);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                })
+        {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("Authorization", "token " + TOKEN);
+                return params;
+            }
+        };
+        RequestQueue rq = Volley.newRequestQueue(this);
+        rq.add(stringRequest);
+        if (notice.mAttachment)
+            new Asyn().execute(Endpoints.media + notice.mAttachment_link);
     }
 
     private class Asyn extends AsyncTask<String, Void, Void> {
@@ -186,7 +258,7 @@ public class DescriptionActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             //verifyStoragePermissions();
-            P.setMessage("Downoading...");
+            P.setMessage("Downloading...");
             P.show();
             P.setIndeterminate(false);
             P.setCancelable(true);
@@ -252,7 +324,6 @@ public class DescriptionActivity extends AppCompatActivity {
             URL url = new URL(sUrl);
             URLConnection conection = url.openConnection();
             conection.connect();
-            //System.out.println(url);
             Log.d("--->",sUrl);
 
             int lengthOfFile = conection.getContentLength();
@@ -260,7 +331,6 @@ public class DescriptionActivity extends AppCompatActivity {
             // download the file
             InputStream input = new BufferedInputStream(url.openStream(),
                     8192);
-
 
             // Output stream
             OutputStream output = new FileOutputStream(Environment

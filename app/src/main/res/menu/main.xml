@@ -11,4 +11,14 @@
         android:enabled="true"
         android:checkable="true" />
 
+    <item
+        android:id="@+id/menu_item_star"
+        android:title="Star"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/img_starred"
+        android:actionProviderClass="android.widget.ShareActionProvider"
+        android:visible="true"
+        android:enabled="true"
+        android:checkable="true" />
+
 </menu>

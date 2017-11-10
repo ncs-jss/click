@@ -76,7 +76,7 @@ public class FragmentAdministration extends Fragment {
 
     public void loadNextDataFromApi(int offset) {
 
-        URL = "";
+        URL = Endpoints.notice_list;
         if (offset != 1)
             URL = URL + "?page=" + offset;
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext()); // altered

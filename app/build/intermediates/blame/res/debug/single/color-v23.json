@@ -1,82 +1,42 @@
 [
     {
-        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
-        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_spinner.xml"
-    },
-    {
         "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
-        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_btn_checkable.xml"
-    },
-    {
-        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
-        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\color-v23\\design_tint_password_toggle.xml"
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
     },
     {
         "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
-        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_default.xml"
-    },
-    {
-        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
-        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_edittext.xml"
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\color-v23\\abc_tint_default.xml"
     },
     {
         "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
-        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\color-v23\\design_tint_password_toggle.xml"
-    },
-    {
-        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
-        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_switch_thumb.xml"
-    },
-    {
-        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
-        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
-        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
-        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_seek_thumb.xml"
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\16e71f33412d26e20f9390da54cb1ac58b18c8b3\\output\\res\\color-v23\\design_tint_password_toggle.xml"
     },
     {
         "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
-        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
-        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_btn_checkable.xml"
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
     },
     {
         "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
-        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_spinner.xml"
-    },
-    {
-        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
-        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_default.xml"
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\color-v23\\abc_tint_spinner.xml"
     },
     {
         "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
-        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "E:\\home\\yasha\\github\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_color_highlight_material.xml"
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
     },
     {
         "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
-        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_switch_thumb.xml"
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
     },
     {
         "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_color_highlight_material.xml"
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\color-v23\\abc_color_highlight_material.xml"
     },
     {
         "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
-        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_switch_track.xml"
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\color-v23\\abc_tint_switch_track.xml"
     },
     {
         "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
-        "source": "E:\\D drive\\git\\click\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\color-v23\\abc_tint_edittext.xml"
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\color-v23\\abc_tint_edittext.xml"
     }
 ]

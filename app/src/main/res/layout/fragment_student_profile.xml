@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Student Profile"
+                    android:textSize="22dp"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    android:layout_centerVertical="true"/>
+
+                <Button
+                    android:id="@+id/bEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                >
+
+                <TextView
+                    android:layout_weight="6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Course:"
+                    android:textSize="19dp"
+                    android:textColor="#000000"
+                    android:paddingLeft="2dp"/>
+
+                <EditText
+                    android:id="@+id/etCourse"
+                    android:layout_weight="4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                >
+
+                <TextView
+                    android:layout_weight="6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Branch:"
+                    android:textSize="19dp"
+                    android:textColor="#000000"
+                    android:paddingLeft="2dp"/>
+
+                <EditText
+                    android:id="@+id/etBranch"
+                    android:layout_weight="4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                >
+
+                <TextView
+                    android:layout_weight="6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Year:"
+                    android:textSize="19dp"
+                    android:textColor="#000000"
+                    android:paddingLeft="2dp"/>
+
+                <EditText
+                    android:id="@+id/etYear"
+                    android:layout_weight="4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                >
+
+                <TextView
+                    android:layout_weight="6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Section:"
+                    android:textSize="19dp"
+                    android:textColor="#000000"
+                    android:paddingLeft="2dp"/>
+
+                <EditText
+                    android:id="@+id/etSection"
+                    android:layout_weight="4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                >
+
+                <TextView
+                    android:layout_weight="6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Univ. Roll No:"
+                    android:textSize="19dp"
+                    android:textColor="#000000"
+                    android:paddingLeft="2dp"/>
+
+                <EditText
+                    android:id="@+id/etUnivRollNo"
+                    android:layout_weight="4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                >
+
+                <TextView
+                    android:layout_weight="6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Contact No:"
+                    android:textSize="19dp"
+                    android:textColor="#000000"
+                    android:paddingLeft="2dp"/>
+
+                <EditText
+                    android:id="@+id/etContactNo"
+                    android:layout_weight="4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                >
+
+                <TextView
+                    android:layout_weight="6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Father's name:"
+                    android:textSize="19dp"
+                    android:textColor="#000000"
+                    android:paddingLeft="2dp"/>
+
+                <EditText
+                    android:id="@+id/etFatherName"
+                    android:layout_weight="4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                >
+
+                <TextView
+                    android:layout_weight="6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mother's name:"
+                    android:textSize="19dp"
+                    android:textColor="#000000"
+                    android:paddingLeft="2dp"/>
+
+                <EditText
+                    android:id="@+id/etMotherName"
+                    android:layout_weight="4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                >
+
+                <TextView
+                    android:layout_weight="6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Address:"
+                    android:textSize="19dp"
+                    android:textColor="#000000"
+                    android:paddingLeft="2dp"/>
+
+                <EditText
+                    android:id="@+id/etAddress"
+                    android:layout_weight="4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="3dp">
+
+                <CheckBox
+                    android:id="@+id/cbDisplay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Display to others"
+                    android:textSize="19dp"
+                    android:layout_centerVertical="true"/>
+
+                <Button
+                    android:id="@+id/bSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Save Changes"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

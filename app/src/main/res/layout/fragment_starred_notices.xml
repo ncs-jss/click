@@ -4,9 +4,10 @@
     android:layout_height="match_parent"
     tools:context="com.hackncs.click.FragmentStarredNotices">
 
-    <TextView
+    <ListView
+        android:id="@+id/lvList2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="fragment starred notices" />
+        android:layout_height="match_parent">
+    </ListView>
 
 </FrameLayout>
