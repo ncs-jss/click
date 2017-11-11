@@ -61,6 +61,7 @@ public class DescriptionActivity extends AppCompatActivity {
     private String TOKEN;
     private String USER_NAME;
     private Menu menu;
+    ProgressDialog P;
 
     private void init(){
         title = (TextView) findViewById(R.id.nTitle);
@@ -78,20 +79,36 @@ public class DescriptionActivity extends AppCompatActivity {
         TOKEN = sp.getString("com.hackncs.click.TOKEN", "");
         USER_NAME = sp.getString("com.hackncs.click.USERNAME", "");
 
-        if(getIntent().getAction() == Intent.ACTION_VIEW){
-            String url = getIntent().getData().toString();
+        Intent i=getIntent();
+        String action=i.getAction();
+        //Log.i("action:",action);
+        //Log.i("openen:","opened");
+        P = new ProgressDialog(context);
+        if (Intent.ACTION_VIEW.equals(action)) {
+
+            P.setMessage("Opening...");
+            P.show();
+            P.setIndeterminate(false);
+            P.setCancelable(true);
+
+            String url = i.getData().toString();
             Log.d("url", url);
             String noticeid = url.substring(url.indexOf('=')+1);
             String get_url = Endpoints.notice_by_pk +noticeid;
             Log.d("Notice Id",noticeid);
+            Log.d("URL",get_url);
             StringRequest newNoticeRequest = new StringRequest(Request.Method.GET, get_url,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             try {
                                 JSONObject jo = new JSONObject(response);
+                                Log.i("Json:",jo.toString());
                                 notice = Notice.getNoticeObject(jo);
+                                P.dismiss();
+                                populateView();
                             } catch (JSONException e) {
+                                Log.i("JsonError:",e.getMessage());
                                 e.printStackTrace();
 
                             }
@@ -100,6 +117,7 @@ public class DescriptionActivity extends AppCompatActivity {
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
+                            Log.i("JsonError:",error.getMessage());
                             Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }){
@@ -117,37 +135,55 @@ public class DescriptionActivity extends AppCompatActivity {
             Bundle b = getIntent().getExtras();
             notice = (Notice) b.get("Notice");
         }
+
+
+    }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+
         populateView();
+
+
+
     }
 
     private void populateView() {
 
         setContentView(R.layout.activity_description);
         Button button = (Button) findViewById(R.id.downloadB);
-        if(notice.mAttachment)
-        {
-            button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    new Asyn().execute(""+notice.mAttachment_link);
-                }
-            });
-        }
-        else {
-            button.setVisibility(View.GONE);
-        }
 
-        if(notice.mAttachment)
-        {
-            index = notice.mAttachment_link.lastIndexOf("/");
-            linkstr = notice.mAttachment_link.substring(index+1);
-        }
+       /* while(notice==null) {
+        P.setMessage("Opening...");
+        P.show();
+        P.setIndeterminate(false);
+        P.setCancelable(true);
+        }*/
+        if(notice!=null) {
+            if (notice.mAttachment) {
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        new Asyn().execute("" + notice.mAttachment_link);
+                    }
+                });
+            } else {
+                button.setVisibility(View.GONE);
+            }
 
-        init();
-        title.setText(notice.mTitle);
-        faculty.setText(notice.mPosted_by);
-        posted_on.setText(notice.mDate);
-        description.loadData(notice.mNotice_description, "text/html", null);
+            if (notice.mAttachment) {
+                index = notice.mAttachment_link.lastIndexOf("/");
+                linkstr = notice.mAttachment_link.substring(index + 1);
+            }
+
+            init();
+            title.setText(notice.mTitle);
+            faculty.setText(notice.mPosted_by);
+            posted_on.setText(notice.mDate);
+            description.loadData(notice.mNotice_description, "text/html", null);
+        }
     }
 
     private void startShareIntent() {

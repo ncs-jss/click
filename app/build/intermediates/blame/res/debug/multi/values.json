@@ -569,7 +569,14 @@
                     "endOffset": 5249
                 },
                 "from": {
-                    "file": "E:\\D drive\\git\\click\\app\\src\\main\\res\\values\\colors.xml"
+                    "file": "E:\\D drive\\git\\click\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 0,
+                        "startOffset": 145,
+                        "endColumn": 41,
+                        "endOffset": 186
+                    }
                 }
             },
             {
@@ -797,14 +804,7 @@
                     "endOffset": 6512
                 },
                 "from": {
-                    "file": "E:\\D drive\\git\\click\\app\\src\\main\\res\\values\\colors.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 279,
-                        "endColumn": 40,
-                        "endOffset": 315
-                    }
+                    "file": "E:\\D drive\\git\\click\\app\\src\\main\\res\\values\\colors.xml"
                 }
             },
             {
@@ -1236,14 +1236,7 @@
                     "endOffset": 8899
                 },
                 "from": {
-                    "file": "E:\\D drive\\git\\click\\app\\src\\main\\res\\values\\colors.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 238,
-                        "endColumn": 39,
-                        "endOffset": 273
-                    }
+                    "file": "E:\\D drive\\git\\click\\app\\src\\main\\res\\values\\colors.xml"
                 }
             },
             {
