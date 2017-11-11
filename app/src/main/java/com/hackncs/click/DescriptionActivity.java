@@ -191,11 +191,12 @@ public class DescriptionActivity extends AppCompatActivity {
         sendIntent.setAction(Intent.ACTION_SEND);
         String share_url = "http://infoconnect.jssaten.ac.in/notice/?notice_id=" + notice.mId;
         Bundle bundle = new Bundle();
-        bundle.putString("Title",notice.mTitle);
-        bundle.putString("Description",notice.mNotice_description);
+        bundle.putString(Intent.EXTRA_TITLE,notice.mTitle);
+        bundle.putString(Intent.EXTRA_TEXT,notice.mNotice_description);
         bundle.putString(Intent.EXTRA_TEXT,share_url+ "\n\nSent via InfoConnect");
-
-       // sendIntent.putExtra(Intent.EXTRA_TEXT,share_url+ "\n\nSent via InfoConnect");
+        /*sendIntent.putExtra(Intent.EXTRA_TITLE,notice.mTitle);
+        sendIntent.putExtra(Intent.EXTRA_TEXT,share_url+ "\n\nSent via InfoConnect");*/
+        sendIntent.putExtras(bundle);
         sendIntent.setType("text/plain");
         startActivity(sendIntent);
     }

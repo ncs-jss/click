@@ -1,11 +1,11 @@
 [
     {
-        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
-        "source": "C:\\Users\\DELL\\.android\\build-cache\\16e71f33412d26e20f9390da54cb1ac58b18c8b3\\output\\res\\layout\\design_navigation_item_subheader.xml"
-    },
-    {
         "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\login.xml",
         "source": "E:\\D drive\\git\\click\\app\\src\\main\\res\\layout\\login.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\16e71f33412d26e20f9390da54cb1ac58b18c8b3\\output\\res\\layout\\design_navigation_item_subheader.xml"
     },
     {
         "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
@@ -20,12 +20,12 @@
         "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
-        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\layout\\abc_action_mode_bar.xml"
-    },
-    {
         "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
         "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\34223d7e247dd6aad67064c96551d55dcdf7cfc1\\output\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
         "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
