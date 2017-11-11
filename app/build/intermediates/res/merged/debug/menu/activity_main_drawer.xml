@@ -1,52 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:checkableBehavior="single">
 
-    <group>
+    <group  android:checkableBehavior="single">
 
         <item
             android:id="@+id/nav_notices"
-            android:icon="@drawable/ic_menu_camera"
+
             android:title="@string/notices" />
         <item
             android:id="@+id/nav_administration"
-            android:icon="@drawable/ic_menu_manage"
+
             android:title="@string/administration" />
         <item
             android:id="@+id/nav_academics"
-            android:icon="@drawable/ic_menu_send"
+
             android:title="@string/academics" />
         <item
             android:id="@+id/nav_placement"
-            android:icon="@drawable/ic_menu_gallery"
+
             android:title="@string/placement" />
         <item
             android:id="@+id/nav_events"
-            android:icon="@drawable/ic_menu_slideshow"
+
             android:title="@string/events" />
         <item
             android:id="@+id/nav_starred"
-            android:icon="@drawable/img_starred"
+
             android:title="@string/starred" />
         <item
             android:id="@+id/nav_download"
-            android:icon="@drawable/img_starred"
+
             android:title="@string/download" />
         <item
             android:id="@+id/nav_create"
-            android:icon="@drawable/img_starred"
+
             android:title="Create Notice" />
 
     </group>
     <item android:title="Settings">
         <menu>
+            <group android:checkableBehavior="single">
             <item
                 android:id="@+id/nav_myprofile"
-                android:icon="@drawable/ic_menu_share"
+
                 android:title="@string/profile" />
             <item
                 android:id="@+id/nav_logout"
-                android:icon="@drawable/ic_menu_share"
+
                 android:title="@string/logout" />
+            </group>
 
         </menu>
 

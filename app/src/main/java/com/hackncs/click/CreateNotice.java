@@ -22,6 +22,8 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -44,6 +46,8 @@ import com.android.volley.toolbox.Volley;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.joanzapata.iconify.IconDrawable;
+import com.joanzapata.iconify.fonts.FontAwesomeIcons;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -73,14 +77,100 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
     private String FIRST_NAME, USER_NAME, GROUP, USER_ID, FACULTY_ID;
     private View view;
     static Summernote summernote;
-
+    Menu menu;
     private final int PICK_FILE_REQUEST=1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_createnotice, container, false);
 
+        menu=MainActivity.menu;
         context = getActivity().getApplicationContext();
+
+        menu.getItem(0).setIcon( new IconDrawable(context, FontAwesomeIcons.fa_plus)
+                .colorRes(R.color.white)
+                .actionBarSize());
+        menu.getItem(0).setTitle("Save");
+        menu.getItem(0).setEnabled(false);
+        menu.getItem(0).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+
+                String title=item.getTitle().toString();
+                if(title.equals("Save"))
+                {
+                    if(checkDetails()) {
+                        Log.d("------>", summernote.getText());
+
+                        notice_title = (EditText) getActivity().findViewById(R.id.etNoticeTitle);
+                        cTitle = notice_title.getText().toString();
+                        cDescription = summernote.getText();
+
+
+                        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+                        TOKEN = sp.getString("com.hackncs.click.TOKEN", "");
+                        USER_NAME = sp.getString("com.hackncs.click.USERNAME", "");
+                        FIRST_NAME = sp.getString("com.hackncs.click.FIRST_NAME", "");
+                        USER_ID = sp.getString("com.hackncs.click.USER_ID", "");
+                        FACULTY_ID = sp.getString("com.hackncs.click.FACULTY_ID", "");
+
+                        coursebranchyear = cSpinselection2 + "-" + cSpinselection3 + "-" + cSpinselection4 + "-" + cSpinselection5;
+                        Toast.makeText(context, "CourseBranchYear="+coursebranchyear, Toast.LENGTH_SHORT).show();
+
+                        //Networking
+                        URL = "http://210.212.85.155/api/notices/notice_create/";
+                        queue = Volley.newRequestQueue(getActivity().getApplicationContext());
+                        postrequest = new StringRequest(Request.Method.POST, URL,
+                                new Response.Listener<String>() {
+                                    @Override
+                                    public void onResponse(String response) {
+                                        Toast.makeText(context, response, Toast.LENGTH_SHORT).show();
+                                    }
+                                },
+                                new Response.ErrorListener() {
+                                    @Override
+                                    public void onErrorResponse(VolleyError error) {
+                                        Toast.makeText(context,"Error "+error.getMessage(), Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                        ) {
+                            @Override
+                            protected Map<String, String> getParams() {
+                                Map<String, String> params = new HashMap<String, String>();
+                                params.put("faculty", FACULTY_ID);
+                                params.put("description", cDescription);
+                                params.put("file_attached", "");
+                                params.put("category", cSpinselection1);
+                                params.put("visible_for_student", cb1_value.toString());
+                                params.put("visible_for_hod", cb2_value.toString());
+                                params.put("visible_for_faculty", cb3_value.toString());
+                                params.put("visible_for_managemant", cb4_value.toString());
+                                params.put("visible_for_others", cb5_value.toString());
+                                params.put("course_branch_year", coursebranchyear);
+                                params.put("created", getTime());
+                                params.put("modified", getTime());
+                                return params;
+                            }
+
+                            @Override
+                            public Map<String, String> getHeaders() throws AuthFailureError {
+                                Map<String, String> params = new HashMap<>();
+                                params.put("Authorization", "token " + TOKEN);
+                                params.put("username", USER_NAME);
+                                return super.getHeaders();
+                            }
+                        };
+                        queue.add(postrequest);
+                    }
+
+
+                }
+                return false;
+            }
+        });
+
+
+
         summernote = (Summernote) view.findViewById(R.id.summernote);
         Button choose=(Button)view.findViewById(R.id.choose_button);
         choose.setOnClickListener(this);
@@ -124,7 +214,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
             }
         });
 
-        create_bt = (Button) view.findViewById(R.id.create_button);
+        /*create_bt = (Button) view.findViewById(R.id.create_button);
         create_bt.setEnabled(false);
         create_bt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -196,7 +286,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
 
 
             }
-        });
+        });*/
 
         b1 = (CheckBox) view.findViewById(R.id.cb1);
         b2 = (CheckBox) view.findViewById(R.id.cb2);
@@ -428,11 +518,13 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         if(isChecked)
         {
-            create_bt.setEnabled(true);
+            //create_bt.setEnabled(true);
+            menu.getItem(0).setEnabled(true);
         }
         else if(!(b1.isChecked()||b2.isChecked()||b3.isChecked()||b4.isChecked()||b5.isChecked()))
         {
-            create_bt.setEnabled(false);
+            //create_bt.setEnabled(false);
+            menu.getItem(0).setEnabled(false);
         }
     }
 

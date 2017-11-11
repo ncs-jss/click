@@ -190,7 +190,12 @@ public class DescriptionActivity extends AppCompatActivity {
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
         String share_url = "http://infoconnect.jssaten.ac.in/notice/?notice_id=" + notice.mId;
-        sendIntent.putExtra(Intent.EXTRA_TEXT,share_url+ "\n\nSent via InfoConnect");
+        Bundle bundle = new Bundle();
+        bundle.putString("Title",notice.mTitle);
+        bundle.putString("Description",notice.mNotice_description);
+        bundle.putString(Intent.EXTRA_TEXT,share_url+ "\n\nSent via InfoConnect");
+
+       // sendIntent.putExtra(Intent.EXTRA_TEXT,share_url+ "\n\nSent via InfoConnect");
         sendIntent.setType("text/plain");
         startActivity(sendIntent);
     }
@@ -200,7 +205,7 @@ public class DescriptionActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
 
 
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.notice, menu);
 
         this.menu = menu;
 
