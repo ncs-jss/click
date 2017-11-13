@@ -210,14 +210,14 @@ public class DescriptionActivity extends AppCompatActivity {
 
         this.menu = menu;
 
-        menu.getItem(1).setIcon(new IconDrawable(this, FontAwesomeIcons.fa_star_o)
+        menu.getItem(1).setIcon(new IconDrawable(this, FontAwesomeIcons.fa_star)
                 .colorRes(R.color.white)
                 .actionBarSize());
         menu.getItem(0).setIcon(new IconDrawable(this, FontAwesomeIcons.fa_share_alt)
                 .colorRes(R.color.white)
                 .actionBarSize());
         if (new OfflineDatabaseHandler(getApplicationContext()).getStarredNoticesIds().contains(notice.mId)) {
-            menu.getItem(1).setIcon(new IconDrawable(this, FontAwesomeIcons.fa_star_o)
+            menu.getItem(1).setIcon(new IconDrawable(this, FontAwesomeIcons.fa_star)
                     .colorRes(R.color.golden)
                     .actionBarSize());
         }
@@ -253,7 +253,7 @@ public class DescriptionActivity extends AppCompatActivity {
                         JSONObject jo;
                         try {
                             jo = new JSONObject(response);
-                            menu.getItem(1).setIcon(new IconDrawable(context, FontAwesomeIcons.fa_star_o)
+                            menu.getItem(1).setIcon(new IconDrawable(context, FontAwesomeIcons.fa_star)
                                     .colorRes(R.color.white)
                                     .actionBarSize());
                             Toast.makeText(context, jo.getString("message"), Toast.LENGTH_SHORT).show();
@@ -293,7 +293,7 @@ public class DescriptionActivity extends AppCompatActivity {
                         try {
                             jo = new JSONObject(response);
 
-                            menu.getItem(1).setIcon(new IconDrawable(context, FontAwesomeIcons.fa_star_o)
+                            menu.getItem(1).setIcon(new IconDrawable(context, FontAwesomeIcons.fa_star)
                                     .colorRes(R.color.golden)
                                     .actionBarSize());
                             Toast.makeText(context, jo.getString("message"), Toast.LENGTH_SHORT).show();
@@ -435,6 +435,12 @@ public class DescriptionActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }
 

@@ -87,7 +87,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         menu=MainActivity.menu;
         context = getActivity().getApplicationContext();
 
-        menu.getItem(0).setIcon( new IconDrawable(context, FontAwesomeIcons.fa_plus)
+        menu.getItem(0).setIcon( new IconDrawable(context, FontAwesomeIcons.fa_save)
                 .colorRes(R.color.white)
                 .actionBarSize());
         menu.getItem(0).setTitle("Save");

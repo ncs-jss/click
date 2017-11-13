@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity
     FloatingActionButton fab;
     private ShareActionProvider mShareActionProvider;
    static Menu menu;
+    Menu nav_menu;
+    String group;
 
 
     @Override
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         Iconify.with(new FontAwesomeModule());
         fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -107,51 +110,52 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        Menu menu = navigationView.getMenu();
-        MenuItem nav_notices = menu.findItem(R.id.nav_notices);
+         nav_menu = navigationView.getMenu();
+        MenuItem nav_notices = nav_menu.findItem(R.id.nav_notices);
         nav_notices.setIcon( new IconDrawable(this, FontAwesomeIcons.fa_thumb_tack)
                 .colorRes(R.color.icon_color)
                 .actionBarSize());
-        MenuItem nav_administration = menu.findItem(R.id.nav_administration);
+        MenuItem nav_administration = nav_menu.findItem(R.id.nav_administration);
         nav_administration.setIcon( new IconDrawable(this, FontAwesomeIcons.fa_university)
                 .colorRes(R.color.icon_color)
                 .actionBarSize());
-        MenuItem nav_academics = menu.findItem(R.id.nav_academics);
+        MenuItem nav_academics = nav_menu.findItem(R.id.nav_academics);
         nav_academics.setIcon( new IconDrawable(this, FontAwesomeIcons.fa_pencil_square_o)
                 .colorRes(R.color.icon_color)
                 .actionBarSize());
-        MenuItem nav_placements = menu.findItem(R.id.nav_placement);
+        MenuItem nav_placements = nav_menu.findItem(R.id.nav_placement);
         nav_placements.setIcon( new IconDrawable(this, FontAwesomeIcons.fa_calendar)
                 .colorRes(R.color.icon_color)
                 .actionBarSize());
-        MenuItem nav_events = menu.findItem(R.id.nav_events);
+        MenuItem nav_events = nav_menu.findItem(R.id.nav_events);
         nav_events.setIcon( new IconDrawable(this, FontAwesomeIcons.fa_graduation_cap)
                 .colorRes(R.color.icon_color)
                 .actionBarSize());
-        MenuItem nav_starred = menu.findItem(R.id.nav_starred);
+        MenuItem nav_starred = nav_menu.findItem(R.id.nav_starred);
         nav_starred.setIcon( new IconDrawable(this, FontAwesomeIcons.fa_star)
                 .colorRes(R.color.icon_color)
                 .actionBarSize());
 
-        MenuItem nav_download = menu.findItem(R.id.nav_download);
+        MenuItem nav_download = nav_menu.findItem(R.id.nav_download);
         nav_download.setIcon( new IconDrawable(this, FontAwesomeIcons.fa_download)
                 .colorRes(R.color.icon_color)
                 .actionBarSize());
 
-        MenuItem nav_create = menu.findItem(R.id.nav_create);
+        MenuItem nav_create = nav_menu.findItem(R.id.nav_create);
         nav_create.setIcon( new IconDrawable(this, FontAwesomeIcons.fa_plus)
                 .colorRes(R.color.icon_color)
                 .actionBarSize());
 
-        MenuItem nav_myprofile = menu.findItem(R.id.nav_myprofile);
+        MenuItem nav_myprofile = nav_menu.findItem(R.id.nav_myprofile);
         nav_myprofile.setIcon( new IconDrawable(this, FontAwesomeIcons.fa_user)
                 .colorRes(R.color.icon_color)
                 .actionBarSize());
-        MenuItem nav_logout = menu.findItem(R.id.nav_logout);
+        MenuItem nav_logout = nav_menu.findItem(R.id.nav_logout);
         nav_logout.setIcon( new IconDrawable(this, FontAwesomeIcons.fa_inbox)
                 .colorRes(R.color.icon_color)
                 .actionBarSize());
-        
+        group=PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.GROUP","student");
+        checkGroup(group);
     }
 
     //to remove
@@ -206,31 +210,40 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_notices) {
             fragmentClass = FragmentNotice.class;
-            fab.show();
             showMenu(false);
+            fab.show();
+            checkGroup(group);
+
         } else if (id == R.id.nav_placement) {
             fragmentClass = FragmentPlacement.class;
             fab.show();
             showMenu(false);
+            checkGroup(group);
         } else if (id == R.id.nav_administration) {
             fragmentClass = FragmentAdministration.class;
             fab.show();
             showMenu(false);
+            checkGroup(group);
         } else if (id == R.id.nav_academics) {
             fragmentClass = FragmentAcademics.class;
             fab.show();
             showMenu(false);
+            checkGroup(group);
         } else if (id == R.id.nav_events) {
             fragmentClass = FragmentEvents.class;
             fab.show();
+            showMenu(false);
+            checkGroup(group);
         } else if (id == R.id.nav_download) {
             fragmentClass = Downloads.class;
             fab.show();
             showMenu(false);
+            checkGroup(group);
         } else if (id == R.id.nav_starred) {
             fragmentClass = FragmentStarredNotices.class;
             fab.show();
             showMenu(false);
+            checkGroup(group);
         } else if (id == R.id.nav_myprofile) {
             if (PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.GROUP","").equals("student"))
                 fragmentClass = FragmentStudentProfile.class;
@@ -239,16 +252,18 @@ public class MainActivity extends AppCompatActivity
 
             fab.show();
             showMenu(true);
+            checkGroup(group);
         }else if (id == R.id.nav_logout) {
             PreferenceManager.getDefaultSharedPreferences(getBaseContext()).edit().clear().apply();
             new OfflineDatabaseHandler(this).flush();
-            Intent intent = new Intent(MainActivity.this, Splash.class);
-            startActivity(intent);
-            fragmentClass = FragmentNotice.class;
+            finish();
+            /*Intent intent = new Intent(MainActivity.this, Splash.class);
+            startActivity(intent);*/
         } else if (id == R.id.nav_create) {
             fragmentClass = CreateNotice.class;
             fab.hide();
             showMenu(true);
+            checkGroup(group);
         }
         try {
             fragment = (Fragment) fragmentClass.newInstance();
@@ -275,6 +290,17 @@ public class MainActivity extends AppCompatActivity
 
     private void showMenu(boolean show)
     {
-        this.menu.getItem(0).setVisible(show);
+
+        menu.getItem(0).setVisible(show);
+    }
+    private void checkGroup(String group)
+    {
+
+        if(group.equals("student"))
+        {
+            fab.hide();
+
+             nav_menu.getItem(7).setVisible(false);
+        }
     }
 }

@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +45,7 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
     CheckBox display;
     Button edit, save;
     String PROFILE_ID, TOKEN;
-
+    Menu menu;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -52,10 +53,7 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
         Iconify.with(new FontAwesomeModule());
         initialize();
         fetchAndDisplay();
-        MainActivity.menu.getItem(0).setIcon( new IconDrawable(context, FontAwesomeIcons.fa_edit)
-                .colorRes(R.color.white)
-                .actionBarSize());
-        MainActivity.menu.getItem(0).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+        menu.getItem(0).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
 
@@ -158,11 +156,8 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
         save.setVisibility(View.INVISIBLE);
     }
     private void enableViews() {
-        course.setEnabled(true);
-        branch.setEnabled(true);
-        year.setEnabled(true);
-        section.setEnabled(true);
-        univ_roll_no.setEnabled(true);
+
+
         contact_no.setEnabled(true);
         father_name.setEnabled(true);
         mother_name.setEnabled(true);
@@ -189,6 +184,14 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
         edit.setOnClickListener(this);
         save.setOnClickListener(this);
         save.setVisibility(View.INVISIBLE);
+        menu=MainActivity.menu;
+        menu.getItem(0).setIcon( new IconDrawable(context, FontAwesomeIcons.fa_edit)
+                .colorRes(R.color.white)
+                .actionBarSize());
+        menu.getItem(0).setTitle("Edit");
+
+        menu.getItem(0).setEnabled(true);
+
         PROFILE_ID = PreferenceManager.getDefaultSharedPreferences(getContext()).getString("com.hackncs.click.PROFILE_ID","0");
         TOKEN = PreferenceManager.getDefaultSharedPreferences(getContext()).getString("com.hackncs.click.TOKEN","0");
     }
