@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -22,6 +23,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.joanzapata.iconify.IconDrawable;
+import com.joanzapata.iconify.Iconify;
+import com.joanzapata.iconify.fonts.FontAwesomeIcons;
+import com.joanzapata.iconify.fonts.FontAwesomeModule;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,13 +42,16 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
     Context context;
     EditText course, branch, year, section, univ_roll_no, contact_no, father_name, mother_name, address;
     CheckBox display;
-    Button edit, save;
+    //Button edit, save;
+
     String PROFILE_ID, TOKEN;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_student_profile,container,false);
+        Iconify.with(new FontAwesomeModule());
+
         initialize();
         fetchAndDisplay();
         return view;
@@ -83,7 +91,7 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
 
     private void setTexts(JSONObject jsonObject) throws JSONException {
         course.setText(jsonObject.getString("course"));
-        branch.setText(jsonObject.getString("branch"));
+
         year.setText(jsonObject.getString("year"));
         section.setText(jsonObject.getString("section"));
         univ_roll_no.setText(jsonObject.getString("univ_roll_no"));
@@ -106,7 +114,7 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
         mother_name.setEnabled(false);
         address.setEnabled(false);
         display.setEnabled(false);
-        save.setVisibility(View.INVISIBLE);
+        //save.setVisibility(View.INVISIBLE);
     }
 
     private void initialize() {
@@ -121,11 +129,50 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
         mother_name = (EditText)view.findViewById(R.id.etMotherName);
         address = (EditText)view.findViewById(R.id.etAddress);
         display = (CheckBox)view.findViewById(R.id.cbDisplay);
-        edit = (Button)view.findViewById(R.id.bEdit);
-        save = (Button)view.findViewById(R.id.bSave);
-        edit.setOnClickListener(this);
-        save.setOnClickListener(this);
-        save.setVisibility(View.INVISIBLE);
+        //edit = (Button)view.findViewById(R.id.bEdit);
+        //save = (Button)view.findViewById(R.id.bSave);
+        //edit.setOnClickListener(this);
+        //save.setOnClickListener(this);
+        //save.setVisibility(View.INVISIBLE);
+        ImageView v1=(ImageView)view.findViewById(R.id.Course_img);
+        v1.setImageDrawable(new IconDrawable(context, FontAwesomeIcons.fa_graduation_cap)
+                .colorRes(R.color.colorGrey)
+                .actionBarSize());
+
+        ImageView v2=(ImageView)view.findViewById(R.id.Branch_img);
+        v2.setImageDrawable(new IconDrawable(context, FontAwesomeIcons.fa_code_fork)
+                .colorRes(R.color.colorGrey)
+                .actionBarSize());
+
+        ImageView v3=(ImageView)view.findViewById(R.id.Year_img);
+        v3.setImageDrawable(new IconDrawable(context, FontAwesomeIcons.fa_calendar)
+                .colorRes(R.color.colorGrey)
+                .actionBarSize());
+        ImageView v4=(ImageView)view.findViewById(R.id.Section_img);
+        v4.setImageDrawable(new IconDrawable(context, FontAwesomeIcons.fa_puzzle_piece)
+                .colorRes(R.color.colorGrey)
+                .actionBarSize());
+        ImageView v5=(ImageView)view.findViewById(R.id.UnivRollNo_img);
+        v5.setImageDrawable(new IconDrawable(context, FontAwesomeIcons.fa_building)
+                .colorRes(R.color.colorGrey)
+                .actionBarSize());
+        ImageView v6=(ImageView)view.findViewById(R.id.ContactNo_img);
+        v6.setImageDrawable(new IconDrawable(context, FontAwesomeIcons.fa_phone)
+                .colorRes(R.color.colorGrey)
+                .actionBarSize());
+        ImageView v7=(ImageView)view.findViewById(R.id.FatherName_img);
+        v7.setImageDrawable(new IconDrawable(context, FontAwesomeIcons.fa_user)
+                .colorRes(R.color.colorGrey)
+                .actionBarSize());
+        ImageView v8=(ImageView)view.findViewById(R.id.MotherName_img);
+        v8.setImageDrawable(new IconDrawable(context, FontAwesomeIcons.fa_user)
+                .colorRes(R.color.colorGrey)
+                .actionBarSize());
+        ImageView v9=(ImageView)view.findViewById(R.id.Address_img);
+        v9.setImageDrawable(new IconDrawable(context, FontAwesomeIcons.fa_home)
+                .colorRes(R.color.colorGrey)
+                .actionBarSize());
+
         PROFILE_ID = PreferenceManager.getDefaultSharedPreferences(getContext()).getString("com.hackncs.click.PROFILE_ID","0");
         TOKEN = PreferenceManager.getDefaultSharedPreferences(getContext()).getString("com.hackncs.click.TOKEN","0");
     }
@@ -134,13 +181,13 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
     public void onClick(View view) {
 
         Log.d("asd", "onclick");
-        if (view.getId() == R.id.bEdit) {
-            enableViews();
-        }
-        else if (view.getId() == R.id.bSave) {
-            Log.d("llll", "a");
-            uploadChanges();
-        }
+//        if (view.getId() == R.id.bEdit) {
+//            enableViews();
+//        }
+//        else if (view.getId() == R.id.bSave) {
+//            Log.d("llll", "a");
+//            uploadChanges();
+//        }
     }
 
     private void enableViews() {
@@ -154,7 +201,7 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
         mother_name.setEnabled(true);
         address.setEnabled(true);
         display.setEnabled(true);
-        save.setVisibility(View.VISIBLE);
+//        save.setVisibility(View.VISIBLE);
     }
 
     private void uploadChanges() {
