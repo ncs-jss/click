@@ -14,6 +14,7 @@ public class Endpoints {
     public static final String student_profile_data = "http://210.212.85.155/api/profiles/student_profile_data/";
     public static final String get_starred_notice_list = "http://210.212.85.155/api/notices/get_starred_notice_list/";
     public static final String login = "http://210.212.85.155/api/profiles/login/";
+    public static final String create_notice="http://210.212.85.155/api/notices/notice_create/";
 
 
 

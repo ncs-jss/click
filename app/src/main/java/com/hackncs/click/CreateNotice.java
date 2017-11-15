@@ -118,7 +118,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
                         Toast.makeText(context, "CourseBranchYear="+coursebranchyear, Toast.LENGTH_SHORT).show();
 
                         //Networking
-                        URL = "http://210.212.85.155/api/notices/notice_create/";
+                        URL = Endpoints.create_notice;
                         queue = Volley.newRequestQueue(getActivity().getApplicationContext());
                         postrequest = new StringRequest(Request.Method.POST, URL,
                                 new Response.Listener<String>() {

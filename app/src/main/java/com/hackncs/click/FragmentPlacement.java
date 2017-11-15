@@ -63,6 +63,7 @@ public class FragmentPlacement extends Fragment{
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
         mRVNoticeList.setLayoutManager(linearLayoutManager);
+
         scrollListener = new EndlessRecyclerViewScrollListener(linearLayoutManager) {
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {

@@ -1,10 +1,13 @@
 package com.hackncs.click;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -168,12 +171,17 @@ public class MainActivity extends AppCompatActivity
         startActivity(sendIntent);
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                finishAffinity();
+            }
             super.onBackPressed();
         }
     }
@@ -256,9 +264,8 @@ public class MainActivity extends AppCompatActivity
         }else if (id == R.id.nav_logout) {
             PreferenceManager.getDefaultSharedPreferences(getBaseContext()).edit().clear().apply();
             new OfflineDatabaseHandler(this).flush();
-            finish();
-            /*Intent intent = new Intent(MainActivity.this, Splash.class);
-            startActivity(intent);*/
+            Intent intent = new Intent(MainActivity.this, Splash.class);
+            startActivity(intent);
         } else if (id == R.id.nav_create) {
             fragmentClass = CreateNotice.class;
             fab.hide();
@@ -288,6 +295,14 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+       
+
+    }
+
+
     private void showMenu(boolean show)
     {
 
@@ -303,4 +318,5 @@ public class MainActivity extends AppCompatActivity
              nav_menu.getItem(7).setVisible(false);
         }
     }
+
 }
