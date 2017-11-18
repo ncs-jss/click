@@ -32,6 +32,7 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.5.2'
     compile 'com.android.volley:volley:1.0.0'
     compile 'in.nashapp.androidsummernote:androidsummernote:1.0.5'
+    compile 'com.joanzapata.iconify:android-iconify-fontawesome:2.2.2' // (v4.5)
     testCompile 'junit:junit:4.12'
 
 }

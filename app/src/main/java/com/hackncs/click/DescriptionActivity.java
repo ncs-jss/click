@@ -28,6 +28,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.joanzapata.iconify.IconDrawable;
+import com.joanzapata.iconify.Iconify;
+import com.joanzapata.iconify.fonts.FontAwesomeIcons;
+import com.joanzapata.iconify.fonts.FontAwesomeModule;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -68,6 +72,7 @@ public class DescriptionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Iconify.with(new FontAwesomeModule());
         context = this;
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         TOKEN = sp.getString("com.hackncs.click.TOKEN", "");
@@ -157,10 +162,23 @@ public class DescriptionActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+
+
         getMenuInflater().inflate(R.menu.main, menu);
+
         this.menu = menu;
-        if (new OfflineDatabaseHandler(getApplicationContext()).getStarredNoticesIds().contains(notice.mId))
-            menu.getItem(1).setIcon(R.drawable.img_starred);
+
+        menu.getItem(1).setIcon(new IconDrawable(this, FontAwesomeIcons.fa_star_o)
+                .colorRes(R.color.white)
+                .actionBarSize());
+        menu.getItem(0).setIcon(new IconDrawable(this, FontAwesomeIcons.fa_share_alt)
+                .colorRes(R.color.white)
+                .actionBarSize());
+        if (new OfflineDatabaseHandler(getApplicationContext()).getStarredNoticesIds().contains(notice.mId)) {
+            menu.getItem(1).setIcon(new IconDrawable(this, FontAwesomeIcons.fa_star_o)
+                    .colorRes(R.color.golden)
+                    .actionBarSize());
+        }
         return true;
     }
 
@@ -172,9 +190,14 @@ public class DescriptionActivity extends AppCompatActivity {
         }
         else if (id == R.id.menu_item_star) {
             if (!new OfflineDatabaseHandler(getApplicationContext()).getStarredNoticesIds().contains(notice.mId))
+            {
                 starNotice();
+            }
             else
+            {
                 removeStarredNotice();
+            }
+
         }
         return super.onOptionsItemSelected(item);
     }
@@ -188,8 +211,12 @@ public class DescriptionActivity extends AppCompatActivity {
                         JSONObject jo;
                         try {
                             jo = new JSONObject(response);
+                            menu.getItem(1).setIcon(new IconDrawable(context, FontAwesomeIcons.fa_star_o)
+                                    .colorRes(R.color.white)
+                                    .actionBarSize());
                             Toast.makeText(context, jo.getString("message"), Toast.LENGTH_SHORT).show();
-                            menu.getItem(1).setIcon(R.drawable.img_starred);
+
+                            //removeStarredNotice();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -223,8 +250,12 @@ public class DescriptionActivity extends AppCompatActivity {
                         JSONObject jo;
                         try {
                             jo = new JSONObject(response);
+
+                            menu.getItem(1).setIcon(new IconDrawable(context, FontAwesomeIcons.fa_star_o)
+                                    .colorRes(R.color.golden)
+                                    .actionBarSize());
                             Toast.makeText(context, jo.getString("message"), Toast.LENGTH_SHORT).show();
-                            menu.getItem(1).setIcon(R.drawable.img_starred);
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

@@ -1,14 +1,14 @@
 [
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
-        "source": "/home/yasha/.android/build-cache/49fc47fdb7f5f52c64c9e08523157bb2e484a55f/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\16e71f33412d26e20f9390da54cb1ac58b18c8b3\\output\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
-        "source": "/home/yasha/.android/build-cache/49fc47fdb7f5f52c64c9e08523157bb2e484a55f/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\16e71f33412d26e20f9390da54cb1ac58b18c8b3\\output\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
     },
     {
-        "merged": "/home/yasha/github/click/app/build/intermediates/res/merged/debug/anim-v21/design_appbar_state_list_animator.xml",
-        "source": "/home/yasha/.android/build-cache/49fc47fdb7f5f52c64c9e08523157bb2e484a55f/output/res/anim-v21/design_appbar_state_list_animator.xml"
+        "merged": "E:\\D drive\\git\\click\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_appbar_state_list_animator.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\16e71f33412d26e20f9390da54cb1ac58b18c8b3\\output\\res\\anim-v21\\design_appbar_state_list_animator.xml"
     }
 ]
