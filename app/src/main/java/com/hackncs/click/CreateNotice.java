@@ -87,7 +87,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         menu=MainActivity.menu;
         context = getActivity().getApplicationContext();
 
-        menu.getItem(0).setIcon( new IconDrawable(context, FontAwesomeIcons.fa_plus)
+        menu.getItem(0).setIcon( new IconDrawable(context, FontAwesomeIcons.fa_save)
                 .colorRes(R.color.white)
                 .actionBarSize());
         menu.getItem(0).setTitle("Save");
@@ -118,7 +118,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
                         Toast.makeText(context, "CourseBranchYear="+coursebranchyear, Toast.LENGTH_SHORT).show();
 
                         //Networking
-                        URL = "http://210.212.85.155/api/notices/notice_create/";
+                        URL = Endpoints.create_notice;
                         queue = Volley.newRequestQueue(getActivity().getApplicationContext());
                         postrequest = new StringRequest(Request.Method.POST, URL,
                                 new Response.Listener<String>() {

@@ -257,8 +257,15 @@ public class Splash extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
-        finish();
+        //Toast.makeText(this,"Pause",Toast.LENGTH_SHORT).show();
     }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
+        //Toast.makeText(this,"Stop",Toast.LENGTH_SHORT).show();
+    }
+
 
     public boolean isOnline() {
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -374,7 +381,7 @@ public class Splash extends Activity {
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(Splash.this, error.toString(), Toast.LENGTH_LONG).show();
+                           // Toast.makeText(Splash.this, error.toString(), Toast.LENGTH_LONG).show();
                         }
                     }){
                 @Override
