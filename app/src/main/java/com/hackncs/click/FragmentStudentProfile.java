@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -22,6 +23,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.joanzapata.iconify.IconDrawable;
+import com.joanzapata.iconify.Iconify;
+import com.joanzapata.iconify.fonts.FontAwesomeIcons;
+import com.joanzapata.iconify.fonts.FontAwesomeModule;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,9 +49,53 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_student_profile,container,false);
+        Iconify.with(new FontAwesomeModule());
         initialize();
         fetchAndDisplay();
+        MainActivity.menu.getItem(0).setIcon( new IconDrawable(context, FontAwesomeIcons.fa_edit)
+                .colorRes(R.color.white)
+                .actionBarSize());
+        MainActivity.menu.getItem(0).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+
+                String title=item.getTitle().toString();
+                if(title.equals("Edit"))
+                {
+                    item.setIcon( new IconDrawable(context, FontAwesomeIcons.fa_save)
+                            .colorRes(R.color.white)
+                            .actionBarSize());
+                    item.setTitle("Save");
+                    enableViews();
+
+                }
+                else
+                {
+                    item.setIcon( new IconDrawable(context, FontAwesomeIcons.fa_edit)
+                            .colorRes(R.color.white)
+                            .actionBarSize());
+                    item.setTitle("Edit");
+                    uploadChanges();
+                }
+
+
+                return false;
+            }
+        });
         return view;
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        /*Log.d("asd", "onclick");
+        if (view.getId() == R.id.bEdit) {
+            enableViews();
+        }
+        else if (view.getId() == R.id.bSave) {
+            Log.d("llll", "a");
+            uploadChanges();
+        }*/
     }
 
     private void fetchAndDisplay() {
@@ -108,6 +157,20 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
         display.setEnabled(false);
         save.setVisibility(View.INVISIBLE);
     }
+    private void enableViews() {
+        course.setEnabled(true);
+        branch.setEnabled(true);
+        year.setEnabled(true);
+        section.setEnabled(true);
+        univ_roll_no.setEnabled(true);
+        contact_no.setEnabled(true);
+        father_name.setEnabled(true);
+        mother_name.setEnabled(true);
+        address.setEnabled(true);
+        display.setEnabled(true);
+        save.setVisibility(View.VISIBLE);
+    }
+
 
     private void initialize() {
         context = getActivity().getApplicationContext();
@@ -130,32 +193,8 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
         TOKEN = PreferenceManager.getDefaultSharedPreferences(getContext()).getString("com.hackncs.click.TOKEN","0");
     }
 
-    @Override
-    public void onClick(View view) {
 
-        Log.d("asd", "onclick");
-        if (view.getId() == R.id.bEdit) {
-            enableViews();
-        }
-        else if (view.getId() == R.id.bSave) {
-            Log.d("llll", "a");
-            uploadChanges();
-        }
-    }
 
-    private void enableViews() {
-        course.setEnabled(true);
-        branch.setEnabled(true);
-        year.setEnabled(true);
-        section.setEnabled(true);
-        univ_roll_no.setEnabled(true);
-        contact_no.setEnabled(true);
-        father_name.setEnabled(true);
-        mother_name.setEnabled(true);
-        address.setEnabled(true);
-        display.setEnabled(true);
-        save.setVisibility(View.VISIBLE);
-    }
 
     private void uploadChanges() {
         String URL = Endpoints.student_profile_data;
@@ -201,4 +240,6 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         requestQueue.add(stringRequest);
     }
+
+
 }

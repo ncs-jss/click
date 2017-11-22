@@ -8,8 +8,8 @@
         android:visible="true"
         android:enabled="true"
         android:checkable="true" />
-        <!--"
-        android:actionProviderClass="android.widget.ShareActionProvider"-->
+    <!--"
+    android:actionProviderClass="android.widget.ShareActionProvider"-->
 
 
     <item
@@ -19,9 +19,9 @@
         android:enabled="true"
         app:showAsAction="ifRoom"
         android:checkable="true" />
-        <!--
+    <!--
 
-        android:actionProviderClass="android.widget.ShareActionProvider"-->
+    android:actionProviderClass="android.widget.ShareActionProvider"-->
 
 
 </menu>

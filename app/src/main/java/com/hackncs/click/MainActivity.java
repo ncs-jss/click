@@ -5,7 +5,9 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
@@ -30,14 +32,9 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, FragmentNotice.OnFragmentInteractionListener,
         FragmentPlacement.OnFragmentInteractionListener {
 
-    /*private static final int REQUEST_EXTERNAL_STORAGE = 1;
-
-    private static String[] PERMISSIONS_STORAGE = {
-            Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
-    };*/
-
+    FloatingActionButton fab;
     private ShareActionProvider mShareActionProvider;
+   static Menu menu;
 
 
     @Override
@@ -45,10 +42,27 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         Iconify.with(new FontAwesomeModule());
-//        setSupportActionBar(toolbar);
-//        verifyStoragePermissions(this);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        final NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        assert navigationView != null;
+
+        View headerView =  navigationView.getHeaderView(0);
+        TextView name = (TextView)headerView.findViewById(R.id.tvFirstName);
+        name.setText("Welcome, "+PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.FIRST_NAME","User"));
+
+        navigationView.setNavigationItemSelectedListener(this);
+
         if (savedInstanceState == null) {
             Fragment fragment = null;
             Class fragmentClass = null;
@@ -61,24 +75,37 @@ public class MainActivity extends AppCompatActivity
 
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+            MenuItem item=navigationView.getMenu().getItem(0);
+            item.setChecked(true);
+            getSupportActionBar().setTitle(item.getTitle());
         }
 
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
 
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        assert navigationView != null;
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
-        View headerView =  navigationView.getHeaderView(0);
-        TextView name = (TextView)headerView.findViewById(R.id.tvFirstName);
-        name.setText("Welcome, "+PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.FIRST_NAME","User"));
+                try {
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.flContent,CreateNotice.class.newInstance()).commit();
+                    MenuItem item=navigationView.getMenu().getItem(7);
+                    item.setChecked(true);
+                    showMenu(true);
+                    getSupportActionBar().setTitle(item.getTitle());
 
-        navigationView.setNavigationItemSelectedListener(this);
+                    fab.hide();
+                } catch (InstantiationException e) {
+                    e.printStackTrace();
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        });
 
         Menu menu = navigationView.getMenu();
         MenuItem nav_notices = menu.findItem(R.id.nav_notices);
@@ -151,7 +178,9 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.profile_menu, menu);
+        this.menu=menu;
+        this.menu.getItem(0).setVisible(false);
         return true;
     }
 
@@ -169,61 +198,58 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        ///item.setChecked(true);
         int id = item.getItemId();
         Fragment fragment = null;
         Class fragmentClass = null;
         fragmentClass = FragmentNotice.class;
-        /*try {
-            Field field = fragmentClass.getDeclaredField("Category");
-            field.setAccessible(true);
-            switch(id){
-                case R.id.nav_notices: field.set(fragmentClass,"misc");
-                break;
-                case R.id.nav_events: field.set(fragmentClass,"events");
-                break;
-                case R.id.nav_download: field.set(fragmentClass,"downloads");
-                break;
-                case R.id.nav_placement: field.set(fragmentClass,"tnp");
-                break;
-                case R.id.nav_administration: field.set(fragmentClass,"administration");
-                break;
-                case R.id.nav_academics: field.set(fragmentClass,"academics");
-                break;
-
-            }
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }*/
 
         if (id == R.id.nav_notices) {
             fragmentClass = FragmentNotice.class;
+            fab.show();
+            showMenu(false);
         } else if (id == R.id.nav_placement) {
             fragmentClass = FragmentPlacement.class;
+            fab.show();
+            showMenu(false);
         } else if (id == R.id.nav_administration) {
             fragmentClass = FragmentAdministration.class;
+            fab.show();
+            showMenu(false);
         } else if (id == R.id.nav_academics) {
             fragmentClass = FragmentAcademics.class;
+            fab.show();
+            showMenu(false);
         } else if (id == R.id.nav_events) {
             fragmentClass = FragmentEvents.class;
+            fab.show();
         } else if (id == R.id.nav_download) {
             fragmentClass = Downloads.class;
+            fab.show();
+            showMenu(false);
         } else if (id == R.id.nav_starred) {
             fragmentClass = FragmentStarredNotices.class;
+            fab.show();
+            showMenu(false);
         } else if (id == R.id.nav_myprofile) {
             if (PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.GROUP","").equals("student"))
                 fragmentClass = FragmentStudentProfile.class;
             else if (PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.GROUP","").equals("faculty"))
                 fragmentClass = FragmentFacultyProfile.class;
+
+            fab.show();
+            showMenu(true);
         }else if (id == R.id.nav_logout) {
             PreferenceManager.getDefaultSharedPreferences(getBaseContext()).edit().clear().apply();
             new OfflineDatabaseHandler(this).flush();
             Intent intent = new Intent(MainActivity.this, Splash.class);
             startActivity(intent);
             fragmentClass = FragmentNotice.class;
-        } else if (id == R.id.nav_create)
+        } else if (id == R.id.nav_create) {
             fragmentClass = CreateNotice.class;
+            fab.hide();
+            showMenu(true);
+        }
         try {
             fragment = (Fragment) fragmentClass.newInstance();
            // Field field = fragment.
@@ -232,38 +258,23 @@ public class MainActivity extends AppCompatActivity
         }
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
-
+        item.setChecked(true);
+        // Set action bar title
+        //setTitle(item.getTitle());
+        getSupportActionBar().setTitle(item.getTitle());
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-
-
-    /**
-     * Checks if the app has permission to write to device storage
-     *
-     * If the app does not has permission then the user will be prompted to grant permissions
-     *
-     * @param //activity
-     */
-    /*public static void verifyStoragePermissions(Activity activity) {
-        // Check if we have write permission
-        int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-
-        if (permission != PackageManager.PERMISSION_GRANTED) {
-            // We don't have permission so prompt the user
-            ActivityCompat.requestPermissions(
-                    activity,
-                    PERMISSIONS_STORAGE,
-                    REQUEST_EXTERNAL_STORAGE
-            );
-        }
-    }
-*/
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    private void showMenu(boolean show)
+    {
+        this.menu.getItem(0).setVisible(show);
     }
 }
