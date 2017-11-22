@@ -51,6 +51,7 @@
 
                 <data
                     android:host="infoconnect.jssaten.ac.in"
+                    android:pathPrefix="/notice/"
                     android:scheme="http" />
             </intent-filter>
         </activity>
