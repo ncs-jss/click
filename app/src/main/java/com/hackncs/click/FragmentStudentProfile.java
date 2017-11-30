@@ -228,7 +228,7 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
                 params.put("father_name",father_name.getText().toString());
                 params.put("mother_name",mother_name.getText().toString());
                 params.put("address",address.getText().toString());
-                params.put("display_to_others",String.valueOf(display.isChecked()));
+                params.put("display_to_others",String.valueOf(false));
                 Log.d("llll","insinde getParams");
                 return params;
             }

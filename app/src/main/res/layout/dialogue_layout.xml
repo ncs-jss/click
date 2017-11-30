@@ -9,7 +9,7 @@
         android:id="@+id/cb1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Entire College"/>
+        android:text="Students"/>
     <CheckBox
         android:id="@+id/cb2"
         android:layout_width="match_parent"

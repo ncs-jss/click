@@ -3,19 +3,25 @@ package com.hackncs.click;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
 import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
+import java.io.IOException;
+import java.net.HttpURLConnection;
 import java.util.Calendar;
 
 import android.icu.text.SimpleDateFormat;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -51,6 +57,7 @@ import com.joanzapata.iconify.fonts.FontAwesomeIcons;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import in.nashapp.androidsummernote.Summernote;
@@ -76,12 +83,14 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
     static String URL = null;
     private String FIRST_NAME, USER_NAME, GROUP, USER_ID, FACULTY_ID;
     private View view;
+    File file;
     static Summernote summernote;
     Menu menu;
+    String filePath="";
     private final int PICK_FILE_REQUEST=1;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_createnotice, container, false);
 
         menu=MainActivity.menu;
@@ -112,7 +121,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
                         USER_NAME = sp.getString("com.hackncs.click.USERNAME", "");
                         FIRST_NAME = sp.getString("com.hackncs.click.FIRST_NAME", "");
                         USER_ID = sp.getString("com.hackncs.click.USER_ID", "");
-                        FACULTY_ID = sp.getString("com.hackncs.click.FACULTY_ID", "");
+                        FACULTY_ID = sp.getString("com.hackncs.click.PROFILE_ID", "");
 
                         coursebranchyear = cSpinselection2 + "-" + cSpinselection3 + "-" + cSpinselection4 + "-" + cSpinselection5;
                         Toast.makeText(context, "CourseBranchYear="+coursebranchyear, Toast.LENGTH_SHORT).show();
@@ -138,9 +147,10 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
                             protected Map<String, String> getParams() {
                                 Map<String, String> params = new HashMap<String, String>();
                                 params.put("faculty", FACULTY_ID);
+                                params.put("title",cTitle);
                                 params.put("description", cDescription);
-                                params.put("file_attached", "");
-                                params.put("category", cSpinselection1);
+                                params.put("file_attached","");
+                                params.put("category", cSpinselection1.toLowerCase());
                                 params.put("visible_for_student", cb1_value.toString());
                                 params.put("visible_for_hod", cb2_value.toString());
                                 params.put("visible_for_faculty", cb3_value.toString());
@@ -149,6 +159,20 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
                                 params.put("course_branch_year", coursebranchyear);
                                 params.put("created", getTime());
                                 params.put("modified", getTime());
+
+                                Log.i("faculty", FACULTY_ID+"id");
+                                Log.i("title",cTitle);
+                                Log.i("description", cDescription);
+                                //Log.i("file_attached",null);
+                                Log.i("category", cSpinselection1.toLowerCase());
+                                Log.i("visible_for_student", cb1_value.toString());
+                                Log.i("visible_for_hod", cb2_value.toString());
+                                Log.i("visible_for_faculty", cb3_value.toString());
+                                Log.i("visible_for_managemant", cb4_value.toString());
+                                Log.i("visible_for_others", cb5_value.toString());
+                                Log.i("course_branch_year", coursebranchyear);
+                                Log.i("created", getTime());
+                                Log.i("modified", getTime());
                                 return params;
                             }
 
@@ -157,10 +181,13 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
                                 Map<String, String> params = new HashMap<>();
                                 params.put("Authorization", "token " + TOKEN);
                                 params.put("username", USER_NAME);
-                                return super.getHeaders();
+                                return params;
                             }
                         };
-                        queue.add(postrequest);
+//                        queue.add(postrequest);
+
+                        new UploadFile().execute();
+
                     }
 
 
@@ -214,80 +241,6 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
             }
         });
 
-        /*create_bt = (Button) view.findViewById(R.id.create_button);
-        create_bt.setEnabled(false);
-        create_bt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if(checkDetails()) {
-                    Log.d("------>", summernote.getText());
-
-                    notice_title = (EditText) getActivity().findViewById(R.id.etNoticeTitle);
-                    cTitle = notice_title.getText().toString();
-                    cDescription = summernote.getText();
-
-
-                    SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-                    TOKEN = sp.getString("com.hackncs.click.TOKEN", "");
-                    USER_NAME = sp.getString("com.hackncs.click.USERNAME", "");
-                    FIRST_NAME = sp.getString("com.hackncs.click.FIRST_NAME", "");
-                    USER_ID = sp.getString("com.hackncs.click.USER_ID", "");
-                    FACULTY_ID = sp.getString("com.hackncs.click.FACULTY_ID", "");
-
-                    coursebranchyear = cSpinselection2 + "-" + cSpinselection3 + "-" + cSpinselection4 + "-" + cSpinselection5;
-                    Toast.makeText(context, "CourseBranchYear="+coursebranchyear, Toast.LENGTH_SHORT).show();
-
-                    //Networking
-                    URL = "http://210.212.85.155/api/notices/notice_create/";
-                    queue = Volley.newRequestQueue(getActivity().getApplicationContext());
-                    postrequest = new StringRequest(Request.Method.POST, URL,
-                            new Response.Listener<String>() {
-                                @Override
-                                public void onResponse(String response) {
-                                    Toast.makeText(context, response, Toast.LENGTH_SHORT).show();
-                                }
-                            },
-                            new Response.ErrorListener() {
-                                @Override
-                                public void onErrorResponse(VolleyError error) {
-                                    Toast.makeText(context,"Error "+error.getMessage(), Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                    ) {
-                        @Override
-                        protected Map<String, String> getParams() {
-                            Map<String, String> params = new HashMap<String, String>();
-                            params.put("faculty", FACULTY_ID);
-                            params.put("description", cDescription);
-                            params.put("file_attached", "");
-                            params.put("category", cSpinselection1);
-                            params.put("visible_for_student", cb1_value.toString());
-                            params.put("visible_for_hod", cb2_value.toString());
-                            params.put("visible_for_faculty", cb3_value.toString());
-                            params.put("visible_for_managemant", cb4_value.toString());
-                            params.put("visible_for_others", cb5_value.toString());
-                            params.put("course_branch_year", coursebranchyear);
-                            params.put("created", getTime());
-                            params.put("modified", getTime());
-                            return params;
-                        }
-
-                        @Override
-                        public Map<String, String> getHeaders() throws AuthFailureError {
-                            Map<String, String> params = new HashMap<>();
-                            params.put("Authorization", "token " + TOKEN);
-                            params.put("username", USER_NAME);
-                            return super.getHeaders();
-                        }
-                    };
-                    queue.add(postrequest);
-                }
-
-
-            }
-        });*/
-
         b1 = (CheckBox) view.findViewById(R.id.cb1);
         b2 = (CheckBox) view.findViewById(R.id.cb2);
         b3 = (CheckBox) view.findViewById(R.id.cb3);
@@ -298,12 +251,6 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         b3.setOnCheckedChangeListener(this);
         b4.setOnCheckedChangeListener(this);
         b5.setOnCheckedChangeListener(this);
-
-
-
-
-
-
         return view;
 
     }
@@ -319,7 +266,8 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
             Uri uri = intent.getData();
 
             Log.i("Path", uri.getPath());
-            File file = new File(uri.getPath());
+            filePath=uri.getPath();
+            file = new File(uri.getPath());
 
 
         }
@@ -337,26 +285,25 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
                 String.valueOf(cb4_value) + String.valueOf(cb5_value));
        
 
-        if (cb1_value||cb2_value||cb3_value||cb4_value||cb5_value)
-        {
-            int spinner_category_length=cSpinselection1.length();
-            int spinner_course_length=cSpinselection2.length();
-            int spinner_branch_length=cSpinselection3.length();
-            int spinner_year_length=cSpinselection4.length();
-            int spinner_section_length=cSpinselection5.length();
-            if(spinner_category_length>0&&spinner_branch_length>0&&spinner_course_length>0&&spinner_year_length>0&&spinner_section_length>0) {
+            if (cb1_value || cb2_value || cb3_value || cb4_value || cb5_value) {
+                int spinner_category_length = cSpinselection1.length();
+                int spinner_course_length = cSpinselection2.length();
+                int spinner_branch_length = cSpinselection3.length();
+                int spinner_year_length = cSpinselection4.length();
+                int spinner_section_length = cSpinselection5.length();
+                if (spinner_category_length > 0 && spinner_branch_length > 0 && spinner_course_length > 0 && spinner_year_length > 0 && spinner_section_length > 0) {
 
-                return true;
-            }
-            else {
-                Toast.makeText(context, "Please select the required Details", Toast.LENGTH_SHORT).show();
+                    return true;
+                } else {
+                    Toast.makeText(context, "Please select the required Details", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+            } else {
+                Toast.makeText(context, "Please check the boxes", Toast.LENGTH_SHORT).show();
                 return false;
             }
-        }
-        else {
-            Toast.makeText(context, "Please check the boxes", Toast.LENGTH_SHORT).show();
-            return false;
-        }
+
+
 
     }
 
@@ -566,5 +513,66 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
 
 
     }
+
+    public class UploadFile extends AsyncTask<Void, Void, Void> {
+        private final ProgressDialog dialog = new ProgressDialog(context);
+        // can use UI thread here
+        protected void onPreExecute() {
+            this.dialog.setMessage("Creating...");
+            this.dialog.setCancelable(false);
+            //this.dialog.show();
+        }
+        @Override
+        protected Void doInBackground(Void... arg0) {
+            // TODO Auto-generated method stub
+
+            String charset = "UTF-8";
+
+            try {
+                MultipartUtility multipart = new MultipartUtility(URL, charset);
+
+                multipart.addHeaderField("Authorization", "token " + TOKEN);
+                multipart.addHeaderField("username", USER_NAME);
+
+                multipart.addFormField("faculty", FACULTY_ID);
+                multipart.addFormField("title",cTitle);
+                multipart.addFormField("description", cDescription);
+                multipart.addFormField("category", cSpinselection1.toLowerCase());
+                multipart.addFormField("visible_for_student", cb1_value.toString());
+                multipart.addFormField("visible_for_hod", cb2_value.toString());
+                multipart.addFormField("visible_for_faculty", cb3_value.toString());
+                multipart.addFormField("visible_for_managemant", cb4_value.toString());
+                multipart.addFormField("visible_for_others", cb5_value.toString());
+                multipart.addFormField("course_branch_year", coursebranchyear);
+                multipart.addFormField("created", getTime());
+                multipart.addFormField("modified", getTime());
+
+
+                multipart.addFilePart("file_attached", file);
+
+
+                List<String> response = multipart.finish();
+
+
+
+                for (String line : response) {
+                    Log.i("Server Replied",line);
+                }
+            } catch (IOException ex) {
+//                Toast.makeText(context,"Error:"+ex.getMessage(),Toast.LENGTH_SHORT);
+                Log.i("Error",ex.getMessage());
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+
+            if (this.dialog.isShowing()) {
+                this.dialog.dismiss();
+            }
+        }
+    }
+
 
 }
