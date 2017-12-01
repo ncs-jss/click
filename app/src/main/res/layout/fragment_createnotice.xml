@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:hint="Title"/>
+        android:hint="@string/title_hint"/>
 
     <TextView
         android:id="@+id/description"
@@ -26,8 +26,8 @@
         android:layout_marginTop="10dp"
         android:textStyle="bold"
         android:layout_below="@+id/etNoticeTitle"
-        android:textSize="15dp"
-        android:text="Description"/>
+        android:textSize="15sp"
+        android:text="@string/description"/>
 
     <in.nashapp.androidsummernote.Summernote
         android:id="@+id/summernote"
@@ -42,7 +42,7 @@
         android:textSize="15sp"
         android:layout_below="@+id/summernote"
         android:textStyle="bold"
-        android:text="Category"/>
+        android:text="@string/category"/>
 
     <Spinner
         android:id="@+id/spinner_category"
@@ -55,16 +55,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/spinner_category"
-        android:textOff="UPLOAD FOR"
-        android:textOn="UPLOAD FOR"/>
+        android:textOff="@string/toggle_text"
+        android:textOn="@string/toggle_text"/>
 
         <Button
             android:id="@+id/choose_button"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_below="@+id/spinner_category"
-            android:text="ATTACH"/>
+            android:text="@string/attach"/>
 <LinearLayout
 
     android:id="@+id/upload_for"

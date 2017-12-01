@@ -9,48 +9,26 @@
         android:id="@+id/cb1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Students"/>
+        android:text="@string/Entire_College"/>
     <CheckBox
         android:id="@+id/cb2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="HOD"/>
+        android:text="@string/hod"/>
     <CheckBox
         android:id="@+id/cb3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Faculty"/>
+        android:text="@string/faculty"/>
     <CheckBox
         android:id="@+id/cb4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Management"/>
+        android:text="@string/management"/>
     <CheckBox
         android:id="@+id/cb5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Others"/>
-   <!-- <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2">
-
-       <Button
-            android:id="@+id/b_cancel"
-            android:layout_weight="1"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Cancel"/>
-        <Button
-            android:id="@+id/b_ok"
-            android:layout_weight="1"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Ok"/>
-
-
-    </LinearLayout>-->
-
+        android:text="@string/others"/>
 
 </LinearLayout>

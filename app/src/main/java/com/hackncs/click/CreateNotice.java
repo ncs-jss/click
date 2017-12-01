@@ -14,6 +14,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -46,6 +47,7 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkResponse;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
@@ -54,6 +56,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.joanzapata.iconify.IconDrawable;
 import com.joanzapata.iconify.fonts.FontAwesomeIcons;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -69,24 +74,23 @@ import static com.hackncs.click.R.id.spinner_course;
 
 public class CreateNotice extends Fragment implements View.OnClickListener, AdapterView.OnItemSelectedListener , CheckBox.OnCheckedChangeListener {
 
-    private ArrayList mSelectedItem;
-    private Boolean cb1_value, cb2_value, cb3_value, cb4_value, cb5_value;
-    private Button create_bt, ok_button, cancel_button, oknxt_button, cancelnxt_button;
+    Spinner spinner2,spinner3,spinner4,spinner5;
+    private boolean cb1_value, cb2_value, cb3_value, cb4_value, cb5_value;
+    boolean vis_for_students,vis_for_others,vis_for_hod,vis_for_management,vis_for_faculty;
     private CheckBox b1, b2, b3, b4, b5;
     private Context context;
-    //private Dialog view, view;
     private EditText notice_title;
     private RequestQueue queue;
-    private StringRequest postrequest;
+    private VolleyMultipartRequest postrequest;
     private String cDescription, cTitle, cSpinselection1, cSpinselection2, cSpinselection3, cSpinselection4, cSpinselection5, coursebranchyear;
     private String TOKEN = "token ";
     static String URL = null;
     private String FIRST_NAME, USER_NAME, GROUP, USER_ID, FACULTY_ID;
     private View view;
-    File file;
     static Summernote summernote;
     Menu menu;
-    String filePath="";
+    String fileName="";
+    byte byteArray[];
     private final int PICK_FILE_REQUEST=1;
 
     @Override
@@ -95,7 +99,11 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
 
         menu=MainActivity.menu;
         context = getActivity().getApplicationContext();
-
+        spinner2 = (Spinner) view.findViewById(R.id.spinner_course);
+        spinner3 = (Spinner) view.findViewById(R.id.spinner_branch);
+        spinner4 = (Spinner) view.findViewById(R.id.spinner_year);
+        spinner5 = (Spinner) view.findViewById(R.id.spinner_section);
+        spinner_enable(false);
         menu.getItem(0).setIcon( new IconDrawable(context, FontAwesomeIcons.fa_save)
                 .colorRes(R.color.white)
                 .actionBarSize());
@@ -122,60 +130,64 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
                         FIRST_NAME = sp.getString("com.hackncs.click.FIRST_NAME", "");
                         USER_ID = sp.getString("com.hackncs.click.USER_ID", "");
                         FACULTY_ID = sp.getString("com.hackncs.click.PROFILE_ID", "");
+                        vis_for_students=cb1_value;
+                        vis_for_hod=cb1_value||cb2_value;
+                        vis_for_faculty=cb1_value||cb3_value;
+                        vis_for_management=cb1_value||cb4_value;
+                        vis_for_others=cb1_value||cb5_value;
 
                         coursebranchyear = cSpinselection2 + "-" + cSpinselection3 + "-" + cSpinselection4 + "-" + cSpinselection5;
                         Toast.makeText(context, "CourseBranchYear="+coursebranchyear, Toast.LENGTH_SHORT).show();
 
-                        //Networking
                         URL = Endpoints.create_notice;
                         queue = Volley.newRequestQueue(getActivity().getApplicationContext());
-                        postrequest = new StringRequest(Request.Method.POST, URL,
-                                new Response.Listener<String>() {
+                        postrequest = new VolleyMultipartRequest(Request.Method.POST, URL,
+                                new Response.Listener<NetworkResponse>() {
                                     @Override
-                                    public void onResponse(String response) {
-                                        Toast.makeText(context, response, Toast.LENGTH_SHORT).show();
+                                    public void onResponse(NetworkResponse response) {
+                                        try {
+                                            JSONObject obj = new JSONObject(new String(response.data));
+                                            Toast.makeText(context, obj.getString("success"), Toast.LENGTH_SHORT).show();
+                                        } catch (JSONException e) {
+                                            e.printStackTrace();
+                                        }
                                     }
                                 },
                                 new Response.ErrorListener() {
                                     @Override
                                     public void onErrorResponse(VolleyError error) {
-                                        Toast.makeText(context,"Error "+error.getMessage(), Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
                                     }
-                                }
-                        ) {
+                                }) {
                             @Override
-                            protected Map<String, String> getParams() {
+                            protected Map<String, String> getParams() throws AuthFailureError {
                                 Map<String, String> params = new HashMap<String, String>();
                                 params.put("faculty", FACULTY_ID);
                                 params.put("title",cTitle);
                                 params.put("description", cDescription);
                                 params.put("file_attached","");
                                 params.put("category", cSpinselection1.toLowerCase());
-                                params.put("visible_for_student", cb1_value.toString());
-                                params.put("visible_for_hod", cb2_value.toString());
-                                params.put("visible_for_faculty", cb3_value.toString());
-                                params.put("visible_for_managemant", cb4_value.toString());
-                                params.put("visible_for_others", cb5_value.toString());
+                                params.put("visible_for_student", String.valueOf(vis_for_students));
+                                params.put("visible_for_hod", String.valueOf(vis_for_hod));
+                                params.put("visible_for_faculty", String.valueOf(vis_for_faculty));
+                                params.put("visible_for_managemant", String.valueOf(vis_for_management));
+                                params.put("visible_for_others", String.valueOf(vis_for_others));
                                 params.put("course_branch_year", coursebranchyear);
                                 params.put("created", getTime());
                                 params.put("modified", getTime());
-
-                                Log.i("faculty", FACULTY_ID+"id");
-                                Log.i("title",cTitle);
-                                Log.i("description", cDescription);
-                                //Log.i("file_attached",null);
-                                Log.i("category", cSpinselection1.toLowerCase());
-                                Log.i("visible_for_student", cb1_value.toString());
-                                Log.i("visible_for_hod", cb2_value.toString());
-                                Log.i("visible_for_faculty", cb3_value.toString());
-                                Log.i("visible_for_managemant", cb4_value.toString());
-                                Log.i("visible_for_others", cb5_value.toString());
-                                Log.i("course_branch_year", coursebranchyear);
-                                Log.i("created", getTime());
-                                Log.i("modified", getTime());
                                 return params;
                             }
+                            @Override
+                            protected Map<String, DataPart> getByteData() {
+                                Map<String, DataPart> params = new HashMap<>();
 
+                                params.put("file_attached", new DataPart(fileName, byteArray));
+                                if(byteArray==null)
+                                {
+                                    return null;
+                                }
+                                return params;
+                            }
                             @Override
                             public Map<String, String> getHeaders() throws AuthFailureError {
                                 Map<String, String> params = new HashMap<>();
@@ -184,13 +196,9 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
                                 return params;
                             }
                         };
-//                        queue.add(postrequest);
-
-                        new UploadFile().execute();
-
+                        //adding the request to volley
+                        queue.add(postrequest);;
                     }
-
-
                 }
                 return false;
             }
@@ -266,8 +274,24 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
             Uri uri = intent.getData();
 
             Log.i("Path", uri.getPath());
-            filePath=uri.getPath();
-            file = new File(uri.getPath());
+            String filePath=uri.getPath();
+            File file = new File(filePath);
+            fileName=filePath.substring(filePath.lastIndexOf('/')+1);
+            if(file.isFile())
+            {
+                byteArray=new byte[(int)file.length()];
+                FileInputStream inputStream= null;
+                try {
+                    inputStream = new FileInputStream(file);
+
+                    inputStream.read(byteArray);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+                 catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
 
 
         }
@@ -285,7 +309,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
                 String.valueOf(cb4_value) + String.valueOf(cb5_value));
        
 
-            if (cb1_value || cb2_value || cb3_value || cb4_value || cb5_value) {
+            if (cb1_value) {
                 int spinner_category_length = cSpinselection1.length();
                 int spinner_course_length = cSpinselection2.length();
                 int spinner_branch_length = cSpinselection3.length();
@@ -302,9 +326,6 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
                 Toast.makeText(context, "Please check the boxes", Toast.LENGTH_SHORT).show();
                 return false;
             }
-
-
-
     }
 
     @Override
@@ -314,18 +335,14 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         {
             attach();
         }
-
-
     }
 
-
-    public String getTime() {
+    public String getTime()
+    {
         Calendar c = Calendar.getInstance();
-
         String formattedDate = String.format("%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",c.getTime());
         Log.d("Current time =>", formattedDate);
         return formattedDate;
-
     }
 
     @Override
@@ -355,7 +372,6 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
             case R.id.spinner_section:
                 cSpinselection5 = tvSpinselection.getText().toString();
                 Log.d("----->", cSpinselection5);
-                //create_bt.setEnabled(true);
                 break;
 
         }
@@ -367,7 +383,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
     }
     public void defineSpinner()
     {
-        Spinner spinner2 = (Spinner) view.findViewById(R.id.spinner_course);
+
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(context,
                 R.array.select_course, R.layout.spinner_item);
         adapter2.setDropDownViewResource(R.layout.spinner_item);
@@ -390,15 +406,11 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
             resId=R.array.select_branch_Mtech;
 
 
-        //adapter3.notifyDataSetChanged();
-        Spinner spinner3 = (Spinner) view.findViewById(R.id.spinner_branch);
         ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(context,
                 resId, R.layout.spinner_item);
         adapter3.setDropDownViewResource(R.layout.spinner_item);
         spinner3.setAdapter(adapter3);
         spinner3.setOnItemSelectedListener(this);
-        //spinner3.setEnabled(false);
-
     }
 
     public void defineAdapter4(String course)
@@ -412,16 +424,12 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
             resId=R.array.select_year_MCA;
 
 
-        Spinner spinner4 = (Spinner) view.findViewById(R.id.spinner_year);
-
-        //adapter3.notifyDataSetChanged();
         ArrayAdapter<CharSequence> adapter4 = ArrayAdapter.createFromResource(context,
                 resId, R.layout.spinner_item);
 
         adapter4.setDropDownViewResource(R.layout.spinner_item);
         spinner4.setAdapter(adapter4);
         spinner4.setOnItemSelectedListener(this);
-        //spinner3.setEnabled(false);
 
     }
 
@@ -448,29 +456,30 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
                 resId = R.array.select_section_Others;
 
 
-        Spinner spinner5 = (Spinner) view.findViewById(R.id.spinner_section);
+
        ArrayAdapter<CharSequence> adapter5 = ArrayAdapter.createFromResource(context,
                 resId, R.layout.spinner_item);
-        //adapter3.notifyDataSetChanged();
-
-
         adapter5.setDropDownViewResource(R.layout.spinner_item);
         spinner5.setAdapter(adapter5);
         spinner5.setOnItemSelectedListener(this);
-        //spinner3.setEnabled(false);
-
     }
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        if(b1.isChecked())
+        {
+            spinner_enable(true);
+        }
+        else
+        {
+            spinner_enable(false);
+        }
         if(isChecked)
         {
-            //create_bt.setEnabled(true);
             menu.getItem(0).setEnabled(true);
         }
         else if(!(b1.isChecked()||b2.isChecked()||b3.isChecked()||b4.isChecked()||b5.isChecked()))
         {
-            //create_bt.setEnabled(false);
             menu.getItem(0).setEnabled(false);
         }
     }
@@ -478,101 +487,19 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
     public void attach()
     {
         Intent intent = new Intent();
-// Show only images, no videos or anything else
         intent.setType("*/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-// Always show the chooser (if there are multiple options available)
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_FILE_REQUEST);
+        startActivityForResult(Intent.createChooser(intent, "Select File"), PICK_FILE_REQUEST);
     }
-    public void readFile(File file)
+
+    private void spinner_enable(boolean set)
     {
-        FileReader fr=null;
-        BufferedReader br=null;
-
-        try {
-
-
-            fr = new FileReader(file);
-            br=new BufferedReader(fr);
-
-            String data="";
-            String c;
-            while ((c = br.readLine()) != null) {
-
-                data+=c;
-
-            }
-            Log.i("Data=",data);
-            br.close();
-            fr.close();
-        }catch (Exception e)
-        {
-            Log.i("Error=",e.getMessage());
-
-        }
-
-
+        spinner2.setEnabled(set);
+        spinner3.setEnabled(set);
+        spinner4.setEnabled(set);
+        spinner5.setEnabled(set);
     }
 
-    public class UploadFile extends AsyncTask<Void, Void, Void> {
-        private final ProgressDialog dialog = new ProgressDialog(context);
-        // can use UI thread here
-        protected void onPreExecute() {
-            this.dialog.setMessage("Creating...");
-            this.dialog.setCancelable(false);
-            //this.dialog.show();
-        }
-        @Override
-        protected Void doInBackground(Void... arg0) {
-            // TODO Auto-generated method stub
-
-            String charset = "UTF-8";
-
-            try {
-                MultipartUtility multipart = new MultipartUtility(URL, charset);
-
-                multipart.addHeaderField("Authorization", "token " + TOKEN);
-                multipart.addHeaderField("username", USER_NAME);
-
-                multipart.addFormField("faculty", FACULTY_ID);
-                multipart.addFormField("title",cTitle);
-                multipart.addFormField("description", cDescription);
-                multipart.addFormField("category", cSpinselection1.toLowerCase());
-                multipart.addFormField("visible_for_student", cb1_value.toString());
-                multipart.addFormField("visible_for_hod", cb2_value.toString());
-                multipart.addFormField("visible_for_faculty", cb3_value.toString());
-                multipart.addFormField("visible_for_managemant", cb4_value.toString());
-                multipart.addFormField("visible_for_others", cb5_value.toString());
-                multipart.addFormField("course_branch_year", coursebranchyear);
-                multipart.addFormField("created", getTime());
-                multipart.addFormField("modified", getTime());
-
-
-                multipart.addFilePart("file_attached", file);
-
-
-                List<String> response = multipart.finish();
-
-
-
-                for (String line : response) {
-                    Log.i("Server Replied",line);
-                }
-            } catch (IOException ex) {
-//                Toast.makeText(context,"Error:"+ex.getMessage(),Toast.LENGTH_SHORT);
-                Log.i("Error",ex.getMessage());
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-
-            if (this.dialog.isShowing()) {
-                this.dialog.dismiss();
-            }
-        }
-    }
 
 
 }

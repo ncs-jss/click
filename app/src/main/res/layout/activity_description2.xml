@@ -9,19 +9,19 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textColor="#000"
         android:gravity="center"
-        android:text="This is the notice title"
+        android:text="@string/title"
         android:id="@+id/nTitle"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="10dp"
+        android:textSize="12sp"
         android:gravity="center"
         android:textColor="#000"
-        android:text="Posted by: Some Faculty"
+        android:text="@string/postedBy"
         android:layout_below="@+id/nTitle"
         android:id="@+id/nFaculty"/>
 
