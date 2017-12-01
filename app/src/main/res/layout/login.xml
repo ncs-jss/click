@@ -9,8 +9,7 @@
         android:src="@drawable/logo"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:layout_marginTop="200dp"
-        android:contentDescription="@string/logo"
+        android:layout_marginTop="125dp"
         android:layout_gravity="center_horizontal"/>
 
     <EditText
@@ -19,7 +18,7 @@
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:background="#1c1140"
         android:hint="@string/usernmae"
         android:padding="10dp"
