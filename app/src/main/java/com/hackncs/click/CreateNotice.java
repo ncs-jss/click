@@ -197,7 +197,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
                             }
                         };
                         //adding the request to volley
-                        queue.add(postrequest);;
+                        queue.add(postrequest);
                     }
                 }
                 return false;
