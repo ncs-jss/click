@@ -179,7 +179,7 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
         mother_name = (EditText)view.findViewById(R.id.etMotherName);
         address = (EditText)view.findViewById(R.id.etAddress);
         display = (CheckBox)view.findViewById(R.id.cbDisplay);
-        edit = (Button)view.findViewById(R.id.bEdit);
+//        edit = (Button)view.findViewById(R.id.bEdit);
         save = (Button)view.findViewById(R.id.bSave);
         edit.setOnClickListener(this);
         save.setOnClickListener(this);
@@ -229,7 +229,6 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
                 params.put("mother_name",mother_name.getText().toString());
                 params.put("address",address.getText().toString());
                 params.put("display_to_others",String.valueOf(false));
-                Log.d("llll","insinde getParams");
                 return params;
             }
             @Override

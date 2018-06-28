@@ -199,7 +199,6 @@ public class VolleyMultipartRequest extends Request<NetworkResponse> {
         }
 
         DataPart(String name, byte[] data) {
-            fileName = name;
             content = data;
         }
 

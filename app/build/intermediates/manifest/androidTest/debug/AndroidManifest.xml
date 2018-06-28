@@ -3,7 +3,7 @@
     package="com.hackncs.click.test" >
 
     <uses-sdk
-        android:minSdkVersion="14"
+        android:minSdkVersion="16"
         android:targetSdkVersion="24" />
 
     <instrumentation

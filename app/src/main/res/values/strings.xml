@@ -61,7 +61,7 @@
     </string-array>
 
     <string-array name="select_course">
-        <item>AllCourses</item>
+        <item>All Courses</item>
         <item>BTech</item>
         <item>MTech</item>
         <item>MCA</item>

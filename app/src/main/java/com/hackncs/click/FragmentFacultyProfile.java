@@ -4,6 +4,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
+
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,7 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
+
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -39,9 +41,9 @@ public class FragmentFacultyProfile extends Fragment implements View.OnClickList
 
     View view;
     Context context;
-    EditText designation, department, contact_no, address, alternate_email;
-    CheckBox display;
-    Button edit, save;
+    TextInputEditText designation, department, contact_no, address, alternate_email;
+//    CheckBox display;
+//    Button edit, save;
     String PROFILE_ID, TOKEN;
     Menu menu;
     @Nullable
@@ -118,7 +120,7 @@ public class FragmentFacultyProfile extends Fragment implements View.OnClickList
         contact_no.setText(jsonObject.getString("contact_no"));
         address.setText(jsonObject.getString("address"));
         alternate_email.setText(jsonObject.getString("alternate_email"));
-        display.setChecked(jsonObject.getBoolean("display_to_others"));
+//        display.setChecked(jsonObject.getBoolean("display_to_others"));
         disableViews();
     }
 
@@ -128,23 +130,17 @@ public class FragmentFacultyProfile extends Fragment implements View.OnClickList
         contact_no.setEnabled(false);
         address.setEnabled(false);
         alternate_email.setEnabled(false);
-        display.setEnabled(false);
-        save.setVisibility(View.INVISIBLE);
+//        display.setEnabled(false);
+//        save.setVisibility(View.INVISIBLE);
     }
 
     private void initialize() {
         context = getActivity().getApplicationContext();
-        designation = (EditText)view.findViewById(R.id.etDesignationF);
-        department = (EditText)view.findViewById(R.id.etDepartmentF);
-        contact_no = (EditText)view.findViewById(R.id.etContactF);
-        address = (EditText)view.findViewById(R.id.etAddressF);
-        alternate_email = (EditText)view.findViewById(R.id.etAltEmailF);
-        edit = (Button)view.findViewById(R.id.bEditF);
-        save = (Button)view.findViewById(R.id.bSaveF);
-        display = (CheckBox)view.findViewById(R.id.cbDisplayF);
-        edit.setOnClickListener(this);
-        save.setOnClickListener(this);
-        save.setVisibility(View.INVISIBLE);
+        designation = (TextInputEditText)view.findViewById(R.id.designation_edit_input);
+        department = (TextInputEditText)view.findViewById(R.id.department_edit_text);
+        contact_no = (TextInputEditText)view.findViewById(R.id.contact_no_edit_text);
+        address = (TextInputEditText)view.findViewById(R.id.address_edit_text);
+        alternate_email = (TextInputEditText)view.findViewById(R.id.email_edit_text);
         menu=MainActivity.menu;
         menu.getItem(0).setIcon( new IconDrawable(context, FontAwesomeIcons.fa_edit)
                 .colorRes(R.color.white)
@@ -177,8 +173,8 @@ public class FragmentFacultyProfile extends Fragment implements View.OnClickList
         contact_no.setEnabled(true);
         address.setEnabled(true);
         alternate_email.setEnabled(true);
-        display.setEnabled(true);
-        save.setVisibility(View.VISIBLE);
+//        display.setEnabled(true);
+//        save.setVisibility(View.VISIBLE);
     }
 
     private void uploadChanges() {
@@ -205,7 +201,7 @@ public class FragmentFacultyProfile extends Fragment implements View.OnClickList
                 params.put("contact_no",contact_no.getText().toString());
                 params.put("address",address.getText().toString());
                 params.put("alternate_email",alternate_email.getText().toString());
-                params.put("display_to_others",String.valueOf(display.isChecked()));
+                params.put("display_to_others",String.valueOf(false));
                 return params;
             }
             @Override

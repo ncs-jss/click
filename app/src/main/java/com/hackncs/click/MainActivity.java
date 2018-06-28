@@ -13,6 +13,7 @@ import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity
    static Menu menu;
     Menu nav_menu;
     String group;
-
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        final NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         assert navigationView != null;
 
         View headerView =  navigationView.getHeaderView(0);
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity
 
                 try {
                     FragmentManager fragmentManager = getSupportFragmentManager();
-                    fragmentManager.beginTransaction().replace(R.id.flContent,CreateNotice.class.newInstance()).commit();
+                    fragmentManager.beginTransaction().replace(R.id.flContent,CreateNotice.class.newInstance(),"create_notice").addToBackStack(null).commit();
                     MenuItem item=navigationView.getMenu().getItem(7);
                     item.setChecked(true);
                     showMenu(true);
@@ -179,10 +180,34 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+
+            int size=getSupportFragmentManager().getFragments().size();
+
+            String fragmentTag=getSupportFragmentManager().getFragments().get(size-1).getTag();
+            Log.i("Fragment",fragmentTag);
+
+
+            if(fragmentTag.equals("notices")){
+
                 finishAffinity();
             }
-            super.onBackPressed();
+            else{
+                Fragment fragment = null;
+                Class fragmentClass = null;
+                fragmentClass = FragmentNotice.class;
+                try {
+                    fragment = (Fragment) fragmentClass.newInstance();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.flContent, fragment).addToBackStack(null).commit();
+                MenuItem item=navigationView.getMenu().getItem(0);
+                item.setChecked(true);
+                fab.show();
+                getSupportActionBar().setTitle(item.getTitle());
+            }
         }
     }
 
@@ -211,6 +236,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         ///item.setChecked(true);
+        String tag="";
         int id = item.getItemId();
         Fragment fragment = null;
         Class fragmentClass = null;
@@ -221,70 +247,77 @@ public class MainActivity extends AppCompatActivity
             showMenu(false);
             fab.show();
             checkGroup(group);
+            tag="notices";
 
         } else if (id == R.id.nav_placement) {
             fragmentClass = FragmentPlacement.class;
             fab.show();
             showMenu(false);
             checkGroup(group);
+            tag="placements";
         } else if (id == R.id.nav_administration) {
             fragmentClass = FragmentAdministration.class;
             fab.show();
             showMenu(false);
             checkGroup(group);
+            tag="administration";
         } else if (id == R.id.nav_academics) {
             fragmentClass = FragmentAcademics.class;
             fab.show();
             showMenu(false);
             checkGroup(group);
+            tag="academics";
         } else if (id == R.id.nav_events) {
             fragmentClass = FragmentEvents.class;
             fab.show();
             showMenu(false);
             checkGroup(group);
+            tag="events";
         } else if (id == R.id.nav_download) {
             fragmentClass = Downloads.class;
             fab.show();
             showMenu(false);
             checkGroup(group);
+            tag="download";
         } else if (id == R.id.nav_starred) {
             fragmentClass = FragmentStarredNotices.class;
             fab.show();
             showMenu(false);
             checkGroup(group);
+            tag="starred";
         } else if (id == R.id.nav_myprofile) {
-            if (PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.GROUP","").equals("student"))
+            String group=PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.GROUP","");
+            if (group.equals("student"))
                 fragmentClass = FragmentStudentProfile.class;
-            else if (PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.GROUP","").equals("faculty"))
+            else
                 fragmentClass = FragmentFacultyProfile.class;
 
             fab.show();
             showMenu(true);
             checkGroup(group);
+            tag="profile";
         }else if (id == R.id.nav_logout) {
             PreferenceManager.getDefaultSharedPreferences(getBaseContext()).edit().clear().apply();
             new OfflineDatabaseHandler(this).flush();
             Intent intent = new Intent(MainActivity.this, Splash.class);
             startActivity(intent);
+            finishAffinity();
         } else if (id == R.id.nav_create) {
             fragmentClass = CreateNotice.class;
             fab.hide();
             showMenu(true);
             checkGroup(group);
+            tag="create_notice";
         }
         try {
             fragment = (Fragment) fragmentClass.newInstance();
-           // Field field = fragment.
         } catch (Exception e) {
             e.printStackTrace();
         }
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.flContent, fragment,tag).addToBackStack(null).commit();
         item.setChecked(true);
-        // Set action bar title
-        //setTitle(item.getTitle());
         getSupportActionBar().setTitle(item.getTitle());
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
@@ -318,5 +351,6 @@ public class MainActivity extends AppCompatActivity
              nav_menu.getItem(7).setVisible(false);
         }
     }
+
 
 }
