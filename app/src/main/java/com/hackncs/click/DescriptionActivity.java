@@ -62,7 +62,7 @@ public class DescriptionActivity extends AppCompatActivity {
     private String USER_NAME;
     private Menu menu;
     ProgressDialog P;
-
+    Button Dbutton;
     private void init(){
         title = (TextView) findViewById(R.id.nTitle);
         faculty = (TextView) findViewById(R.id.nFaculty);
@@ -84,6 +84,8 @@ public class DescriptionActivity extends AppCompatActivity {
         //Log.i("action:",action);
         //Log.i("openen:","opened");
         P = new ProgressDialog(context);
+
+
         if (Intent.ACTION_VIEW.equals(action)) {
 
             P.setMessage("Opening...");
@@ -137,6 +139,9 @@ public class DescriptionActivity extends AppCompatActivity {
         }
 
 
+
+
+
     }
 
     @Override
@@ -153,8 +158,16 @@ public class DescriptionActivity extends AppCompatActivity {
     private void populateView() {
 
         setContentView(R.layout.activity_description);
-        Button button = (Button) findViewById(R.id.downloadB);
 
+        Dbutton = (Button) findViewById(R.id.downloadB);
+
+        Dbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new Asyn().execute(Endpoints.media + notice.mAttachment_link);
+            }
+        });
+        Dbutton.setVisibility(View.GONE);
        /* while(notice==null) {
         P.setMessage("Opening...");
         P.show();
@@ -163,14 +176,10 @@ public class DescriptionActivity extends AppCompatActivity {
         }*/
         if(notice!=null) {
             if (notice.mAttachment) {
-                button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        new Asyn().execute("" + notice.mAttachment_link);
-                    }
-                });
+                Dbutton.setVisibility(View.VISIBLE);
+
             } else {
-                button.setVisibility(View.GONE);
+                Dbutton.setVisibility(View.GONE);
             }
 
             if (notice.mAttachment) {

@@ -9,7 +9,7 @@
         android:src="@drawable/logo"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:layout_marginTop="200px"
+        android:layout_marginTop="125dp"
         android:layout_gravity="center_horizontal"/>
 
     <EditText
@@ -18,10 +18,10 @@
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:background="#1c1140"
-        android:hint="Username"
-        android:padding="10px"
+        android:hint="@string/usernmae"
+        android:padding="10dp"
         android:textColorHint="#aaaaaa"
         android:textColor="#ffffff"/>
 
@@ -34,8 +34,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:background="#1c1140"
-        android:hint="Password"
-        android:padding="10px"
+        android:hint="@string/password"
+        android:padding="10dp"
         android:textColorHint="#aaaaaa"
         android:textColor="#ffffff"/>
 
@@ -47,7 +47,7 @@
         android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:text="Submit"
+        android:text="@string/submit"
         android:textColor="#eeeeee"
         android:background="#4f4473"/>
 

@@ -366,7 +366,7 @@ public class Splash extends Activity {
                                 token = jsonObject.getString("token");
                                 group = jsonObject.getString("group");
                                 user_id = jsonObject.getString("user_id");
-                                if (Character.isDigit(username.getText().toString().charAt(0)))
+                                if (jsonObject.has("student_id"))
                                     profile_id = jsonObject.getString("student_id");
                                 else
                                     profile_id = jsonObject.getString("faculty_id");
