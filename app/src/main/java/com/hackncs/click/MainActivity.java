@@ -206,6 +206,8 @@ public class MainActivity extends AppCompatActivity
                 MenuItem item=navigationView.getMenu().getItem(0);
                 item.setChecked(true);
                 fab.show();
+                showMenu(false);
+                checkGroup(group);
                 getSupportActionBar().setTitle(item.getTitle());
             }
         }

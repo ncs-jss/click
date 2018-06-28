@@ -225,7 +225,7 @@ public class Splash extends Activity {
         switch (condition) {
             case INITIAL_DISPLAY:
                 loader.animate().alpha(0.0f).setDuration(1000).start();
-                logo.animate().y(200).setDuration(1000).setInterpolator(new AccelerateDecelerateInterpolator()).setStartDelay(500).start();
+//                logo.animate().y(200).setDuration(1000).setInterpolator(new AccelerateDecelerateInterpolator()).setStartDelay(500).start();
                 break;
             case LOGIN_DISPLAY:
                 Animation fade_in = new AnimationUtils().loadAnimation(this, android.R.anim.fade_in);

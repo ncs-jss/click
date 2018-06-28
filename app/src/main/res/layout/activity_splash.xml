@@ -17,15 +17,23 @@
         android:id="@+id/ivLogo"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="100dp"
         android:contentDescription="@string/logo"
         android:src="@drawable/logo"/>
+
+    <ImageView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/info"/>
 
     <ProgressBar
         android:id="@+id/pbLoader"
         android:layout_width="65dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="16dp"
         android:foregroundTint="#ffffff"
         style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"/>
 
@@ -38,5 +46,6 @@
         android:textSize="15sp"
         android:textColor="#ffffff"
         android:visibility="gone"/>
+
 
 </LinearLayout>
