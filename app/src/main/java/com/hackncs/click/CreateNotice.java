@@ -32,7 +32,9 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.OpenableColumns;
 import android.support.annotation.NonNull;
+import android.support.design.button.MaterialButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.NestedScrollView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -46,7 +48,6 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -220,7 +221,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
 
 
         summernote = (Summernote) view.findViewById(R.id.summernote);
-        Button choose=(Button)view.findViewById(R.id.choose_button);
+        Button choose=(Button) view.findViewById(R.id.choose_button);
         choose.setOnClickListener(this);
         Spinner spinner1 = (Spinner) view.findViewById(R.id.spinner_category);
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(context,
@@ -235,7 +236,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         ToggleButton toggle = (ToggleButton) view.findViewById(R.id.upload_button);
         toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             LinearLayout uploadLayout=(LinearLayout)view.findViewById(R.id.upload_for);
-            ScrollView sv = (ScrollView)view.findViewById(R.id.scrl);
+            NestedScrollView sv = (NestedScrollView)view.findViewById(R.id.scrl);
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     // The toggle is enabled
@@ -243,10 +244,10 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
                     uploadLayout.setVisibility(View.VISIBLE);
                     sv.post(new Runnable() {
                         public void run() {
-                            sv.fullScroll(ScrollView.FOCUS_DOWN);
+                            sv.fullScroll(NestedScrollView.FOCUS_DOWN);
                         }
                     });
-                    //sv.fullScroll(ScrollView.FOCUS_DOWN);
+                    //sv.fullScroll(NestedScrollView.FOCUS_DOWN);
                     //sv.scrollTo(0, );
 
 
@@ -255,7 +256,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
                     uploadLayout.setVisibility(View.GONE);
                     sv.post(new Runnable() {
                         public void run() {
-                            sv.fullScroll(ScrollView.FOCUS_UP);
+                            sv.fullScroll(NestedScrollView.FOCUS_UP);
                         }
                     });
                 }
@@ -600,6 +601,11 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
 
     private void createNotice(Uri fileUri) {
 
+        final ProgressDialog progressDialog=new ProgressDialog(getContext());
+        progressDialog.setMessage("Please wait..");
+        progressDialog.setCancelable(false);
+        progressDialog.setTitle("Creating Notice...");
+        progressDialog.show();
         notice_title = (EditText) getActivity().findViewById(R.id.etNoticeTitle);
         cTitle = notice_title.getText().toString();
         cDescription = summernote.getText();
@@ -624,7 +630,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         headers.put("Authorization",TOKEN);
         headers.put("username",USER_NAME);
 
-        MultipartBody.Part body = prepareFilePart("file_attached", fileUri);
+        MultipartBody.Part body = fileUri!=null?prepareFilePart("file_attached", fileUri):null;
         CreateNoticeService apiService = ApiClient.getClient().create(CreateNoticeService.class);
 
         NoticeModel noticeModel = new NoticeModel(FACULTY_ID,cTitle,cDescription,null,category,vis_for_students,vis_for_hod,vis_for_faculty,vis_for_management,vis_for_others,coursebranchyear,getTime(),getTime());
@@ -632,7 +638,8 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
                                 params.put("faculty", createPartFromString(FACULTY_ID));
                                 params.put("title",createPartFromString(cTitle));
                                 params.put("description", createPartFromString(cDescription));
-//                                params.put("file_attached","");
+                                if(cSpinselection1.toLowerCase().equals("training and placement"))
+                                    cSpinselection1="tnp";
                                 params.put("category", createPartFromString(cSpinselection1.toLowerCase()));
                                 params.put("visible_for_students", createPartFromString(String.valueOf(vis_for_students)));
                                 params.put("visible_for_hod", createPartFromString(String.valueOf(vis_for_hod)));
@@ -647,14 +654,20 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
 
             @Override
             public void onResponse(Call<JSONObject> call, retrofit2.Response<JSONObject> response) {
-
-
-                    Toast.makeText(getContext(),response.message(),Toast.LENGTH_SHORT).show();
-
+                    progressDialog.dismiss();
+                    if(response.isSuccessful())
+                    {
+                        Toast.makeText(getContext(),"Notice Create Successfully",Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(getContext(),"Please try again",Toast.LENGTH_SHORT).show();
+                    }
             }
 
             @Override
             public void onFailure(Call<JSONObject> call, Throwable t) {
+                progressDialog.dismiss();
                 Log.e("Upload error:", t.toString());
             }
         });

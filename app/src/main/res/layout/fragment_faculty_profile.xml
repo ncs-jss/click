@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:padding="24dp"
+    android:padding="16dp"
     android:paddingTop="16dp"
     >
 
@@ -41,7 +41,8 @@
                 android:enabled="false"
                 android:drawableLeft="@drawable/ic_person_black_24dp"
                 android:drawableStart="@drawable/ic_person_black_24dp"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:drawablePadding="16dp"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -57,7 +58,8 @@
                 android:layout_height="wrap_content"
                 android:enabled="false"
                 android:drawableLeft="@drawable/ic_work_black_24dp"
-                android:drawableStart="@drawable/ic_work_black_24dp"/>
+                android:drawableStart="@drawable/ic_work_black_24dp"
+                android:drawablePadding="16dp"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -75,6 +77,7 @@
                 android:enabled="false"
                 android:drawableLeft="@drawable/ic_phone_black_24dp"
                 android:drawableStart="@drawable/ic_phone_black_24dp"
+                android:drawablePadding="16dp"
                 />
         </android.support.design.widget.TextInputLayout>
 
@@ -92,6 +95,7 @@
                 android:enabled="false"
                 android:drawableLeft="@drawable/ic_home_black_24dp"
                 android:drawableStart="@drawable/ic_home_black_24dp"
+                android:drawablePadding="16dp"
                 />
         </android.support.design.widget.TextInputLayout>
 
@@ -111,6 +115,7 @@
                 android:enabled="false"
                 android:drawableLeft="@drawable/ic_email_black_24dp"
                 android:drawableStart="@drawable/ic_email_black_24dp"
+                android:drawablePadding="16dp"
                 />
         </android.support.design.widget.TextInputLayout>
 

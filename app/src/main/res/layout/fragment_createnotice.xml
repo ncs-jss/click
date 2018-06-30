@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/scrl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,62 +9,76 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="16dp">
 
     <EditText
         android:id="@+id/etNoticeTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_marginBottom="11dp"
+        android:textSize="22sp"
         android:hint="@string/title_hint"/>
-
+    <LinearLayout
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_below="@+id/etNoticeTitle"
+    android:layout_marginBottom="16dp">
     <TextView
         android:id="@+id/description"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textStyle="bold"
-        android:layout_below="@+id/etNoticeTitle"
-        android:textSize="15sp"
+        android:textSize="20sp"
+        android:layout_weight="1"
         android:text="@string/description"/>
 
-    <in.nashapp.androidsummernote.Summernote
-        android:id="@+id/summernote"
-        android:layout_width="match_parent"
-        android:layout_below="@+id/description"
-        android:layout_height="300dp"/>
+        <Button
+            android:id="@+id/choose_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/attach"/>
+    </LinearLayout>
+
+        <in.nashapp.androidsummernote.Summernote
+            android:id="@+id/summernote"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:nestedScrollingEnabled="true"
+            android:layout_below="@+id/layout"
+            android:layout_marginBottom="16dp"/>
+
 
     <TextView
         android:id="@+id/heading_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
+        android:textSize="16sp"
         android:layout_below="@+id/summernote"
         android:textStyle="bold"
+        android:layout_marginBottom="8dp"
         android:text="@string/category"/>
 
-    <Spinner
-        android:id="@+id/spinner_category"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/heading_category"/>
+        <Spinner
+            android:id="@+id/spinner_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/heading_category"
+            android:layout_marginBottom="8dp" />
 
     <ToggleButton
         android:id="@+id/upload_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/spinner_category"
+        android:layout_marginBottom="16dp"
+        android:background="@color/colorAccent"
         android:textOff="@string/toggle_text"
         android:textOn="@string/toggle_text"/>
 
-        <Button
-            android:id="@+id/choose_button"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/spinner_category"
-            android:text="@string/attach"/>
+
 <LinearLayout
 
     android:id="@+id/upload_for"
@@ -74,9 +87,15 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:layout_below="@id/upload_button">
-    <include layout="@layout/dialogue_layout" />
-    <include layout="@layout/upload_for_details" />
+    <include layout="@layout/dialogue_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"/>
+    <include layout="@layout/upload_for_details"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"/>
 </LinearLayout>
     </RelativeLayout>
 
-</ScrollView>
+</android.support.v4.widget.NestedScrollView>

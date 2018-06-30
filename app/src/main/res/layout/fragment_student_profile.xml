@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
+    android:padding="16dp"
     android:paddingTop="16dp">
 
     <TextView
@@ -39,7 +39,8 @@
                     android:enabled="false"
                     android:drawableLeft="@drawable/graduation"
                     android:drawableStart="@drawable/graduation"
-                    android:maxLines="1" />
+                    android:maxLines="1"
+                    android:drawablePadding="16dp"/>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -55,7 +56,8 @@
                     android:layout_height="wrap_content"
                     android:enabled="false"
                     android:drawableLeft="@drawable/merge"
-                    android:drawableStart="@drawable/merge"/>
+                    android:drawableStart="@drawable/merge"
+                    android:drawablePadding="16dp"/>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -73,6 +75,7 @@
                     android:enabled="false"
                     android:drawableLeft="@drawable/year"
                     android:drawableStart="@drawable/year"
+                    android:drawablePadding="16dp"
                     />
             </android.support.design.widget.TextInputLayout>
 
@@ -90,6 +93,7 @@
                     android:enabled="false"
                     android:drawableLeft="@drawable/section"
                     android:drawableStart="@drawable/section"
+                    android:drawablePadding="16dp"
                     />
             </android.support.design.widget.TextInputLayout>
 
@@ -108,6 +112,7 @@
                     android:enabled="false"
                     android:drawableLeft="@drawable/university"
                     android:drawableStart="@drawable/university"
+                    android:drawablePadding="16dp"
                     />
             </android.support.design.widget.TextInputLayout>
 
@@ -124,6 +129,7 @@
                     android:layout_height="wrap_content"
                     android:enabled="false"
                     android:drawableLeft="@drawable/ic_phone_black_24dp"
+                    android:drawablePadding="16dp"
                     android:drawableStart="@drawable/ic_phone_black_24dp"
                     />
             </android.support.design.widget.TextInputLayout>
@@ -143,6 +149,7 @@
                     android:enabled="false"
                     android:drawableLeft="@drawable/father"
                     android:drawableStart="@drawable/father"
+                    android:drawablePadding="16dp"
                     />
             </android.support.design.widget.TextInputLayout>
 
@@ -160,6 +167,7 @@
                     android:enabled="false"
                     android:drawableLeft="@drawable/mother"
                     android:drawableStart="@drawable/mother"
+                    android:drawablePadding="16dp"
                     />
             </android.support.design.widget.TextInputLayout>
 
@@ -177,6 +185,7 @@
                     android:enabled="false"
                     android:drawableLeft="@drawable/ic_home_black_24dp"
                     android:drawableStart="@drawable/ic_home_black_24dp"
+                    android:drawablePadding="16dp"
                     />
             </android.support.design.widget.TextInputLayout>
 
