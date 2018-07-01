@@ -225,7 +225,7 @@ public class Splash extends Activity {
         switch (condition) {
             case INITIAL_DISPLAY:
                 loader.animate().alpha(0.0f).setDuration(1000).start();
-                logo.animate().y(200).setDuration(1000).setInterpolator(new AccelerateDecelerateInterpolator()).setStartDelay(500).start();
+//                logo.animate().y(200).setDuration(1000).setInterpolator(new AccelerateDecelerateInterpolator()).setStartDelay(500).start();
                 break;
             case LOGIN_DISPLAY:
                 Animation fade_in = new AnimationUtils().loadAnimation(this, android.R.anim.fade_in);
@@ -366,7 +366,7 @@ public class Splash extends Activity {
                                 token = jsonObject.getString("token");
                                 group = jsonObject.getString("group");
                                 user_id = jsonObject.getString("user_id");
-                                if (Character.isDigit(username.getText().toString().charAt(0)))
+                                if (jsonObject.has("student_id"))
                                     profile_id = jsonObject.getString("student_id");
                                 else
                                     profile_id = jsonObject.getString("faculty_id");

@@ -1,16 +1,67 @@
 <resources>
-    <string name="app_name">click</string>
+
+
+    <!--Dialogue_layout-->
+    <string name="app_name">InfoConnect</string>
+    <string name="Entire_College">Entire College</string>
+    <string name="hod">HOD</string>
+    <string name="faculty">Faculty</string>
+    <string name="management">Management</string>
+    <string name="others">Others</string>
+    <!---->
+
+    <!--Description layout-->
+    <string name="title">This is the notice title</string>
+    <string name="postedBy">Posted by :</string>
+    <string name="postedOn">Posted on :</string>
+    <string name="download_bttn">Download</string>
+    <string name="tvConnErrMsg">You\'re not connected!</string>
+    <!---->
+
+    <!--activity_main layout-->
+    <string name="logo">Logo</string>
+    <!---->
+
+    <!--fragment_createNotice layout-->
+    <string name="title_hint">Title</string>
+    <string name="description">Description</string>
+    <string name="category">Category</string>
+    <string name="toggle_text">Upload For</string>
+    <string name="attach">Attach</string>
+    <!---->
+
+    <!--list_item layout-->
+    <string name="filename">FileName</string>
+    <!---->
+
+    <!--login layout-->
+    <string name="usernmae">Username</string>
+    <string name="password">Password</string>
+    <string name="submit">Submit</string>
+    <!---->
+
+    <!--nav_bar layout-->
+    <string name="welcome_user">"Welcome, User"</string>
+    <string name="jssate">"JSS Academy Of Technical Education"</string>
+    <!---->
+
+    <!--Upload_for_details layout-->
+
+    <string name="select_course">Select Course</string>
+    <string name="select_branch">Select Branch</string>
+    <string name="select_year">Select Year</string>
+    <string name="select_section">Select Section</string>
 
     <string-array name="uplaod_category">
         <item>Academics</item>
         <item>Administration</item>
-        <item>Timimg and Placement</item>
+        <item>Training and Placement</item>
         <item>Events</item>
         <item>Miscelleneous</item>
     </string-array>
 
     <string-array name="select_course">
-        <item>AllCourses</item>
+        <item>All Courses</item>
         <item>BTech</item>
         <item>MTech</item>
         <item>MCA</item>
@@ -40,6 +91,7 @@
         <item>CSE</item>
         <item>IT</item>
     </string-array>
+
     <string-array name="select_branch_MBA">
         <item>All Branches</item>
     </string-array>
@@ -57,12 +109,14 @@
         <item>1</item>
         <item>2</item>
     </string-array>
+
     <string-array name="select_year_MCA">
         <item>All years</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
     </string-array>
+
     <string-array name="select_section">
         <item>All Sections</item>
         <item>CSE1</item>
@@ -80,13 +134,12 @@
         <item>IC2</item>
     </string-array>
 
-
-
     <string-array name="select_section_CSE">
         <item>All Sections</item>
         <item>CSE1</item>
         <item>CSE2</item>
     </string-array>
+
     <string-array name="select_section_ME">
         <item>All Sections</item>
         <item>ME1</item>
@@ -98,18 +151,21 @@
         <item>All Sections</item>
         <item>IT1</item>
         <item>IT2</item>
-        </string-array>
+    </string-array>
+
     <string-array name="select_section_ECE">
         <item>All Sections</item>
         <item>ECE1</item>
         <item>ECE2</item>
         <item>ECE3</item>
     </string-array>
+
     <string-array name="select_section_EE">
         <item>All Sections</item>
         <item>EE1</item>
         <item>EE2</item>
     </string-array>
+
     <string-array name="select_section_CE">
         <item>All Sections</item>
         <item>CE1</item>
@@ -121,9 +177,11 @@
         <item>IC1</item>
         <item>IC2</item>
     </string-array>
+
     <string-array name="select_section_Others">
         <item>All Sections</item>
     </string-array>
+    <!---->
 
      <string name="ok">OK</string>
      <string name="cancel">CANCEL</string>
@@ -131,8 +189,8 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="jssate">"JSS Academy Of Technical Education"</string>
-    <string name="welcome">"Welcome, User"</string>
+
+
     <string name="notices">"All notices"</string>
     <string name="placement">"Placement"</string>
     <string name="administration">"Administration"</string>
@@ -143,6 +201,13 @@
     <string name="starred">"Starred"</string>
     <string name="profile">"My Profile"</string>
     <string name="logout">"Logout"</string>
+
+
+
+    <string name="create_notice">Create Notice</string>
+    <string name="share">Share</string>
+    <string name="star">Star</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

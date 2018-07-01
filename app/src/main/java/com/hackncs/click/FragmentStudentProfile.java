@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -41,9 +41,7 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
 
     View view;
     Context context;
-    EditText course, branch, year, section, univ_roll_no, contact_no, father_name, mother_name, address;
-    CheckBox display;
-    Button edit, save;
+    TextInputEditText course, branch, year, section, univ_roll_no, contact_no, father_name, mother_name, address;
     String PROFILE_ID, TOKEN;
     Menu menu;
     @Nullable
@@ -86,14 +84,6 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
     @Override
     public void onClick(View view) {
 
-        /*Log.d("asd", "onclick");
-        if (view.getId() == R.id.bEdit) {
-            enableViews();
-        }
-        else if (view.getId() == R.id.bSave) {
-            Log.d("llll", "a");
-            uploadChanges();
-        }*/
     }
 
     private void fetchAndDisplay() {
@@ -138,7 +128,6 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
         father_name.setText(jsonObject.getString("father_name"));
         mother_name.setText(jsonObject.getString("mother_name"));
         address.setText(jsonObject.getString("address"));
-        display.setChecked(jsonObject.getBoolean("display_to_others"));
         disableViews();
     }
 
@@ -152,8 +141,8 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
         father_name.setEnabled(false);
         mother_name.setEnabled(false);
         address.setEnabled(false);
-        display.setEnabled(false);
-        save.setVisibility(View.INVISIBLE);
+
+
     }
     private void enableViews() {
 
@@ -162,28 +151,22 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
         father_name.setEnabled(true);
         mother_name.setEnabled(true);
         address.setEnabled(true);
-        display.setEnabled(true);
-        save.setVisibility(View.VISIBLE);
+
     }
 
 
     private void initialize() {
         context = getActivity().getApplicationContext();
-        course = (EditText)view.findViewById(R.id.etCourse);
-        branch = (EditText)view.findViewById(R.id.etBranch);
-        year = (EditText)view.findViewById(R.id.etYear);
-        section = (EditText)view.findViewById(R.id.etSection);
-        univ_roll_no = (EditText)view.findViewById(R.id.etUnivRollNo);
-        contact_no = (EditText)view.findViewById(R.id.etContactNo);
-        father_name = (EditText)view.findViewById(R.id.etFatherName);
-        mother_name = (EditText)view.findViewById(R.id.etMotherName);
-        address = (EditText)view.findViewById(R.id.etAddress);
-        display = (CheckBox)view.findViewById(R.id.cbDisplay);
-        edit = (Button)view.findViewById(R.id.bEdit);
-        save = (Button)view.findViewById(R.id.bSave);
-        edit.setOnClickListener(this);
-        save.setOnClickListener(this);
-        save.setVisibility(View.INVISIBLE);
+        course = (TextInputEditText)view.findViewById(R.id.course_edit_input);
+        branch = (TextInputEditText)view.findViewById(R.id.branch_edit_text);
+        year = (TextInputEditText)view.findViewById(R.id.year_edit_text);
+        section = (TextInputEditText)view.findViewById(R.id.section_edit_text);
+        univ_roll_no = (TextInputEditText)view.findViewById(R.id.uni_roll_no_edit_text);
+        contact_no = (TextInputEditText)view.findViewById(R.id.contact_no_edit_text);
+        father_name = (TextInputEditText)view.findViewById(R.id.father_edit_text);
+        mother_name = (TextInputEditText)view.findViewById(R.id.mother_edit_text);
+        address = (TextInputEditText)view.findViewById(R.id.address_edit_text);
+
         menu=MainActivity.menu;
         menu.getItem(0).setIcon( new IconDrawable(context, FontAwesomeIcons.fa_edit)
                 .colorRes(R.color.white)
@@ -228,8 +211,7 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
                 params.put("father_name",father_name.getText().toString());
                 params.put("mother_name",mother_name.getText().toString());
                 params.put("address",address.getText().toString());
-                params.put("display_to_others",String.valueOf(display.isChecked()));
-                Log.d("llll","insinde getParams");
+                params.put("display_to_others",String.valueOf(false));
                 return params;
             }
             @Override
