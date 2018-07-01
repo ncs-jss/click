@@ -20,7 +20,6 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical|center_horizontal"
-            android:text="00"
             android:textColor="#ffffff"
             android:textSize="25sp" />
 
@@ -29,7 +28,6 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical|center_horizontal"
-            android:text="NOV"
             android:textStyle="bold"
             android:textColor="#ffffff"
             android:textSize="12sp" />

@@ -209,7 +209,20 @@
     <string name="star">Star</string>
 
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="student_profile">Student Profile</string>
+    <string name="course">Course</string>
+    <string name="branch">Branch</string>
+    <string name="year">Year</string>
+    <string name="address">Address</string>
+    <string name="section">Section</string>
+    <string name="uni_roll_no">University Roll No.</string>
+    <string name="contact_no">Contact No.</string>
+    <string name="mother_contact_no.">Mother\'s Contact No.</string>
+    <string name="father_contact_no.">Father\'s Contact No.</string>
+    <string name="faculty_profile">Faculty Profile</string>
+    <string name="designation">Designation</string>
+    <string name="department">Department</string>
+    <string name="email">Email</string>
 
 </resources>
