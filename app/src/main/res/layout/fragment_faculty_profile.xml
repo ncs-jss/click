@@ -1,191 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:paddingTop="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/faculty_profile"
+        android:textSize="32sp"
+        android:layout_marginBottom="24dp"/>
+
+    <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="vertical">
 
-        <LinearLayout
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/designation_text_input"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="@string/designation">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Faculty Profile"
-                    android:textSize="22dp"
-                    android:textColor="#000000"
-                    android:padding="10dp"
-                    android:layout_centerVertical="true"/>
-
-                <Button
-                    android:id="@+id/bEditF"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Edit"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"/>
-
-            </RelativeLayout>
-
-            <LinearLayout
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/designation_edit_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="10"
-                >
+                android:enabled="false"
+                android:drawableLeft="@drawable/ic_person_black_24dp"
+                android:drawableStart="@drawable/ic_person_black_24dp"
+                android:maxLines="1"
+                android:drawablePadding="16dp"/>
+        </android.support.design.widget.TextInputLayout>
 
-                <TextView
-                    android:layout_weight="6"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Designation:"
-                    android:textSize="19dp"
-                    android:textColor="#000000"
-                    android:paddingLeft="2dp"/>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/department_text_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="@string/department">
 
-                <EditText
-                    android:id="@+id/etDesignationF"
-                    android:layout_weight="4"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/department_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="10"
-                >
+                android:enabled="false"
+                android:drawableLeft="@drawable/ic_work_black_24dp"
+                android:drawableStart="@drawable/ic_work_black_24dp"
+                android:drawablePadding="16dp"/>
+        </android.support.design.widget.TextInputLayout>
 
-                <TextView
-                    android:layout_weight="6"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Department:"
-                    android:textSize="19dp"
-                    android:textColor="#000000"
-                    android:paddingLeft="2dp"/>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/contact_no_text_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="@string/contact_no">
 
-                <EditText
-                    android:id="@+id/etDepartmentF"
-                    android:layout_weight="4"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/contact_no_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="10"
-                >
+                android:inputType="phone"
+                android:enabled="false"
+                android:drawableLeft="@drawable/ic_phone_black_24dp"
+                android:drawableStart="@drawable/ic_phone_black_24dp"
+                android:drawablePadding="16dp"
+                />
+        </android.support.design.widget.TextInputLayout>
 
-                <TextView
-                    android:layout_weight="6"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Contact No:"
-                    android:textSize="19dp"
-                    android:textColor="#000000"
-                    android:paddingLeft="2dp"/>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/address_text_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="@string/address">
 
-                <EditText
-                    android:id="@+id/etContactF"
-                    android:layout_weight="4"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/address_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="10"
-                >
+                android:enabled="false"
+                android:drawableLeft="@drawable/ic_home_black_24dp"
+                android:drawableStart="@drawable/ic_home_black_24dp"
+                android:drawablePadding="16dp"
+                />
+        </android.support.design.widget.TextInputLayout>
 
-                <TextView
-                    android:layout_weight="6"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Address:"
-                    android:textSize="19dp"
-                    android:textColor="#000000"
-                    android:paddingLeft="2dp"/>
 
-                <EditText
-                    android:id="@+id/etAddressF"
-                    android:layout_weight="4"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/email_text_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="@string/email">
 
-            </LinearLayout>
-
-            <LinearLayout
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/email_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="10"
-                >
+                android:inputType="textEmailAddress"
+                android:enabled="false"
+                android:drawableLeft="@drawable/ic_email_black_24dp"
+                android:drawableStart="@drawable/ic_email_black_24dp"
+                android:drawablePadding="16dp"
+                />
+        </android.support.design.widget.TextInputLayout>
 
-                <TextView
-                    android:layout_weight="6"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Alternate e-mail:"
-                    android:textSize="19dp"
-                    android:textColor="#000000"
-                    android:paddingLeft="2dp"/>
-
-                <EditText
-                    android:id="@+id/etAltEmailF"
-                    android:layout_weight="4"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    />
-
-            </LinearLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="3dp">
-
-                <CheckBox
-                    android:id="@+id/cbDisplayF"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Display to others"
-                    android:textSize="19dp"
-                    android:layout_centerVertical="true"/>
-
-                <Button
-                    android:id="@+id/bSaveF"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Save Changes"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"/>
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-    </ScrollView>
-
+    </LinearLayout>
+</ScrollView>
 </LinearLayout>

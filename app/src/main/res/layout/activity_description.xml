@@ -23,20 +23,20 @@
             android:layout_marginBottom="5dp"
             android:layout_marginTop="15dp"
             android:gravity="center"
-            android:text="This is the notice title"
+            android:text="@string/title"
             android:textStyle="bold"
             android:textColor="#efefef"
-            android:textSize="12dp" />
+            android:textSize="15sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/nTitle"
             android:id="@+id/postedby"
-            android:text="Posted by :"
+            android:text="@string/postedBy"
             android:textColor="#efefef"
             android:textStyle="bold"
-            android:textSize="10dp"/>
+            android:textSize="12sp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,30 +44,31 @@
             android:layout_below="@+id/nTitle"
             android:id="@+id/nFaculty"
             android:layout_toRightOf="@+id/postedby"
-            android:text="Posted by :"
+            android:layout_toEndOf="@+id/postedby"
             android:textColor="#efefef"
-            android:textSize="10dp"/>
+            android:textSize="12sp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/nTitle"
+            android:layout_below="@+id/postedby"
             android:id="@+id/postedon"
-            android:text="Posted on :"
+            android:text="@string/postedOn"
             android:layout_toLeftOf="@+id/ndate"
+            android:layout_toStartOf="@+id/ndate"
             android:textColor="#efefef"
             android:textStyle="bold"
-            android:textSize="10dp"/>
+            android:textSize="12sp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/nTitle"
+            android:layout_below="@+id/nFaculty"
             android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:id="@+id/ndate"
-            android:text="Posted by :"
             android:textColor="#efefef"
-            android:textSize="10dp"/>
+            android:textSize="12sp"/>
     </RelativeLayout>
 
     <WebView
@@ -83,8 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimary"
-        android:onClick="downloadAttachment"
-        android:text="Download"
+        android:text="@string/download_bttn"
         android:textColor="#fff" />
 
 </RelativeLayout>

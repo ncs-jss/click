@@ -20,7 +20,6 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical|center_horizontal"
-            android:text="00"
             android:textColor="#ffffff"
             android:textSize="25sp" />
 
@@ -29,25 +28,11 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical|center_horizontal"
-            android:text="NOV"
             android:textStyle="bold"
             android:textColor="#ffffff"
-            android:textSize="10dp" />
+            android:textSize="12sp" />
     </LinearLayout>
 
-    <!--<TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textmPostedby"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/textmPostedby"
-        android:layout_toStartOf="@+id/textmPostedby"
-        android:layout_toRightOf="@+id/DateBox"
-        android:layout_toEndOf="@+id/DateBox"
-        android:layout_below="@+id/textmPostedby"
-        android:text="d2" />
--->
     <TextView
         android:id="@+id/textmPostedby"
         android:layout_width="wrap_content"
@@ -59,7 +44,7 @@
         android:paddingEnd="10dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:text="faculty name" />
+        android:text="@string/postedBy" />
 
     <TextView
         android:layout_margin="15dp"
@@ -72,7 +57,8 @@
         android:paddingEnd="10dp"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/DateBox"
-        android:text="Title" />
+        android:layout_toEndOf="@+id/DateBox"
+        android:text="@string/title" />
 
     <ImageView
         android:layout_width="match_parent"

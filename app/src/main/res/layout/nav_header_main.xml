@@ -24,7 +24,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="13dp"
+        android:textSize="13sp"
         android:textStyle="bold"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="@string/jssate"
@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
-        android:text="Welcome, User"
+        android:text="@string/welcome_user"
         android:textAlignment="center"
         android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />

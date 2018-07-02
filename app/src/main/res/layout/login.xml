@@ -3,42 +3,57 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
     android:background="#2d2251">
 
     <ImageView
         android:src="@drawable/logo"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:layout_marginTop="200px"
+        android:layout_marginTop="80dp"
         android:layout_gravity="center_horizontal"/>
+
+    <ImageView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/info"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColorHint="#aaaaaa"
+        android:layout_marginTop="12dp"
+        android:hint="@string/usernmae">
+
 
     <EditText
         android:visibility="visible"
         android:id="@+id/etUsername"
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="100dp"
-        android:background="#1c1140"
-        android:hint="Username"
-        android:padding="10px"
-        android:textColorHint="#aaaaaa"
+        android:padding="10dp"
+        android:maxLines="1"
         android:textColor="#ffffff"/>
+    </android.support.design.widget.TextInputLayout>
 
+<android.support.design.widget.TextInputLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColorHint="#aaaaaa"
+    android:layout_marginTop="10dp"
+    android:hint="@string/password">
     <EditText
-        android:visibility="visible"
         android:id="@+id/etPassword"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:inputType="textPassword"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:background="#1c1140"
-        android:hint="Password"
-        android:padding="10px"
-        android:textColorHint="#aaaaaa"
+        android:padding="10dp"
+        android:maxLines="1"
         android:textColor="#ffffff"/>
-
+</android.support.design.widget.TextInputLayout>
 
     <Button
         android:id="@+id/bSubmit"
@@ -47,8 +62,8 @@
         android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:text="Submit"
-        android:textColor="#eeeeee"
-        android:background="#4f4473"/>
+        android:text="@string/submit"
+        android:textColor="#000000"
+        android:background="@color/colorAccent"/>
 
 </LinearLayout>
