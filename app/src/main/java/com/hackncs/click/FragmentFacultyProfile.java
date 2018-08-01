@@ -32,8 +32,6 @@ import com.joanzapata.iconify.fonts.FontAwesomeIcons;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,8 +40,6 @@ public class FragmentFacultyProfile extends Fragment implements View.OnClickList
     View view;
     Context context;
     TextInputEditText designation, department, contact_no, address, alternate_email;
-//    CheckBox display;
-//    Button edit, save;
     String PROFILE_ID, TOKEN;
     Menu menu;
     @Nullable
@@ -99,7 +95,7 @@ public class FragmentFacultyProfile extends Fragment implements View.OnClickList
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(context, error.toString(), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(context, error.toString(), Toast.LENGTH_SHORT).show();
                     }
                 })
         {
@@ -120,7 +116,6 @@ public class FragmentFacultyProfile extends Fragment implements View.OnClickList
         contact_no.setText(jsonObject.getString("contact_no"));
         address.setText(jsonObject.getString("address"));
         alternate_email.setText(jsonObject.getString("alternate_email"));
-//        display.setChecked(jsonObject.getBoolean("display_to_others"));
         disableViews();
     }
 
@@ -130,8 +125,6 @@ public class FragmentFacultyProfile extends Fragment implements View.OnClickList
         contact_no.setEnabled(false);
         address.setEnabled(false);
         alternate_email.setEnabled(false);
-//        display.setEnabled(false);
-//        save.setVisibility(View.INVISIBLE);
     }
 
     private void initialize() {
@@ -157,14 +150,6 @@ public class FragmentFacultyProfile extends Fragment implements View.OnClickList
     @Override
     public void onClick(View view) {
 
-       /* Log.d("asd", "onclick");
-        if (view.getId() == R.id.bEditF) {
-            enableViews();
-        }
-        else if (view.getId() == R.id.bSaveF) {
-            Log.d("llll", "a");
-            uploadChanges();
-        }*/
     }
 
     private void enableViews() {
@@ -173,8 +158,6 @@ public class FragmentFacultyProfile extends Fragment implements View.OnClickList
         contact_no.setEnabled(true);
         address.setEnabled(true);
         alternate_email.setEnabled(true);
-//        display.setEnabled(true);
-//        save.setVisibility(View.VISIBLE);
     }
 
     private void uploadChanges() {

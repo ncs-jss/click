@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity
 
     FloatingActionButton fab;
     private ShareActionProvider mShareActionProvider;
-   static Menu menu;
+    static Menu menu;
     Menu nav_menu;
     String group;
     NavigationView navigationView;
@@ -184,7 +184,7 @@ public class MainActivity extends AppCompatActivity
             int size=getSupportFragmentManager().getFragments().size();
 
             String fragmentTag=getSupportFragmentManager().getFragments().get(size-1).getTag();
-            Log.i("Fragment",fragmentTag);
+//            Log.i("Fragment",fragmentTag);
 
 
             if(fragmentTag.equals("notices")){

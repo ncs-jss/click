@@ -103,7 +103,7 @@ public class FragmentStudentProfile extends Fragment implements View.OnClickList
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(context, error.toString(), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(context, error.toString(), Toast.LENGTH_SHORT).show();
                     }
                 })
         {

@@ -129,89 +129,10 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
                 if(title.equals("Save"))
                 {
                     if(checkDetails()) {
-                        Log.d("------>", summernote.getText());
+//                        Log.d("------>", summernote.getText());
 
                         createNotice(fileUri);
-//                        notice_title = (EditText) getActivity().findViewById(R.id.etNoticeTitle);
-//                        cTitle = notice_title.getText().toString();
-//                        cDescription = summernote.getText();
-//
-//
-//                        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-//                        TOKEN = sp.getString("com.hackncs.click.TOKEN", "");
-//                        USER_NAME = sp.getString("com.hackncs.click.USERNAME", "");
-//                        FIRST_NAME = sp.getString("com.hackncs.click.FIRST_NAME", "");
-//                        USER_ID = sp.getString("com.hackncs.click.USER_ID", "");
-//                        FACULTY_ID = sp.getString("com.hackncs.click.PROFILE_ID", "");
-//                        vis_for_students=cb1_value;
-//                        vis_for_hod=cb1_value||cb2_value;
-//                        vis_for_faculty=cb1_value||cb3_value;
-//                        vis_for_management=cb1_value||cb4_value;
-//                        vis_for_others=cb1_value||cb5_value;
-//
-//                        coursebranchyear = cSpinselection2 + "-" + cSpinselection3 + "-" + cSpinselection4 + "-" + cSpinselection5;
-//                        Toast.makeText(context, "CourseBranchYear="+coursebranchyear, Toast.LENGTH_SHORT).show();
-//
-//                        URL = Endpoints.create_notice;
-//                        queue = Volley.newRequestQueue(getActivity().getApplicationContext());
-//                        postrequest = new VolleyMultipartRequest(Request.Method.POST, URL,
-//                                new Response.Listener<NetworkResponse>() {
-//                                    @Override
-//                                    public void onResponse(NetworkResponse response) {
-//                                        try {
-//                                            JSONObject obj = new JSONObject(new String(response.data));
-//                                            Toast.makeText(context, obj.getString("success"), Toast.LENGTH_SHORT).show();
-//                                        } catch (JSONException e) {
-//                                            e.printStackTrace();
-//                                        }
-//                                    }
-//                                },
-//                                new Response.ErrorListener() {
-//                                    @Override
-//                                    public void onErrorResponse(VolleyError error) {
-//                                        Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
-//                                    }
-//                                }) {
-//                            @Override
-//                            protected Map<String, String> getParams() throws AuthFailureError {
-//                                Map<String, String> params = new HashMap<String, String>();
-//                                params.put("faculty", FACULTY_ID);
-//                                params.put("title",cTitle);
-//                                params.put("description", cDescription);
-////                                params.put("file_attached","");
-//                                params.put("category", cSpinselection1.toLowerCase());
-//                                params.put("visible_for_student", String.valueOf(vis_for_students));
-//                                params.put("visible_for_hod", String.valueOf(vis_for_hod));
-//                                params.put("visible_for_faculty", String.valueOf(vis_for_faculty));
-//                                params.put("visible_for_managemant", String.valueOf(vis_for_management));
-//                                params.put("visible_for_others", String.valueOf(vis_for_others));
-//                                params.put("course_branch_year", coursebranchyear);
-//                                params.put("created", getTime());
-//                                params.put("modified", getTime());
-//                                return params;
-//                            }
-//                            @Override
-//                            protected Map<String, DataPart> getByteData() {
-//                                Map<String, DataPart> params = new HashMap<>();
-//
-//                                params.put("file_attached", new DataPart(fileName, byteArray));
-//                                if(byteArray==null)
-//                                {
-//                                    return null;
-//                                }
-//                                return params;
-//                            }
-//                            @Override
-//                            public Map<String, String> getHeaders() throws AuthFailureError {
-//                                Map<String, String> params = new HashMap<>();
-//                                params.put("Authorization", "token " + TOKEN);
-//                                params.put("username", USER_NAME);
-//                                return params;
-//                            }
-//                        };
-//                        //adding the request to volley
-//                        queue.add(postrequest);
-                    }
+                   }
                 }
                 return false;
             }
@@ -246,9 +167,6 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
                             sv.fullScroll(NestedScrollView.FOCUS_DOWN);
                         }
                     });
-                    //sv.fullScroll(NestedScrollView.FOCUS_DOWN);
-                    //sv.scrollTo(0, );
-
 
                 } else {
                     // The toggle is disabled
@@ -282,105 +200,17 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         super.onActivityResult(requestCode, resultCode, intent);
         summernote.onActivityResult(requestCode, resultCode, intent);
 
-//        if (requestCode == PICK_FILE_REQUEST && resultCode == RESULT_OK && intent != null && intent.getData() != null) {
-//
-//            Uri uri = intent.getData();
-//
-//            Log.i("Path", uri.getPath());
-//            String filePath=uri.getPath();
-//            File file = new File(filePath);
-//            fileName=filePath.substring(filePath.lastIndexOf('/')+1);
-//            if(file.isFile())
-//            {
-//                byteArray=new byte[(int)file.length()];
-//                FileInputStream inputStream= null;
-//                try {
-//                    inputStream = new FileInputStream(file);
-//
-//                    inputStream.read(byteArray);
-//                } catch (FileNotFoundException e) {
-//                    e.printStackTrace();
-//                }
-//                 catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//
-//
-//        }
-
         if (requestCode == PICK_FILE_REQUEST && resultCode == Activity.RESULT_OK) {
 
             Uri uri = null;
             if (intent != null) {
                 uri =   intent.getData();
-                Log.i("URI", "Uri: " + uri.toString());
+//                Log.i("URI", "Uri: " + uri.toString());
                 fileUri=uri;
-//                dumpImageMetaData(uri);
-//                try {
-//                    Log.i("File Read",readTextFromUri(uri));
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
             }
         }
 
     }
-
-//    public void dumpImageMetaData(Uri uri) {
-//
-//        // The query, since it only applies to a single document, will only return
-//        // one row. There's no need to filter, sort, or select fields, since we want
-//        // all fields for one document.
-//        Cursor cursor = getActivity().getContentResolver()
-//                .query(uri, null, null, null, null, null);
-//
-//        try {
-//            // moveToFirst() returns false if the cursor has 0 rows.  Very handy for
-//            // "if there's anything to look at, look at it" conditionals.
-//            if (cursor != null && cursor.moveToFirst()) {
-//
-//                // Note it's called "Display Name".  This is
-//                // provider-specific, and might not necessarily be the file name.
-//                String displayName = cursor.getString(
-//                        cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
-//                Log.i("Click", "Display Name: " + displayName);
-//
-//                int sizeIndex = cursor.getColumnIndex(OpenableColumns.SIZE);
-//                // If the size is unknown, the value stored is null.  But since an
-//                // int can't be null in Java, the behavior is implementation-specific,
-//                // which is just a fancy term for "unpredictable".  So as
-//                // a rule, check if it's null before assigning to an int.  This will
-//                // happen often:  The storage API allows for remote files, whose
-//                // size might not be locally known.
-//                String size = null;
-//                if (!cursor.isNull(sizeIndex)) {
-//                    // Technically the column stores an int, but cursor.getString()
-//                    // will do the conversion automatically.
-//                    size = cursor.getString(sizeIndex);
-//                } else {
-//                    size = "Unknown";
-//                }
-//                Log.i("Click", "Size: " + size);
-//            }
-//        } finally {
-//            cursor.close();
-//        }
-//    }
-
-//    private String readTextFromUri(Uri uri) throws IOException {
-//        InputStream inputStream = getActivity().getContentResolver().openInputStream(uri);
-//        BufferedReader reader = new BufferedReader(new InputStreamReader(
-//                inputStream));
-//        StringBuilder stringBuilder = new StringBuilder();
-//        String line;
-//        while ((line = reader.readLine()) != null) {
-//            stringBuilder.append(line);
-//        }
-//        byteArray=stringBuilder.toString().getBytes();
-//        return stringBuilder.toString();
-//    }
-
 
 
 
@@ -391,8 +221,8 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         cb3_value = b3.isChecked();
         cb4_value = b4.isChecked();
         cb5_value = b5.isChecked();
-        Log.d("---->", String.valueOf(cb1_value) + String.valueOf(cb2_value) + String.valueOf(cb3_value) +
-                String.valueOf(cb4_value) + String.valueOf(cb5_value));
+//        Log.d("---->", String.valueOf(cb1_value) + String.valueOf(cb2_value) + String.valueOf(cb3_value) +
+//                String.valueOf(cb4_value) + String.valueOf(cb5_value));
        
 
             if (cb1_value) {
@@ -427,7 +257,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
     {
         Calendar c = Calendar.getInstance();
         String formattedDate = String.format("%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",c.getTime());
-        Log.d("Current time =>", formattedDate);
+//        Log.d("Current time =>", formattedDate);
         return formattedDate;
     }
 
@@ -437,27 +267,27 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         switch (parent.getId()) {
             case R.id.spinner_category:
                 cSpinselection1 = tvSpinselection.getText().toString();
-                Log.d("----->", cSpinselection1);
+//                Log.d("----->", cSpinselection1);
 
                 break;
             case R.id.spinner_course:
                 cSpinselection2 = tvSpinselection.getText().toString();
-                Log.d("----->", cSpinselection2);
+//                Log.d("----->", cSpinselection2);
                 defineAdapter3(cSpinselection2);
                 break;
             case R.id.spinner_branch:
                 cSpinselection3 = tvSpinselection.getText().toString();
-                Log.d("----->", cSpinselection3);
+//                Log.d("----->", cSpinselection3);
                 defineAdapter4(cSpinselection2);
                 break;
             case R.id.spinner_year:
                 cSpinselection4 = tvSpinselection.getText().toString();
-                Log.d("----->", cSpinselection4);
+//                Log.d("----->", cSpinselection4);
                 defineAdapter5(cSpinselection2,cSpinselection3);
                 break;
             case R.id.spinner_section:
                 cSpinselection5 = tvSpinselection.getText().toString();
-                Log.d("----->", cSpinselection5);
+//                Log.d("----->", cSpinselection5);
                 break;
 
         }
@@ -623,7 +453,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         vis_for_management=String.valueOf(cb1_value||cb4_value);
         vis_for_others=String.valueOf(cb1_value||cb5_value);
         coursebranchyear = cSpinselection2 + "-" + cSpinselection3 + "-" + cSpinselection4 + "-" + cSpinselection5;
-        Toast.makeText(context, "CourseBranchYear="+coursebranchyear, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(context, "CourseBranchYear="+coursebranchyear, Toast.LENGTH_SHORT).show();
 
         HashMap<String,String> headers=new HashMap<>();
         headers.put("Authorization",TOKEN);
@@ -667,7 +497,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
             @Override
             public void onFailure(Call<JSONObject> call, Throwable t) {
                 progressDialog.dismiss();
-                Log.e("Upload error:", t.toString());
+//                Log.e("Upload error:", t.toString());
             }
         });
 

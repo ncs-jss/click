@@ -94,23 +94,23 @@ public class DescriptionActivity extends AppCompatActivity {
             P.setCancelable(true);
 
             String url = i.getData().toString();
-            Log.d("url", url);
+//            Log.d("url", url);
             String noticeid = url.substring(url.indexOf('=')+1);
             String get_url = Endpoints.notice_by_pk +noticeid;
-            Log.d("Notice Id",noticeid);
-            Log.d("URL",get_url);
+//            Log.d("Notice Id",noticeid);
+//            Log.d("URL",get_url);
             StringRequest newNoticeRequest = new StringRequest(Request.Method.GET, get_url,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             try {
                                 JSONObject jo = new JSONObject(response);
-                                Log.i("Json:",jo.toString());
+//                                Log.i("Json:","notice received");
                                 notice = Notice.getNoticeObject(jo);
                                 P.dismiss();
                                 populateView();
                             } catch (JSONException e) {
-                                Log.i("JsonError:",e.getMessage());
+//                                Log.i("JsonError:",e.getMessage());
                                 e.printStackTrace();
 
                             }
@@ -119,8 +119,8 @@ public class DescriptionActivity extends AppCompatActivity {
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Log.i("JsonError:",error.getMessage());
-                            Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+//                            Log.i("JsonError:",error.getMessage());
+//                            Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }){
                 @Override
@@ -168,12 +168,7 @@ public class DescriptionActivity extends AppCompatActivity {
             }
         });
         Dbutton.setVisibility(View.GONE);
-       /* while(notice==null) {
-        P.setMessage("Opening...");
-        P.show();
-        P.setIndeterminate(false);
-        P.setCancelable(true);
-        }*/
+
         if(notice!=null) {
             if (notice.mAttachment) {
                 Dbutton.setVisibility(View.VISIBLE);
@@ -190,7 +185,7 @@ public class DescriptionActivity extends AppCompatActivity {
             init();
             title.setText(notice.mTitle);
             faculty.setText(notice.mPosted_by);
-            posted_on.setText(notice.mDate);
+            posted_on.setText(notice.date);
             description.loadData(notice.mNotice_description, "text/html", null);
         }
     }
@@ -203,8 +198,6 @@ public class DescriptionActivity extends AppCompatActivity {
         bundle.putString(Intent.EXTRA_TITLE,notice.mTitle);
         bundle.putString(Intent.EXTRA_TEXT,notice.mNotice_description);
         bundle.putString(Intent.EXTRA_TEXT,share_url+ "\n\nSent via InfoConnect");
-        /*sendIntent.putExtra(Intent.EXTRA_TITLE,notice.mTitle);
-        sendIntent.putExtra(Intent.EXTRA_TEXT,share_url+ "\n\nSent via InfoConnect");*/
         sendIntent.putExtras(bundle);
         sendIntent.setType("text/plain");
         startActivity(sendIntent);
@@ -213,8 +206,6 @@ public class DescriptionActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-
-
         getMenuInflater().inflate(R.menu.notice, menu);
 
         this.menu = menu;
@@ -225,10 +216,16 @@ public class DescriptionActivity extends AppCompatActivity {
         menu.getItem(0).setIcon(new IconDrawable(this, FontAwesomeIcons.fa_share_alt)
                 .colorRes(R.color.white)
                 .actionBarSize());
-        if (new OfflineDatabaseHandler(getApplicationContext()).getStarredNoticesIds().contains(notice.mId)) {
-            menu.getItem(1).setIcon(new IconDrawable(this, FontAwesomeIcons.fa_star)
-                    .colorRes(R.color.golden)
-                    .actionBarSize());
+        try {
+//            Log.i("Stared Notices",new OfflineDatabaseHandler(DescriptionActivity.this).getStarredNoticesIds().toString());
+            if (new OfflineDatabaseHandler(DescriptionActivity.this).getStarredNoticesIds().contains(notice.mId)) {
+                menu.getItem(1).setIcon(new IconDrawable(this, FontAwesomeIcons.fa_star)
+                        .colorRes(R.color.golden)
+                        .actionBarSize());
+            }
+        }
+        catch (Exception e){
+//            Log.i("Error",e.toString());
         }
         return true;
     }
@@ -240,7 +237,7 @@ public class DescriptionActivity extends AppCompatActivity {
             startShareIntent();
         }
         else if (id == R.id.menu_item_star) {
-            if (!new OfflineDatabaseHandler(getApplicationContext()).getStarredNoticesIds().contains(notice.mId))
+            if (!new OfflineDatabaseHandler(DescriptionActivity.this).getStarredNoticesIds().contains(notice.mId))
             {
                 starNotice();
             }
@@ -277,7 +274,7 @@ public class DescriptionActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(context, error.toString(), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(context, error.toString(), Toast.LENGTH_SHORT).show();
                     }
                 })
         {
@@ -305,18 +302,20 @@ public class DescriptionActivity extends AppCompatActivity {
                             menu.getItem(1).setIcon(new IconDrawable(context, FontAwesomeIcons.fa_star)
                                     .colorRes(R.color.golden)
                                     .actionBarSize());
-                            Toast.makeText(context, jo.getString("message"), Toast.LENGTH_SHORT).show();
+                            boolean result =new OfflineDatabaseHandler(DescriptionActivity.this).insertNotice(notice);
+//                            Log.i("Stared Notices",new OfflineDatabaseHandler(DescriptionActivity.this).getStarredNoticesIds().toString());
+                            Toast.makeText(DescriptionActivity.this, jo.getString("message"), Toast.LENGTH_SHORT).show();
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        new OfflineDatabaseHandler(context).insertNotice(notice);
+
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 })
         {
@@ -351,7 +350,7 @@ public class DescriptionActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(String... params) {
             downloadAttachment(params[0]);
-            Log.d("---->", params[0]);
+//            Log.d("---->", params[0]);
 
             return null;
         }
@@ -406,7 +405,7 @@ public class DescriptionActivity extends AppCompatActivity {
             URL url = new URL(sUrl);
             URLConnection conection = url.openConnection();
             conection.connect();
-            Log.d("--->",sUrl);
+//            Log.d("--->",sUrl);
 
             int lengthOfFile = conection.getContentLength();
 

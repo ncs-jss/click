@@ -20,6 +20,7 @@ public class Notice implements Serializable{
     public String mNextUrl;
     public String numDate;
     public String month;
+    public String date;
 
     public static Notice getNoticeObject(JSONObject json_data) throws JSONException {
         Notice notice = new Notice();
@@ -56,6 +57,10 @@ public class Notice implements Serializable{
         else
         if (notice.month.equals("12"))
             notice.month = "Dec";
+
+
+        notice.date=notice.numDate+"-"+notice.month+"-"+notice.mDate.substring(0,4)+" "+notice.mDate.substring(11,16);
+
 
         if(notice.mAttachment_link != "null")
             notice.mAttachment = true;

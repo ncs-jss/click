@@ -70,6 +70,7 @@ public class Splash extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+//        Log.i("Stared Notices 1",new OfflineDatabaseHandler(Splash.this).getStarredNoticesIds().toString());
         initialize(INITIAL_DISPLAY);
         verifyStoragePermissions(this);
         new BackgroundTasks().execute();
@@ -149,7 +150,8 @@ public class Splash extends Activity {
     }
 
     private void syncStarredNotices() {
-        new OfflineDatabaseHandler(getApplicationContext()).flush();
+//        Log.i("Stared Notices",new OfflineDatabaseHandler(Splash.this).getStarredNoticesIds().toString());
+        new OfflineDatabaseHandler(Splash.this).flush();
         final String TOKEN = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.TOKEN", "");
         final String USER_NAME = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.USERNAME", "");
         String URL = Endpoints.get_starred_notice_list;
@@ -172,7 +174,8 @@ public class Splash extends Activity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(Splash.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(Splash.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+//                        Log.e("Error",error.getLocalizedMessage());
                     }
                 }){
             @Override
@@ -183,13 +186,13 @@ public class Splash extends Activity {
                 return params;
             }
         };
-        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+        RequestQueue queue = Volley.newRequestQueue(Splash.this);
         queue.add(stringRequest);
     }
 
     private void loadAndAdd(String notice) {
         final OfflineDatabaseHandler dbHandler = new OfflineDatabaseHandler(this);
-        String URL = "http://210.212.85.155/api/notices/notice_by_pk/";
+        String URL = Endpoints.notice_by_pk;
         final String TOKEN = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.TOKEN", "");
         final String USER_NAME = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.USERNAME", "");
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL+notice,
@@ -199,6 +202,7 @@ public class Splash extends Activity {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             dbHandler.insertNotice(Notice.getNoticeObject(jsonObject));
+//                            Log.i("Stared Notices",new OfflineDatabaseHandler(Splash.this).getStarredNoticesIds().toString());
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -207,7 +211,7 @@ public class Splash extends Activity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(Splash.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(Splash.this, error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }){
             @Override
@@ -217,7 +221,7 @@ public class Splash extends Activity {
                 params.put("username", USER_NAME);
                 return params;            }
         };
-        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+        RequestQueue queue = Volley.newRequestQueue(Splash.this);
         queue.add(stringRequest);
     }
 
@@ -275,7 +279,7 @@ public class Splash extends Activity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    Toast.makeText(getApplicationContext(), "Connected!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Splash.this, "Connected!", Toast.LENGTH_SHORT).show();
                 }
             });
             return true;
@@ -284,7 +288,7 @@ public class Splash extends Activity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    Toast.makeText(getApplicationContext(), "Disconnected!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Splash.this, "Disconnected!", Toast.LENGTH_SHORT).show();
                 }
             });
             return false;
@@ -298,7 +302,7 @@ public class Splash extends Activity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    Toast.makeText(getApplicationContext(), "Creating directory...", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Splash.this, "Creating directory...", Toast.LENGTH_SHORT).show();
                 }
             });
             status = folder.mkdir();
