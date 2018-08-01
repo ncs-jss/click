@@ -27,13 +27,15 @@
     android:orientation="horizontal"
     android:layout_below="@+id/etNoticeTitle"
     android:layout_marginBottom="16dp">
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_weight="1"
-        android:text="@string/description"/>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/description"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/choose_button"
@@ -68,24 +70,33 @@
             android:layout_below="@id/heading_category"
             android:layout_marginBottom="8dp" />
 
-    <ToggleButton
-        android:id="@+id/upload_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/spinner_category"
-        android:layout_marginBottom="16dp"
-        android:background="@color/colorAccent"
-        android:textOff="@string/toggle_text"
-        android:textOn="@string/toggle_text"/>
+    <!--<ToggleButton-->
+        <!--android:id="@+id/upload_button"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/spinner_category"-->
+        <!--android:layout_marginBottom="16dp"-->
+        <!--android:background="@color/colorAccent"-->
+        <!--android:textOff="@string/toggle_text"-->
+        <!--android:textOn="@string/toggle_text"/>-->
+
+        <TextView
+            android:id="@+id/upload_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinner_category"
+            android:layout_marginBottom="16dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@string/toggle_text"/>
 
 
 <LinearLayout
-
     android:id="@+id/upload_for"
-    android:visibility="gone"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+    android:baselineAligned="false"
     android:layout_below="@id/upload_button">
     <include layout="@layout/dialogue_layout"
         android:layout_height="wrap_content"
@@ -96,6 +107,15 @@
         android:layout_width="0dp"
         android:layout_weight="1"/>
 </LinearLayout>
+       <Button
+           android:id="@+id/create_notice"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:background="@color/colorAccent"
+           android:layout_marginTop="12dp"
+           android:enabled="false"
+           android:text="Create"
+           android:layout_below="@+id/upload_for"/>
     </RelativeLayout>
 
 </android.support.v4.widget.NestedScrollView>

@@ -45,7 +45,7 @@ public class NoticeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         holder.itemView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Toast.makeText(view.getContext(),"Recycle Click" + position,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(view.getContext(),"Recycle Click" + position,Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context,DescriptionActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("Notice", current);

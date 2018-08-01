@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity
             }
 
             FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+            fragmentManager.beginTransaction().replace(R.id.flContent, fragment,"notices").commit();
             MenuItem item=navigationView.getMenu().getItem(0);
             item.setChecked(true);
             getSupportActionBar().setTitle(item.getTitle());
@@ -202,7 +202,7 @@ public class MainActivity extends AppCompatActivity
                 }
 
                 FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.flContent, fragment).addToBackStack(null).commit();
+                fragmentManager.beginTransaction().replace(R.id.flContent, fragment,"notices").addToBackStack(null).commit();
                 MenuItem item=navigationView.getMenu().getItem(0);
                 item.setChecked(true);
                 fab.show();
@@ -307,7 +307,6 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_create) {
             fragmentClass = CreateNotice.class;
             fab.hide();
-            showMenu(true);
             checkGroup(group);
             tag="create_notice";
         }

@@ -91,55 +91,59 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
     private CheckBox b1, b2, b3, b4, b5;
     private Context context;
     private EditText notice_title;
-    private RequestQueue queue;
-    private VolleyMultipartRequest postrequest;
     private String cDescription, cTitle,category, cSpinselection1, cSpinselection2, cSpinselection3, cSpinselection4, cSpinselection5, coursebranchyear;
     private String TOKEN = "token ";
-    static String URL = null;
     private String FIRST_NAME, USER_NAME, GROUP, USER_ID, FACULTY_ID;
     private View view;
     static Summernote summernote;
     Menu menu;
-    String fileName="";
-    byte byteArray[];
     Uri fileUri;
     private final int PICK_FILE_REQUEST=1;
+    Button createNotice;
 
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_createnotice, container, false);
 
-        menu=MainActivity.menu;
+//        menu=MainActivity.menu;
         context = getActivity().getApplicationContext();
         spinner2 = (Spinner) view.findViewById(R.id.spinner_course);
         spinner3 = (Spinner) view.findViewById(R.id.spinner_branch);
         spinner4 = (Spinner) view.findViewById(R.id.spinner_year);
         spinner5 = (Spinner) view.findViewById(R.id.spinner_section);
         spinner_enable(false);
-        menu.getItem(0).setIcon( new IconDrawable(context, FontAwesomeIcons.fa_save)
-                .colorRes(R.color.white)
-                .actionBarSize());
-        menu.getItem(0).setTitle("Save");
-        menu.getItem(0).setEnabled(false);
-        menu.getItem(0).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+//        createNotice.setIcon( new IconDrawable(context, FontAwesomeIcons.fa_save)
+//                .colorRes(R.color.white)
+//                .actionBarSize());
+//        createNotice.setTitle("Save");
+//        createNotice.setEnabled(false);
+//        createNotice.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+//            @Override
+//            public boolean onMenuItemClick(MenuItem item) {
+//
+//                String title=item.getTitle().toString();
+//                if(title.equals("Save"))
+//                {
+//                    if(checkDetails()) {
+////                        Log.d("------>", summernote.getText());
+//
+//                        createNotice(fileUri);
+//                   }
+//                }
+//                return false;
+//            }
+//        });
+
+
+        createNotice=view.findViewById(R.id.create_notice);
+        createNotice.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onMenuItemClick(MenuItem item) {
-
-                String title=item.getTitle().toString();
-                if(title.equals("Save"))
-                {
-                    if(checkDetails()) {
-//                        Log.d("------>", summernote.getText());
-
-                        createNotice(fileUri);
-                   }
+            public void onClick(View v) {
+                if(checkDetails()) {
+                    createNotice(fileUri);
                 }
-                return false;
             }
         });
-
-
-
         summernote = (Summernote) view.findViewById(R.id.summernote);
         Button choose=(Button) view.findViewById(R.id.choose_button);
         choose.setOnClickListener(this);
@@ -153,32 +157,32 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         //Defining Spinners
 
         defineSpinner();
-        ToggleButton toggle = (ToggleButton) view.findViewById(R.id.upload_button);
-        toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            LinearLayout uploadLayout=(LinearLayout)view.findViewById(R.id.upload_for);
-            NestedScrollView sv = (NestedScrollView)view.findViewById(R.id.scrl);
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    // The toggle is enabled
-
-                    uploadLayout.setVisibility(View.VISIBLE);
-                    sv.post(new Runnable() {
-                        public void run() {
-                            sv.fullScroll(NestedScrollView.FOCUS_DOWN);
-                        }
-                    });
-
-                } else {
-                    // The toggle is disabled
-                    uploadLayout.setVisibility(View.GONE);
-                    sv.post(new Runnable() {
-                        public void run() {
-                            sv.fullScroll(NestedScrollView.FOCUS_UP);
-                        }
-                    });
-                }
-            }
-        });
+//        ToggleButton toggle = (ToggleButton) view.findViewById(R.id.upload_button);
+//        toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            LinearLayout uploadLayout=(LinearLayout)view.findViewById(R.id.upload_for);
+//            NestedScrollView sv = (NestedScrollView)view.findViewById(R.id.scrl);
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if (isChecked) {
+//                    // The toggle is enabled
+//
+//                    uploadLayout.setVisibility(View.VISIBLE);
+//                    sv.post(new Runnable() {
+//                        public void run() {
+//                            sv.fullScroll(NestedScrollView.FOCUS_DOWN);
+//                        }
+//                    });
+//
+//                } else {
+//                    // The toggle is disabled
+//                    uploadLayout.setVisibility(View.GONE);
+//                    sv.post(new Runnable() {
+//                        public void run() {
+//                            sv.fullScroll(NestedScrollView.FOCUS_UP);
+//                        }
+//                    });
+//                }
+//            }
+//        });
 
         b1 = (CheckBox) view.findViewById(R.id.cb1);
         b2 = (CheckBox) view.findViewById(R.id.cb2);
@@ -392,11 +396,11 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         }
         if(isChecked)
         {
-            menu.getItem(0).setEnabled(true);
+            createNotice.setEnabled(true);
         }
         else if(!(b1.isChecked()||b2.isChecked()||b3.isChecked()||b4.isChecked()||b5.isChecked()))
         {
-            menu.getItem(0).setEnabled(false);
+            createNotice.setEnabled(false);
         }
     }
 

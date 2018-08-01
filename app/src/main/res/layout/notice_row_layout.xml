@@ -1,7 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:baselineAligned="false">
+    android:layout_height="wrap_content">
 
 
     <LinearLayout
@@ -33,18 +32,33 @@
             android:textSize="12sp" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textmPostedby"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:textColor="#000"
-        android:paddingBottom="15dp"
-        android:paddingRight="10dp"
-        android:paddingEnd="10dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:text="@string/postedBy" />
+        android:layout_alignBottom="@+id/DateBox"
+        android:layout_alignStart="@+id/textmTitle"
+        android:layout_alignLeft="@+id/textmTitle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp"
+            android:paddingEnd="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/postedBy"
+            android:textColor="#000"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textmPostedby"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp"
+            android:paddingEnd="10dp"
+            android:paddingRight="10dp"
+            android:text="USER"
+            android:textColor="#000" />
+    </LinearLayout>
 
     <TextView
         android:layout_margin="15dp"
@@ -59,13 +73,5 @@
         android:layout_toRightOf="@+id/DateBox"
         android:layout_toEndOf="@+id/DateBox"
         android:text="@string/title" />
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:layout_alignParentBottom="true"
-        android:background="#d9d9d9"/>
 
 </RelativeLayout>
