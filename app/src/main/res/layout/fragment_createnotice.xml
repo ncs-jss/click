@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/scrl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -36,6 +37,11 @@
             android:text="@string/description"
             android:textSize="20sp"
             android:textStyle="bold" />
+        <ImageButton
+            android:id="@+id/click_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_camera_alt_black_24dp"/>
 
         <Button
             android:id="@+id/choose_button"
@@ -52,13 +58,22 @@
             android:layout_below="@+id/layout"
             android:layout_marginBottom="16dp"/>
 
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip"
+            style="@style/Widget.MaterialComponents.Chip.Entry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/summernote"
+            android:text="hello"
+            android:layout_marginBottom="16dp"/>
+
 
     <TextView
         android:id="@+id/heading_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
-        android:layout_below="@+id/summernote"
+        android:layout_below="@+id/chip"
         android:textStyle="bold"
         android:layout_marginBottom="8dp"
         android:text="@string/category"/>

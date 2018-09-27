@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -339,6 +340,11 @@ public class DescriptionActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             //verifyStoragePermissions();
+            File folder = new File(Environment.getExternalStorageDirectory()+"/InfoConnect");
+            boolean status = folder.exists();
+            if (!status) {
+                status = folder.mkdir();
+            }
             P.setMessage("Downloading...");
             P.show();
             P.setIndeterminate(false);
@@ -366,29 +372,31 @@ public class DescriptionActivity extends AppCompatActivity {
                         Intent intent = new Intent();
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         intent.setAction(Intent.ACTION_VIEW);
+                        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                        Uri uri = FileProvider.getUriForFile(context, context.getApplicationContext().getPackageName() + ".fileprovider", selectedFile);
                         if (selectedFile.getName().endsWith(".doc") || selectedFile.getName().endsWith(".docx")) {
-                            intent.setDataAndType(Uri.fromFile(selectedFile), "application/msword");
+                            intent.setDataAndType(uri, "application/msword");
                         }
                         else if(selectedFile.getName().endsWith(".pdf")) {
-                            intent.setDataAndType(Uri.fromFile(selectedFile), "application/pdf");
+                            intent.setDataAndType(uri, "application/pdf");
                         }
                         else if(selectedFile.getName().endsWith(".ppt") || selectedFile.getName().endsWith(".pptx")) {
-                            intent.setDataAndType(Uri.fromFile(selectedFile), "application/vnd.ms-powerpoint");
+                            intent.setDataAndType(uri, "application/vnd.ms-powerpoint");
                         }
                         else if(selectedFile.getName().endsWith(".xls") || selectedFile.getName().endsWith(".xlsx")) {
-                            intent.setDataAndType(Uri.fromFile(selectedFile), "application/vnd.ms-excel");
+                            intent.setDataAndType(uri, "application/vnd.ms-excel");
                         }
                         else if(selectedFile.getName().endsWith(".rtf")) {
-                            intent.setDataAndType(Uri.fromFile(selectedFile), "application/rtf");
+                            intent.setDataAndType(uri, "application/rtf");
                         }
                         else if(selectedFile.getName().endsWith(".jpg") || selectedFile.getName().endsWith(".jpeg") || selectedFile.getName().endsWith(".png")) {
-                            intent.setDataAndType(Uri.fromFile(selectedFile), "image/jpeg");
+                            intent.setDataAndType(uri, "image/jpeg");
                         }
                         else if(selectedFile.getName().endsWith(".txt")) {
-                            intent.setDataAndType(Uri.fromFile(selectedFile), "text/plain");
+                            intent.setDataAndType(uri, "text/plain");
                         }
                         else {
-                            intent.setDataAndType(Uri.fromFile(selectedFile), "*/*");
+                            intent.setDataAndType(uri, "*/*");
                         }
                         startActivity(intent);
                     }

@@ -24,15 +24,20 @@ import java.net.HttpURLConnection;
 import java.util.Calendar;
 
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.icu.text.SimpleDateFormat;
+import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.preference.PreferenceManager;
+import android.provider.MediaStore;
 import android.provider.OpenableColumns;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.FileProvider;
 import android.support.v4.widget.NestedScrollView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -46,6 +51,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -67,6 +73,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -100,6 +107,9 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
     Uri fileUri;
     private final int PICK_FILE_REQUEST=1;
     Button createNotice;
+    ImageButton click_photo;
+    static final int REQUEST_TAKE_PHOTO = 2;
+    String mCurrentPhotoPath=null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
@@ -112,29 +122,6 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         spinner4 = (Spinner) view.findViewById(R.id.spinner_year);
         spinner5 = (Spinner) view.findViewById(R.id.spinner_section);
         spinner_enable(false);
-//        createNotice.setIcon( new IconDrawable(context, FontAwesomeIcons.fa_save)
-//                .colorRes(R.color.white)
-//                .actionBarSize());
-//        createNotice.setTitle("Save");
-//        createNotice.setEnabled(false);
-//        createNotice.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-//            @Override
-//            public boolean onMenuItemClick(MenuItem item) {
-//
-//                String title=item.getTitle().toString();
-//                if(title.equals("Save"))
-//                {
-//                    if(checkDetails()) {
-////                        Log.d("------>", summernote.getText());
-//
-//                        createNotice(fileUri);
-//                   }
-//                }
-//                return false;
-//            }
-//        });
-
-
         createNotice=view.findViewById(R.id.create_notice);
         createNotice.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,35 +141,18 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         spinner1.setAdapter(adapter1);
         spinner1.setOnItemSelectedListener(this);
 
+        click_photo=view.findViewById(R.id.click_photo);
+        click_photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                dispatchTakePictureIntent();
+
+            }
+        });
         //Defining Spinners
 
         defineSpinner();
-//        ToggleButton toggle = (ToggleButton) view.findViewById(R.id.upload_button);
-//        toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            LinearLayout uploadLayout=(LinearLayout)view.findViewById(R.id.upload_for);
-//            NestedScrollView sv = (NestedScrollView)view.findViewById(R.id.scrl);
-//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                if (isChecked) {
-//                    // The toggle is enabled
-//
-//                    uploadLayout.setVisibility(View.VISIBLE);
-//                    sv.post(new Runnable() {
-//                        public void run() {
-//                            sv.fullScroll(NestedScrollView.FOCUS_DOWN);
-//                        }
-//                    });
-//
-//                } else {
-//                    // The toggle is disabled
-//                    uploadLayout.setVisibility(View.GONE);
-//                    sv.post(new Runnable() {
-//                        public void run() {
-//                            sv.fullScroll(NestedScrollView.FOCUS_UP);
-//                        }
-//                    });
-//                }
-//            }
-//        });
 
         b1 = (CheckBox) view.findViewById(R.id.cb1);
         b2 = (CheckBox) view.findViewById(R.id.cb2);
@@ -209,9 +179,14 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
             Uri uri = null;
             if (intent != null) {
                 uri =   intent.getData();
-//                Log.i("URI", "Uri: " + uri.toString());
                 fileUri=uri;
+                Toast.makeText(context,fileUri.toString(),Toast.LENGTH_LONG).show();
             }
+        }
+        if (requestCode == REQUEST_TAKE_PHOTO && resultCode == RESULT_OK) {
+
+//            galleryAddPic();
+//            fileUri=Uri.parse(new File(mCurrentPhotoPath).toString());
         }
 
     }
@@ -225,9 +200,6 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         cb3_value = b3.isChecked();
         cb4_value = b4.isChecked();
         cb5_value = b5.isChecked();
-//        Log.d("---->", String.valueOf(cb1_value) + String.valueOf(cb2_value) + String.valueOf(cb3_value) +
-//                String.valueOf(cb4_value) + String.valueOf(cb5_value));
-       
 
             if (cb1_value) {
                 int spinner_category_length = cSpinselection1.length();
@@ -406,12 +378,8 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
 
     public void attach()
     {
-//        Intent intent = new Intent();
-//        intent.setType("*/*");
-//        intent.setAction(Intent.ACTION_GET_CONTENT);
-//        startActivityForResult(Intent.createChooser(intent, "Select File"), PICK_FILE_REQUEST);
 
-         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
         intent.addCategory(Intent.CATEGORY_OPENABLE);
 
         intent.setType("*/*");
@@ -463,7 +431,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         headers.put("Authorization",TOKEN);
         headers.put("username",USER_NAME);
 
-        MultipartBody.Part body = fileUri!=null?prepareFilePart("file_attached", fileUri):null;
+        MultipartBody.Part body = fileUri!=null?prepareFilePart("file_attached", fileUri):(mCurrentPhotoPath!=null?prepareImagePart("file_attached"):null);
         CreateNoticeService apiService = ApiClient.getClient().create(CreateNoticeService.class);
 
         NoticeModel noticeModel = new NoticeModel(FACULTY_ID,cTitle,cDescription,null,category,vis_for_students,vis_for_hod,vis_for_faculty,vis_for_management,vis_for_others,coursebranchyear,getTime(),getTime());
@@ -511,6 +479,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
     private MultipartBody.Part prepareFilePart(String partName, Uri fileUri) {
 
         File file = FileUtils.getFile(getContext(), fileUri);
+        Toast.makeText(context,getActivity().getContentResolver().getType(fileUri),Toast.LENGTH_SHORT).show();
 
         RequestBody requestFile =
                 RequestBody.create(
@@ -524,10 +493,75 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
     }
 
     @NonNull
+    private MultipartBody.Part prepareImagePart(String partName) {
+
+        File file = new File(mCurrentPhotoPath);
+//        Toast.makeText(context,getActivity().getContentResolver().getType(fileUri),Toast.LENGTH_SHORT).show();
+
+        RequestBody requestFile =
+                RequestBody.create(
+                        MediaType.parse("image/jpg"),
+                        file
+                );
+
+        // MultipartBody.Part is used to send also the actual file name
+        return MultipartBody.Part.createFormData(partName, file.getName(), requestFile);
+
+    }
+
+    @NonNull
     private RequestBody createPartFromString(String descriptionString) {
         return RequestBody.create(
                 okhttp3.MultipartBody.FORM, descriptionString);
     }
+
+    private File createImageFile() throws IOException {
+        // Create an image file name
+        String timeStamp = getTime();
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = getContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(
+                imageFileName,  /* prefix */
+                ".jpg",         /* suffix */
+                storageDir      /* directory */
+        );
+
+        // Save a file: path for use with ACTION_VIEW intents
+        mCurrentPhotoPath = image.getAbsolutePath();
+        return image;
+    }
+
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        // Ensure that there's a camera activity to handle the intent
+        if (takePictureIntent.resolveActivity(getContext().getPackageManager()) != null) {
+            // Create the File where the photo should go
+            File photoFile = null;
+            try {
+                photoFile = createImageFile();
+            } catch (IOException ex) {
+               Log.i("error",ex.toString());
+            }
+            // Continue only if the File was successfully created
+            if (photoFile != null) {
+                Uri photoURI = FileProvider.getUriForFile(context, context.getApplicationContext().getPackageName() + ".fileprovider", photoFile);
+//                Toast.makeText(context,photoURI.toString(),Toast.LENGTH_LONG).show();
+//                fileUri=photoURI;
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
+            }
+        }
+    }
+//    private void galleryAddPic() {
+//        Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+//        File f = new File(mCurrentPhotoPath);
+//        Uri contentUri = Uri.fromFile(f);
+//
+//        mediaScanIntent.setData(contentUri);
+////        Toast.makeText(context,mediaScanIntent.getData().toString(),Toast.LENGTH_SHORT).show();
+//
+//        getContext().sendBroadcast(mediaScanIntent);
+//    }
 
 
 }
