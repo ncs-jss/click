@@ -1,48 +1,18 @@
 package com.hackncs.click;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-
-import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.util.Calendar;
-
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.icu.text.SimpleDateFormat;
-import android.media.MediaScannerConnection;
 import android.net.Uri;
-import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
-import android.provider.OpenableColumns;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.FileProvider;
-import android.support.v4.widget.NestedScrollView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -52,32 +22,22 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.NetworkResponse;
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.joanzapata.iconify.IconDrawable;
-import com.joanzapata.iconify.fonts.FontAwesomeIcons;
+import com.google.android.material.chip.Chip;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.Date;
+import java.io.File;
+import java.io.IOException;
+import java.util.Calendar;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
+import androidx.annotation.NonNull;
+import androidx.core.content.FileProvider;
+import androidx.fragment.app.Fragment;
 import in.nashapp.androidsummernote.Summernote;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -86,30 +46,29 @@ import retrofit2.Call;
 import retrofit2.Callback;
 
 import static android.app.Activity.RESULT_OK;
-import static com.hackncs.click.R.id.container;
-import static com.hackncs.click.R.id.spinner_course;
 
 
-public class CreateNotice extends Fragment implements View.OnClickListener, AdapterView.OnItemSelectedListener , CheckBox.OnCheckedChangeListener {
+public class CreateNotice extends Fragment implements View.OnClickListener, AdapterView.OnItemSelectedListener, CheckBox.OnCheckedChangeListener {
 
-    Spinner spinner2,spinner3,spinner4,spinner5;
+    Spinner spinner2, spinner3, spinner4, spinner5;
     private boolean cb1_value, cb2_value, cb3_value, cb4_value, cb5_value;
-    private String vis_for_students,vis_for_others,vis_for_hod,vis_for_management,vis_for_faculty;
+    private String vis_for_students, vis_for_others, vis_for_hod, vis_for_management, vis_for_faculty;
     private CheckBox b1, b2, b3, b4, b5;
     private Context context;
     private EditText notice_title;
-    private String cDescription, cTitle,category, cSpinselection1, cSpinselection2, cSpinselection3, cSpinselection4, cSpinselection5, coursebranchyear;
+    private String cDescription, cTitle, category, cSpinselection1, cSpinselection2, cSpinselection3, cSpinselection4, cSpinselection5, coursebranchyear;
     private String TOKEN = "token ";
     private String FIRST_NAME, USER_NAME, GROUP, USER_ID, FACULTY_ID;
     private View view;
     static Summernote summernote;
     Menu menu;
     Uri fileUri;
-    private final int PICK_FILE_REQUEST=1;
+    private final int PICK_FILE_REQUEST = 1;
     Button createNotice;
     ImageButton click_photo;
     static final int REQUEST_TAKE_PHOTO = 2;
-    String mCurrentPhotoPath=null;
+    String mCurrentPhotoPath = null;
+    Chip chip;
 
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
@@ -117,22 +76,31 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
 
 //        menu=MainActivity.menu;
         context = getActivity().getApplicationContext();
+        chip = view.findViewById(R.id.chip);
+        chip.setOnCloseIconClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCurrentPhotoPath = null;
+                fileUri = null;
+                chip.setVisibility(View.GONE);
+            }
+        });
         spinner2 = (Spinner) view.findViewById(R.id.spinner_course);
         spinner3 = (Spinner) view.findViewById(R.id.spinner_branch);
         spinner4 = (Spinner) view.findViewById(R.id.spinner_year);
         spinner5 = (Spinner) view.findViewById(R.id.spinner_section);
         spinner_enable(false);
-        createNotice=view.findViewById(R.id.create_notice);
+        createNotice = view.findViewById(R.id.create_notice);
         createNotice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkDetails()) {
+                if (checkDetails()) {
                     createNotice(fileUri);
                 }
             }
         });
         summernote = (Summernote) view.findViewById(R.id.summernote);
-        Button choose=(Button) view.findViewById(R.id.choose_button);
+        Button choose = (Button) view.findViewById(R.id.choose_button);
         choose.setOnClickListener(this);
         Spinner spinner1 = (Spinner) view.findViewById(R.id.spinner_category);
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(context,
@@ -141,7 +109,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         spinner1.setAdapter(adapter1);
         spinner1.setOnItemSelectedListener(this);
 
-        click_photo=view.findViewById(R.id.click_photo);
+        click_photo = view.findViewById(R.id.click_photo);
         click_photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -178,22 +146,26 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
 
             Uri uri = null;
             if (intent != null) {
-                uri =   intent.getData();
-                fileUri=uri;
-                Toast.makeText(context,fileUri.toString(),Toast.LENGTH_LONG).show();
+                uri = intent.getData();
+                fileUri = uri;
+                mCurrentPhotoPath = null;
+                File file = FileUtils.getFile(getContext(), fileUri);
+                chip.setText(file.getName());
+                chip.setVisibility(View.VISIBLE);
             }
         }
         if (requestCode == REQUEST_TAKE_PHOTO && resultCode == RESULT_OK) {
 
-//            galleryAddPic();
-//            fileUri=Uri.parse(new File(mCurrentPhotoPath).toString());
+            File file = new File(mCurrentPhotoPath);
+            fileUri = null;
+            chip.setText(file.getName());
+            chip.setVisibility(View.VISIBLE);
         }
 
     }
 
 
-
-    public boolean checkDetails () {
+    public boolean checkDetails() {
 
         cb1_value = b1.isChecked();
         cb2_value = b2.isChecked();
@@ -201,38 +173,40 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         cb4_value = b4.isChecked();
         cb5_value = b5.isChecked();
 
-            if (cb1_value) {
-                int spinner_category_length = cSpinselection1.length();
-                int spinner_course_length = cSpinselection2.length();
-                int spinner_branch_length = cSpinselection3.length();
-                int spinner_year_length = cSpinselection4.length();
-                int spinner_section_length = cSpinselection5.length();
-                if (spinner_category_length > 0 && spinner_branch_length > 0 && spinner_course_length > 0 && spinner_year_length > 0 && spinner_section_length > 0) {
+        if (cb1_value) {
+            int spinner_category_length = cSpinselection1.length();
+            int spinner_course_length = cSpinselection2.length();
+            int spinner_branch_length = cSpinselection3.length();
+            int spinner_year_length = cSpinselection4.length();
+            int spinner_section_length = cSpinselection5.length();
+            if (spinner_category_length > 0 && spinner_branch_length > 0 && spinner_course_length > 0 && spinner_year_length > 0 && spinner_section_length > 0) {
 
-                    return true;
-                } else {
-                    Toast.makeText(context, "Please select the required Details", Toast.LENGTH_SHORT).show();
-                    return false;
-                }
+                return true;
             } else {
-                Toast.makeText(context, "Please check the boxes", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Please select the required Details", Toast.LENGTH_SHORT).show();
                 return false;
             }
+        }
+        else if(cb2_value||cb3_value||cb4_value||cb5_value){
+            return true;
+        }
+        else {
+            Toast.makeText(context, "Please check the boxes", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
     @Override
     public void onClick(View v) {
 
-        if(v.getId()==R.id.choose_button)
-        {
+        if (v.getId() == R.id.choose_button) {
             attach();
         }
     }
 
-    public String getTime()
-    {
+    public String getTime() {
         Calendar c = Calendar.getInstance();
-        String formattedDate = String.format("%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",c.getTime());
+        String formattedDate = String.format("%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS", c.getTime());
 //        Log.d("Current time =>", formattedDate);
         return formattedDate;
     }
@@ -259,7 +233,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
             case R.id.spinner_year:
                 cSpinselection4 = tvSpinselection.getText().toString();
 //                Log.d("----->", cSpinselection4);
-                defineAdapter5(cSpinselection2,cSpinselection3);
+                defineAdapter5(cSpinselection2, cSpinselection3);
                 break;
             case R.id.spinner_section:
                 cSpinselection5 = tvSpinselection.getText().toString();
@@ -273,8 +247,8 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
-    public void defineSpinner()
-    {
+
+    public void defineSpinner() {
 
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(context,
                 R.array.select_course, R.layout.spinner_item);
@@ -283,19 +257,19 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         spinner2.setOnItemSelectedListener(this);
 
     }
-    public void defineAdapter3(String course)
-    {
-        int resId=R.array.select_branch_Btech;
-        if(course.equals("BTech"))
-        resId=R.array.select_branch_Btech;
+
+    public void defineAdapter3(String course) {
+        int resId = R.array.select_branch_Btech;
+        if (course.equals("BTech"))
+            resId = R.array.select_branch_Btech;
         else if (course.equals("MTech"))
-            resId=R.array.select_branch_Mtech;
+            resId = R.array.select_branch_Mtech;
         else if (course.equals("MCA"))
-            resId=R.array.select_branch_MCA;
+            resId = R.array.select_branch_MCA;
         else if (course.equals("MBA"))
-            resId=R.array.select_branch_MBA;
+            resId = R.array.select_branch_MBA;
         else if (course.equals("MTech"))
-            resId=R.array.select_branch_Mtech;
+            resId = R.array.select_branch_Mtech;
 
 
         ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(context,
@@ -305,15 +279,14 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         spinner3.setOnItemSelectedListener(this);
     }
 
-    public void defineAdapter4(String course)
-    {
-        int resId=R.array.select_year_Btech;
-        if(course.equals("BTech"))
-            resId=R.array.select_year_Btech;
-        else if (course.equals("MTech")||course.equals("MBA"))
-            resId=R.array.select_year_Others;
+    public void defineAdapter4(String course) {
+        int resId = R.array.select_year_Btech;
+        if (course.equals("BTech"))
+            resId = R.array.select_year_Btech;
+        else if (course.equals("MTech") || course.equals("MBA"))
+            resId = R.array.select_year_Others;
         else if (course.equals("MCA"))
-            resId=R.array.select_year_MCA;
+            resId = R.array.select_year_MCA;
 
 
         ArrayAdapter<CharSequence> adapter4 = ArrayAdapter.createFromResource(context,
@@ -325,11 +298,10 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
 
     }
 
-    public void defineAdapter5(String course,String branch)
-    {
-        int resId=R.array.select_section;
-        if(course.equals("BTech")) {
-            if(branch.equals("CSE"))
+    public void defineAdapter5(String course, String branch) {
+        int resId = R.array.select_section;
+        if (course.equals("BTech")) {
+            if (branch.equals("CSE"))
                 resId = R.array.select_section_CSE;
             else if (branch.equals("IT"))
                 resId = R.array.select_section_IT;
@@ -343,13 +315,11 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
                 resId = R.array.select_section_EE;
             else if (branch.equals("IC"))
                 resId = R.array.select_section_IC;
-        }
-        else if (course.equals("MTech") || course.equals("MBA")||course.equals("MCA"))
-                resId = R.array.select_section_Others;
+        } else if (course.equals("MTech") || course.equals("MBA") || course.equals("MCA"))
+            resId = R.array.select_section_Others;
 
 
-
-       ArrayAdapter<CharSequence> adapter5 = ArrayAdapter.createFromResource(context,
+        ArrayAdapter<CharSequence> adapter5 = ArrayAdapter.createFromResource(context,
                 resId, R.layout.spinner_item);
         adapter5.setDropDownViewResource(R.layout.spinner_item);
         spinner5.setAdapter(adapter5);
@@ -358,26 +328,19 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        if(b1.isChecked())
-        {
+        if (b1.isChecked()) {
             spinner_enable(true);
-        }
-        else
-        {
+        } else {
             spinner_enable(false);
         }
-        if(isChecked)
-        {
+        if (isChecked) {
             createNotice.setEnabled(true);
-        }
-        else if(!(b1.isChecked()||b2.isChecked()||b3.isChecked()||b4.isChecked()||b5.isChecked()))
-        {
+        } else if (!(b1.isChecked() || b2.isChecked() || b3.isChecked() || b4.isChecked() || b5.isChecked())) {
             createNotice.setEnabled(false);
         }
     }
 
-    public void attach()
-    {
+    public void attach() {
 
         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
         intent.addCategory(Intent.CATEGORY_OPENABLE);
@@ -387,12 +350,9 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         startActivityForResult(intent, PICK_FILE_REQUEST);
 
 
-
-
     }
 
-    private void spinner_enable(boolean set)
-    {
+    private void spinner_enable(boolean set) {
         spinner2.setEnabled(set);
         spinner3.setEnabled(set);
         spinner4.setEnabled(set);
@@ -402,7 +362,7 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
 
     private void createNotice(Uri fileUri) {
 
-        final ProgressDialog progressDialog=new ProgressDialog(getContext());
+        final ProgressDialog progressDialog = new ProgressDialog(getContext());
         progressDialog.setMessage("Please wait..");
         progressDialog.setCancelable(false);
         progressDialog.setTitle("Creating Notice...");
@@ -410,60 +370,59 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
         notice_title = (EditText) getActivity().findViewById(R.id.etNoticeTitle);
         cTitle = notice_title.getText().toString();
         cDescription = summernote.getText();
-        category=cSpinselection1.toLowerCase();
+        category = cSpinselection1.toLowerCase();
 
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        TOKEN = "token "+sp.getString("com.hackncs.click.TOKEN", "");
+        TOKEN = "token " + sp.getString("com.hackncs.click.TOKEN", "");
         USER_NAME = sp.getString("com.hackncs.click.USERNAME", "");
         FIRST_NAME = sp.getString("com.hackncs.click.FIRST_NAME", "");
         USER_ID = sp.getString("com.hackncs.click.USER_ID", "");
         FACULTY_ID = sp.getString("com.hackncs.click.PROFILE_ID", "");
-        vis_for_students=String.valueOf(cb1_value);
-        vis_for_hod=String.valueOf(cb1_value||cb2_value);
-        vis_for_faculty=String.valueOf(cb1_value||cb3_value);
-        vis_for_management=String.valueOf(cb1_value||cb4_value);
-        vis_for_others=String.valueOf(cb1_value||cb5_value);
+        vis_for_students = String.valueOf(cb1_value);
+        vis_for_hod = String.valueOf(cb1_value || cb2_value);
+        vis_for_faculty = String.valueOf(cb1_value || cb3_value);
+        vis_for_management = String.valueOf(cb1_value || cb4_value);
+        vis_for_others = String.valueOf(cb1_value || cb5_value);
         coursebranchyear = cSpinselection2 + "-" + cSpinselection3 + "-" + cSpinselection4 + "-" + cSpinselection5;
 //        Toast.makeText(context, "CourseBranchYear="+coursebranchyear, Toast.LENGTH_SHORT).show();
 
-        HashMap<String,String> headers=new HashMap<>();
-        headers.put("Authorization",TOKEN);
-        headers.put("username",USER_NAME);
+        HashMap<String, String> headers = new HashMap<>();
+        headers.put("Authorization", TOKEN);
+        headers.put("username", USER_NAME);
 
-        MultipartBody.Part body = fileUri!=null?prepareFilePart("file_attached", fileUri):(mCurrentPhotoPath!=null?prepareImagePart("file_attached"):null);
+        MultipartBody.Part body = fileUri != null ? prepareFilePart("file_attached", fileUri) : (mCurrentPhotoPath != null ? prepareImagePart("file_attached") : null);
         CreateNoticeService apiService = ApiClient.getClient().create(CreateNoticeService.class);
 
-        NoticeModel noticeModel = new NoticeModel(FACULTY_ID,cTitle,cDescription,null,category,vis_for_students,vis_for_hod,vis_for_faculty,vis_for_management,vis_for_others,coursebranchyear,getTime(),getTime());
+        NoticeModel noticeModel = new NoticeModel(FACULTY_ID, cTitle, cDescription, null, category, vis_for_students, vis_for_hod, vis_for_faculty, vis_for_management, vis_for_others, coursebranchyear, getTime(), getTime());
         HashMap<String, RequestBody> params = new HashMap<>();
-                                params.put("faculty", createPartFromString(FACULTY_ID));
-                                params.put("title",createPartFromString(cTitle));
-                                params.put("description", createPartFromString(cDescription));
-                                if(cSpinselection1.toLowerCase().equals("training and placement"))
-                                    cSpinselection1="tnp";
-                                params.put("category", createPartFromString(cSpinselection1.toLowerCase()));
-                                params.put("visible_for_students", createPartFromString(String.valueOf(vis_for_students)));
-                                params.put("visible_for_hod", createPartFromString(String.valueOf(vis_for_hod)));
-                                params.put("visible_for_faculty",createPartFromString(String.valueOf(vis_for_faculty)));
-                                params.put("visible_for_management",createPartFromString(String.valueOf(vis_for_management)));
-                                params.put("visible_for_others",createPartFromString(String.valueOf(vis_for_others)));
-                                params.put("course_branch_year",createPartFromString(coursebranchyear));
-                                params.put("created",createPartFromString(getTime()));
-                                params.put("modified", createPartFromString(getTime()));
-        Call<JSONObject> call = apiService.upload(headers,params,body);
+        params.put("faculty", createPartFromString(FACULTY_ID));
+        params.put("title", createPartFromString(cTitle));
+        params.put("description", createPartFromString(cDescription));
+        if (cSpinselection1.toLowerCase().equals("training and placement"))
+            cSpinselection1 = "tnp";
+        params.put("category", createPartFromString(cSpinselection1.toLowerCase()));
+        params.put("visible_for_students", createPartFromString(String.valueOf(vis_for_students)));
+        params.put("visible_for_hod", createPartFromString(String.valueOf(vis_for_hod)));
+        params.put("visible_for_faculty", createPartFromString(String.valueOf(vis_for_faculty)));
+        params.put("visible_for_management", createPartFromString(String.valueOf(vis_for_management)));
+        params.put("visible_for_others", createPartFromString(String.valueOf(vis_for_others)));
+        params.put("course_branch_year", createPartFromString(coursebranchyear));
+        params.put("created", createPartFromString(getTime()));
+        params.put("modified", createPartFromString(getTime()));
+        Call<JSONObject> call = apiService.upload(headers, params, body);
         call.enqueue(new Callback<JSONObject>() {
 
             @Override
             public void onResponse(Call<JSONObject> call, retrofit2.Response<JSONObject> response) {
-                    progressDialog.dismiss();
-                    if(response.isSuccessful())
-                    {
-                        Toast.makeText(getContext(),"Notice Create Successfully",Toast.LENGTH_SHORT).show();
-                    }
-                    else
-                    {
-                        Toast.makeText(getContext(),"Please try again",Toast.LENGTH_SHORT).show();
-                    }
+                progressDialog.dismiss();
+                if (response.isSuccessful()) {
+                    Toast.makeText(getContext(), "Notice Create Successfully", Toast.LENGTH_SHORT).show();
+                    getActivity().onBackPressed();
+
+                } else {
+                    Toast.makeText(getContext(), "Please try again", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
@@ -479,8 +438,6 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
     private MultipartBody.Part prepareFilePart(String partName, Uri fileUri) {
 
         File file = FileUtils.getFile(getContext(), fileUri);
-        Toast.makeText(context,getActivity().getContentResolver().getType(fileUri),Toast.LENGTH_SHORT).show();
-
         RequestBody requestFile =
                 RequestBody.create(
                         MediaType.parse(getActivity().getContentResolver().getType(fileUri)),
@@ -496,8 +453,6 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
     private MultipartBody.Part prepareImagePart(String partName) {
 
         File file = new File(mCurrentPhotoPath);
-//        Toast.makeText(context,getActivity().getContentResolver().getType(fileUri),Toast.LENGTH_SHORT).show();
-
         RequestBody requestFile =
                 RequestBody.create(
                         MediaType.parse("image/jpg"),
@@ -516,7 +471,6 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
     }
 
     private File createImageFile() throws IOException {
-        // Create an image file name
         String timeStamp = getTime();
         String imageFileName = "JPEG_" + timeStamp + "_";
         File storageDir = getContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
@@ -526,42 +480,25 @@ public class CreateNotice extends Fragment implements View.OnClickListener, Adap
                 storageDir      /* directory */
         );
 
-        // Save a file: path for use with ACTION_VIEW intents
         mCurrentPhotoPath = image.getAbsolutePath();
         return image;
     }
 
     private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        // Ensure that there's a camera activity to handle the intent
         if (takePictureIntent.resolveActivity(getContext().getPackageManager()) != null) {
-            // Create the File where the photo should go
             File photoFile = null;
             try {
                 photoFile = createImageFile();
             } catch (IOException ex) {
-               Log.i("error",ex.toString());
+                Log.i("error", ex.toString());
             }
-            // Continue only if the File was successfully created
             if (photoFile != null) {
                 Uri photoURI = FileProvider.getUriForFile(context, context.getApplicationContext().getPackageName() + ".fileprovider", photoFile);
-//                Toast.makeText(context,photoURI.toString(),Toast.LENGTH_LONG).show();
-//                fileUri=photoURI;
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
             }
         }
     }
-//    private void galleryAddPic() {
-//        Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-//        File f = new File(mCurrentPhotoPath);
-//        Uri contentUri = Uri.fromFile(f);
-//
-//        mediaScanIntent.setData(contentUri);
-////        Toast.makeText(context,mediaScanIntent.getData().toString(),Toast.LENGTH_SHORT).show();
-//
-//        getContext().sendBroadcast(mediaScanIntent);
-//    }
-
 
 }

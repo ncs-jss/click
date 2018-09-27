@@ -4,71 +4,71 @@
     android:id="@+id/activity_description"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.hackncs.click.DescriptionActivity"
-    android:background="#fff">
+    android:background="#fff"
+    tools:context="com.hackncs.click.DescriptionActivity">
 
     <RelativeLayout
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingBottom="15dp"
-        android:background="#644599"
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#644599"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp">
 
         <TextView
             android:id="@+id/nTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
             android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
             android:gravity="center"
             android:text="@string/title"
-            android:textStyle="bold"
             android:textColor="#efefef"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/postedby"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/nTitle"
-            android:id="@+id/postedby"
             android:text="@string/postedBy"
             android:textColor="#efefef"
-            android:textStyle="bold"
-            android:textSize="12sp"/>
+            android:textSize="12sp"
+            android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/nFaculty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/nTitle"
-            android:id="@+id/nFaculty"
-            android:layout_toRightOf="@+id/postedby"
             android:layout_toEndOf="@+id/postedby"
+            android:layout_toRightOf="@+id/postedby"
             android:textColor="#efefef"
-            android:textSize="12sp"/>
+            android:textSize="12sp" />
 
         <TextView
+            android:id="@+id/postedon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/postedby"
-            android:id="@+id/postedon"
-            android:text="@string/postedOn"
-            android:layout_toLeftOf="@+id/ndate"
             android:layout_toStartOf="@+id/ndate"
+            android:layout_toLeftOf="@+id/ndate"
+            android:text="@string/postedOn"
             android:textColor="#efefef"
-            android:textStyle="bold"
-            android:textSize="12sp"/>
+            android:textSize="12sp"
+            android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/ndate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/nFaculty"
-            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:id="@+id/ndate"
+            android:layout_alignParentRight="true"
             android:textColor="#efefef"
-            android:textSize="12sp"/>
+            android:textSize="12sp" />
     </RelativeLayout>
 
     <WebView

@@ -9,10 +9,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
-import android.support.design.widget.Snackbar;
-import android.support.v4.content.FileProvider;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,12 +25,12 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.snackbar.Snackbar;
 import com.joanzapata.iconify.IconDrawable;
 import com.joanzapata.iconify.Iconify;
 import com.joanzapata.iconify.fonts.FontAwesomeIcons;
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -51,12 +47,15 @@ import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.Map;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
+
 public class DescriptionActivity extends AppCompatActivity {
 
     private TextView title, faculty, posted_on;
     private WebView description;
-    private int index=0;
-    private String linkstr="";
+    private int index = 0;
+    private String linkstr = "";
     public Context context;
     private Notice notice;
     private String TOKEN;
@@ -64,10 +63,11 @@ public class DescriptionActivity extends AppCompatActivity {
     private Menu menu;
     ProgressDialog P;
     Button Dbutton;
-    private void init(){
+
+    private void init() {
         title = (TextView) findViewById(R.id.nTitle);
         faculty = (TextView) findViewById(R.id.nFaculty);
-        description = (WebView)findViewById(R.id.nDescription);
+        description = (WebView) findViewById(R.id.nDescription);
         posted_on = (TextView) findViewById(R.id.ndate);
     }
 
@@ -80,8 +80,8 @@ public class DescriptionActivity extends AppCompatActivity {
         TOKEN = sp.getString("com.hackncs.click.TOKEN", "");
         USER_NAME = sp.getString("com.hackncs.click.USERNAME", "");
 
-        Intent i=getIntent();
-        String action=i.getAction();
+        Intent i = getIntent();
+        String action = i.getAction();
         //Log.i("action:",action);
         //Log.i("openen:","opened");
         P = new ProgressDialog(context);
@@ -96,8 +96,8 @@ public class DescriptionActivity extends AppCompatActivity {
 
             String url = i.getData().toString();
 //            Log.d("url", url);
-            String noticeid = url.substring(url.indexOf('=')+1);
-            String get_url = Endpoints.notice_by_pk +noticeid;
+            String noticeid = url.substring(url.indexOf('=') + 1);
+            String get_url = Endpoints.notice_by_pk + noticeid;
 //            Log.d("Notice Id",noticeid);
 //            Log.d("URL",get_url);
             StringRequest newNoticeRequest = new StringRequest(Request.Method.GET, get_url,
@@ -123,7 +123,7 @@ public class DescriptionActivity extends AppCompatActivity {
 //                            Log.i("JsonError:",error.getMessage());
 //                            Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
                         }
-                    }){
+                    }) {
                 @Override
                 public Map<String, String> getHeaders() throws AuthFailureError {
                     Map<String, String> params = new HashMap<>();
@@ -134,24 +134,19 @@ public class DescriptionActivity extends AppCompatActivity {
             };
             RequestQueue rq = Volley.newRequestQueue(this);
             rq.add(newNoticeRequest);
-        }else{
+        } else {
             Bundle b = getIntent().getExtras();
             notice = (Notice) b.get("Notice");
         }
 
 
-
-
-
     }
 
     @Override
-    protected void onResume()
-    {
+    protected void onResume() {
         super.onResume();
 
         populateView();
-
 
 
     }
@@ -170,7 +165,7 @@ public class DescriptionActivity extends AppCompatActivity {
         });
         Dbutton.setVisibility(View.GONE);
 
-        if(notice!=null) {
+        if (notice != null) {
             if (notice.mAttachment) {
                 Dbutton.setVisibility(View.VISIBLE);
 
@@ -196,9 +191,9 @@ public class DescriptionActivity extends AppCompatActivity {
         sendIntent.setAction(Intent.ACTION_SEND);
         String share_url = "http://infoconnect.jssaten.ac.in/notice/?notice_id=" + notice.mId;
         Bundle bundle = new Bundle();
-        bundle.putString(Intent.EXTRA_TITLE,notice.mTitle);
-        bundle.putString(Intent.EXTRA_TEXT,notice.mNotice_description);
-        bundle.putString(Intent.EXTRA_TEXT,share_url+ "\n\nSent via InfoConnect");
+        bundle.putString(Intent.EXTRA_TITLE, notice.mTitle);
+        bundle.putString(Intent.EXTRA_TEXT, notice.mNotice_description);
+        bundle.putString(Intent.EXTRA_TEXT, share_url + "\n\nSent via InfoConnect");
         sendIntent.putExtras(bundle);
         sendIntent.setType("text/plain");
         startActivity(sendIntent);
@@ -224,8 +219,7 @@ public class DescriptionActivity extends AppCompatActivity {
                         .colorRes(R.color.golden)
                         .actionBarSize());
             }
-        }
-        catch (Exception e){
+        } catch (Exception e) {
 //            Log.i("Error",e.toString());
         }
         return true;
@@ -236,14 +230,10 @@ public class DescriptionActivity extends AppCompatActivity {
         int id = item.getItemId();
         if (id == R.id.menu_item_share) {
             startShareIntent();
-        }
-        else if (id == R.id.menu_item_star) {
-            if (!new OfflineDatabaseHandler(DescriptionActivity.this).getStarredNoticesIds().contains(notice.mId))
-            {
+        } else if (id == R.id.menu_item_star) {
+            if (!new OfflineDatabaseHandler(DescriptionActivity.this).getStarredNoticesIds().contains(notice.mId)) {
                 starNotice();
-            }
-            else
-            {
+            } else {
                 removeStarredNotice();
             }
 
@@ -277,8 +267,7 @@ public class DescriptionActivity extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
 //                        Toast.makeText(context, error.toString(), Toast.LENGTH_SHORT).show();
                     }
-                })
-        {
+                }) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
@@ -303,7 +292,7 @@ public class DescriptionActivity extends AppCompatActivity {
                             menu.getItem(1).setIcon(new IconDrawable(context, FontAwesomeIcons.fa_star)
                                     .colorRes(R.color.golden)
                                     .actionBarSize());
-                            boolean result =new OfflineDatabaseHandler(DescriptionActivity.this).insertNotice(notice);
+                            boolean result = new OfflineDatabaseHandler(DescriptionActivity.this).insertNotice(notice);
 //                            Log.i("Stared Notices",new OfflineDatabaseHandler(DescriptionActivity.this).getStarredNoticesIds().toString());
                             Toast.makeText(DescriptionActivity.this, jo.getString("message"), Toast.LENGTH_SHORT).show();
 
@@ -318,8 +307,7 @@ public class DescriptionActivity extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
 //                        Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
-                })
-        {
+                }) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
@@ -340,7 +328,7 @@ public class DescriptionActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             //verifyStoragePermissions();
-            File folder = new File(Environment.getExternalStorageDirectory()+"/InfoConnect");
+            File folder = new File(Environment.getExternalStorageDirectory() + "/InfoConnect");
             boolean status = folder.exists();
             if (!status) {
                 status = folder.mkdir();
@@ -363,11 +351,11 @@ public class DescriptionActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void Void) {
-            RelativeLayout parentView = (RelativeLayout)findViewById(R.id.activity_description);
+            RelativeLayout parentView = (RelativeLayout) findViewById(R.id.activity_description);
             Snackbar.make(parentView, "Download Complete!", Snackbar.LENGTH_SHORT).setAction("Open", new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    File selectedFile = new File(Environment.getExternalStorageDirectory().toString()+"/InfoConnect/" + linkstr);
+                    File selectedFile = new File(Environment.getExternalStorageDirectory().toString() + "/InfoConnect/" + linkstr);
                     if (selectedFile.isFile()) {
                         Intent intent = new Intent();
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -376,26 +364,19 @@ public class DescriptionActivity extends AppCompatActivity {
                         Uri uri = FileProvider.getUriForFile(context, context.getApplicationContext().getPackageName() + ".fileprovider", selectedFile);
                         if (selectedFile.getName().endsWith(".doc") || selectedFile.getName().endsWith(".docx")) {
                             intent.setDataAndType(uri, "application/msword");
-                        }
-                        else if(selectedFile.getName().endsWith(".pdf")) {
+                        } else if (selectedFile.getName().endsWith(".pdf")) {
                             intent.setDataAndType(uri, "application/pdf");
-                        }
-                        else if(selectedFile.getName().endsWith(".ppt") || selectedFile.getName().endsWith(".pptx")) {
+                        } else if (selectedFile.getName().endsWith(".ppt") || selectedFile.getName().endsWith(".pptx")) {
                             intent.setDataAndType(uri, "application/vnd.ms-powerpoint");
-                        }
-                        else if(selectedFile.getName().endsWith(".xls") || selectedFile.getName().endsWith(".xlsx")) {
+                        } else if (selectedFile.getName().endsWith(".xls") || selectedFile.getName().endsWith(".xlsx")) {
                             intent.setDataAndType(uri, "application/vnd.ms-excel");
-                        }
-                        else if(selectedFile.getName().endsWith(".rtf")) {
+                        } else if (selectedFile.getName().endsWith(".rtf")) {
                             intent.setDataAndType(uri, "application/rtf");
-                        }
-                        else if(selectedFile.getName().endsWith(".jpg") || selectedFile.getName().endsWith(".jpeg") || selectedFile.getName().endsWith(".png")) {
+                        } else if (selectedFile.getName().endsWith(".jpg") || selectedFile.getName().endsWith(".jpeg") || selectedFile.getName().endsWith(".png")) {
                             intent.setDataAndType(uri, "image/jpeg");
-                        }
-                        else if(selectedFile.getName().endsWith(".txt")) {
+                        } else if (selectedFile.getName().endsWith(".txt")) {
                             intent.setDataAndType(uri, "text/plain");
-                        }
-                        else {
+                        } else {
                             intent.setDataAndType(uri, "*/*");
                         }
                         startActivity(intent);
@@ -423,7 +404,7 @@ public class DescriptionActivity extends AppCompatActivity {
 
             // Output stream
             OutputStream output = new FileOutputStream(Environment
-                    .getExternalStorageDirectory().toString()+"/InfoConnect/"
+                    .getExternalStorageDirectory().toString() + "/InfoConnect/"
                     + linkstr);
 
             byte data[] = new byte[1024];

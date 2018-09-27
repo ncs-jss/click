@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="16dp"
     android:paddingTop="16dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
         android:text="@string/student_profile"
-        android:textSize="32sp"
-        android:layout_marginBottom="24dp"/>
+        android:textSize="32sp" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -25,169 +25,162 @@
             android:orientation="vertical">
 
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/course_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:hint="@string/course">
 
-                <android.support.design.widget.TextInputEditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/course_edit_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:enabled="false"
-                    android:drawableLeft="@drawable/graduation"
                     android:drawableStart="@drawable/graduation"
-                    android:maxLines="1"
-                    android:drawablePadding="16dp"/>
-            </android.support.design.widget.TextInputLayout>
+                    android:drawableLeft="@drawable/graduation"
+                    android:drawablePadding="16dp"
+                    android:enabled="false"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/branch_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:hint="@string/branch">
 
-                <android.support.design.widget.TextInputEditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/branch_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:enabled="false"
-                    android:drawableLeft="@drawable/merge"
                     android:drawableStart="@drawable/merge"
-                    android:drawablePadding="16dp"/>
-            </android.support.design.widget.TextInputLayout>
+                    android:drawableLeft="@drawable/merge"
+                    android:drawablePadding="16dp"
+                    android:enabled="false" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/year_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:hint="@string/year">
 
-                <android.support.design.widget.TextInputEditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/year_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="phone"
-                    android:enabled="false"
-                    android:drawableLeft="@drawable/year"
                     android:drawableStart="@drawable/year"
+                    android:drawableLeft="@drawable/year"
                     android:drawablePadding="16dp"
-                    />
-            </android.support.design.widget.TextInputLayout>
+                    android:enabled="false"
+                    android:inputType="phone" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/section_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:hint="@string/section">
 
-                <android.support.design.widget.TextInputEditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/section_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:enabled="false"
-                    android:drawableLeft="@drawable/section"
                     android:drawableStart="@drawable/section"
+                    android:drawableLeft="@drawable/section"
                     android:drawablePadding="16dp"
-                    />
-            </android.support.design.widget.TextInputLayout>
+                    android:enabled="false" />
+            </com.google.android.material.textfield.TextInputLayout>
 
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/uni_roll_no_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:hint="@string/uni_roll_no">
 
-                <android.support.design.widget.TextInputEditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/uni_roll_no_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:enabled="false"
-                    android:drawableLeft="@drawable/university"
                     android:drawableStart="@drawable/university"
+                    android:drawableLeft="@drawable/university"
                     android:drawablePadding="16dp"
-                    />
-            </android.support.design.widget.TextInputLayout>
+                    android:enabled="false" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/contact_no_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:hint="@string/contact_no">
 
-                <android.support.design.widget.TextInputEditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/contact_no_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:enabled="false"
+                    android:drawableStart="@drawable/ic_phone_black_24dp"
                     android:drawableLeft="@drawable/ic_phone_black_24dp"
                     android:drawablePadding="16dp"
-                    android:drawableStart="@drawable/ic_phone_black_24dp"
-                    />
-            </android.support.design.widget.TextInputLayout>
+                    android:enabled="false" />
+            </com.google.android.material.textfield.TextInputLayout>
 
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/father_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:hint="@string/father_contact_no.">
 
-                <android.support.design.widget.TextInputEditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/father_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:enabled="false"
-                    android:drawableLeft="@drawable/father"
                     android:drawableStart="@drawable/father"
+                    android:drawableLeft="@drawable/father"
                     android:drawablePadding="16dp"
-                    />
-            </android.support.design.widget.TextInputLayout>
+                    android:enabled="false" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/mother_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:hint="@string/mother_contact_no.">
 
-                <android.support.design.widget.TextInputEditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/mother_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:enabled="false"
-                    android:drawableLeft="@drawable/mother"
                     android:drawableStart="@drawable/mother"
+                    android:drawableLeft="@drawable/mother"
                     android:drawablePadding="16dp"
-                    />
-            </android.support.design.widget.TextInputLayout>
+                    android:enabled="false" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/address_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:hint="@string/address">
 
-                <android.support.design.widget.TextInputEditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/address_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:enabled="false"
-                    android:drawableLeft="@drawable/ic_home_black_24dp"
                     android:drawableStart="@drawable/ic_home_black_24dp"
+                    android:drawableLeft="@drawable/ic_home_black_24dp"
                     android:drawablePadding="16dp"
-                    />
-            </android.support.design.widget.TextInputLayout>
+                    android:enabled="false" />
+            </com.google.android.material.textfield.TextInputLayout>
 
 
         </LinearLayout>

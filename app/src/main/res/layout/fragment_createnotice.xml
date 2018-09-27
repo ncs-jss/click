@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scrl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,71 +12,79 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-    <EditText
-        android:id="@+id/etNoticeTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginBottom="11dp"
-        android:inputType="text"
-        android:textSize="22sp"
-        android:hint="@string/title_hint"/>
-    <LinearLayout
-    android:id="@+id/layout"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_below="@+id/etNoticeTitle"
-    android:layout_marginBottom="16dp">
-
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/etNoticeTitle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/description"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-        <ImageButton
-            android:id="@+id/click_photo"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_camera_alt_black_24dp"/>
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="11dp"
+            android:hint="@string/title_hint"
+            android:inputType="text"
+            android:textSize="22sp" />
 
-        <Button
-            android:id="@+id/choose_button"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/attach"/>
-    </LinearLayout>
+            android:layout_below="@+id/etNoticeTitle"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/description"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/click_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_camera_alt_black_24dp"
+                android:contentDescription="TODO" />
+
+            <Button
+                android:id="@+id/choose_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/attach" />
+        </LinearLayout>
 
         <in.nashapp.androidsummernote.Summernote
             android:id="@+id/summernote"
             android:layout_width="match_parent"
             android:layout_height="400dp"
-            android:nestedScrollingEnabled="true"
             android:layout_below="@+id/layout"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp"
+            android:nestedScrollingEnabled="true"
+            tools:targetApi="lollipop" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip"
             style="@style/Widget.MaterialComponents.Chip.Entry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/summernote"
-            android:text="hello"
-            android:layout_marginBottom="16dp"/>
+            android:layout_below="@+id/summernote"
+            android:layout_marginBottom="16dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Chip"
+            android:visibility="gone"
+            app:checkedIconEnabled="false"
+            app:chipIconEnabled="false"
+            app:closeIconEnabled="true" />
 
 
-    <TextView
-        android:id="@+id/heading_category"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_below="@+id/chip"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"
-        android:text="@string/category"/>
+        <TextView
+            android:id="@+id/heading_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chip"
+            android:layout_marginBottom="8dp"
+            android:text="@string/category"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <Spinner
             android:id="@+id/spinner_category"
@@ -85,7 +93,7 @@
             android:layout_below="@id/heading_category"
             android:layout_marginBottom="8dp" />
 
-    <!--<ToggleButton-->
+        <!--<ToggleButton-->
         <!--android:id="@+id/upload_button"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"-->
@@ -101,36 +109,41 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/spinner_category"
             android:layout_marginBottom="16dp"
+            android:text="@string/toggle_text"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:text="@string/toggle_text"/>
+            android:textStyle="bold" />
 
 
-<LinearLayout
-    android:id="@+id/upload_for"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:baselineAligned="false"
-    android:layout_below="@id/upload_button">
-    <include layout="@layout/dialogue_layout"
-        android:layout_height="wrap_content"
-        android:layout_width="0dp"
-        android:layout_weight="1"/>
-    <include layout="@layout/upload_for_details"
-        android:layout_height="wrap_content"
-        android:layout_width="0dp"
-        android:layout_weight="1"/>
-</LinearLayout>
-       <Button
-           android:id="@+id/create_notice"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:background="@color/colorAccent"
-           android:layout_marginTop="12dp"
-           android:enabled="false"
-           android:text="Create"
-           android:layout_below="@+id/upload_for"/>
+        <LinearLayout
+            android:id="@+id/upload_for"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/upload_button"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <include
+                layout="@layout/dialogue_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <include
+                layout="@layout/upload_for_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/create_notice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/upload_for"
+            android:layout_marginTop="12dp"
+            android:background="@color/colorAccent"
+            android:enabled="false"
+            android:text="Create" />
     </RelativeLayout>
 
-</android.support.v4.widget.NestedScrollView>
+</androidx.core.widget.NestedScrollView>

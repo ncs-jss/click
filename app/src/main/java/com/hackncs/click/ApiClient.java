@@ -18,7 +18,7 @@ public class ApiClient {
 
     public static Retrofit getClient() {
 
-        if (retrofit==null) {
+        if (retrofit == null) {
             retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
@@ -26,8 +26,8 @@ public class ApiClient {
         }
         return retrofit;
     }
-    private static OkHttpClient get_HTTPClient(final Map<String, String> headers)
-    {
+
+    private static OkHttpClient get_HTTPClient(final Map<String, String> headers) {
         final OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         httpClient.addInterceptor(new Interceptor() {
             @Override

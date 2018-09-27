@@ -14,10 +14,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.support.v4.app.ActivityCompat;
-import android.util.Log;
 import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.DecelerateInterpolator;
@@ -43,6 +40,8 @@ import org.json.JSONObject;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
+
+import androidx.core.app.ActivityCompat;
 
 public class Splash extends Activity {
 
@@ -121,9 +120,9 @@ public class Splash extends Activity {
                 sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
                 break;
             case LOGIN_DISPLAY:
-                username = (EditText)findViewById(R.id.etUsername);
-                password = (EditText)findViewById(R.id.etPassword);
-                submit = (Button)findViewById(R.id.bSubmit);
+                username = (EditText) findViewById(R.id.etUsername);
+                password = (EditText) findViewById(R.id.etPassword);
+                submit = (Button) findViewById(R.id.bSubmit);
                 submit.setClickable(false);
                 break;
         }
@@ -140,7 +139,7 @@ public class Splash extends Activity {
             if (progress % 5 == 0)
                 x++;
             try {
-                Thread.sleep(10+x);
+                Thread.sleep(10 + x);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -162,7 +161,7 @@ public class Splash extends Activity {
                         try {
                             JSONArray jsonArray = new JSONArray(response);
                             int i = 0;
-                            while (jsonArray.getJSONObject(i)!=null) {
+                            while (jsonArray.getJSONObject(i) != null) {
                                 loadAndAdd(jsonArray.getJSONObject(i).getString("notice"));
                                 i++;
                             }
@@ -177,7 +176,7 @@ public class Splash extends Activity {
 //                        Toast.makeText(Splash.this, error.getMessage(), Toast.LENGTH_SHORT).show();
 //                        Log.e("Error",error.getLocalizedMessage());
                     }
-                }){
+                }) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
@@ -195,7 +194,7 @@ public class Splash extends Activity {
         String URL = Endpoints.notice_by_pk;
         final String TOKEN = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.TOKEN", "");
         final String USER_NAME = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("com.hackncs.click.USERNAME", "");
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL+notice,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL + notice,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -213,13 +212,14 @@ public class Splash extends Activity {
                     public void onErrorResponse(VolleyError error) {
 //                        Toast.makeText(Splash.this, error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
-                }){
+                }) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
                 params.put("Authorization", "token " + TOKEN);
                 params.put("username", USER_NAME);
-                return params;            }
+                return params;
+            }
         };
         RequestQueue queue = Volley.newRequestQueue(Splash.this);
         queue.add(stringRequest);
@@ -246,7 +246,7 @@ public class Splash extends Activity {
         setContentView(R.layout.login);
         initialize(LOGIN_DISPLAY);
         animate(LOGIN_DISPLAY);
-        submitListener =  new View.OnClickListener() {
+        submitListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 progressDialog = new ProgressDialog(Splash.this);
@@ -263,6 +263,7 @@ public class Splash extends Activity {
         super.onPause();
         //Toast.makeText(this,"Pause",Toast.LENGTH_SHORT).show();
     }
+
     @Override
     protected void onStop() {
         super.onStop();
@@ -283,8 +284,7 @@ public class Splash extends Activity {
                 }
             });
             return true;
-        }
-        else {
+        } else {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -296,7 +296,7 @@ public class Splash extends Activity {
     }
 
     private boolean connectFolder() {
-        File folder = new File(Environment.getExternalStorageDirectory()+"/InfoConnect");
+        File folder = new File(Environment.getExternalStorageDirectory() + "/InfoConnect");
         boolean status = folder.exists();
         if (!status) {
             runOnUiThread(new Runnable() {
@@ -327,7 +327,8 @@ public class Splash extends Activity {
 
     public class LoginTasks extends AsyncTask<String, Integer, String> {
 
-        String token = "", group = "", user_id = "", first_name="", profile_id="";
+        String token = "", group = "", user_id = "", first_name = "", profile_id = "";
+
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -339,23 +340,23 @@ public class Splash extends Activity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             progressDialog.dismiss();
-                if (!s.equals("ok")) {
-                    Toast.makeText(Splash.this, "Login failed!", Toast.LENGTH_SHORT).show();
-                } else {
-                    editor = sharedPreferences.edit();
-                    editor.putBoolean("com.hackncs.click.LOGGED_IN", true);
-                    editor.putString("com.hackncs.click.TOKEN", token);
-                    editor.putString("com.hackncs.click.GROUP", group);
-                    editor.putString("com.hackncs.click.USER_ID", user_id);
-                    editor.putString("com.hackncs.click.PROFILE_ID", profile_id);
-                    editor.putString("com.hackncs.click.USERNAME", sUsername);
-                    editor.putString("com.hackncs.click.FIRST_NAME", first_name);
-                    editor.commit();
-                    syncStarredNotices();
-                    Intent intent = new Intent(Splash.this, MainActivity.class);
-                    intent.putExtra("mode", "ONLINE_MODE");
-                    startActivity(intent);
-                }
+            if (!s.equals("ok")) {
+                Toast.makeText(Splash.this, "Login failed!", Toast.LENGTH_SHORT).show();
+            } else {
+                editor = sharedPreferences.edit();
+                editor.putBoolean("com.hackncs.click.LOGGED_IN", true);
+                editor.putString("com.hackncs.click.TOKEN", token);
+                editor.putString("com.hackncs.click.GROUP", group);
+                editor.putString("com.hackncs.click.USER_ID", user_id);
+                editor.putString("com.hackncs.click.PROFILE_ID", profile_id);
+                editor.putString("com.hackncs.click.USERNAME", sUsername);
+                editor.putString("com.hackncs.click.FIRST_NAME", first_name);
+                editor.apply();
+                syncStarredNotices();
+                Intent intent = new Intent(Splash.this, MainActivity.class);
+                intent.putExtra("mode", "ONLINE_MODE");
+                startActivity(intent);
+            }
         }
 
         @Override
@@ -385,14 +386,14 @@ public class Splash extends Activity {
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                           // Toast.makeText(Splash.this, error.toString(), Toast.LENGTH_LONG).show();
+                            // Toast.makeText(Splash.this, error.toString(), Toast.LENGTH_LONG).show();
                         }
-                    }){
+                    }) {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String, String> map = new HashMap<>();
-                    map.put("username",sUsername);
-                    map.put("password",sPassword);
+                    map.put("username", sUsername);
+                    map.put("password", sPassword);
                     return map;
                 }
             };
