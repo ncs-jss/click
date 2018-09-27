@@ -1,122 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="16dp"
     android:paddingTop="16dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
         android:text="@string/faculty_profile"
-        android:textSize="32sp"
-        android:layout_marginBottom="24dp"/>
+        android:textSize="32sp" />
 
     <ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clipChildren="false"
-        android:clipToPadding="false"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/designation_text_input"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:hint="@string/designation">
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical">
 
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/designation_edit_input"
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/designation_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
-                android:drawableLeft="@drawable/ic_person_black_24dp"
-                android:drawableStart="@drawable/ic_person_black_24dp"
-                android:maxLines="1"
-                android:drawablePadding="16dp"/>
-        </android.support.design.widget.TextInputLayout>
+                android:layout_marginBottom="16dp"
+                android:hint="@string/designation">
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/department_text_input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:hint="@string/department">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/designation_edit_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_person_black_24dp"
+                    android:drawableLeft="@drawable/ic_person_black_24dp"
+                    android:drawablePadding="16dp"
+                    android:enabled="false"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/department_edit_text"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/department_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
-                android:drawableLeft="@drawable/ic_work_black_24dp"
-                android:drawableStart="@drawable/ic_work_black_24dp"
-                android:drawablePadding="16dp"/>
-        </android.support.design.widget.TextInputLayout>
+                android:layout_marginBottom="16dp"
+                android:hint="@string/department">
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/contact_no_text_input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:hint="@string/contact_no">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/department_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_work_black_24dp"
+                    android:drawableLeft="@drawable/ic_work_black_24dp"
+                    android:drawablePadding="16dp"
+                    android:enabled="false" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/contact_no_edit_text"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/contact_no_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="phone"
-                android:enabled="false"
-                android:drawableLeft="@drawable/ic_phone_black_24dp"
-                android:drawableStart="@drawable/ic_phone_black_24dp"
-                android:drawablePadding="16dp"
-                />
-        </android.support.design.widget.TextInputLayout>
+                android:layout_marginBottom="16dp"
+                android:hint="@string/contact_no">
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/address_text_input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:hint="@string/address">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/contact_no_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_phone_black_24dp"
+                    android:drawableLeft="@drawable/ic_phone_black_24dp"
+                    android:drawablePadding="16dp"
+                    android:enabled="false"
+                    android:inputType="phone" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/address_edit_text"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/address_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
-                android:drawableLeft="@drawable/ic_home_black_24dp"
-                android:drawableStart="@drawable/ic_home_black_24dp"
-                android:drawablePadding="16dp"
-                />
-        </android.support.design.widget.TextInputLayout>
+                android:layout_marginBottom="16dp"
+                android:hint="@string/address">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_home_black_24dp"
+                    android:drawableLeft="@drawable/ic_home_black_24dp"
+                    android:drawablePadding="16dp"
+                    android:enabled="false" />
+            </com.google.android.material.textfield.TextInputLayout>
 
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/email_text_input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:hint="@string/email">
-
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/email_edit_text"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:enabled="false"
-                android:drawableLeft="@drawable/ic_email_black_24dp"
-                android:drawableStart="@drawable/ic_email_black_24dp"
-                android:drawablePadding="16dp"
-                />
-        </android.support.design.widget.TextInputLayout>
+                android:layout_marginBottom="16dp"
+                android:hint="@string/email">
 
-    </LinearLayout>
-</ScrollView>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_email_black_24dp"
+                    android:drawableLeft="@drawable/ic_email_black_24dp"
+                    android:drawablePadding="16dp"
+                    android:enabled="false"
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

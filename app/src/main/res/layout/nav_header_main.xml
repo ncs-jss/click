@@ -5,44 +5,43 @@
     android:background="@drawable/slide_nav_bar"
     android:gravity="bottom"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_marginTop="4dp"
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_gravity="center"
+        android:layout_marginTop="4dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:src="@drawable/jsslogo" />
+        android:src="@drawable/jsslogo"
+        android:contentDescription="TODO" />
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="13sp"
-        android:textStyle="bold"
+        android:gravity="center"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="@string/jssate"
-        android:gravity="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="13sp"
+        android:textStyle="bold" />
 
 
     <TextView
         android:id="@+id/tvFirstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:paddingTop="8dp"
         android:text="@string/welcome_user"
         android:textAlignment="center"
-        android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-
 
 
 </LinearLayout>

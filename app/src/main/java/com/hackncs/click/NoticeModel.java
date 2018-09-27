@@ -19,37 +19,35 @@ public class NoticeModel {
     String modified;
 
     public NoticeModel(String faculty,
-            String title,
-            String description,
-            File file_attached,
-            String category,
-            String visible_for_students,
-            String visible_for_hod,
-            String visible_for_faculty,
-            String visible_for_management,
-            String visible_for_others,
-            String course_branch_year,
-            String created,
-            String modified)
-    {
-        this.category=category;
-        this.faculty=faculty;
-        this.title=title;
-        this.file_attached=file_attached;
-        this.description=description;
-        this.visible_for_faculty=visible_for_faculty;
-        this.visible_for_hod= visible_for_hod;
-        this.visible_for_management=visible_for_management;
-        this.visible_for_students=visible_for_students;
-        this.visible_for_others=visible_for_others;
-        this.course_branch_year=course_branch_year;
-        this.created=created;
-        this.modified=modified;
+                       String title,
+                       String description,
+                       File file_attached,
+                       String category,
+                       String visible_for_students,
+                       String visible_for_hod,
+                       String visible_for_faculty,
+                       String visible_for_management,
+                       String visible_for_others,
+                       String course_branch_year,
+                       String created,
+                       String modified) {
+        this.category = category;
+        this.faculty = faculty;
+        this.title = title;
+        this.file_attached = file_attached;
+        this.description = description;
+        this.visible_for_faculty = visible_for_faculty;
+        this.visible_for_hod = visible_for_hod;
+        this.visible_for_management = visible_for_management;
+        this.visible_for_students = visible_for_students;
+        this.visible_for_others = visible_for_others;
+        this.course_branch_year = course_branch_year;
+        this.created = created;
+        this.modified = modified;
 
     }
 
-    public NoticeModel()
-    {
+    public NoticeModel() {
 
     }
 

@@ -4,22 +4,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 
 public class FragmentStarredNotices extends Fragment {
@@ -33,7 +29,7 @@ public class FragmentStarredNotices extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_starred_notices,container,false);
+        view = inflater.inflate(R.layout.fragment_starred_notices, container, false);
         context = getActivity().getApplicationContext();
         listView = (ListView) view.findViewById(R.id.lvList2);
         fetchNotices();
@@ -43,6 +39,10 @@ public class FragmentStarredNotices extends Fragment {
     private void fetchNotices() {
         notices.clear();
         notices = new OfflineDatabaseHandler(context).getStarredNotices();
+        List<Notice> temp = notices;
+        for (int i = temp.size() - 1, j = 0; i >= 0; i--, j++) {
+            notices.set(j, temp.get(i));
+        }
         myAdapter = new MyAdapter(context, notices);
         listView.setAdapter(myAdapter);
     }
@@ -68,10 +68,9 @@ public class FragmentStarredNotices extends Fragment {
         public View getView(int position, View convertView, ViewGroup parent) {
             View row;
             if (convertView == null) {
-                LayoutInflater  inflater = getActivity().getLayoutInflater();
+                LayoutInflater inflater = getActivity().getLayoutInflater();
                 row = inflater.inflate(R.layout.notice_row_layout, parent, false);
-            }
-            else
+            } else
                 row = convertView;
             obj = mObjects.get(position);
             row.setOnClickListener(new View.OnClickListener() {
@@ -83,15 +82,15 @@ public class FragmentStarredNotices extends Fragment {
                     context.startActivity(intent);
                 }
             });
-            TextView title = (TextView)row.findViewById(R.id.textmTitle);
-            TextView postedBy = (TextView)row.findViewById(R.id.textmPostedby);
-            TextView month = (TextView)row.findViewById(R.id.textmMonth);
-            TextView date = (TextView)row.findViewById(R.id.textmDate);
+            TextView title = (TextView) row.findViewById(R.id.textmTitle);
+            TextView postedBy = (TextView) row.findViewById(R.id.textmPostedby);
+            TextView month = (TextView) row.findViewById(R.id.textmMonth);
+            TextView date = (TextView) row.findViewById(R.id.textmDate);
             title.setText(obj.mTitle);
             postedBy.setText(obj.mPosted_by);
-            obj.numDate = (obj.mDate).substring(8,10);
-            obj.month = (obj.mDate).substring(5,7);
-            if(obj.month.equals("01"))
+            obj.numDate = (obj.mDate).substring(8, 10);
+            obj.month = (obj.mDate).substring(5, 7);
+            if (obj.month.equals("01"))
                 obj.month = "Jan";
             else if (obj.month.equals("02"))
                 obj.month = "Feb";

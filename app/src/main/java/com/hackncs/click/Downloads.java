@@ -5,9 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +23,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.content.FileProvider;
+import androidx.fragment.app.Fragment;
+
 public class Downloads extends Fragment implements AdapterView.OnItemClickListener {
 
     private View view;
@@ -39,47 +42,46 @@ public class Downloads extends Fragment implements AdapterView.OnItemClickListen
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.activity_downloads,container,false);
+        view = inflater.inflate(R.layout.activity_downloads, container, false);
         context = getActivity().getApplicationContext();
         listView = (ListView) view.findViewById(R.id.lvList);
-        initialDirectory = new File(Environment.getExternalStorageDirectory()+"/InfoConnect");
+        initialDirectory = new File(Environment.getExternalStorageDirectory() + "/InfoConnect");
         filesList = new ArrayList<>();
-        acceptedFileExtensions = new String[] {};
+        acceptedFileExtensions = new String[]{};
         refreshFilesList();
         return view;
     }
 
-   /* @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_downloads);
-        listView = (ListView) findViewById(R.id.lvList);
-        initialDirectory = new File(Environment.getExternalStorageDirectory()+"/InfoConnect");
-        filesList = new ArrayList<>();
-        acceptedFileExtensions = new String[] {};
-        refreshFilesList();
-    }
+    /* @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_downloads);
+         listView = (ListView) findViewById(R.id.lvList);
+         initialDirectory = new File(Environment.getExternalStorageDirectory()+"/InfoConnect");
+         filesList = new ArrayList<>();
+         acceptedFileExtensions = new String[] {};
+         refreshFilesList();
+     }
 
-    @Override
-    protected void onResume() {
-        refreshFilesList();
-        super.onResume();
-    }
-*/
+     @Override
+     protected void onResume() {
+         refreshFilesList();
+         super.onResume();
+     }
+ */
     private void refreshFilesList() {
         filesList.clear();
         ExtensionFilenameFilter filter = new ExtensionFilenameFilter(acceptedFileExtensions);
         File[] files = initialDirectory.listFiles(filter);
-        if(files != null && files.length > 0) {
-            for(File f : files) {
+        if (files != null && files.length > 0) {
+            for (File f : files) {
                 filesList.add(f);
             }
             Collections.sort(filesList, new FileComparator());
+        } else {
+            Toast.makeText(context, "No files found!", Toast.LENGTH_SHORT).show();
         }
-        else {
-            Toast.makeText(context , "No files found!", Toast.LENGTH_SHORT).show();
-        }
-        myAdapter = new MyAdapter(context , filesList);
+        myAdapter = new MyAdapter(context, filesList);
         listView.setAdapter(myAdapter);
         listView.setOnItemClickListener(this);
     }
@@ -91,29 +93,26 @@ public class Downloads extends Fragment implements AdapterView.OnItemClickListen
             Intent intent = new Intent();
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.setAction(Intent.ACTION_VIEW);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            Uri uri = FileProvider.getUriForFile(context, context.getApplicationContext().getPackageName() + ".fileprovider", selectedFile);
+            Log.i("URI", uri.toString());
+            Log.i("FILE URI", Uri.fromFile(selectedFile).toString());
             if (selectedFile.getName().endsWith(".doc") || selectedFile.getName().endsWith(".docx")) {
-                intent.setDataAndType(Uri.fromFile(selectedFile), "application/msword");
-            }
-            else if(selectedFile.getName().endsWith(".pdf")) {
-                intent.setDataAndType(Uri.fromFile(selectedFile), "application/pdf");
-            }
-            else if(selectedFile.getName().endsWith(".ppt") || selectedFile.getName().endsWith(".pptx")) {
-                intent.setDataAndType(Uri.fromFile(selectedFile), "application/vnd.ms-powerpoint");
-            }
-            else if(selectedFile.getName().endsWith(".xls") || selectedFile.getName().endsWith(".xlsx")) {
-                intent.setDataAndType(Uri.fromFile(selectedFile), "application/vnd.ms-excel");
-            }
-            else if(selectedFile.getName().endsWith(".rtf")) {
-                intent.setDataAndType(Uri.fromFile(selectedFile), "application/rtf");
-            }
-            else if(selectedFile.getName().endsWith(".jpg") || selectedFile.getName().endsWith(".jpeg") || selectedFile.getName().endsWith(".png")) {
-                intent.setDataAndType(Uri.fromFile(selectedFile), "image/jpeg");
-            }
-            else if(selectedFile.getName().endsWith(".txt")) {
-                intent.setDataAndType(Uri.fromFile(selectedFile), "text/plain");
-            }
-            else {
-                intent.setDataAndType(Uri.fromFile(selectedFile), "*/*");
+                intent.setDataAndType(uri, "application/msword");
+            } else if (selectedFile.getName().endsWith(".pdf")) {
+                intent.setDataAndType(uri, "application/pdf");
+            } else if (selectedFile.getName().endsWith(".ppt") || selectedFile.getName().endsWith(".pptx")) {
+                intent.setDataAndType(uri, "application/vnd.ms-powerpoint");
+            } else if (selectedFile.getName().endsWith(".xls") || selectedFile.getName().endsWith(".xlsx")) {
+                intent.setDataAndType(uri, "application/vnd.ms-excel");
+            } else if (selectedFile.getName().endsWith(".rtf")) {
+                intent.setDataAndType(uri, "application/rtf");
+            } else if (selectedFile.getName().endsWith(".jpg") || selectedFile.getName().endsWith(".jpeg") || selectedFile.getName().endsWith(".png")) {
+                intent.setDataAndType(uri, "image/jpeg");
+            } else if (selectedFile.getName().endsWith(".txt")) {
+                intent.setDataAndType(uri, "text/plain");
+            } else {
+                intent.setDataAndType(uri, "*/*");
             }
             startActivity(intent);
         }
@@ -122,6 +121,7 @@ public class Downloads extends Fragment implements AdapterView.OnItemClickListen
     private class MyAdapter extends ArrayAdapter<File> {
 
         private List<File> mObjects;
+
         public MyAdapter(Context context, List<File> objects) {
             super(context, R.layout.list_item, android.R.id.text1, objects);
             mObjects = objects;
@@ -132,40 +132,32 @@ public class Downloads extends Fragment implements AdapterView.OnItemClickListen
         public View getView(int position, View convertView, ViewGroup parent) {
             View row;
             if (convertView == null) {
-                LayoutInflater  inflater = getActivity().getLayoutInflater();
+                LayoutInflater inflater = getActivity().getLayoutInflater();
 //                LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 row = inflater.inflate(R.layout.list_item, parent, false);
-            }
-            else
+            } else
                 row = convertView;
             File displayFile = mObjects.get(position);
-            ImageView imageView = (ImageView)row.findViewById(R.id.file_picker_image);
-            TextView textView = (TextView)row.findViewById(R.id.file_picker_text);
+            ImageView imageView = (ImageView) row.findViewById(R.id.file_picker_image);
+            TextView textView = (TextView) row.findViewById(R.id.file_picker_text);
             textView.setSingleLine(true);
             textView.setText(displayFile.getName());
             if (displayFile.isFile()) {
                 if (displayFile.getName().endsWith(".doc") || displayFile.getName().endsWith(".docx")) {
                     imageView.setImageResource(R.drawable.doc);
-                }
-                else if(displayFile.getName().endsWith(".pdf")) {
+                } else if (displayFile.getName().endsWith(".pdf")) {
                     imageView.setImageResource(R.drawable.pdf);
-                }
-                else if(displayFile.getName().endsWith(".ppt") || displayFile.getName().endsWith(".pptx")) {
+                } else if (displayFile.getName().endsWith(".ppt") || displayFile.getName().endsWith(".pptx")) {
                     imageView.setImageResource(R.drawable.ppt);
-                }
-                else if(displayFile.getName().endsWith(".xls") || displayFile.getName().endsWith(".xlsx")) {
+                } else if (displayFile.getName().endsWith(".xls") || displayFile.getName().endsWith(".xlsx")) {
                     imageView.setImageResource(R.drawable.xls);
-                }
-                else if(displayFile.getName().endsWith(".rtf")) {
+                } else if (displayFile.getName().endsWith(".rtf")) {
                     imageView.setImageResource(R.drawable.rtf);
-                }
-                else if(displayFile.getName().endsWith(".jpg") || displayFile.getName().endsWith(".jpeg") || displayFile.getName().endsWith(".png")) {
+                } else if (displayFile.getName().endsWith(".jpg") || displayFile.getName().endsWith(".jpeg") || displayFile.getName().endsWith(".png")) {
                     imageView.setImageResource(R.drawable.jpg);
-                }
-                else if(displayFile.getName().endsWith(".txt")) {
+                } else if (displayFile.getName().endsWith(".txt")) {
                     imageView.setImageResource(R.drawable.txt);
-                }
-                else {
+                } else {
                     imageView.setImageResource(R.drawable.file);
                 }
             }
@@ -176,6 +168,7 @@ public class Downloads extends Fragment implements AdapterView.OnItemClickListen
     private class ExtensionFilenameFilter implements FilenameFilter {
 
         private String[] acceptedExtensions;
+
         public ExtensionFilenameFilter(String[] extensions) {
             super();
             acceptedExtensions = extensions;
@@ -183,12 +176,12 @@ public class Downloads extends Fragment implements AdapterView.OnItemClickListen
 
         @Override
         public boolean accept(File file, String s) {
-            if(new File(file, s).isDirectory()) {
+            if (new File(file, s).isDirectory()) {
                 return false;
             }
-            if(acceptedExtensions != null && acceptedExtensions.length > 0) {
-                for(int i = 0; i < acceptedExtensions.length; i++) {
-                    if(s.endsWith(acceptedExtensions[i])) {
+            if (acceptedExtensions != null && acceptedExtensions.length > 0) {
+                for (int i = 0; i < acceptedExtensions.length; i++) {
+                    if (s.endsWith(acceptedExtensions[i])) {
                         return true;
                     }
                 }
