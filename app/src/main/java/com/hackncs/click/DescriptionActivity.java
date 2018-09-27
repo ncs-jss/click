@@ -9,9 +9,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,12 +25,12 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.snackbar.Snackbar;
 import com.joanzapata.iconify.IconDrawable;
 import com.joanzapata.iconify.Iconify;
 import com.joanzapata.iconify.fonts.FontAwesomeIcons;
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -50,12 +47,15 @@ import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.Map;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
+
 public class DescriptionActivity extends AppCompatActivity {
 
     private TextView title, faculty, posted_on;
     private WebView description;
-    private int index=0;
-    private String linkstr="";
+    private int index = 0;
+    private String linkstr = "";
     public Context context;
     private Notice notice;
     private String TOKEN;
@@ -63,10 +63,11 @@ public class DescriptionActivity extends AppCompatActivity {
     private Menu menu;
     ProgressDialog P;
     Button Dbutton;
-    private void init(){
+
+    private void init() {
         title = (TextView) findViewById(R.id.nTitle);
         faculty = (TextView) findViewById(R.id.nFaculty);
-        description = (WebView)findViewById(R.id.nDescription);
+        description = (WebView) findViewById(R.id.nDescription);
         posted_on = (TextView) findViewById(R.id.ndate);
     }
 
@@ -79,8 +80,8 @@ public class DescriptionActivity extends AppCompatActivity {
         TOKEN = sp.getString("com.hackncs.click.TOKEN", "");
         USER_NAME = sp.getString("com.hackncs.click.USERNAME", "");
 
-        Intent i=getIntent();
-        String action=i.getAction();
+        Intent i = getIntent();
+        String action = i.getAction();
         //Log.i("action:",action);
         //Log.i("openen:","opened");
         P = new ProgressDialog(context);
@@ -94,23 +95,23 @@ public class DescriptionActivity extends AppCompatActivity {
             P.setCancelable(true);
 
             String url = i.getData().toString();
-            Log.d("url", url);
-            String noticeid = url.substring(url.indexOf('=')+1);
-            String get_url = Endpoints.notice_by_pk +noticeid;
-            Log.d("Notice Id",noticeid);
-            Log.d("URL",get_url);
+//            Log.d("url", url);
+            String noticeid = url.substring(url.indexOf('=') + 1);
+            String get_url = Endpoints.notice_by_pk + noticeid;
+//            Log.d("Notice Id",noticeid);
+//            Log.d("URL",get_url);
             StringRequest newNoticeRequest = new StringRequest(Request.Method.GET, get_url,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             try {
                                 JSONObject jo = new JSONObject(response);
-                                Log.i("Json:",jo.toString());
+//                                Log.i("Json:","notice received");
                                 notice = Notice.getNoticeObject(jo);
                                 P.dismiss();
                                 populateView();
                             } catch (JSONException e) {
-                                Log.i("JsonError:",e.getMessage());
+//                                Log.i("JsonError:",e.getMessage());
                                 e.printStackTrace();
 
                             }
@@ -119,10 +120,10 @@ public class DescriptionActivity extends AppCompatActivity {
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Log.i("JsonError:",error.getMessage());
-                            Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+//                            Log.i("JsonError:",error.getMessage());
+//                            Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
                         }
-                    }){
+                    }) {
                 @Override
                 public Map<String, String> getHeaders() throws AuthFailureError {
                     Map<String, String> params = new HashMap<>();
@@ -133,24 +134,19 @@ public class DescriptionActivity extends AppCompatActivity {
             };
             RequestQueue rq = Volley.newRequestQueue(this);
             rq.add(newNoticeRequest);
-        }else{
+        } else {
             Bundle b = getIntent().getExtras();
             notice = (Notice) b.get("Notice");
         }
 
 
-
-
-
     }
 
     @Override
-    protected void onResume()
-    {
+    protected void onResume() {
         super.onResume();
 
         populateView();
-
 
 
     }
@@ -168,13 +164,8 @@ public class DescriptionActivity extends AppCompatActivity {
             }
         });
         Dbutton.setVisibility(View.GONE);
-       /* while(notice==null) {
-        P.setMessage("Opening...");
-        P.show();
-        P.setIndeterminate(false);
-        P.setCancelable(true);
-        }*/
-        if(notice!=null) {
+
+        if (notice != null) {
             if (notice.mAttachment) {
                 Dbutton.setVisibility(View.VISIBLE);
 
@@ -190,7 +181,7 @@ public class DescriptionActivity extends AppCompatActivity {
             init();
             title.setText(notice.mTitle);
             faculty.setText(notice.mPosted_by);
-            posted_on.setText(notice.mDate);
+            posted_on.setText(notice.date);
             description.loadData(notice.mNotice_description, "text/html", null);
         }
     }
@@ -200,11 +191,9 @@ public class DescriptionActivity extends AppCompatActivity {
         sendIntent.setAction(Intent.ACTION_SEND);
         String share_url = "http://infoconnect.jssaten.ac.in/notice/?notice_id=" + notice.mId;
         Bundle bundle = new Bundle();
-        bundle.putString(Intent.EXTRA_TITLE,notice.mTitle);
-        bundle.putString(Intent.EXTRA_TEXT,notice.mNotice_description);
-        bundle.putString(Intent.EXTRA_TEXT,share_url+ "\n\nSent via InfoConnect");
-        /*sendIntent.putExtra(Intent.EXTRA_TITLE,notice.mTitle);
-        sendIntent.putExtra(Intent.EXTRA_TEXT,share_url+ "\n\nSent via InfoConnect");*/
+        bundle.putString(Intent.EXTRA_TITLE, notice.mTitle);
+        bundle.putString(Intent.EXTRA_TEXT, notice.mNotice_description);
+        bundle.putString(Intent.EXTRA_TEXT, share_url + "\n\nSent via InfoConnect");
         sendIntent.putExtras(bundle);
         sendIntent.setType("text/plain");
         startActivity(sendIntent);
@@ -213,8 +202,6 @@ public class DescriptionActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-
-
         getMenuInflater().inflate(R.menu.notice, menu);
 
         this.menu = menu;
@@ -225,10 +212,15 @@ public class DescriptionActivity extends AppCompatActivity {
         menu.getItem(0).setIcon(new IconDrawable(this, FontAwesomeIcons.fa_share_alt)
                 .colorRes(R.color.white)
                 .actionBarSize());
-        if (new OfflineDatabaseHandler(getApplicationContext()).getStarredNoticesIds().contains(notice.mId)) {
-            menu.getItem(1).setIcon(new IconDrawable(this, FontAwesomeIcons.fa_star)
-                    .colorRes(R.color.golden)
-                    .actionBarSize());
+        try {
+//            Log.i("Stared Notices",new OfflineDatabaseHandler(DescriptionActivity.this).getStarredNoticesIds().toString());
+            if (new OfflineDatabaseHandler(DescriptionActivity.this).getStarredNoticesIds().contains(notice.mId)) {
+                menu.getItem(1).setIcon(new IconDrawable(this, FontAwesomeIcons.fa_star)
+                        .colorRes(R.color.golden)
+                        .actionBarSize());
+            }
+        } catch (Exception e) {
+//            Log.i("Error",e.toString());
         }
         return true;
     }
@@ -238,14 +230,10 @@ public class DescriptionActivity extends AppCompatActivity {
         int id = item.getItemId();
         if (id == R.id.menu_item_share) {
             startShareIntent();
-        }
-        else if (id == R.id.menu_item_star) {
-            if (!new OfflineDatabaseHandler(getApplicationContext()).getStarredNoticesIds().contains(notice.mId))
-            {
+        } else if (id == R.id.menu_item_star) {
+            if (!new OfflineDatabaseHandler(DescriptionActivity.this).getStarredNoticesIds().contains(notice.mId)) {
                 starNotice();
-            }
-            else
-            {
+            } else {
                 removeStarredNotice();
             }
 
@@ -277,10 +265,9 @@ public class DescriptionActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(context, error.toString(), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(context, error.toString(), Toast.LENGTH_SHORT).show();
                     }
-                })
-        {
+                }) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
@@ -305,21 +292,22 @@ public class DescriptionActivity extends AppCompatActivity {
                             menu.getItem(1).setIcon(new IconDrawable(context, FontAwesomeIcons.fa_star)
                                     .colorRes(R.color.golden)
                                     .actionBarSize());
-                            Toast.makeText(context, jo.getString("message"), Toast.LENGTH_SHORT).show();
+                            boolean result = new OfflineDatabaseHandler(DescriptionActivity.this).insertNotice(notice);
+//                            Log.i("Stared Notices",new OfflineDatabaseHandler(DescriptionActivity.this).getStarredNoticesIds().toString());
+                            Toast.makeText(DescriptionActivity.this, jo.getString("message"), Toast.LENGTH_SHORT).show();
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        new OfflineDatabaseHandler(context).insertNotice(notice);
+
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
-                })
-        {
+                }) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
@@ -340,6 +328,11 @@ public class DescriptionActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             //verifyStoragePermissions();
+            File folder = new File(Environment.getExternalStorageDirectory() + "/InfoConnect");
+            boolean status = folder.exists();
+            if (!status) {
+                status = folder.mkdir();
+            }
             P.setMessage("Downloading...");
             P.show();
             P.setIndeterminate(false);
@@ -351,45 +344,40 @@ public class DescriptionActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(String... params) {
             downloadAttachment(params[0]);
-            Log.d("---->", params[0]);
+//            Log.d("---->", params[0]);
 
             return null;
         }
 
         @Override
         protected void onPostExecute(Void Void) {
-            RelativeLayout parentView = (RelativeLayout)findViewById(R.id.activity_description);
+            RelativeLayout parentView = (RelativeLayout) findViewById(R.id.activity_description);
             Snackbar.make(parentView, "Download Complete!", Snackbar.LENGTH_SHORT).setAction("Open", new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    File selectedFile = new File(Environment.getExternalStorageDirectory().toString()+"/InfoConnect/" + linkstr);
+                    File selectedFile = new File(Environment.getExternalStorageDirectory().toString() + "/InfoConnect/" + linkstr);
                     if (selectedFile.isFile()) {
                         Intent intent = new Intent();
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         intent.setAction(Intent.ACTION_VIEW);
+                        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                        Uri uri = FileProvider.getUriForFile(context, context.getApplicationContext().getPackageName() + ".fileprovider", selectedFile);
                         if (selectedFile.getName().endsWith(".doc") || selectedFile.getName().endsWith(".docx")) {
-                            intent.setDataAndType(Uri.fromFile(selectedFile), "application/msword");
-                        }
-                        else if(selectedFile.getName().endsWith(".pdf")) {
-                            intent.setDataAndType(Uri.fromFile(selectedFile), "application/pdf");
-                        }
-                        else if(selectedFile.getName().endsWith(".ppt") || selectedFile.getName().endsWith(".pptx")) {
-                            intent.setDataAndType(Uri.fromFile(selectedFile), "application/vnd.ms-powerpoint");
-                        }
-                        else if(selectedFile.getName().endsWith(".xls") || selectedFile.getName().endsWith(".xlsx")) {
-                            intent.setDataAndType(Uri.fromFile(selectedFile), "application/vnd.ms-excel");
-                        }
-                        else if(selectedFile.getName().endsWith(".rtf")) {
-                            intent.setDataAndType(Uri.fromFile(selectedFile), "application/rtf");
-                        }
-                        else if(selectedFile.getName().endsWith(".jpg") || selectedFile.getName().endsWith(".jpeg") || selectedFile.getName().endsWith(".png")) {
-                            intent.setDataAndType(Uri.fromFile(selectedFile), "image/jpeg");
-                        }
-                        else if(selectedFile.getName().endsWith(".txt")) {
-                            intent.setDataAndType(Uri.fromFile(selectedFile), "text/plain");
-                        }
-                        else {
-                            intent.setDataAndType(Uri.fromFile(selectedFile), "*/*");
+                            intent.setDataAndType(uri, "application/msword");
+                        } else if (selectedFile.getName().endsWith(".pdf")) {
+                            intent.setDataAndType(uri, "application/pdf");
+                        } else if (selectedFile.getName().endsWith(".ppt") || selectedFile.getName().endsWith(".pptx")) {
+                            intent.setDataAndType(uri, "application/vnd.ms-powerpoint");
+                        } else if (selectedFile.getName().endsWith(".xls") || selectedFile.getName().endsWith(".xlsx")) {
+                            intent.setDataAndType(uri, "application/vnd.ms-excel");
+                        } else if (selectedFile.getName().endsWith(".rtf")) {
+                            intent.setDataAndType(uri, "application/rtf");
+                        } else if (selectedFile.getName().endsWith(".jpg") || selectedFile.getName().endsWith(".jpeg") || selectedFile.getName().endsWith(".png")) {
+                            intent.setDataAndType(uri, "image/jpeg");
+                        } else if (selectedFile.getName().endsWith(".txt")) {
+                            intent.setDataAndType(uri, "text/plain");
+                        } else {
+                            intent.setDataAndType(uri, "*/*");
                         }
                         startActivity(intent);
                     }
@@ -406,7 +394,7 @@ public class DescriptionActivity extends AppCompatActivity {
             URL url = new URL(sUrl);
             URLConnection conection = url.openConnection();
             conection.connect();
-            Log.d("--->",sUrl);
+//            Log.d("--->",sUrl);
 
             int lengthOfFile = conection.getContentLength();
 
@@ -416,7 +404,7 @@ public class DescriptionActivity extends AppCompatActivity {
 
             // Output stream
             OutputStream output = new FileOutputStream(Environment
-                    .getExternalStorageDirectory().toString()+"/InfoConnect/"
+                    .getExternalStorageDirectory().toString() + "/InfoConnect/"
                     + linkstr);
 
             byte data[] = new byte[1024];

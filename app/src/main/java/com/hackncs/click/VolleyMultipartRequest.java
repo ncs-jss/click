@@ -1,8 +1,5 @@
 package com.hackncs.click;
 
-/**
- * Created by DELL on 11/30/2017.
- */
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;

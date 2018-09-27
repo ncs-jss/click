@@ -1,18 +1,13 @@
 package com.hackncs.click;
 
-import  android.content.Context;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
@@ -31,6 +26,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 
 public class FragmentAcademics extends Fragment {
     private RecyclerView mRVNoticeList;
@@ -43,7 +42,8 @@ public class FragmentAcademics extends Fragment {
     private EndlessRecyclerViewScrollListener scrollListener;
     private List<Notice> data = new ArrayList<>();
     private String USER_NAME;
-    public static String NOTICE_CATEGORY="academics";
+    public static String NOTICE_CATEGORY = "academics";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -54,9 +54,9 @@ public class FragmentAcademics extends Fragment {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         TOKEN = sp.getString("com.hackncs.click.TOKEN", "");
         USER_NAME = sp.getString("com.hackncs.click.USERNAME", "");
-        Log.d("---->", TOKEN);
-        Log.d("---->", USER_NAME);
-        Log.d("---->", sp.getString("com.hackncs.click.FIRST_NAME","User"));
+//        Log.d("---->", TOKEN);
+//        Log.d("---->", USER_NAME);
+//        Log.d("---->", sp.getString("com.hackncs.click.FIRST_NAME","User"));
 
         mAdapter = new NoticeAdapter(context, data);
         mRVNoticeList.setAdapter(mAdapter);
@@ -86,29 +86,26 @@ public class FragmentAcademics extends Fragment {
                     @Override
                     public void onResponse(String response) {
                         //Toast.makeText(context, response, Toast.LENGTH_LONG).show();
-                        Log.d("Response", response);
+//                        Log.d("Response", response);
                         try {
                             JSONObject obj = new JSONObject(response);
 
-                            //Integer mCount = obj.getInt("count");
-                            //mNext = obj.getString("next");
-                            //System.out.println(mNext);
-                            //String previous = obj.getString("previous");
+
                             Notice.getNoticeArray(obj.getString("results"), data);
 
                             mAdapter.notifyDataSetChanged();
 
 
                         } catch (JSONException e) {
-                            Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show();
+//                            Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show();
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(context, error.toString(), Toast.LENGTH_LONG).show();
-                        Log.d("ERROR", "error => " + error.toString());
+//                        Toast.makeText(context, error.toString(), Toast.LENGTH_LONG).show();
+//                        Log.d("ERROR", "error => " + error.toString());
                     }
                 }) {
             @Override

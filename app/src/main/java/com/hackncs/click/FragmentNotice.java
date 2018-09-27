@@ -5,14 +5,10 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
@@ -30,6 +26,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class FragmentNotice extends Fragment {
     public FragmentNotice fragmentNotice;
@@ -57,8 +57,8 @@ public class FragmentNotice extends Fragment {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         TOKEN = sp.getString("com.hackncs.click.TOKEN", "");
         USER_NAME = sp.getString("com.hackncs.click.USERNAME", "");
-        Log.d("---->", TOKEN);
-        Log.d("---->", USER_NAME);
+//        Log.d("---->", TOKEN);
+//        Log.d("---->", USER_NAME);
 
 
         mAdapter = new NoticeAdapter(context, data);
@@ -96,15 +96,15 @@ public class FragmentNotice extends Fragment {
                             mAdapter.notifyDataSetChanged();
 
                         } catch (JSONException e) {
-                            Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show();
+//                            Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show();
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(context, error.toString(), Toast.LENGTH_LONG).show();
-                        Log.d("ERROR", "error => " + error.toString());
+//                        Toast.makeText(context, error.toString(), Toast.LENGTH_LONG).show();
+//                        Log.d("ERROR", "error => " + error.toString());
                     }
                 }) {
             @Override

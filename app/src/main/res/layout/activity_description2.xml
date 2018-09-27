@@ -7,30 +7,29 @@
     tools:context="com.hackncs.click.DescriptionActivity">
 
     <TextView
+        android:id="@+id/nTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:textColor="#000"
         android:gravity="center"
         android:text="@string/title"
-        android:id="@+id/nTitle"/>
+        android:textColor="#000"
+        android:textSize="15sp" />
 
     <TextView
+        android:id="@+id/nFaculty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
-        android:gravity="center"
-        android:textColor="#000"
-        android:text="@string/postedBy"
         android:layout_below="@+id/nTitle"
-        android:id="@+id/nFaculty"/>
+        android:gravity="center"
+        android:text="@string/postedBy"
+        android:textColor="#000"
+        android:textSize="12sp" />
 
     <WebView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@+id/nFaculty"
         android:id="@+id/nDescription"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nFaculty"
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

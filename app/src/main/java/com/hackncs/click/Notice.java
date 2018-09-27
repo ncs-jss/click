@@ -7,7 +7,7 @@ import org.json.JSONObject;
 import java.io.Serializable;
 import java.util.List;
 
-public class Notice implements Serializable{
+public class Notice implements Serializable {
 
     public String mTitle;
     public String mNotice_description;
@@ -20,6 +20,7 @@ public class Notice implements Serializable{
     public String mNextUrl;
     public String numDate;
     public String month;
+    public String date;
 
     public static Notice getNoticeObject(JSONObject json_data) throws JSONException {
         Notice notice = new Notice();
@@ -29,9 +30,9 @@ public class Notice implements Serializable{
         notice.mNotice_description = json_data.getString("description");
         notice.mAttachment_link = json_data.getString("file_attached");
         notice.mDate = json_data.getString("created");
-        notice.numDate = (notice.mDate).substring(8,10);
-        notice.month = (notice.mDate).substring(5,7);
-        if(notice.month.equals("01"))
+        notice.numDate = (notice.mDate).substring(8, 10);
+        notice.month = (notice.mDate).substring(5, 7);
+        if (notice.month.equals("01"))
             notice.month = "Jan";
         else if (notice.month.equals("02"))
             notice.month = "Feb";
@@ -53,11 +54,14 @@ public class Notice implements Serializable{
             notice.month = "Oct";
         else if (notice.month.equals("11"))
             notice.month = "Nov";
-        else
-        if (notice.month.equals("12"))
+        else if (notice.month.equals("12"))
             notice.month = "Dec";
 
-        if(notice.mAttachment_link != "null")
+
+        notice.date = notice.numDate + "-" + notice.month + "-" + notice.mDate.substring(0, 4) + " " + notice.mDate.substring(11, 16);
+
+
+        if (notice.mAttachment_link != "null")
             notice.mAttachment = true;
 
         return notice;
