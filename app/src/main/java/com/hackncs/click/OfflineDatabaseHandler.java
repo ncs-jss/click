@@ -50,6 +50,7 @@ public class OfflineDatabaseHandler extends SQLiteOpenHelper{
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+TABLE_LABEL_NOTICES);
+        onCreate(sqLiteDatabase);
     }
 
     public void flush() {

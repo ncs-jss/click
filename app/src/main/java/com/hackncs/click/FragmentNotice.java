@@ -57,8 +57,8 @@ public class FragmentNotice extends Fragment {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         TOKEN = sp.getString("com.hackncs.click.TOKEN", "");
         USER_NAME = sp.getString("com.hackncs.click.USERNAME", "");
-        Log.d("---->", TOKEN);
-        Log.d("---->", USER_NAME);
+//        Log.d("---->", TOKEN);
+//        Log.d("---->", USER_NAME);
 
 
         mAdapter = new NoticeAdapter(context, data);
@@ -96,15 +96,15 @@ public class FragmentNotice extends Fragment {
                             mAdapter.notifyDataSetChanged();
 
                         } catch (JSONException e) {
-                            Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show();
+//                            Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show();
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(context, error.toString(), Toast.LENGTH_LONG).show();
-                        Log.d("ERROR", "error => " + error.toString());
+//                        Toast.makeText(context, error.toString(), Toast.LENGTH_LONG).show();
+//                        Log.d("ERROR", "error => " + error.toString());
                     }
                 }) {
             @Override

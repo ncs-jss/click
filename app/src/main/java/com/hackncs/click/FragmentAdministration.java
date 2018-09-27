@@ -54,8 +54,8 @@ public class FragmentAdministration extends Fragment {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         TOKEN = sp.getString("com.hackncs.click.TOKEN", "");
         USER_NAME = sp.getString("com.hackncs.click.USERNAME", "");
-        Log.d("---->", TOKEN);
-        Log.d("---->", USER_NAME);
+//        Log.d("---->", TOKEN);
+//        Log.d("---->", USER_NAME);
 
 
         mAdapter = new NoticeAdapter(context, data);
@@ -86,7 +86,7 @@ public class FragmentAdministration extends Fragment {
                     @Override
                     public void onResponse(String response) {
                         //Toast.makeText(context, response, Toast.LENGTH_LONG).show();
-                        Log.d("Response", response);
+//                        Log.d("Response", response);
                         try {
                             JSONObject obj = new JSONObject(response);
 
@@ -100,15 +100,15 @@ public class FragmentAdministration extends Fragment {
 
 
                         } catch (JSONException e) {
-                            Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show();
+//                            Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show();
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(context, error.toString(), Toast.LENGTH_LONG).show();
-                        Log.d("ERROR", "error => " + error.toString());
+//                        Toast.makeText(context, error.toString(), Toast.LENGTH_LONG).show();
+//                        Log.d("ERROR", "error => " + error.toString());
                     }
                 }) {
             @Override
