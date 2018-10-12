@@ -9,3 +9,5 @@ app/build/intermediates/
 /captures
 .externalNativeBuild
 /app/src/main/java/com/hackncs/click/Endpoints.java
+/app/build/
+/app/release/
